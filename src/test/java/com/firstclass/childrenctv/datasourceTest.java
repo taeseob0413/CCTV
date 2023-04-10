@@ -38,6 +38,15 @@ public class datasourceTest {
 			String phone = "010-0000-0000";
 			user.add(name, age, phone);
 		}
+		
+		@Test
+		public void addtest2() {
+			String name ="LLL";
+			int age =25;
+			String phone = "010-1251-1548";
+			user.add(name, age, phone);
+			
+		}
 	
 
 }
