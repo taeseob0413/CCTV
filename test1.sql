@@ -19,3 +19,15 @@ create table sale_table
 select * from USER_table;
 select * from USER_table;
 
+CREATE TABLE USER (    
+    NAME VARCHAR2(50),
+    EMAIL VARCHAR2(100)
+);
+
+SELECT * FROM USER_TABLE;
+
+
+
+
+
+
