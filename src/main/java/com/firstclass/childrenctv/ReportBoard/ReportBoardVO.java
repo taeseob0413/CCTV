@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.domain;
+package com.firstclass.childrenctv.ReportBoard;
 
 import java.util.Date;
 
@@ -15,6 +15,10 @@ public class ReportBoardVO {
 	private Long child_id;	//실종아동 고유번호
 	
 	
+	public ReportBoardVO() {
+		
+	}
+	
 	public ReportBoardVO(Long report_id, Date report_time, String report_address, String report_content, Long user_id, Long child_id) {
 		this.report_id = report_id;
 		this.report_time = report_time;
@@ -23,7 +27,6 @@ public class ReportBoardVO {
 		this.user_id = user_id;
 		this.child_id = child_id;
 	}
-
 	
 	
 }

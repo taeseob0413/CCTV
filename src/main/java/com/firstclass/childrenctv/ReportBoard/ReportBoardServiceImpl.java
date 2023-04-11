@@ -1,11 +1,8 @@
-package com.firstclass.childrenctv.service;
+package com.firstclass.childrenctv.ReportBoard;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-
-import com.firstclass.childrenctv.domain.ReportBoardVO;
-import com.firstclass.childrenctv.mapper.ReportBoardMapper;
 
 import lombok.AllArgsConstructor;
 
@@ -13,7 +10,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ReportBoardServiceImpl implements ReportBoardService {
 
-	private ReportBoardMapper mapper;		//reportboardservice로 바꾸고 mapper를 지우기
+	private ReportBoardMapper mapper;
 
 	@Override
 	public void insert(ReportBoardVO board) {		// 제보 글 등록

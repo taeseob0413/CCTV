@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.firstclass.childrenctv.domain.ReportBoardVO;
-import com.firstclass.childrenctv.service.ReportBoardService;
+import com.firstclass.childrenctv.ReportBoard.ReportBoardService;
+import com.firstclass.childrenctv.ReportBoard.ReportBoardVO;
 
 @SpringBootTest
 public class datasourceTest {

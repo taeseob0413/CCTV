@@ -1,10 +1,8 @@
-package com.firstclass.childrenctv.mapper;
+package com.firstclass.childrenctv.ReportBoard;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-
-import com.firstclass.childrenctv.domain.ReportBoardVO;
 
 @Mapper
 public interface ReportBoardMapper {

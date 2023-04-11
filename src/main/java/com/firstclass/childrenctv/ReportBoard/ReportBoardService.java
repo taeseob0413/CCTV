@@ -1,8 +1,6 @@
-package com.firstclass.childrenctv.service;
+package com.firstclass.childrenctv.ReportBoard;
 
 import java.util.List;
-
-import com.firstclass.childrenctv.domain.ReportBoardVO;
 
 public interface ReportBoardService {
 
