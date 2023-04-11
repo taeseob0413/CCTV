@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.firstclass.childrenctv.mapper.ReportBoardMapper">
+
+<insert id="insert">
+insert into ReportBoard_table(report_id,report_address, report_content, user_id, child_id)
+values(#{report_id}, #{report_address}, #{report_content}, #{user_id}, #{child_id})
+</insert>
+
+<select id="get" resultType ="com.firstclass.childrenctv.domain.ReportBoardVO">
+select * from ReportBoard_table where report_id = #{report_id}
+</select>
+
+<select id="getByChild" resultType="com.firstclass.childrenctv.domain.ReportBoardVO">
+select * from ReportBoard_table where child_id = #{child_id}
+</select>
+
+<select id="getByUser" resultType="com.firstclass.childrenctv.domain.ReportBoardVO">
+select * from ReportBoard_table where user_id = #{user_id}
+</select>
+
+</mapper>

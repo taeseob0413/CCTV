@@ -1,52 +1,53 @@
 package com.firstclass.childrenctv;
 
-import static org.assertj.core.api.Assertions.fail;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
-import com.firstclass.childrenctv.service.UserService;
+import com.firstclass.childrenctv.domain.ReportBoardVO;
+import com.firstclass.childrenctv.service.ReportBoardService;
 
 @SpringBootTest
 public class datasourceTest {
 	
 	@Autowired
-	private UserService user;
+	private ReportBoardService Reportboard;
 	
+		
 		@Test
-		public void testConnection() {
-			try (Connection con = DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521:XE", 
-					"CCTV", 
-					"1234")) {
-				
-				System.out.println(con);
-			} catch (Exception e) {
-				fail(e.getMessage());
-			}
+		public void addreportboard() {
+
+			ReportBoardVO  board = new ReportBoardVO();
+			board.setChild_id(1025L);
+			board.setReport_address("대구");
+			board.setReport_content("봤다");
+			board.setReport_id(9L);
+			board.setUser_id(15188L);
+			Reportboard.insert(board);
 		}
 		
 		@Test
-		public void addtest() {
-			String name ="LCH";
-			int age = 24;
-			String phone = "010-0000-0000";
-			user.add(name, age, phone);
-		}
-		
-		@Test
-		public void addtest2() {
-			String name ="LLL";
-			int age =25;
-			String phone = "010-1251-1548";
-			user.add(name, age, phone);
+		public void getreportboard() {
+			ReportBoardVO board =Reportboard.get(3L);
 			
+			System.out.println("ReportBoardVO 정보!!!!!!!!!!!!" + board.toString());
 		}
+		
+		@Test
+		public void getlistbychild() {
+			System.out.println("아이 번호로 찾기!!!!" + Reportboard.getByChild(1025L));
+		}
+		
+		@Test void getlistbyuser() {
+			System.out.println("유저 번호로 찾기!!!!" + Reportboard.getByUser(15188L));
+		}
+		
+		
+		
+		
 	
 
 }
