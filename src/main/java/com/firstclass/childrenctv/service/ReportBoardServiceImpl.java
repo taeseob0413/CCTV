@@ -13,10 +13,10 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ReportBoardServiceImpl implements ReportBoardService {
 
-	private ReportBoardMapper mapper;
+	private ReportBoardMapper mapper;		//reportboardservice로 바꾸고 mapper를 지우기
 
 	@Override
-	public void insert(ReportBoardVO board) {
+	public void insert(ReportBoardVO board) {		// 제보 글 등록
 		mapper.insert(board);
 	}
 
@@ -32,19 +32,19 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 	
 
 	@Override
-	public ReportBoardVO get(Long report_id) {
+	public ReportBoardVO get(Long report_id) {		//제보 상세 글 보기
 		
 		return mapper.get(report_id);
 	}
 
 	@Override
-	public List<ReportBoardVO> getByChild(Long child_id) {
+	public List<ReportBoardVO> getByChild(Long child_id) {		//실종 아동별 제보 글 보기
 		
 		return mapper.getByChild(child_id);
 	}
 
 	@Override
-	public List<ReportBoardVO> getByUser(Long user_id) {
+	public List<ReportBoardVO> getByUser(Long user_id) {		//작성자별 제보 글 보기
 		
 		return mapper.getByUser(user_id);
 	}

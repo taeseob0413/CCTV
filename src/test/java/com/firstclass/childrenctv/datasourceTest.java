@@ -19,12 +19,11 @@ public class datasourceTest {
 		
 		@Test
 		public void addreportboard() {
-
 			ReportBoardVO  board = new ReportBoardVO();
 			board.setChild_id(1025L);
 			board.setReport_address("대구");
 			board.setReport_content("봤다");
-			board.setReport_id(9L);
+			board.setReport_id(10L);
 			board.setUser_id(15188L);
 			Reportboard.insert(board);
 		}
@@ -32,7 +31,6 @@ public class datasourceTest {
 		@Test
 		public void getreportboard() {
 			ReportBoardVO board =Reportboard.get(3L);
-			
 			System.out.println("ReportBoardVO 정보!!!!!!!!!!!!" + board.toString());
 		}
 		
@@ -46,8 +44,4 @@ public class datasourceTest {
 		}
 		
 		
-		
-		
-	
-
 }
