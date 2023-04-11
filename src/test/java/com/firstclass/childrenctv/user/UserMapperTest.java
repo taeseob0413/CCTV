@@ -13,13 +13,19 @@ class UserMapperTest {
     private UserMapper userMapper;
     @Test
     void create() {
-        UserVO userVO = new UserVO(1L, "s", "s", "s", "s", "s", "ss", 13, "dd");
+        UserVO userVO = new UserVO(1L, "s", "s", "s", "s", 13, "ss", "s", "dd");
         userMapper.create(userVO);
     }
 
     @Test
     void existIDPASSWORD(){
-        boolean is = userMapper.existUserByIdAndPassword("s2", "s");
+        UserVO is = userMapper.existUserByIdAndPassword("s2", "s");
         System.out.println(is);
+    }
+
+    @Test
+    void existNameAndEmail(){
+        UserVO userVO = userMapper.existUserByNameAndEmail("ss", "s");
+        System.out.println(userVO.toString());
     }
 }

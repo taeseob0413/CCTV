@@ -9,7 +9,7 @@ public interface UserMapper {
     void create(UserVO userVO);
     void delete(Long userId);
     void update(UserVO userVO);
-    Boolean existUserByIdAndPassword(String loginId, String password);
+    UserVO existUserByIdAndPassword(String loginId, String password);
     UserVO existUserByNameAndEmail(String name, String email);
     //List<ReportBoardVO> getReportList(Long id);
     List<UserVO> getAllUserList();
