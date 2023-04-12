@@ -13,8 +13,10 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 	private ReportBoardMapper mapper;
 
 	@Override
-	public void insert(ReportBoardVO board) {		// 제보 글 등록
+	public void insert(ReportBoardVO board) {// 제보 글 등록
+		
 		mapper.insert(board);
+		
 	}
 
 	@Override
