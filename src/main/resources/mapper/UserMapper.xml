@@ -1,0 +1,14 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.firstclass.childrenctv.user.UserMapper">
+    <insert id="create" parameterType="com.firstclass.childrenctv.user.UserVO">
+        INSERT INTO USER_TABLE(user_id, user_name, user_loginID, user_password, user_age, user_gender, user_address, user_grade, user_email)
+            VALUES (#{user_id}, #{user_name}, #{user_loginID}, #{user_password}, #{user_age}, #{user_gender}, #{user_address}, #{user_grade}, #{user_email})
+    </insert>
+    <select id="existUserByIdAndPassword" resultType="com.firstclass.childrenctv.user.UserVO">
+        SELECT * FROM USER_TABLE WHERE user_loginID = #{loginId} AND user_password = #{password}
+    </select>
+    <select id="existUserByNameAndEmail" resultType="com.firstclass.childrenctv.user.UserVO">
+        SELECT * FROM USER_TABLE WHERE user_name = #{name} AND user_email = #{email}
+    </select>
+</mapper>
