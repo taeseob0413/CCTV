@@ -31,7 +31,7 @@ public class datasourceTest {
 		
 		@Test
 		public void getreportboard() {
-			ReportBoardVO board =Reportboard.get(3L);
+			ReportBoardVO board =Reportboard.get(1L);
 			System.out.println("ReportBoardVO 정보!!!!!!!!!!!!" + board.toString());
 		}
 		
