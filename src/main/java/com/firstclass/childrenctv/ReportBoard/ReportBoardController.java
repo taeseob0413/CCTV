@@ -21,10 +21,24 @@ public class ReportBoardController {
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
 		service.insert(board);
 		
-		return "index";
+		return "index";		// 추후에 list 화면으로 이동시키기
 		
 	}
 	
+	@PostMapping("/reportBoard/delete")
+	    public String deleteReportBoard(Long report_id) {  //세션에서 정보 넘어올때 다시 수정
+    
+        service.deleteReportBoard(report_id);
+      
+        return "index"; //실종아동 정보 게시판이 만들어지면 수정
+    
+    }
+
+	@PostMapping("/reportBoard/update")
+	public String updateReportBoard(ReportBoardVO board) {
+	    service.update(board);
+	    return "index";  //추후에 list 화면으로 이동시키기
 	
+	}
 
 }

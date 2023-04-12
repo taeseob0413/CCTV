@@ -13,7 +13,7 @@ class UserMapperTest {
     private UserMapper userMapper;
     @Test
     void create() {
-        UserVO userVO = new UserVO(1L, "s", "s", "s", "s", 13, "ss", "s", "dd");
+        UserVO userVO = new UserVO(5L, "s", "s", "s", "s", 13, "ss", "s", "dd");
         userMapper.create(userVO);
     }
 
@@ -23,9 +23,10 @@ class UserMapperTest {
         System.out.println(is);
     }
 
+    //동일한 이름과 이메일을 가진 데이터가 있으면 데이터가 2개 불러와져서 오류 발생
     @Test
     void existNameAndEmail(){
-        UserVO userVO = userMapper.existUserByNameAndEmail("ss", "s");
-        System.out.println(userVO.toString());
+        UserVO userVO = userMapper.existUserByNameAndEmail("s", "s");
+        System.out.println(userVO);
     }
 }

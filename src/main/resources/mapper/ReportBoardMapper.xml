@@ -20,4 +20,12 @@ select * from ReportBoard_table where child_id = #{child_id}
 select * from ReportBoard_table where user_id = #{user_id}
 </select>
 
+<delete id="deleteReportBoard"> 
+delete reportboard_table where report_id =#{report_id}
+</delete>
+
+<update id="update">
+update reportboard_table set report_time =#{report_time}, report_address =#{report_address}, report_content =#{report_content} where report_id = #{report_id}
+</update>
+
 </mapper>
