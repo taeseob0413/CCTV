@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.firstclass.childrenctv.mapper.UserMapper">
+    <insert id="create" parameterType="com.firstclass.childrenctv.domain.UserVO">
+        INSERT INTO USER_TABLE(user_id, user_name, user_loginID, user_password, user_age, user_gender, user_address, user_grade, user_email)
+            VALUES (#{user_id}, #{user_name}, #{user_loginID}, #{user_password}, #{user_age}, #{user_gender}, #{user_address}, #{user_grade}, #{user_email})
+    </insert>
+</mapper>
