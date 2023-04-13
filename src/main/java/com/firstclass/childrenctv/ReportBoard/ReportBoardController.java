@@ -1,10 +1,11 @@
 package com.firstclass.childrenctv.ReportBoard;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 
 @Controller
@@ -39,6 +40,13 @@ public class ReportBoardController {
 	    service.update(board);
 	    return "index";  //추후에 list 화면으로 이동시키기
 	
+	}
+	
+	@GetMapping("/reportBoard/get")
+	public String get(@RequestParam("report_id") Long report_id, Model model) {
+		model.addAttribute("board", service.get(report_id));
+		System.out.println("컨트롤러 들어왔다!!!!!!!!!!");
+		return "reportboard/get";
 	}
 
 }
