@@ -4,7 +4,7 @@
 
 <body>
 <div id="welcomePage">
-    <h1>Welcome Page</h1>
+    <h1>Welcome Page 수정</h1>
 </div>
 
 </body>

@@ -2,29 +2,31 @@
 <%@ include file="../layout/header.jsp"%>
 
 
-<center>
-  <h1>로그인</h1>
-  <form action="/user/login" method="post">
+<div id="login_logo">CCTV 로그인</div>
+<div id = "login_area">
+  <div id ="loginBox">
 
-    <table border="1" cellpadding="0" cellspacing="0">
-      <tr>
-        <td bgcolor="orange">이메일</td>
-        <td><input type="text" name="email" /></td>
-      </tr>
-      <tr>
-        <td bgcolor="orange">비밀번호</td>
-        <td><input type="password" name="password" /></td>
-      </tr>
-      <tr>
-        <td colspan="2" align="center">
-          <input type="submit" value="로그인"/>
-        </td>
-      </tr>
-    </table>
-  </form>
-  <br>
-  <a href="/user/join">회원 가입</a>
-  <hr>
-</center>
+    <form action="" method="POST">
+
+      <div class="input-box">
+        <input id="username" type="text" name="username" placeholder="아이디">
+        <label for="username">아이디</label>
+      </div>
+
+      <div class="input-box">
+        <input id="password" type="password" name="password" placeholder="비밀번호">
+        <label for="password">비밀번호</label>
+      </div>
+      <div id="forgot">
+        <a href="">비밀번호 찾기</a>
+        <a href="">아이디 찾기</a>
+      </div>
+      <input type="submit" value="로그인">
+      <div id = "userJoin">
+        <a href="">회원 가입</a>
+      </div>
+    </form>
+  </div>
+</div>
 
 <%@ include file="../layout/footer.jsp"%>
