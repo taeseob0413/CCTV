@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface ChildBoardMapper {
-	public List<ChildBoardVO> getChildAddr(String addr);
+	public List<ChildBoardVO> getChildAddr(String child_location);
 	
 	public List<ChildBoardVO> getChild();
 	

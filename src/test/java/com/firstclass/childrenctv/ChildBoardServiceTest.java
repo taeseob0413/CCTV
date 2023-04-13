@@ -24,7 +24,7 @@ public class ChildBoardServiceTest {
 		child.setChild_gender("m");
 		child.setChild_height(100f);
 		child.setChild_location("seoul");
-		child.setChild_name("신태섭");
+		child.setChild_name("gkgkgk");
 		child.setChild_outfit("ddd");
 		child.setChild_time("11시11");
 		
@@ -34,7 +34,7 @@ public class ChildBoardServiceTest {
 	}
 	@Test
 	public void testGet() {
-		List<ChildBoardVO> child_list=service.getChild();
+		List<ChildBoardVO> child_list=service.getChildAddr("송파");
 		for(ChildBoardVO sss: child_list) {
 			System.out.println(sss.getChild_name());
 		}
