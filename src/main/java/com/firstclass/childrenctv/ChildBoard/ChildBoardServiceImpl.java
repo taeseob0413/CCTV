@@ -51,5 +51,10 @@ public class ChildBoardServiceImpl implements ChildBoardService {
 
 
    }
+   
+   @Override
+   public void register(ChildBoardVO child) {
+	   mapper.insert(child);
 
+}
 }

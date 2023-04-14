@@ -1,3 +1,4 @@
+
 package com.firstclass.childrenctv.ChildBoard;
 
 import java.util.List;
@@ -11,4 +12,5 @@ public interface ChildBoardService {
 	
 	void insert(ChildBoardVO child);
 	
+	public void register(ChildBoardVO child);
 }
