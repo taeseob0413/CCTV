@@ -23,11 +23,11 @@ public class ChildBoardServiceTest {
 		child.setChild_feature("안녕하세요");
 		child.setChild_gender("m");
 		child.setChild_height(100f);
-		child.setChild_location("seoul");
-		child.setChild_name("gkgkgk");
+		child.setChild_location("성북구");
+		child.setChild_name("이");
 		child.setChild_outfit("ddd");
 		child.setChild_time("11시11");
-		
+		child.setChild_img("aaaa");
 		service.insert(child);
 		System.out.println("성공");
 		

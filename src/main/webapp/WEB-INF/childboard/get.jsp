@@ -27,36 +27,22 @@
 						</tr>
 					</thead>
 					
-					<c:forEach var="board" items="${list}" >
+					
 						<tr>
 							
 							
-							<td>"${list[0].getChild_location()}"</td>
+							<td>"${child.getChild_location()}"</td>
 							
-							<td>"${list[0].child_name}"</td>
+							<td>"${child.child_name}"</td>
 							
-							<td>"${list[0].child_age}"</td>
+							<td>"${child.child_age}"</td>
 							
-							<td>"${list[0].child_gender}"</td>
+							<td>"${child.child_gender}"</td>
 							
-							<td>"${list[0].child_img}"</td>
-							
-						</tr>
-						<tr>
-							
-							
-							<td>"${list[1].getChild_location()}"</td>
-							
-							<td>"${list[1].child_name}"</td>
-							
-							<td>"${list[1].child_age}"</td>
-							
-							<td>"${list[1].child_gender}"</td>
-							
-							<td>"${list[1].child_img}"</td>
+							<td>"${child.child_img}"</td>
 							
 						</tr>
-					</c:forEach>
+					
 				</table>
 				</div>
 				</div>
