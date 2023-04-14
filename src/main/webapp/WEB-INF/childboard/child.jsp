@@ -27,17 +27,33 @@
 						</tr>
 					</thead>
 					
-					<c:forEach items="${list}" var="board">
+					<c:forEach var="board" items="${list}" >
 						<tr>
 							
 							
-							<td><c:out value="${board.child_id}" /></td>
+							<td>"${list[0].getChild_location()}"</td>
 							
-							<td><c:out value="${board.child_name}" /></td>
+							<td>"${list[0].child_name}"</td>
 							
-							<td><c:out value="${board.child_age}" /></td>
+							<td>"${list[0].child_age}"</td>
 							
-							<td><c:out value="${board.child_gender}" /></td>
+							<td>"${list[0].child_gender}"</td>
+							
+							<td>"${list[0].child_img}"</td>
+							
+						</tr>
+						<tr>
+							
+							
+							<td>"${list[1].getChild_location()}"</td>
+							
+							<td>"${list[1].child_name}"</td>
+							
+							<td>"${list[1].child_age}"</td>
+							
+							<td>"${list[1].child_gender}"</td>
+							
+							<td>"${list[1].child_img}"</td>
 							
 						</tr>
 					</c:forEach>

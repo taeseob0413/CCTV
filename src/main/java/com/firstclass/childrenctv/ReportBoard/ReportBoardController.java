@@ -1,5 +1,6 @@
 package com.firstclass.childrenctv.ReportBoard;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +13,7 @@ import lombok.AllArgsConstructor;
 @Controller
 @AllArgsConstructor
 public class ReportBoardController {
-
+	@Autowired
 	private ReportBoardService service;
 	
 	@PostMapping("/reportBoard/register")

@@ -14,7 +14,14 @@ public class ChildBoardVO {
 	private String child_time;
 	private String child_feature;
 	private String child_outfit;
+	private String child_img;
 	
+	public String getChild_img() {
+		return child_img;
+	}
+	public void setChild_img(String child_img) {
+		this.child_img = child_img;
+	}
 	public String getChild_location() {
 		return child_location;
 	}

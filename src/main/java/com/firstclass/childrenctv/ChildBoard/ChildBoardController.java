@@ -22,7 +22,8 @@ public class ChildBoardController {
 	@GetMapping("/child/list")
 	public String list(Model model) {
 
-		String child_location="송파";
+		String child_location="성북";
+
 		List<ChildBoardVO> cl=service.getChildAddr(child_location);
 		
 		model.addAttribute("list", cl);
@@ -31,10 +32,12 @@ public class ChildBoardController {
 		System.out.println("성공!");
 		return "childboard/child";
 	}
-	
 	@GetMapping("/child/get")
-	public void get(@RequestParam("child_id") Long child_id, Model model) {
-		model.addAttribute("board",service.getChildId(child_id));
-	} 
+	public String get(@RequestParam("child_id") Long child_id,Model model) {
+		model.addAttribute("child",service.getChildId(child_id));
+		return "childboard/get";
+	}
+	
+	
 
 }
