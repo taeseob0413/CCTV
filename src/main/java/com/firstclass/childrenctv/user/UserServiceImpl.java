@@ -9,9 +9,10 @@ import java.util.List;
 @AllArgsConstructor
 public class UserServiceImpl implements UserService{
     private final UserMapper userMapper;
+    
     @Override
     public void signup(UserVO user) {
-
+    	userMapper.create(user);	
     }
 
     @Override

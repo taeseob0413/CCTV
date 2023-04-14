@@ -7,6 +7,7 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
     void create(UserVO userVO);
+    public int insertSelectKey(UserVO userVO); 
     void delete(Long userId);
     void update(UserVO userVO);
     UserVO existUserByIdAndPassword(String loginId, String password);

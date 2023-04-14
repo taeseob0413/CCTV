@@ -3,7 +3,7 @@ package com.firstclass.childrenctv.user;
 import java.util.List;
 
 public interface UserService {
-    void signup(UserVO user);
+    void signup(UserVO user);  //회원가입
     UserVO signIn(String loginid, String password);
     String findId(String name, String email);
     String findpass(String name, String email, String loginId);

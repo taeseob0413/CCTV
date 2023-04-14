@@ -5,6 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
+	
+	@GetMapping("/user/join")
+	public String join() {
+		return "/user/JoinUser";
+	}
 
     @GetMapping("/user/login")
     public String login(){

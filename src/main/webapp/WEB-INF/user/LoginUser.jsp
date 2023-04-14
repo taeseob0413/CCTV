@@ -23,7 +23,7 @@
       </div>
       <input type="submit" value="로그인">
       <div id = "userJoin">
-        <a href="">회원 가입</a>
+        <a href="/user/join">회원 가입</a>
       </div>
     </form>
   </div>

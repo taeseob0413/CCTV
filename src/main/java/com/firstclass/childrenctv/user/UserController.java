@@ -9,6 +9,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 @AllArgsConstructor
 public class UserController {
     private final UserService userService;
+    
+    @PostMapping("/user/join")
+    public String join(UserVO user){
+    	System.out.println("성공해주세요...");   
+    	System.out.print("정보 확인" +  user.toString());	
+    	
+    	userService.signup(user);
+    	
+    	return "index";
+    }
 
     @PostMapping("/user/login")
     public String login(String email, String password, HttpServletRequest request){

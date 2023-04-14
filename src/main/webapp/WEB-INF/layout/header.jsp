@@ -16,5 +16,7 @@
     <li>지역별 실종 아동</li>
     <li>안전 지도 서비스</li>
     <li>미등록 실종 아동 제보</li>
-    <li class ="userMenu">로그인</li>
+    <li class ="userMenu">
+    	<a href="/user/login">로그인</a>
+    </li>
 </ul>
