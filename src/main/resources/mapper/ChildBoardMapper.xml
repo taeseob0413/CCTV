@@ -17,6 +17,6 @@
     
     <insert id="insert" parameterType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO">
         INSERT INTO CHILDBOARD_TABLE(child_id,child_location,child_age,child_gender,child_name,child_height,child_time,child_feature,child_outfit)
-            VALUES (seq_child.nextval,#{child_location}, #{child_age},#{child_gender},#{child_name},#{child_height},#{child_time},#{child_feature},#{child_outfit})
+            VALUES (seq_childboard.nextval,#{child_location}, #{child_age},#{child_gender},#{child_name},#{child_height},#{child_time},#{child_feature},#{child_outfit})
     </insert>
 </mapper>
