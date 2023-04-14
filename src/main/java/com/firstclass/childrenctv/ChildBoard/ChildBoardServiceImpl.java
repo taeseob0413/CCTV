@@ -21,8 +21,8 @@ public class ChildBoardServiceImpl implements ChildBoardService {
 
 
    @Override
-   public List<ChildBoardVO> getChildAddr(String addr) {
-	   return mapper.getChildAddr(addr);
+   public List<ChildBoardVO> getChildAddr(String child_location) {
+	   return mapper.getChildAddr(child_location);
 
    }
 

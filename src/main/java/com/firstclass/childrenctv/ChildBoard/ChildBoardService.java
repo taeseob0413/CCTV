@@ -4,7 +4,7 @@ package com.firstclass.childrenctv.ChildBoard;
 import java.util.List;
 
 public interface ChildBoardService {
-	List<ChildBoardVO> getChildAddr(String addr);
+	List<ChildBoardVO> getChildAddr(String child_location);
 	
 	List<ChildBoardVO> getChild();
 	
