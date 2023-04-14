@@ -16,5 +16,10 @@
     <li>지역별 실종 아동</li>
     <li>안전 지도 서비스</li>
     <li>미등록 실종 아동 제보</li>
+    <% if(user == null){%>
     <li class ="userMenu">로그인</li>
+    <%} else{ %>
+    <li class ="userMenu">로그아웃</li>
+    <li class ="userMenu">마이페이지</li>
+    <% } %>
 </ul>
