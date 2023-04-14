@@ -1,5 +1,7 @@
 package com.firstclass.childrenctv.ChildBoard;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,9 +22,12 @@ public class ChildBoardController {
 	@GetMapping("/child/list")
 	public String list(Model model) {
 		String child_location="송파";
-		model.addAttribute("list", service.getChildAddr(child_location));
+		List<ChildBoardVO> cl=service.getChildAddr(child_location);
+		
+		model.addAttribute("list", cl);
+		
 		System.out.println("성공!");
-		return "/childboard/child";
+		return "childboard/child";
 	}
 	
 	
