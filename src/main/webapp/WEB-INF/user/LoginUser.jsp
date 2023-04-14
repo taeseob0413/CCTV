@@ -6,10 +6,10 @@
 <div id="login_area">
     <div id="loginBox">
 
-        <form id="loginForm" action="/user/login" method="POST" onsubmit="return checkLogin()">
+        <div id="loginForm">
 
             <div class="input-box">
-                <input id="username" type="text" name="email" placeholder="아이디">
+                <input id="username" type="text" name="username" placeholder="아이디">
                 <label for="username">아이디</label>
             </div>
 
@@ -21,25 +21,26 @@
                 <a href="">비밀번호 찾기</a>
                 <a href="">아이디 찾기</a>
             </div>
-            <input type="submit" value="로그인">
+            <button id="loginButton"type="button" onclick="checkLogin()">로그인</button>
             <div id="userJoin">
                 <a href="">회원 가입</a>
             </div>
-        </form>
+        </div>
     </div>
 </div>
+
 <script type="text/javascript">
     checkLogin = function () {
-        var form = document.getElementById('loginForm');
-        var data = new FormData(form);
+        const userEmail = document.getElementById('username').value;
+        const userPassword = document.getElementById('password').value;
         fetch('/user/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                email: 's',
-                password: 's'
+                email : userEmail.toString(),
+                password : userPassword.toString()
             })
         })
             .then(response => {

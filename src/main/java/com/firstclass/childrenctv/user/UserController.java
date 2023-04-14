@@ -5,6 +5,7 @@ import com.firstclass.childrenctv.user.dto.LoginDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import oracle.jdbc.proxy.annotation.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -22,5 +23,11 @@ public class UserController {
         }
         request.getSession().setAttribute("user", user);
         return new BaseResponse(200, "성공적으로 로그인되었습니다.");
+    }
+
+    @PostMapping("/user/logout")
+    public BaseResponse logout(HttpServletRequest request){
+        request.getSession().removeAttribute("user");
+        return new BaseResponse(200, "성공적으로 로그아웃되었습니다.");
     }
 }
