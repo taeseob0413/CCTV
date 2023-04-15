@@ -3,9 +3,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="../layout/header.jsp"%>
 
+<style>
+    #container{
+        text-align: center;
+    }
+</style>
+
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Tables</h1>
+		<h1 class="page-header">실종아동 게시판</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -40,6 +46,7 @@
 							
 							<td>${board.child_gender}</td>
 							
+
 							
 							
 						</tr>
