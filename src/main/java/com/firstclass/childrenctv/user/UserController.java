@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 @AllArgsConstructor
 public class UserController {
-    @Autowired
+    
 	private UserService userService;
 
     @PostMapping("/user/login")

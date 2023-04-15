@@ -20,14 +20,14 @@ public class ChildBoardServiceTest {
 	public void testRegister() {
 		ChildBoardVO child=new ChildBoardVO();
 		child.setChild_age(15L);
-		child.setChild_feature("안녕하세요");
+		child.setChild_feature("보통");
 		child.setChild_gender("m");
-		child.setChild_height(100f);
-		child.setChild_location("성북구");
-		child.setChild_name("이");
-		child.setChild_outfit("ddd");
+		child.setChild_height(150f);
+		child.setChild_location("동작구");
+		child.setChild_name("햄스터");
+		child.setChild_outfit("파란 옷");
 		child.setChild_time("11시11");
-		child.setChild_img("aaaa");
+		child.setChild_img("https://www.vivasam.com/images/create/job/89/job4.jpg");
 		service.insert(child);
 		System.out.println("성공");
 		

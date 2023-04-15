@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@include file="../layout/header.jsp"%>
 
 <div class="row">
 	<div class="col-lg-12">
@@ -19,43 +21,29 @@
 				<table class="table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>#번호</th>
+							<th>사진</th>
+							<th>실종장소</th>
 							<th>이름</th>
-							<th>나이</th>
-							<th>주소</th>
 							<th>성별</th>
+							
 						</tr>
 					</thead>
 					
-					<c:forEach var="board" items="${list}" >
+					<c:forEach items="${list}" var="board" >
 						<tr>
 							
+							<td><a href='/child/get?child_id=<c:out value="${board.child_id}"/>'><img src="${board.child_img}" alt="My Image" width="150" height="150"></td>
 							
-							<td>"${list[0].getChild_location()}"</td>
+							<td>${board.getChild_location()}</td>
 							
-							<td>"${list[0].child_name}"</td>
+							<td>${board.child_name}</td>
 							
-							<td>"${list[0].child_age}"</td>
-							
-							<td>"${list[0].child_gender}"</td>
-							
-							<td>"${list[0].child_img}"</td>
-							
-						</tr>
-						<tr>
+							<td>${board.child_gender}</td>
 							
 							
-							<td>"${list[1].getChild_location()}"</td>
-							
-							<td>"${list[1].child_name}"</td>
-							
-							<td>"${list[1].child_age}"</td>
-							
-							<td>"${list[1].child_gender}"</td>
-							
-							<td>"${list[1].child_img}"</td>
 							
 						</tr>
+						
 					</c:forEach>
 				</table>
 				</div>
@@ -63,6 +51,6 @@
 				</div>
 				</div>
 				
-
+<%@ include file="../layout/footer.jsp"%>
 
 
