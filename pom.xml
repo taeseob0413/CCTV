@@ -23,7 +23,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-	<groupId>com.oracle.database.jdbc</groupId>
+			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
 			<version>19.8.0.0</version>
 		</dependency>
@@ -31,7 +31,7 @@
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>3.0.0</version>
-		</dependency> 
+		</dependency>
 		
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
@@ -54,9 +54,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-				
-
+		
 		<dependency>
 			<groupId>javax.activation</groupId>
 			<artifactId>activation</artifactId>
@@ -75,7 +73,6 @@
 		    <artifactId>ojdbc8</artifactId>
 		    </dependency>
 		
-
 	</dependencies>
 
 	<build>
@@ -96,4 +93,3 @@
 	</build>
 
 </project>
-
