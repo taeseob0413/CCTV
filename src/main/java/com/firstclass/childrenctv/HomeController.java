@@ -2,6 +2,7 @@ package com.firstclass.childrenctv;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -11,10 +12,10 @@ public class HomeController {
 		return "/user/JoinUser";
 	}
 
-    @GetMapping("/user/login")
-    public String login(){
-        return "/user/LoginUser";
-    }
+	@GetMapping("/user/login")
+	public String login(){
+		return "/user/LoginUser";
+	}
 
     @GetMapping("/")
     public String home(){
@@ -40,4 +41,8 @@ public class HomeController {
     public String findUserPassword(){
         return "user/FindUserPassword";
     }
+
 }
+
+
+

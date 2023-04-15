@@ -12,6 +12,7 @@ public interface ReportBoardMapper {
 	public ReportBoardVO get(Long report_id);
 	public List<ReportBoardVO> getByChild(Long child_id);
 	public List<ReportBoardVO> getByUser(Long user_id);
+	public String getLoginId(Long user_id);
 	
 	public void deleteReportBoard(Long report_id);
 }
