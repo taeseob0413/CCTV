@@ -6,9 +6,10 @@
 
 
 <center>
-    <h1>실종 아동 제보 글 작성2dfsfdsf</h1>
+    <h1>실종 아동 제보 글 작성</h1>
 
     <form action="/reportBoard/register" method="post">
+    	<input type="hidden" name = "child_id" value="${child_id}">
         <table>
             <tr>
                 <td>목격 시간</td>
@@ -28,7 +29,7 @@
             </tr>
         </table>
         <input type="submit" value="작성완료"/>
-        <input type="button" value="취소" onclick="location.href='list.jsp'"/>
+        <input type="button" value="취소" onclick="location.href='list'"/>
     </form>
 </center>
 
