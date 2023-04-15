@@ -16,7 +16,35 @@
     <li>지역별 실종 아동</li>
     <li>안전 지도 서비스</li>
     <li>미등록 실종 아동 제보</li>
-    <li class ="userMenu">
-    	<a href="/user/login">로그인</a>
-    </li>
+    <% if(user == null){%>
+    <li class ="userMenu" onclick="toLoginPage()">로그인</li>
+    <%} else{ %>
+    <li class ="userMenu" onclick="logout()">로그아웃</li>
+    <li class ="userMenu">마이페이지</li>
+    <% } %>
 </ul>
+
+<script type="text/javascript">
+    toLoginPage = function (){
+        location.replace("/user/login");
+    };
+
+    logout = function (){
+        fetch('/user/logout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(json => {
+                if(json.code == 200){
+                    alert("로그아웃되었습니다.")
+                    location.replace("/");
+                }
+                else{
+                    alert("요청이 실패되었습니다.");
+                }
+            })
+    }
+</script>
