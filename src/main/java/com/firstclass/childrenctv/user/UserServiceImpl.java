@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class UserServiceImpl implements UserService{
-    private final UserMapper userMapper = null;
+    private final UserMapper userMapper;
     @Override
     public void signup(UserVO user) {
 
