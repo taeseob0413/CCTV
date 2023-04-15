@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 @AllArgsConstructor
 public class UserController {
-    private final UserService userService;
+    private final UserService userService = null;
 
     @PostMapping("/user/login")
     public String login(String email, String password, HttpServletRequest request){

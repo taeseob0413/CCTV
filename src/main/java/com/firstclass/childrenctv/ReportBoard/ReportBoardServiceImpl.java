@@ -10,42 +10,42 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ReportBoardServiceImpl implements ReportBoardService {
 
-	private ReportBoardMapper mapper;
+	private ReportBoardService service;
 
 	@Override
 	public void insert(ReportBoardVO board) {// 제보 글 등록
 		
-		mapper.insert(board);
+		service.insert(board);
 		
 	}
 
 	@Override
 	public void update(ReportBoardVO board) {		//제보 글 수정
-		mapper.update(board);
+		service.update(board);
 	}
 
 	@Override
-	public ReportBoardVO get(Long report_id) {		//제보 상세 글 보기
+	public List<ReportBoardVO> get(Long report_id) {		//제보 상세 글 보기
 		
-		return mapper.get(report_id);
+		return service.get(report_id);
 	}
 
 	@Override
 	public List<ReportBoardVO> getByChild(Long child_id) {		//실종 아동별 제보 글 보기
 		
-		return mapper.getByChild(child_id);
+		return service.getByChild(child_id);
 	}
 
 	@Override
 	public List<ReportBoardVO> getByUser(Long user_id) {		//작성자별 제보 글 보기
 		
-		return mapper.getByUser(user_id);
+		return service.getByUser(user_id);
 	}
 	
 	@Override
 	public void deleteReportBoard(Long report_id) {		//제보 글 삭제
 		
-		mapper.deleteReportBoard(report_id);
+		service.deleteReportBoard(report_id);
 	}
 	
 
