@@ -1,9 +1,6 @@
 package com.firstclass.childrenctv.ReportBoard;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -13,7 +10,7 @@ import lombok.AllArgsConstructor;
 @Controller
 @AllArgsConstructor
 public class ReportBoardController {
-	@Autowired
+
 	private ReportBoardService service;
 	
 	@PostMapping("/reportBoard/register")
@@ -43,7 +40,5 @@ public class ReportBoardController {
 	    return "index";  //추후에 list 화면으로 이동시키기
 	
 	}
-	
-
 
 }
