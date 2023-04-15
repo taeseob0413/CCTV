@@ -27,7 +27,15 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public String findId(String name, String email) {
-        return null;
+        String userLoginId = null;
+        try {
+            UserVO user = userMapper.existUserByNameAndEmail(name, email);
+            System.out.println(user.toString());
+            userLoginId = user.getUser_loginID();
+        }catch (Exception e){
+
+        }
+        return userLoginId;
     }
 
     @Override

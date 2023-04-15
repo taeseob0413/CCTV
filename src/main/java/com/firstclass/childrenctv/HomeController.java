@@ -25,4 +25,9 @@ public class HomeController {
     public String register() {
     	return "reportboard/register";
     }
+
+    @GetMapping("/find/user/userLoginId")
+    public String findUserLoginId(){
+        return "/user/FindUserLoginId";
+    }
 }

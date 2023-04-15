@@ -7,7 +7,6 @@
     <div id="loginBox">
 
         <div id="loginForm">
-
             <div class="input-box">
                 <input id="username" type="text" name="username" placeholder="아이디">
                 <label for="username">아이디</label>
@@ -18,8 +17,8 @@
                 <label for="password">비밀번호</label>
             </div>
             <div id="forgot">
-                <a href="">비밀번호 찾기</a>
-                <a href="">아이디 찾기</a>
+                <a href="/find/user/userLoginId">비밀번호 찾기</a>
+                <a href="/find/user/userLoginId">아이디 찾기</a>
             </div>
             <button id="loginButton"type="button" onclick="checkLogin()">로그인</button>
             <div id="userJoin">

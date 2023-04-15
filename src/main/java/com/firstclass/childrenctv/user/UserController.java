@@ -30,4 +30,11 @@ public class UserController {
         request.getSession().removeAttribute("user");
         return new BaseResponse(200, "성공적으로 로그아웃되었습니다.");
     }
+
+    @GetMapping("/find/user")
+    public BaseResponse findUserId(@RequestParam String userName, @RequestParam String userEmail){
+        String userID = userService.findId(userName, userEmail);
+        if(userID == null) return new BaseResponse<>(400, "일치하는 회원 정보가 없습니다.");
+        return new BaseResponse(200, "회원님의 아이디는 " + userID + " 입니다.");
+    }
 }
