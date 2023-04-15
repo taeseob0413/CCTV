@@ -2,7 +2,7 @@
 <%@ include file="../layout/header.jsp" %>
 
 
-<div id="login_logo">CCTV 아이디 찾기</div>
+<div id="login_logo">CCTV 비밀번호 찾기</div>
 <div id="login_area">
     <div id="loginBox">
 
@@ -13,10 +13,14 @@
             </div>
 
             <div class="input-box">
-                <input id="password" type="text" name="email" placeholder="이메일">
-                <label for="password">이메일</label>
+                <input id="email" type="text" name="email" placeholder="이메일">
+                <label for="email">이메일</label>
             </div>
-            <button id="loginButton"type="button" onclick="checkLogin()">아이디 찾기</button>
+            <div class="input-box">
+                <input id="userId" type="text" name="userId" placeholder="아이디">
+                <label for="userId">아이디</label>
+            </div>
+            <button id="loginButton"type="button" onclick="checkLogin()">비밀번호 찾기</button>
             <div id="userJoin">
                 <a href="">회원 가입</a>
             </div>
@@ -27,9 +31,10 @@
 <script type="text/javascript">
     checkLogin = function () {
         const userName = document.getElementById('username').value;
-        const userEmail = document.getElementById('password').value;
-        var parameter = "?userName=" + userName.toString() + "&userEmail=" + userEmail.toString();
-        fetch('/find/user/loginId' + parameter, {
+        const userEmail = document.getElementById('email').value;
+        const userId = document.getElementById('userId').value;
+        var parameter = "?userName=" + userName.toString() + "&userEmail=" + userEmail.toString() + "&userLoginId=" + userId.toString();
+        fetch('/find/user/password' + parameter, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

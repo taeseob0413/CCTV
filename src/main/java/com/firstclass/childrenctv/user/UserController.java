@@ -31,10 +31,17 @@ public class UserController {
         return new BaseResponse(200, "성공적으로 로그아웃되었습니다.");
     }
 
-    @GetMapping("/find/user")
+    @GetMapping("/find/user/loginId")
     public BaseResponse findUserId(@RequestParam String userName, @RequestParam String userEmail){
         String userID = userService.findId(userName, userEmail);
         if(userID == null) return new BaseResponse<>(400, "일치하는 회원 정보가 없습니다.");
         return new BaseResponse(200, "회원님의 아이디는 " + userID + " 입니다.");
+    }
+
+    @GetMapping("/find/user/password")
+    public BaseResponse findUserPassword(@RequestParam String userName, @RequestParam String userEmail, @RequestParam String userLoginId){
+        boolean emailSend = userService.findpass(userName, userEmail, userLoginId);
+        if(emailSend) return new BaseResponse<>(200, userEmail + "로 비밀번호를 전송했습니다.");
+        return new BaseResponse(400, "정보가 불일치합니다. 다시 입력해주세요.");
     }
 }

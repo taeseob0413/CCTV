@@ -17,7 +17,7 @@
                 <label for="password">비밀번호</label>
             </div>
             <div id="forgot">
-                <a href="/find/user/userLoginId">비밀번호 찾기</a>
+                <a href="/find/user/userPassword">비밀번호 찾기</a>
                 <a href="/find/user/userLoginId">아이디 찾기</a>
             </div>
             <button id="loginButton"type="button" onclick="checkLogin()">로그인</button>

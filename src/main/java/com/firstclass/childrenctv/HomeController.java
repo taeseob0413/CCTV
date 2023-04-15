@@ -30,4 +30,9 @@ public class HomeController {
     public String findUserLoginId(){
         return "/user/FindUserLoginId";
     }
+
+    @GetMapping("/find/user/userPassword")
+    public String findUserPassword(){
+        return "user/FindUserPassword";
+    }
 }
