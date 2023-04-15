@@ -1,18 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-<<<<<<< HEAD
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
-=======
 	pageEncoding="UTF-8"%>
+<%@include file="../layout/header.jsp"%>
+	
+
+
 
 <div class="row">
 	<div class="col-lg-12">
@@ -32,11 +23,11 @@
 				<table class="table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>#번호</th>
+							<th>사진</th>
+							<th>실종장소</th>
 							<th>이름</th>
-							<th>나이</th>
-							<th>주소</th>
 							<th>성별</th>
+							
 						</tr>
 					</thead>
 					
@@ -52,7 +43,7 @@
 							
 							<td>"${child.child_gender}"</td>
 							
-							<td>"${child.child_img}"</td>
+							<td><img src="${child.child_img}" alt="My Image"></td>
 							
 						</tr>
 					
@@ -63,6 +54,4 @@
 				</div>
 				
 
-
-
->>>>>>> branch 'sts' of https://github.com/ChangDaeJun/CCTV.git
+<%@ include file="../layout/footer.jsp"%>
