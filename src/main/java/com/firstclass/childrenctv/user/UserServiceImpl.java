@@ -1,5 +1,6 @@
 package com.firstclass.childrenctv.user;
 
+import com.firstclass.childrenctv.util.GmailService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 public class UserServiceImpl implements UserService{
     private final UserMapper userMapper;
+    private final GmailService gmailService;
     @Override
     public void signup(UserVO user) {
 
@@ -27,12 +29,29 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public String findId(String name, String email) {
-        return null;
+        String userLoginId = null;
+        try {
+            UserVO user = userMapper.existUserByNameAndEmail(name, email);
+            userLoginId = user.getUser_loginID();
+        }catch (Exception e){
+
+        }
+        return userLoginId;
     }
 
     @Override
-    public String findpass(String name, String email, String loginId) {
-        return null;
+    public boolean findpass(String name, String email, String loginId) {
+        String userLoginId = null;
+        UserVO user = null;
+        try {
+            user = userMapper.existUserByNameAndEmail(name, email);
+            userLoginId = user.getUser_loginID();
+        }catch (Exception e){
+
+        }
+        if(userLoginId == null || !userLoginId.equals(loginId)) return false;
+        gmailService.send(email, "CCTV 비밀번호를 알려드립니다.", "당신의 비밀번호는 " + user.getUser_password() +" 입니다.");
+        return true;
     }
 
     @Override

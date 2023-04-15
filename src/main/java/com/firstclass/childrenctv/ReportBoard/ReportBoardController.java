@@ -27,12 +27,6 @@ public class ReportBoardController {
 	
 	@PostMapping("/reportBoard/register")
 	public String reportboardregister(ReportBoardVO board, HttpServletRequest request) {
-		board.setUser_id(20L);
-		/* 세션에서 유저 정보를 받아오는 부분
-		 * HttpSession userSession = request.getSession(); UserVO userInfo = (UserVO)
-		 * userSession.getAttribute("user"); 
-		 * board.setUser_id(userInfo.getUser_id());
-		 */
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
 		service.insert(board);
 		

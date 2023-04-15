@@ -4,7 +4,18 @@
 <link rel="stylesheet" href="/resources/css/reportboard_register_style.css">
 </head>
 
-
+<% 
+	HttpSession userSession = request.getSession();
+	UserVO userInfo = (UserVO) userSession.getAttribute("user");
+	String userLoginId = null;
+	if(userInfo != null){
+		userLoginId =userInfo.getUser_loginID();
+	}
+	else{
+		userLoginId = "None";
+	}
+%>
+	
 <center>
     <h1>실종 아동 제보 글 작성</h1>
 
@@ -19,7 +30,7 @@
             </tr>
             <tr>
                 <td>작성자</td>
-                <td>${board.user_id}</td>
+                <td><%= userLoginId %></td>
             </tr>
             <tr>
                 <td>목격 위치</td>
@@ -30,11 +41,17 @@
                 <td><textarea name="report_content" rows="50" cols="100">${board.report_content }</textarea></td>
             </tr>
         </table>
-        <input type="submit" value="작성완료"/>
-        <input type="button" value="취소" onclick="location.href='get?report_id=${board.report_id}"/>
+        <input type="submit" value="수정완료" onclick="showModal()">
+        <input type="button" value="취소" onclick="location.href='get?report_id=${board.report_id}'"/>
     </form>
 </center>
 
+
+<script>
+function showModal() {
+ alert('수정 완료!')
+}
+</script>
 
 
 <%@ include file="../layout/footer.jsp"%>
