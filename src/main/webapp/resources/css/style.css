@@ -57,7 +57,13 @@ input:focus + label, label{
     -o-transition: all 0.2s ease;
 }
 
-input[type=submit]{
+button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#loginButton{
     background-color: #4a89dc;
     border:none;
     color:white;
