@@ -70,6 +70,13 @@ public class ChildBoardVO {
 	public void setChild_outfit(String child_outfit) {
 		this.child_outfit = child_outfit;
 	}
+	public Long getChild_id() {
+		return child_id;
+	}
+	public void setChild_id(Long child_id) {
+		this.child_id = child_id;
+	}
+	
 	
 	
 	

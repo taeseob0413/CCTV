@@ -21,14 +21,11 @@ public class ChildBoardController {
 	
 	@GetMapping("/child/list")
 	public String list(Model model) {
-
-		String child_location="성북";
-
+		String child_location="동작";
 		List<ChildBoardVO> cl=service.getChildAddr(child_location);
 		
 		model.addAttribute("list", cl);
 		
-
 		System.out.println("성공!");
 		return "childboard/child";
 	}
@@ -39,5 +36,4 @@ public class ChildBoardController {
 	}
 	
 	
-
 }

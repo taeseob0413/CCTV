@@ -13,7 +13,7 @@ import lombok.AllArgsConstructor;
 @Controller
 @AllArgsConstructor
 public class ReportBoardController {
-	@Autowired
+	
 	private ReportBoardService service;
 	
 	@PostMapping("/reportBoard/register")
