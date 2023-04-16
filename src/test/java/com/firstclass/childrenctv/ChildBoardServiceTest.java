@@ -21,13 +21,13 @@ public class ChildBoardServiceTest {
 		ChildBoardVO child=new ChildBoardVO();
 		child.setChild_age(15L);
 		child.setChild_feature("보통");
-		child.setChild_gender("m");
+		child.setChild_gender("g");
 		child.setChild_height(150f);
 		child.setChild_location("동작구");
-		child.setChild_name("햄스터");
-		child.setChild_outfit("파란 옷");
+		child.setChild_name("고양이");
+		child.setChild_outfit("갈색 옷");
 		child.setChild_time("11시11");
-		child.setChild_img("https://www.vivasam.com/images/create/job/89/job4.jpg");
+		child.setChild_img("https://www.fitpetmall.com/wp-content/uploads/2022/11/shutterstock_1915792003-768x535.jpg");
 		service.insert(child);
 		System.out.println("성공");
 		

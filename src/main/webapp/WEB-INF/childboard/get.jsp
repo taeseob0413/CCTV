@@ -11,7 +11,7 @@
 
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">실종아동 상세 페이지</h1>
+		<h1 class="page-header">실종 아동 상세 페이지</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -28,7 +28,7 @@
 					<thead>
 						<tr>
 							<th>사진</th>
-							<th>실종장소</th>
+							<th>실종 장소</th>
 							<th>이름</th>
 							<th>나이</th>
 							<th>성별</th>
