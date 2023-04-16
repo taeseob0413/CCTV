@@ -19,12 +19,12 @@ public class ChildBoardServiceTest {
 	@Test
 	public void testRegister() {
 		ChildBoardVO child=new ChildBoardVO();
-		child.setChild_age(15L);
-		child.setChild_feature("안녕하세요");
+		child.setChild_age(13L);
+		child.setChild_feature("안녕");
 		child.setChild_gender("m");
 		child.setChild_height(100f);
 		child.setChild_location("성북구");
-		child.setChild_name("이");
+		child.setChild_name("김");
 		child.setChild_outfit("ddd");
 		child.setChild_time("11시11");
 		child.setChild_img("aaaa");
