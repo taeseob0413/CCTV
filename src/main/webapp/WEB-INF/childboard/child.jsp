@@ -1,17 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@include file="../layout/header.jsp"%>
-
+<head>
 <style>
-    #container{
-        text-align: center;
-    }
-</style>
-
+h1 {color: #667632;
+   font-family: serif;
+   font-weight: bold;
+   font-size: 30px;}
+   table{
+      width: 60%;
+      border: 2px solid #C1D387;  
+      border-collapse: collapse;
+      }
+   td{
+     border: 2px solid #C1D387;
+     padding: 10px;
+     text-align: center;
+   }
+     </style>
+     </head>
+<center>
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Missing Children Info</h1>
+		<h1 class="page-header">Missing Children INFO</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -25,37 +38,42 @@
 			<!-- /.panel-heading -->
 			<div class="panel-body">
 				<table class="table table-striped table-bordered table-hover">
-					<thead>
-						<tr>
-							<th>사진</th>
-							<th>실종 장소</th>
-							<th>이름</th>
-							<th>성별</th>
-							
-						</tr>
-					</thead>
 					
-					<c:forEach items="${list}" var="board" >
-						<tr>
+					
+					<c:set var="i" value="0" />
+                     <c:set var="j" value="3" />
+                     <c:choose>
+                       <c:when test="${list != null && fn:length(list) > 0 }">
+                       <c:forEach items="${list}" var="board" >
+                       <c:if test="{i%j == 0}">
+					    <tr>
+					     
+					      </c:if>
+					        <td class="im"><a href='/child/get?child_id=<c:out value="${board.child_id}"/>'><img src="${board.child_img}" alt="My Image" width="150" height="150"></td>
 							
-							<td><a href='/child/get?child_id=<c:out value="${board.child_id}"/>'><img src="${board.child_img}" alt="My Image" width="150" height="150"></td>
-							
-							<td>${board.getChild_location()}</td>
-							
-							<td>${board.child_name}</td>
-							
-							<td>${board.child_gender}</td>
-							
-
-							
-							
-						</tr>
+							<td class="lo">${board.getChild_location()}</td>
+							<td class="name">${board.child_name}</td>
 						
-					</c:forEach>
+							
+							<td class="ge">${board.child_gender}</td> 
+							<c:if test="${i%j == j-1}">
+							</tr>
+					      </c:if> 
+					      <c:set var="i" value="${i+1}" />
+					      </c:forEach>
+					      </c:when>
+					      <c:otherwise>
+					      <tr>
+                            <td>존재하지 않습니다.</td>
+                          </tr>
+                          </c:otherwise>
+					
+					</c:choose>
+		   
 				</table>
 				</div>
 				</div>
 				</div>
 				</div>
-				
+				</center>
 <%@ include file="../layout/footer.jsp"%>

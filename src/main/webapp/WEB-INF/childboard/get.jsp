@@ -1,17 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../layout/header.jsp"%>
-	
+<head>
 <style>
-    #container{
-        text-align: center;
-    }
+   h1 {color: #667632;
+   font-family: serif;
+   font-weight: bold;
+   font-size: 30px;}
 </style>
-
-
+</head>	
+<center>
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">실종 아동 상세 페이지</h1>
+		<h1 class="page-header">Finding Missing Children</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -63,5 +64,5 @@
 				</div>
 				</div>
 				
-
+</center>
 <%@ include file="../layout/footer.jsp"%>
