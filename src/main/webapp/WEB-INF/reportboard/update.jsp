@@ -12,7 +12,7 @@
 		userLoginId =userInfo.getUser_loginID();
 	}
 	else{
-		userLoginId = "None";
+		userLoginId = "익명";
 	}
 %>
 	
@@ -24,13 +24,25 @@
     	<input type="hidden" name="user_id" value="${board.user_id }"/>
     	<input type="hidden" name="report_id" value="${board.report_id }"/>
         <table>
+        	<tr>
+                <td>작성자</td>
+                <td>${board.user_id }</td>
+            </tr>
+        	<tr>
+                <td>아동 이름</td>
+                <td>${board.child_name }</td>
+            </tr>
+            <tr>
+                <td>나이</td>
+                <td>${board.child_age }></td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>${board.child_gender }</td>
+            </tr>
             <tr>
                 <td>목격 시간</td>
                 <td><input type="date" name="report_time" value="${board.report_time}"></td>
-            </tr>
-            <tr>
-                <td>작성자</td>
-                <td><%= userLoginId %></td>
             </tr>
             <tr>
                 <td>목격 위치</td>
