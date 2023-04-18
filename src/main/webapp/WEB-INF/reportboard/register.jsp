@@ -14,7 +14,7 @@
 		userId = userInfo.getUser_id();
 	}
 	else{
-		userLoginId = "None";
+		userLoginId = "익명";
 		userId = 0L;
 	}
 %>
@@ -22,14 +22,42 @@
 <center>
     <h1>실종 아동 제보 글 작성</h1>
 
-    <form action="/reportBoard/register" method="post">
+    <form action="/reportBoard/register" method="post" id="registerform">
     	<input type="hidden" name = "child_id" value="${child_id}">
     	<input type="hidden" name= "user_loginId" value= <%= userLoginId %>>
     	<input type="hidden" name= "user_id" value=<%= userId %>>
+    	
         <table>
+        	<tr>
+                <td>아동 이름</td>
+                <td><input type="text" name="child_name"></td>
+            </tr>
+            <tr>
+                <td>나이</td>
+                <td><input type="number" name="child_age" 
+                oninput="checkNumberLength(this)"
+                min="0" step="1"></td>
+            </tr>
+            <tr>
+                <td>키(신장)</td>
+                <td><input type="number" name="child_height" oninput="checkHeightLength(this)"> (cm)</td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>
+					<input type="radio" name="child_gender" id="maleRadio" value="남성">
+						남성
+					<input type="radio" name="child_gender" id="femaleRadio" value="여성">
+						여성
+				</td>
+            </tr>
+            <tr>
+                <td>연고지</td>
+                <td><textarea name="child_hometown" rows="1" cols="100"></textarea></td>
+            </tr>
             <tr>
                 <td>목격 시간</td>
-                <td><input type="date" name="report_time"></td>
+                <td><input type="datetime-local" name="report_time" id="report_time"></td>
             </tr>
             <tr>
                 <td>작성자</td>
@@ -43,10 +71,63 @@
                 <td>목격 내용</td>
                 <td><textarea name="report_content" rows="50" cols="100"></textarea></td>
             </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="text" name="password" oninput="checkPwLength(this)"></td>
+            </tr>
         </table>
-        <input type="submit" value="작성완료"/>
+        <input type="submit" id="mysubmit" value="작성완료" onclick="return submitForm()"/>
         <input type="button" value="취소" onclick="location.href='list?child_id=${child_id}'"/>
     </form>
 </center>
+
+
+<script>
+//예외값 처리하는 script
+function checkNumberLength(input) {
+  if (input.value.length > 2) {
+    alert("나이는 최대 2자리까지 입력 가능합니다.");
+    input.value = input.value.slice(0, 2);
+  }
+}
+
+function checkPwLength(input) {
+	  if (input.value.length > 10) {
+	    alert("비밀번호는 10자리 이하로 입력해주세요.");
+	  }
+	}
+
+	function checkHeightLength(input) {
+		  if (input.value.length > 3) {
+		    alert("비정상적인 키(cm)입니다.");
+		    input.value = input.value.slice(0, 3);
+		  }
+		}
+</script>
+
+<script>
+//엔터 키(키 코드 13)를 눌렀을 때 폼의 서브밋 동작을 막음
+document.getElementById("registerform").addEventListener("keydown", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+  }
+});
+</script>
+
+<script>
+
+function submitForm() {
+	  // 폼 서브밋 전에 비밀번호 값이 있는지 확인
+	  var passwordInput = document.getElementsByName("password")[0];
+	  if (passwordInput.value.length === 0) {
+	    alert("비밀번호를 입력해주세요.");
+	    return false; // 서브밋 중지
+	  }
+	  return true; // 서브밋 실행
+	}
+</script>
+
+
+
 
 <%@ include file="../layout/footer.jsp"%>

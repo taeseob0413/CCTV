@@ -25,7 +25,6 @@ public class datasourceTest {
 			board.setReport_address("대구구구구");
 			board.setReport_content("봤다");
 			board.setUser_id(20L);
-			board.setReport_time(currentDate);
 			Reportboard.insert(board);
 		}
 		
@@ -57,7 +56,6 @@ public class datasourceTest {
 			ReportBoardVO  board = new ReportBoardVO();
 			board.setReport_address("평택");
 			board.setReport_content("평택에서 봤습니다");
-			board.setReport_time(currentDate);
 			board.setReport_id(218L);
 			Reportboard.update(board);
 		}

@@ -28,6 +28,14 @@ public class ReportBoardController {
 	@PostMapping("/reportBoard/register")
 	public String reportboardregister(ReportBoardVO board, HttpServletRequest request) {
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
+		//child_age 미입력시 0으로 고정
+		if(board.getChild_age()==null) {
+			board.setChild_age(0);
+		}
+		//child_height 미입력시 0으로 고정
+		if(board.getChild_height()==null) {
+			board.setChild_height(0);
+		}
 		service.insert(board);
 		
 		return "redirect:/reportBoard/list?child_id=" + board.getChild_id();

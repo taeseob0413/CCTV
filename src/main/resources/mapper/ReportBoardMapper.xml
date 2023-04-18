@@ -4,8 +4,8 @@
 <mapper namespace="com.firstclass.childrenctv.ReportBoard.ReportBoardMapper">
 
 <insert id="insert">
-insert into ReportBoard_table(report_id,report_address, report_time, report_content, user_id, user_loginId, child_id)
-values(seq_reportboard.nextval, #{report_address}, #{report_time}, #{report_content}, #{user_id}, #{user_loginId}, #{child_id})
+insert into ReportBoard_table(report_id, child_name, child_age, child_height, child_gender, child_hometown, report_address, report_time, report_content, user_id, user_loginId, child_id, password)
+values(seq_reportboard.nextval, #{child_name}, #{child_age}, #{child_height}, #{child_gender}, #{child_hometown}, #{report_address}, #{report_time}, #{report_content}, #{user_id}, #{user_loginId}, #{child_id}, #{password})
 </insert>
 
 <select id="get" resultType ="com.firstclass.childrenctv.ReportBoard.ReportBoardVO">

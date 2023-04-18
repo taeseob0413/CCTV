@@ -12,7 +12,7 @@
 		userLoginId =userInfo.getUser_loginID();
 	}
 	else{
-		userLoginId = "None";
+		userLoginId = "익명";
 	}
 %>
 	

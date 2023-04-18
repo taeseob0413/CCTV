@@ -1,6 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.time.LocalDateTime" %>
+<%@ page import="com.firstclass.childrenctv.ReportBoard.ReportBoardVO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <%@ include file="../layout/header.jsp"%>
@@ -30,7 +32,6 @@
 </style>
 </head>
 <body>
-
 	<h1>제보글 리스트</h1>
 	<table>
 		<tr>
@@ -40,14 +41,15 @@
 			<th>작성자</th>
 		</tr>
 		<%-- 게시글 리스트를 반복해서 출력 --%>
-		<c:forEach var="list" items="${list}">
-			<tr>
-				<td><a href="get?report_id=${list.report_id}"><c:out value="${list.report_id}" /></a></td>
-				<td><a href="get?report_id=${list.report_id}"><c:out value="${list.report_time}" /></a></td>
-				<td><a href="get?report_id=${list.report_id}"><c:out value="${list.report_address}" /></a></td>
-				<td><a href="get?report_id=${list.report_id}"><c:out value="${list.user_loginId}"/></a></td>
-			</tr>
-		</c:forEach>
+
+<c:forEach var="reportboard" items="${list}">
+    <tr>
+        <td><a href="get?report_id=${reportboard.report_id}"><c:out value="${reportboard.report_id}" /></a></td>
+        <td><a href="get?report_id=${reportboard.report_id}"><c:out value="${reportboard.report_time.toString().replace('T', ' ')}" /></a></td>
+        <td><a href="get?report_id=${reportboard.report_id}"><c:out value="${reportboard.report_address}" /></a></td>
+        <td><a href="get?report_id=${reportboard.report_id}"><c:out value="${reportboard.user_loginId}"/></a></td>
+    </tr>
+</c:forEach>
 	</table>
 	<input type="button" value="제보" onClick="goToRegisterPage(${child_id})">
 

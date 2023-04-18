@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@include file="../layout/header.jsp"%>
+<%@ page import="java.time.LocalDateTime" %>
 <%@ page import="com.firstclass.childrenctv.ReportBoard.ReportBoardVO" %>
+
+<%@include file="../layout/header.jsp"%>
 <head>
 <link rel="stylesheet" href="/resources/css/reportboard_get_style.css">
 </head>
@@ -9,9 +11,29 @@
     <h1>실종 아동 제보</h1>
 
         <table>
+        	<tr>
+                <td>아동 이름</td>
+                <td>${board.child_name }</td>
+            </tr>
+            <tr>
+                <td>나이</td>
+                <td>${board.child_age }세</td>
+            </tr>
+            <tr>
+                <td>키(신장)</td>
+                <td>${board.child_height } (cm)</td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>${board.child_gender }</td>
+            </tr>
+            <tr>
+                <td>연고지</td>
+                <td>${board.child_hometown }</td>
+            </tr>
             <tr>
                 <td>목격 시간</td>
-                <td>${board.report_time }</td>
+                <td>${board.report_time.toString().replace('T', ' ') }</td>
             </tr>
             <tr>
                 <td>작성자</td>
@@ -27,22 +49,12 @@
             </tr>
         </table>
          <input type="button" value="목록" onclick="location.href='list?child_id=${board.child_id}'"/>
-         
-         
-         <%
-    		HttpSession userSession = request.getSession();
-    		UserVO userInfo = (UserVO) userSession.getAttribute("user");
-    		ReportBoardVO reportboard = (ReportBoardVO) request.getAttribute("board");
-    		if (userInfo != null) {
-        		if (userInfo.getUser_id() == reportboard.getUser_id() || userInfo.getUser_grade().equalsIgnoreCase("admin")) {
-			%>
-		<input type="button" value="수정" onclick="location.href='update?report_id=${board.report_id}'"/>
-		<%      
-        		}
-    		}
-		%>
+		<input type="button" value="수정" onclick="updateDialog()"/>
          
           <%
+			HttpSession userSession = request.getSession();
+  			UserVO userInfo = (UserVO) userSession.getAttribute("user");
+  			ReportBoardVO reportboard = (ReportBoardVO)request.getAttribute("board");
          	if(userInfo != null){
         		if(userInfo.getUser_grade().equalsIgnoreCase("admin")){
          %>
@@ -75,6 +87,26 @@ function deletePost(reportId) {
 	  }
 	}
   </script>
+  
+
+<script>
+function updateDialog() {
+	var grade = '<%= userInfo.getUser_grade()%>';
+	if(grade.toLowerCase() === "admin"){
+		alert("관리자 계정입니다.");
+		location.href = 'update?report_id=${board.report_id}'; // 화면 이동
+		return;
+	}
+	var password = prompt("비밀번호를 입력하세요.");
+    if (password != null && password.length > 0) {
+        if (password === "${board.password}") {
+            location.href = 'update?report_id=${board.report_id}'; // 화면 이동
+        } else {
+            alert("비밀번호가 일치하지 않습니다."); 
+        }
+    }
+}
+</script>
 
 
 <%@ include file="../layout/footer.jsp"%>
