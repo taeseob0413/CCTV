@@ -26,42 +26,22 @@
     	<input type="hidden" name = "child_id" value="${child_id}">
     	<input type="hidden" name= "user_loginId" value= <%= userLoginId %>>
     	<input type="hidden" name= "user_id" value=<%= userId %>>
+    	<input type="hidden" name= "child_name" value="데이터">
+    	<input type="hidden" name = "child_age" value="11">
+    	<input type="hidden" name = "child_gender" value="데이터">
     	
         <table>
         	<tr>
+                <td>작성자</td>
+                <td><%= userLoginId %></td>
+            </tr>
+        	<tr>
                 <td>아동 이름</td>
-                <td><input type="text" name="child_name"></td>
-            </tr>
-            <tr>
-                <td>나이</td>
-                <td><input type="number" name="child_age" 
-                oninput="checkNumberLength(this)"
-                min="0" step="1"></td>
-            </tr>
-            <tr>
-                <td>키(신장)</td>
-                <td><input type="number" name="child_height" oninput="checkHeightLength(this)"> (cm)</td>
-            </tr>
-            <tr>
-                <td>성별</td>
-                <td>
-					<input type="radio" name="child_gender" id="maleRadio" value="남성">
-						남성
-					<input type="radio" name="child_gender" id="femaleRadio" value="여성">
-						여성
-				</td>
-            </tr>
-            <tr>
-                <td>연고지</td>
-                <td><textarea name="child_hometown" rows="1" cols="100"></textarea></td>
+                <td><!-- ${child.child_name }--></td>
             </tr>
             <tr>
                 <td>목격 시간</td>
                 <td><input type="datetime-local" name="report_time" id="report_time"></td>
-            </tr>
-            <tr>
-                <td>작성자</td>
-                <td><%= userLoginId %></td>
             </tr>
             <tr>
                 <td>목격 위치</td>
@@ -96,13 +76,6 @@ function checkPwLength(input) {
 	    alert("비밀번호는 10자리 이하로 입력해주세요.");
 	  }
 	}
-
-	function checkHeightLength(input) {
-		  if (input.value.length > 3) {
-		    alert("비정상적인 키(cm)입니다.");
-		    input.value = input.value.slice(0, 3);
-		  }
-		}
 </script>
 
 <script>

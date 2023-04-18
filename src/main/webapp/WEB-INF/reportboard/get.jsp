@@ -12,6 +12,10 @@
 
         <table>
         	<tr>
+                <td>작성자</td>
+                <td>${board.user_loginId}</td> 
+            </tr>
+        	<tr>
                 <td>아동 이름</td>
                 <td>${board.child_name }</td>
             </tr>
@@ -20,24 +24,12 @@
                 <td>${board.child_age }세</td>
             </tr>
             <tr>
-                <td>키(신장)</td>
-                <td>${board.child_height } (cm)</td>
-            </tr>
-            <tr>
                 <td>성별</td>
                 <td>${board.child_gender }</td>
             </tr>
             <tr>
-                <td>연고지</td>
-                <td>${board.child_hometown }</td>
-            </tr>
-            <tr>
                 <td>목격 시간</td>
                 <td>${board.report_time.toString().replace('T', ' ') }</td>
-            </tr>
-            <tr>
-                <td>작성자</td>
-                <td>${board.user_loginId}</td> 
             </tr>
             <tr>
                 <td>목격 위치</td>
@@ -91,12 +83,13 @@ function deletePost(reportId) {
 
 <script>
 function updateDialog() {
-	var grade = '<%= userInfo.getUser_grade()%>';
-	if(grade.toLowerCase() === "admin"){
-		alert("관리자 계정입니다.");
-		location.href = 'update?report_id=${board.report_id}'; // 화면 이동
-		return;
-	}
+		var grade = '<%=userInfo != null ? userInfo.getUser_grade() : ""%>';
+		if(grade.toLowerCase() === "admin"){
+			alert("관리자 계정입니다.");
+			location.href = 'update?report_id=${board.report_id}'; // 화면 이동
+			return;
+		}
+	
 	var password = prompt("비밀번호를 입력하세요.");
     if (password != null && password.length > 0) {
         if (password === "${board.password}") {

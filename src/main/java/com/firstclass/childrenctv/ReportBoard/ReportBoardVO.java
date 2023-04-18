@@ -15,11 +15,9 @@ public class ReportBoardVO {
 	
 	
 	private String child_name; //아동 이름 
-	private Integer child_age; //아동 현재 나이 
-	private Integer child_height; //아동 키
+	private int child_age; //아동 현재 나이 
 	private String child_gender; //아동 성별
-	private String child_hometown; //아동 연고지
-	 	
+	
 	private LocalDateTime report_time;		//제보 글 목격 시간
 	private String report_address;		//제보 글 목격 위치
 	private String report_content;		//제보 글 내용
@@ -28,4 +26,5 @@ public class ReportBoardVO {
 	private Long child_id;	//실종아동 고유번호
 	
 	private String password;	//제보 글 비밀번호
+	private int approval;		//관리자 승인 여부 (1 or 0)
 }

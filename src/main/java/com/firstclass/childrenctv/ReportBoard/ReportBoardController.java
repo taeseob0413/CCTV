@@ -16,7 +16,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ReportBoardController {
 
-	private ReportBoardService service;
+	private ReportBoardService boardservice;
 	
 	@GetMapping("/reportBoard/register")
     public String reportboardregister(@RequestParam("child_id") Long child_id, Model model) {
@@ -28,15 +28,7 @@ public class ReportBoardController {
 	@PostMapping("/reportBoard/register")
 	public String reportboardregister(ReportBoardVO board, HttpServletRequest request) {
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
-		//child_age 미입력시 0으로 고정
-		if(board.getChild_age()==null) {
-			board.setChild_age(0);
-		}
-		//child_height 미입력시 0으로 고정
-		if(board.getChild_height()==null) {
-			board.setChild_height(0);
-		}
-		service.insert(board);
+		boardservice.insert(board);
 		
 		return "redirect:/reportBoard/list?child_id=" + board.getChild_id();
 		
@@ -44,16 +36,16 @@ public class ReportBoardController {
 	
 	@PostMapping("/reportBoard/delete")
 	public String deleteReportBoard(Long report_id, @RequestParam("child_id") Long child_id) {
-	    service.deleteReportBoard(report_id);
+	    boardservice.deleteReportBoard(report_id);
 	    return "redirect:/reportBoard/list?child_id=" + child_id;
 	}
 
 	
 	@GetMapping("/reportBoard/get")
 	public String get(@RequestParam("report_id") Long report_id, Model model) {
-		model.addAttribute("board", service.get(report_id));
+		model.addAttribute("board", boardservice.get(report_id));
 		System.out.println("GET 컨트롤러 들어왔다!!!!!!!!!!");
-		if(service.get(report_id) != null) {
+		if(boardservice.get(report_id) != null) {
 			return "reportboard/get";
 		}
 		else {
@@ -64,7 +56,7 @@ public class ReportBoardController {
 	@GetMapping("/reportBoard/list")
 	public String list(@RequestParam("child_id") Long child_id, Model model) {
 		
-		model.addAttribute("list", service.getByChild(child_id));
+		model.addAttribute("list", boardservice.getByChild(child_id));
 		model.addAttribute("child_id", child_id);
 		System.out.println("LIST 컨트롤러 들어왔다!!!!!!!!!!!!!");
 		return "reportboard/list";
@@ -74,7 +66,7 @@ public class ReportBoardController {
 	@GetMapping("/reportBoard/update")
 	public String update(@RequestParam("report_id") Long reportboard_id, Model model) {
 	    // reportboard_id를 사용하여 해당 보고서 정보를 가져와서 update.jsp 화면에 전달
-	    ReportBoardVO board = service.get(reportboard_id);
+	    ReportBoardVO board = boardservice.get(reportboard_id);
 	    System.out.println("어떤 정보를 가져왔을까????????" + board);
 	    model.addAttribute("board", board);
 	    return "reportboard/update";
@@ -83,7 +75,7 @@ public class ReportBoardController {
 	@PostMapping("/reportBoard/update")
 	public String update(ReportBoardVO board, @RequestParam("child_id") Long child_id) {
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
-		service.update(board);
+		boardservice.update(board);
 		return "redirect:/reportBoard/list?child_id=" + child_id;
 		
 	}
