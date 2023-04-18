@@ -19,5 +19,6 @@ public class ChildBoardVO {
 	   private String child_feature; //아이 특징
 	   private String child_outfit; //아이 불상
 	   private String child_img; //이미지 경로
+	   private String child_height;
 	
 }

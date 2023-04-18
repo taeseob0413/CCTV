@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../layout/header.jsp"%>
-<<<<<<< HEAD
+
 <head>
 <style>
    h1 {color: #667632;
@@ -11,12 +11,7 @@
 </style>
 </head>	
 <center>
-=======
-	
 
-
-
->>>>>>> refs/remotes/origin/pji
 <div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Finding Missing Children</h1>
@@ -36,22 +31,17 @@
 					<thead>
 						<tr>
 							<th>사진</th>
-<<<<<<< HEAD
-							<th>실종 장소</th>
-=======
+
 							<th>실종장소</th>
->>>>>>> refs/remotes/origin/pji
+
 							<th>이름</th>
-<<<<<<< HEAD
+
 							<th>나이</th>
-=======
->>>>>>> refs/remotes/origin/pji
+
 							<th>성별</th>
-<<<<<<< HEAD
+
 							<th>실종 일자</th>
 							<th>키</th>
-=======
->>>>>>> refs/remotes/origin/pji
 							
 						</tr>
 					</thead>
@@ -64,27 +54,14 @@
 							
 							<td>${child.child_name}</td>
 							
-							<td>${child.child_age}</td>
+							<td>${child.child_curage}</td>
 							
 							<td>${child.child_gender}</td>
 							
 							<td>${child.child_time}</td>
 							
-							
-<<<<<<< HEAD
 							<td>${child.child_height}</td>
-=======
-							<td>"${child.getChild_location()}"</td>
-							
-							<td>"${child.child_name}"</td>
-							
-							<td>"${child.child_age}"</td>
-							
-							<td>"${child.child_gender}"</td>
-							
-							<td><img src="${child.child_img}" alt="My Image"></td>
->>>>>>> refs/remotes/origin/pji
-							
+												
 						</tr>
 					
 				</table>
@@ -93,9 +70,6 @@
 				</div>
 				</div>
 				
-<<<<<<< HEAD
 </center>
-=======
 
->>>>>>> refs/remotes/origin/pji
 <%@ include file="../layout/footer.jsp"%>
