@@ -25,7 +25,7 @@ delete reportboard_table where report_id =#{report_id}
 </delete>
 
 <update id="update">
-update reportboard_table set child_name =#{child_name}, child_age =#{child_age}, child_gender =#child_gender, report_time =#{report_time}, report_address =#{report_address}, report_content =#{report_content}, user_id=#{user_id}, user_loginId=#{user_loginId} where report_id = #{report_id}
+update reportboard_table set child_name =#{child_name}, child_age =#{child_age}, child_gender =#{child_gender}, report_time =#{report_time}, report_address =#{report_address}, report_content =#{report_content}, user_id=#{user_id}, user_loginId=#{user_loginId} where report_id = #{report_id}
 </update>
 
 <select id="getLoginId">
