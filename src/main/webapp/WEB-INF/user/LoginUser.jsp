@@ -3,8 +3,8 @@
 
 <link rel="stylesheet" type="text/css" href="/resources/css/login.css">
 
-<div id="login_logo">CCTV 로그인</div>
 <div id="login_area">
+    <div id="login_logo">CCTV 로그인</div>
     <div id="loginBox">
 
         <div id="loginForm">
