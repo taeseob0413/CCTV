@@ -32,7 +32,7 @@
 						<tr>
 							<th>사진</th>
 
-							<th>실종장소</th>
+							<th>실종 장소</th>
 
 							<th>이름</th>
 
@@ -41,8 +41,9 @@
 							<th>성별</th>
 
 							<th>실종 일자</th>
-							<th>키</th>
 							
+							<th>키</th>
+
 						</tr>
 					</thead>
 					
@@ -59,9 +60,9 @@
 							<td>${child.child_gender}</td>
 							
 							<td>${child.child_time}</td>
-							
+
 							<td>${child.child_height}</td>
-												
+
 						</tr>
 					
 				</table>
@@ -70,6 +71,6 @@
 				</div>
 				</div>
 				
-</center>
 
+</center>
 <%@ include file="../layout/footer.jsp"%>
