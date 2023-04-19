@@ -1,0 +1,60 @@
+package com.firstclass.childrenctv.ChildBoard;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import lombok.AllArgsConstructor;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+
+
+@Service
+@AllArgsConstructor
+public class ChildBoardServiceImpl implements ChildBoardService {
+
+	
+
+   @Autowired
+   private ChildBoardMapper mapper;
+
+
+   @Override
+   public List<ChildBoardVO> getChildAddr(String child_location) {
+	   return mapper.getChildAddr(child_location);
+
+   }
+
+
+	
+
+   @Override
+   public List<ChildBoardVO> getChild() {
+      // TODO Auto-generated method stub
+      return mapper.getChild();
+   }
+
+	
+   @Override
+   public ChildBoardVO getChildId(Long id) {
+      // TODO Auto-generated method stub
+      return mapper.getChildId(id);
+   }
+
+
+	
+
+   @Override
+   public void insert(ChildBoardVO child) {
+      mapper.insert(child);
+
+
+   }
+   
+   @Override
+   public void register(ChildBoardVO child) {
+	   mapper.insert(child);
+
+}
+}
