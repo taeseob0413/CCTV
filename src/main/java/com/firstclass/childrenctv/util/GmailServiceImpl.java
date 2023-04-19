@@ -18,8 +18,6 @@ public class GmailServiceImpl implements GmailService {
     private String password;
     @Override
     public void send(String email, String title, String text) {
-        System.out.println(this.user);
-        System.out.println(this.password);
         Properties prop = getProperties();
         Session session = getSession(prop);
 
@@ -28,7 +26,7 @@ public class GmailServiceImpl implements GmailService {
             message.setFrom(new InternetAddress(user));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
             message.setSubject(title);
-            message.setText(text);
+            message.setContent(text, "text/html; charset=utf-8");
             Transport.send(message);
         } catch (AddressException e) {
             e.printStackTrace();
@@ -36,6 +34,7 @@ public class GmailServiceImpl implements GmailService {
             e.printStackTrace();
         }
     }
+
 
     private Session getSession(Properties prop) {
         Session session = Session.getDefaultInstance(prop, new Authenticator() {

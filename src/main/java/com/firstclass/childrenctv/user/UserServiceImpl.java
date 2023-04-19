@@ -1,6 +1,7 @@
 package com.firstclass.childrenctv.user;
 
 import com.firstclass.childrenctv.util.GmailService;
+import com.firstclass.childrenctv.util.MailTemplate;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -50,7 +51,7 @@ public class UserServiceImpl implements UserService{
 
         }
         if(userLoginId == null || !userLoginId.equals(loginId)) return false;
-        gmailService.send(email, "CCTV 비밀번호를 알려드립니다.", "당신의 비밀번호는 " + user.getUser_password() +" 입니다.");
+        gmailService.send(email, "[CCTV] 비밀번호를 알려드립니다.", MailTemplate.findPassword(user.getUser_name(), user.getUser_password()));
         return true;
     }
 
