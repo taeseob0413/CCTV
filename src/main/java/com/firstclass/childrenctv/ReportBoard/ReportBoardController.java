@@ -26,7 +26,7 @@ public class ReportBoardController {
     }
 	
 	@PostMapping("/reportBoard/register")
-	public String reportboardregister(ReportBoardVO board, HttpServletRequest request) {
+	public String reportboardregister(ReportBoardVO board) {
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
 		boardservice.insert(board);
 		

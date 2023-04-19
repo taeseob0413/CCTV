@@ -37,9 +37,9 @@ public class ProtectBoardServiceImpl implements ProtectBoardService {
 	}
 
 	@Override
-	public List<ProtectBoardVO> getByUser(Long user_id) {
+	public List<ProtectBoardVO> getByUser(String user_loginId) {
 		
-		return mapper.getByUser(user_id);
+		return mapper.getByUser(user_loginId);
 	}
 
 	@Override
@@ -52,12 +52,6 @@ public class ProtectBoardServiceImpl implements ProtectBoardService {
 	public void delete(Long protect_id) {
 		
 		mapper.delete(protect_id);
-	}
-
-	@Override
-	public String getLoginId(Long user_id) {
-		
-		return mapper.getLoginId(user_id);
 	}
 
 }

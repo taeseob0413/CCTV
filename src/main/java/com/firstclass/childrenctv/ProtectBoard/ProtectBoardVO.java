@@ -22,8 +22,7 @@ public class ProtectBoardVO {
 	private String protect_address;		//보호 글 목격 위치
 	private String protect_content;		//보호 글 내용
 	
-	private Long user_id;	// 사용자 고유번호
-	private Long user_phone;		//사용자 연락처
+	private String user_phone;		//사용자 연락처
 	private String user_loginId;		// 사용자 로그인아이디
 	private Long child_id;	//실종아동 고유번호
 	
