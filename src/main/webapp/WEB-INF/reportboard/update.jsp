@@ -21,12 +21,17 @@
 
     <form action="/reportBoard/update" method="post">
     	<input type="hidden" name="child_id" value="${board.child_id }"/>
-    	<input type="hidden" name="user_id" value="${board.user_id }"/>
+    	<input type="hidden" name="child_name" value="${board.child_name }"/>
+    	<input type="hidden" name="child_age" value="${board.child_age }"/>
+    	<input type="hidden" name="child_gender" value="${board.child_gender }"/>
     	<input type="hidden" name="report_id" value="${board.report_id }"/>
+    	<input type="hidden" name="user_loginId" value="${board.user_loginId }"/>
+    	<input type="hidden" name="password" value="${board.password }"/>
+    	<input type="hidden" name="approval" value="${board.approval }"/>
         <table>
         	<tr>
                 <td>작성자</td>
-                <td>${board.user_id }</td>
+                <td>${board.user_loginId }</td>
             </tr>
         	<tr>
                 <td>아동 이름</td>
