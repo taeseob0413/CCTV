@@ -42,16 +42,17 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public boolean findpass(String name, String email, String loginId) {
-        String userLoginId = null;
         UserVO user = null;
+
         try {
             user = userMapper.existUserByNameAndEmail(name, email);
-            userLoginId = user.getUser_loginID();
-        }catch (Exception e){
+            if(!user.getUser_loginID().equals(loginId)) return false;
 
+            gmailService.send(email, "[CCTV] 비밀번호를 알려드립니다.",
+                    MailTemplate.findPassword(user.getUser_name(), user.getUser_password()));
+        }catch (Exception e){
+            return false;
         }
-        if(userLoginId == null || !userLoginId.equals(loginId)) return false;
-        gmailService.send(email, "[CCTV] 비밀번호를 알려드립니다.", MailTemplate.findPassword(user.getUser_name(), user.getUser_password()));
         return true;
     }
 
