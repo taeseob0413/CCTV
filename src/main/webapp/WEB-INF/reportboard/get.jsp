@@ -14,7 +14,7 @@
             </tr>
             <tr>
                 <td>작성자</td>
-                <td><%= request.getParameter("user_name") %></td> <%--추후에 세션에서 userLoginID 받아오기 --%>
+                <td>${board.user_loginId}</td> 
             </tr>
             <tr>
                 <td>목격 위치</td>
@@ -27,36 +27,29 @@
         </table>
          <input type="button" value="목록" onclick="location.href='list?child_id=${board.child_id}'"/>
          
-         <%-- 해당글의 작성자와 관리자만 수정 가능
+         
          <%
     		HttpSession userSession = request.getSession();
     		UserVO userInfo = (UserVO) userSession.getAttribute("user");
     		ReportBoardVO reportboard = (ReportBoardVO) request.getAttribute("board");
     		if (userInfo != null) {
-        		if (userInfo.getUser_id() == reportboard.getUser_id() || userInfo.getUser_grade.equalsIgnoreCase("admin")) {
+        		if (userInfo.getUser_id() == reportboard.getUser_id() || userInfo.getUser_grade().equalsIgnoreCase("admin")) {
 			%>
-			--%>
 		<input type="button" value="수정" onclick="location.href='update?report_id=${board.report_id}'"/>
-		<%--
 		<%      
         		}
     		}
 		%>
-		--%>
          
-         <%--
           <%
          	if(userInfo != null){
         		if(userInfo.getUser_grade().equalsIgnoreCase("admin")){
          %>
-         --%>
          <input type="submit" value="글삭제" onclick="deletePost(${board.report_id})"/>
-         <%--
          <%
         		}
          	}
          %>
-         --%>
          
          
          
@@ -69,7 +62,6 @@ function deletePost(reportId) {
 	    var xhr = new XMLHttpRequest();
 	    xhr.open('POST', '/reportBoard/delete', true);
 	    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-	    console.log("reportId는 뭘까요????????????????????????" +reportId);
 	    var childId = "${board.child_id}";
 	    xhr.onload = function () {
 	      if (xhr.status === 200) {

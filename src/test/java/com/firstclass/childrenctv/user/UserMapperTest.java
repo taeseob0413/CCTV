@@ -11,11 +11,19 @@ class UserMapperTest {
 
     @Autowired
     private UserMapper userMapper;
+
 //    @Test
 //    void create() {
 //        UserVO userVO = new UserVO(5L, "s", "s", "s", "s", 13, "ss", "s", "dd");
 //        userMapper.create(userVO);
 //    }
+
+    @Test
+    void create() {
+        //UserVO userVO = new UserVO(2L, "chang dae jun", "eowns1209@gmail.com", "testId", "1234", 13, "ss", "s", "dd");
+        //userMapper.create(userVO);
+    }
+
 
     @Test
     void existIDPASSWORD(){

@@ -48,5 +48,12 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 		mapper.deleteReportBoard(report_id);
 	}
 	
+	@Override
+	public String getLoginId(Long user_id) {
+		return mapper.getLoginId(user_id);
+	}
+	
+	
+
 
 }

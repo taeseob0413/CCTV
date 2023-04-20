@@ -18,7 +18,13 @@ public class ReportBoardVO {
 	private String report_address;		//제보 글 목격 위치
 	private String report_content;		//제보 글 내용
 	private Long user_id;	// 사용자 고유번호
+	private String user_loginId;		// 사용자 로그인아이디
 	private Long child_id;	//실종아동 고유번호
+	
+	// 추가된 필드
+    private Date createdDate; // 글 작성일
+    private Date updatedDate; // 글 수정일
+    private String title; // 글 제목
 
 	
 }

@@ -48,8 +48,8 @@ public class ReportBoardController {
 	}
 
 	
-	@GetMapping("/reportBoard/get")
-	public String get(@RequestParam("report_id") Long report_id, Model model) {
+	@GetMapping("/reportBoard/view")//get에서 view로 바꿈 여기 수정!!
+	public String view(@RequestParam("report_id") Long report_id, Model model) {
 		model.addAttribute("board", service.get(report_id));
 		System.out.println("GET 컨트롤러 들어왔다!!!!!!!!!!");
 		if(service.get(report_id) != null) {

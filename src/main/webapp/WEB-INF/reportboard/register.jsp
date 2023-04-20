@@ -4,12 +4,28 @@
 <link rel="stylesheet" href="/resources/css/reportboard_register_style.css">
 </head>
 
+<% 
+	HttpSession userSession = request.getSession();
+	UserVO userInfo = (UserVO) userSession.getAttribute("user");
+	String userLoginId = null;
+	Long userId = null;
+	if(userInfo != null){
+		userLoginId =userInfo.getUser_loginID();
+		userId = userInfo.getUser_id();
+	}
+	else{
+		userLoginId = "None";
+		userId = 0L;
+	}
+%>
 
 <center>
     <h1>실종 아동 제보 글 작성</h1>
 
     <form action="/reportBoard/register" method="post">
     	<input type="hidden" name = "child_id" value="${child_id}">
+    	<input type="hidden" name= "user_loginId" value= <%= userLoginId %>>
+    	<input type="hidden" name= "user_id" value=<%= userId %>>
         <table>
             <tr>
                 <td>목격 시간</td>
@@ -17,7 +33,7 @@
             </tr>
             <tr>
                 <td>작성자</td>
-                <td><%= request.getParameter("user_name") %></td>
+                <td><%= userLoginId %></td>
             </tr>
             <tr>
                 <td>목격 위치</td>
@@ -29,7 +45,7 @@
             </tr>
         </table>
         <input type="submit" value="작성완료"/>
-        <input type="button" value="취소" onclick="location.href='list'"/>
+        <input type="button" value="취소" onclick="location.href='list?child_id=${child_id}'"/>
     </form>
 </center>
 
