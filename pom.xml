@@ -66,7 +66,6 @@
 			<artifactId>mail</artifactId>
 			<version>1.4.7</version>
 		</dependency>
-		
 		<dependency>
 		<groupId>log4j</groupId>
 		<artifactId>log4j</artifactId>
@@ -85,6 +84,12 @@
 		    <artifactId>spring-boot-starter-mail</artifactId>
 		    <version>2.2.6.RELEASE</version>
 		</dependency>
+		
+		<dependency>
+		   <groupId>jstl</groupId>
+		   <artifactId>jstl</artifactId>
+		   <version>1.2</version>
+	  	</dependency>
 
 
 			<!-- Ajax사용하기 -->
@@ -108,7 +113,6 @@
 		    <artifactId>jackson-annotations</artifactId>
 		    <version>2.12.3</version>
 		</dependency>
-		
 	</dependencies>
 
 	<build>

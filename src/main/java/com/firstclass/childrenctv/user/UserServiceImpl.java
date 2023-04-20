@@ -81,5 +81,4 @@ public class UserServiceImpl implements UserService{
     public List<UserVO> getAllUserList() {
         return null;
     }
-
 }

@@ -21,7 +21,7 @@ public class HomeController {
     public String home(){
         return "index";
     }
-    
+
     @GetMapping("/find/user/userLoginId")
     public String findUserLoginId(){
         return "/user/FindUserLoginId";
@@ -30,7 +30,7 @@ public class HomeController {
     @GetMapping("/find/user/userPassword")
     public String findUserPassword(){
         return "user/FindUserPassword";
-    }
+    } 
 
 }
 
