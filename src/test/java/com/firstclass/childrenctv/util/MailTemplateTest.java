@@ -1,5 +1,7 @@
 package com.firstclass.childrenctv.util;
 
+import com.firstclass.childrenctv.util.email.GmailService;
+import com.firstclass.childrenctv.util.email.MailText;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +17,7 @@ class MailTemplateTest {
     @Test
     void reportNotification() {
         try {
-            gmailService.send(email, "CCTV 제보", MailTemplate.reportNotification("장대준", "응애", "www.naver.com"));
+            gmailService.send(email, "CCTV 제보", MailText.getReportNotification("장대준", "응애", "www.naver.com"));
         }
         catch (Exception e){
             fail();
@@ -25,7 +27,7 @@ class MailTemplateTest {
     @Test
     void findPassword() {
         try {
-            gmailService.send(email, "CCTV 제보", MailTemplate.findPassword("장대준", "테스트12"));
+            gmailService.send(email, "CCTV 제보", MailText.getFindPassword("장대준", "테스트12"));
         }
         catch (Exception e){
             fail();

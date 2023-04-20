@@ -1,20 +1,20 @@
-package com.firstclass.childrenctv.util;
+package com.firstclass.childrenctv.util.email;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public final class MailTemplate {
+public final class MailText {
     private static final String BASIC_TEMPLATE_PATH = "src/main/webapp/resources/email/template/basicTemplate.jsp";
     private static final String REPORT_NOTIFICATION_PATH = "src/main/webapp/resources/email/notification/reportNotification.jsp";
     private static final String FIND_PASSWORD_PATH = "src/main/webapp/resources/email/user/findPassword.jsp";
-    public static String reportNotification(String userName, String childName, String url) throws IOException{
+    public static String getReportNotification(String userName, String childName, String url) throws IOException{
         String text = parse(REPORT_NOTIFICATION_PATH, BASIC_TEMPLATE_PATH);
         return text.replace("<%userName%>", userName)
                 .replace("<%childName%>", childName)
                 .replace("<%url%>", url);
     }
-    public static String findPassword(String userName, String password) throws IOException{
+    public static String getFindPassword(String userName, String password) throws IOException{
         String text = parse(FIND_PASSWORD_PATH, BASIC_TEMPLATE_PATH);
         return text.replace("<%userName%>", userName)
                 .replace("<%password%>", password);

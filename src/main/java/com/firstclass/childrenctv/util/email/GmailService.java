@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.util;
+package com.firstclass.childrenctv.util.email;
 
 public interface GmailService {
     void send(String email, String title, String text);

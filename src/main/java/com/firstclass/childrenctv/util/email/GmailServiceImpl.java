@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.util;
+package com.firstclass.childrenctv.util.email;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

@@ -1,13 +1,9 @@
 package com.firstclass.childrenctv.user;
 
-import com.firstclass.childrenctv.response.BaseResponse;
+import com.firstclass.childrenctv.util.response.BaseResponse;
 import com.firstclass.childrenctv.user.dto.LoginDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import oracle.jdbc.proxy.annotation.Post;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
