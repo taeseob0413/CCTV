@@ -18,7 +18,7 @@
 %>
 
 <center>
-    <h1>실종 아동 제보 글 작성</h1>
+    <h1>실종 아동 목격 제보</h1>
 
     <form action="/reportBoard/register" method="post" id="registerform">
     	<input type="hidden" name = "child_id" value="${child.child_id}">
@@ -79,14 +79,17 @@ document.getElementById("registerform").addEventListener("keydown", function(eve
 <script>
 
 function submitForm() {
-	  // 폼 서브밋 전에 비밀번호 값이 있는지 확인
-	  var passwordInput = document.getElementsByName("password")[0];
-	  if (passwordInput.value.length === 0) {
-	    alert("비밀번호를 입력해주세요.");
-	    return false; // 서브밋 중지
-	  }
-	  return true; // 서브밋 실행
-	}
+    // 입력값이 없는 경우 submit 방지
+    if (document.getElementsByName("report_time")[0].value.trim() === "" ||
+        document.getElementsByName("report_address")[0].value.trim() === "" ||
+        document.getElementsByName("report_content")[0].value.trim() === "" ||
+        document.getElementsByName("password")[0].value.trim() === "") {
+        alert("모든 항목을 입력해주세요.");
+        return false;
+    }
+    alert('관리자 승인 후 게시됩니다.')
+    return true;
+}
 </script>
 
 

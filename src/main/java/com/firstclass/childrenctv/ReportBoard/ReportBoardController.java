@@ -31,14 +31,14 @@ public class ReportBoardController {
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
 		boardservice.insert(board);
 		
-		return "redirect:/reportBoard/list?child_id=" + board.getChild_id();
+		return "redirect:/child/get?child_id=" + board.getChild_id();
 		
 	}
 	
 	@PostMapping("/reportBoard/delete")
 	public String deleteReportBoard(Long report_id, @RequestParam("child_id") Long child_id) {
 	    boardservice.deleteReportBoard(report_id);
-	    return "redirect:/reportBoard/list?child_id=" + child_id;
+	    return "redirect:/child/get?child_id=" + child_id;
 	}
 
 	

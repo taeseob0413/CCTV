@@ -8,7 +8,7 @@
 </head>
 
 <center>
-    <h1>실종 아동 제보</h1>
+    <h1>실종 아동 목격 제보</h1>
 
         <table>
         	<tr>
@@ -70,7 +70,7 @@ function deletePost(reportId) {
 	    xhr.onload = function () {
 	      if (xhr.status === 200) {
 	        alert('글이 삭제되었습니다.');
-	        location.href = "list?child_id=" +${board.child_id};
+	        location.href = "/child/get?child_id=" +${board.child_id};
 	      } else {
 	        alert('글 삭제에 실패하였습니다.');
 	      }
