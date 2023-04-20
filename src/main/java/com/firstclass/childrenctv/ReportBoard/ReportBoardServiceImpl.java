@@ -37,20 +37,15 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 	}
 
 	@Override
-	public List<ReportBoardVO> getByUser(Long user_id) {		//작성자별 제보 글 보기
+	public List<ReportBoardVO> getByUser(String user_loginId) {		//작성자별 제보 글 보기
 		
-		return mapper.getByUser(user_id);
+		return mapper.getByUser(user_loginId);
 	}
 	
 	@Override
 	public void deleteReportBoard(Long report_id) {		//제보 글 삭제
 		
 		mapper.deleteReportBoard(report_id);
-	}
-	
-	@Override
-	public String getLoginId(Long user_id) {
-		return mapper.getLoginId(user_id);
 	}
 	
 

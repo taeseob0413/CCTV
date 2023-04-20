@@ -13,7 +13,7 @@
 </div>
 <div id = "headerMenu">
 <ul id = "headerMenuList">
-    <li>보호 신고</li>
+    <li><a href="/protectBoard/list" >보호신고</a></li>
     <li>실종 검색</li>
     <li>안전 지도</li>
     <% if(user == null){%>

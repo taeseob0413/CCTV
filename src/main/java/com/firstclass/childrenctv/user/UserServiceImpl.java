@@ -10,12 +10,26 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class UserServiceImpl implements UserService{
-    private final UserMapper userMapper;
+
+	private final UserMapper userMapper;
     private final GmailService gmailService;
+    
+
     @Override
     public void signup(UserVO user) {
-
+    	userMapper.insert(user);	
     }
+    
+	@Override
+	public int idcheck(String loginid) {
+    	return userMapper.idcheck(loginid); 
+	}
+	
+	@Override
+	public String emailcheck(String email) {
+		String code = gmailService.send1(email);
+		return code;
+	}
 
     @Override
     public UserVO signIn(String loginid, String password) {

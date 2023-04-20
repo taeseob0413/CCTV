@@ -12,7 +12,7 @@ class GmailServiceTest {
 
     @Test
     void send() {
-        String email = "eowns1209@gmail.com";
+        String email = "lunn297@gmail.com";
         String title = "제목";
         String text = "내용";
 
