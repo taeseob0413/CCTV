@@ -4,20 +4,20 @@
 <mapper namespace="com.firstclass.childrenctv.ReportBoard.ReportBoardMapper">
 
 <insert id="insert">
-insert into ReportBoard_table(report_id,report_address, report_time, report_content, user_id, user_loginId, child_id)
-values(seq_reportboard.nextval, #{report_address}, #{report_time}, #{report_content}, #{user_id}, #{user_loginId}, #{child_id})
+insert into ReportBoard_table(report_id, child_name, child_age, child_gender, report_address, report_time, report_content, user_loginId, child_id, password)
+values(seq_reportboard.nextval, #{child_name}, #{child_age}, #{child_gender}, #{report_address}, #{report_time}, #{report_content}, #{user_loginId}, #{child_id}, #{password})
 </insert>
 
 <select id="get" resultType ="com.firstclass.childrenctv.ReportBoard.ReportBoardVO">
-select * from ReportBoard_table where report_id = #{report_id}
+select * from ReportBoard_table where report_id = #{report_id} AND approval =1
 </select>
 
 <select id="getByChild" resultType="com.firstclass.childrenctv.ReportBoard.ReportBoardVO">
-select * from ReportBoard_table where child_id = #{child_id} order by report_id desc
+select * from ReportBoard_table where child_id = #{child_id} AND approval =1 order by report_id desc
 </select>
 
 <select id="getByUser" resultType="com.firstclass.childrenctv.ReportBoard.ReportBoardVO">
-select * from ReportBoard_table where user_id = #{user_id}
+select * from ReportBoard_table where user_loginId = #{user_loginId} AND approval =1
 </select>
 
 <delete id="deleteReportBoard"> 
@@ -27,9 +27,5 @@ delete reportboard_table where report_id =#{report_id}
 <update id="update">
 update reportboard_table set report_time =#{report_time}, report_address =#{report_address}, report_content =#{report_content} where report_id = #{report_id}
 </update>
-
-<select id="getLoginId">
-select user_loginId from user_table where user_id =#{user_id}
-</select>
 
 </mapper>
