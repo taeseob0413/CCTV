@@ -77,7 +77,7 @@ public class ReportBoardController {
 	@PostMapping("/reportBoard/update")
 	public String update(ReportBoardVO board, @RequestParam("child_id") Long child_id) {
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
-		service.update(board);
+		boardservice.update(board);
 		return "redirect:/reportBoard/list?child_id=" + child_id;
 	}
 
