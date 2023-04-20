@@ -3,14 +3,16 @@ package com.firstclass.childrenctv.ChildBoard;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public interface ChildBoardService {
-	List<ChildBoardVO> getChildAddr(String child_location);
+		
+	// List<ChildBoardVO> getChildAddr(String child_location);
 	
-	List<ChildBoardVO> getChild();
+	List<ChildBoardVO> getList(Criteria cri); //목록
 	
-	ChildBoardVO getChildId(Long id);
+	ChildBoardVO get(Long child_id); //상세
 	
-	void insert(ChildBoardVO child);
-	
-	public void register(ChildBoardVO child);
+	//void insert(List<ChildBoardVO> childEntityList);
 }

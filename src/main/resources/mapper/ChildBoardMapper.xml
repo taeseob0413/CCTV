@@ -1,10 +1,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-        
-        
+           
 <mapper namespace="com.firstclass.childrenctv.ChildBoard.ChildBoardMapper">  
-    <select id="getChild" resultType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO">
-    	select * from CHILDBOARD_TABLE where child_id>0
+
+    <select id="getList" resultType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO">
+    <![CDATA[
+    	select * from CHILDBOARD_TABLE where child_id > 0
+        ]]>
     </select>
     
     <select id="getChildId" parameterType="Long"  resultType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO">
@@ -15,8 +17,40 @@
     	select * from CHILDBOARD_TABLE where child_location like '%'||#{addr}||'%'
     </select>
     
-    <insert id="insert" parameterType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO">
-        INSERT INTO CHILDBOARD_TABLE(child_id,child_location,child_curage,child_occage,child_gender,child_name,child_time,child_feature,child_outfit,child_img)
-            VALUES (seq_child.nextval,#{child_location}, #{child_curage},#{child_occage},#{child_gender},#{child_name},#{child_time},#{child_feature},#{child_outfit},#{child_img})
+    <insert id="insert">
+        INSERT INTO CHILDBOARD_TABLE (child_id,child_location,child_curage,child_gender,child_name,child_height,child_time,child_feature,child_outfit,child_img,child_occage)
+        VALUES (seq_child.nextval, #{child_location}, #{child_curage},#{child_gender},#{child_name},#{child_height},#{child_time},#{child_feature},#{child_outfit},#{child_img},#{child_occage})
     </insert>
+    
+    <insert id="insertSelectKey">
+        
+        <selectKey keyProperty="child_id" order="BEFORE"
+           resultType="long">
+           select seq_child.nextval from dual
+        </selectKey>
+         
+        insert into childboard_table (child_id,child_location,child_curage,child_gender,child_name,child_height,child_time,child_feature,child_outfit,child_img,child_occage)
+        values (#{child_id}, #{child_location}, #{child_curage},#{child_gender},#{child_name},#{child_height},#{child_time},#{child_feature},#{child_outfit},#{child_img},#{child_occage})
+    
+    </insert>
+    
+    <select id="read" resultType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO">
+      select * from childboard_table where child_id = #{child_id}
+    </select>
+    
+    <!--  게시글 목록 페이징 -->
+    <select id="getListWithPaging" resultType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO">
+        <![CDATA[
+        select *
+        from
+           (
+            select /*+ INDEX_DESC(CHILDBOARD_TABLE cd_pk) */
+              rownum rn, child_id,child_location,child_curage,child_gender,child_name,child_height,child_time,child_feature,child_outfit,child_img,child_occage
+            from childboard_table
+            where rownum <= #{pageNum} * #{amount}
+            )
+           where rn > (#{pageNum} -1) * #{amount}
+        ]]>
+
+    </select>
 </mapper>

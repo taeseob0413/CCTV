@@ -14,47 +14,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 @AllArgsConstructor
 public class ChildBoardServiceImpl implements ChildBoardService {
 
-	
-
    @Autowired
    private ChildBoardMapper mapper;
 
 
-   @Override
-   public List<ChildBoardVO> getChildAddr(String child_location) {
-	   return mapper.getChildAddr(child_location);
+  // @Override
+  // public List<ChildBoardVO> getChildAddr(String child_location) {
+	//   return mapper.getChildAddr(child_location);
 
-   }
-
-
-	
+  // }
 
    @Override
-   public List<ChildBoardVO> getChild() {
+   public List<ChildBoardVO> getList(Criteria cri) {
       // TODO Auto-generated method stub
-      return mapper.getChild();
+      return mapper.getListWithPaging(cri);
    }
 
 	
    @Override
-   public ChildBoardVO getChildId(Long id) {
+   public ChildBoardVO get(Long child_id) {
       // TODO Auto-generated method stub
-      return mapper.getChildId(id);
-   }
-
-
-	
-
-   @Override
-   public void insert(ChildBoardVO child) {
-      mapper.insert(child);
-
-
+      return mapper.read(child_id);
    }
    
-   @Override
-   public void register(ChildBoardVO child) {
-	   mapper.insert(child);
+   //@Override
+   //public void insert(List<ChildBoardVO> childEntityList) {
+     // mapper.insert(childEntityList);
+      
+   
 
-}
 }

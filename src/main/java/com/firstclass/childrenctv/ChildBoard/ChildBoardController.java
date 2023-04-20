@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.AllArgsConstructor;
@@ -19,19 +17,21 @@ public class ChildBoardController {
 	@Autowired
 	private ChildBoardService service;
 	
-	@GetMapping("/child/list")
-	public String list(Model model) {
-		String child_location="동작";
-		List<ChildBoardVO> cl=service.getChildAddr(child_location);
+	@GetMapping("/childboard/list")
+	public void list(Criteria cri, Model model) {
 		
-		model.addAttribute("list", cl);
+		model.addAttribute("list", service.getList(cri));
+		model.addAttribute("pageMaker", new PageDTO(cri, 123));
 		
 		System.out.println("성공!");
-		return "childboard/child";
+		
 	}
-	@GetMapping("/child/get")
-	public String get(@RequestParam("child_id") Long child_id,Model model) {
-		model.addAttribute("child",service.getChildId(child_id));
+	
+	@GetMapping("/childboard/get")
+	public String getChild(@RequestParam("child_id") Long child_id, Model model) {
+		
+		model.addAttribute("board",service.get(child_id));
+		
 		return "childboard/get";
 	}
 	

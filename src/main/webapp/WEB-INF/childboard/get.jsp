@@ -42,27 +42,23 @@
 
 							<th>실종 일자</th>
 							
-							<th>키</th>
 
 						</tr>
 					</thead>
 					
 					
 						<tr>
-							<td><img src="${child.child_img}" alt="My Image" width="150" height="150"></td>
+							<td><img src="${board.child_img}" alt="My Image" width="150" height="150"></td>
 							
-							<td>${child.getChild_location()}</td>
+							<td>${board.getChild_location()}</td>
 							
-							<td>${child.child_name}</td>
+							<td>${board.child_name}</td>
 							
-							<td>${child.child_curage}</td>
+							<td>${board.child_curage}</td>
 							
-							<td>${child.child_gender}</td>
+							<td>${board.child_gender}</td>
 							
-							<td>${child.child_time}</td>
-
-							<td>${child.child_height}</td>
-
+							<td>${board.child_time}</td>
 						</tr>
 					
 				</table>
