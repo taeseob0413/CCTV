@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.firstclass.childrenctv.user.UserVO;
+import com.firstclass.childrenctv.ChildBoard.ChildBoardService;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
 
 @Controller
@@ -19,11 +17,12 @@ import lombok.AllArgsConstructor;
 public class ReportBoardController {
 
 	private ReportBoardService boardservice;
+	private ChildBoardService childservice;
 	
 	@GetMapping("/reportBoard/register")
     public String reportboardregister(@RequestParam("child_id") Long child_id, Model model) {
         // child_id 값을 모델에 추가하여 register.jsp로 전달
-        model.addAttribute("child_id", child_id);
+        model.addAttribute("child", childservice.getChildId(child_id));
         return "reportboard/register";
     }
 	
@@ -32,14 +31,14 @@ public class ReportBoardController {
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
 		boardservice.insert(board);
 		
-		return "redirect:/reportBoard/list?child_id=" + board.getChild_id();
+		return "redirect:/child/get?child_id=" + board.getChild_id();
 		
 	}
 	
 	@PostMapping("/reportBoard/delete")
 	public String deleteReportBoard(Long report_id, @RequestParam("child_id") Long child_id) {
 	    boardservice.deleteReportBoard(report_id);
-	    return "redirect:/reportBoard/list?child_id=" + child_id;
+	    return "redirect:/child/get?child_id=" + child_id;
 	}
 
 	
@@ -55,15 +54,6 @@ public class ReportBoardController {
 		}
 	}
 	
-	@GetMapping("/reportBoard/list")
-	public String list(@RequestParam("child_id") Long child_id, Model model) {
-		
-		model.addAttribute("list", boardservice.getByChild(child_id));
-		model.addAttribute("child_id", child_id);
-		System.out.println("LIST 컨트롤러 들어왔다!!!!!!!!!!!!!");
-		return "reportboard/list";
-		
-	}
 	
 	@GetMapping("/reportBoard/update")
 	public String update(@RequestParam("report_id") Long reportboard_id, Model model) {
@@ -78,7 +68,7 @@ public class ReportBoardController {
 	public String update(ReportBoardVO board, @RequestParam("child_id") Long child_id) {
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
 		boardservice.update(board);
-		return "redirect:/reportBoard/list?child_id=" + child_id;
+		return "redirect:/reportBoard/get?report_id=" + board.getReport_id();
 	}
 
 }
