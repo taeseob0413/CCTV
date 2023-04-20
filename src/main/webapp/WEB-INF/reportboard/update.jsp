@@ -17,7 +17,7 @@
 %>
 	
 <center>
-    <h1>실종 아동 제보 글 작성</h1>
+    <h1>실종 아동 제보 글 수정</h1>
 
     <form action="/reportBoard/update" method="post">
     	<input type="hidden" name="child_id" value="${board.child_id }"/>
@@ -47,7 +47,7 @@
             </tr>
             <tr>
                 <td>목격 시간</td>
-                <td><input type="date" name="report_time" value="${board.report_time}"></td>
+                <td><input type="datetime-local" name="report_time" value="${board.report_time}"></td>
             </tr>
             <tr>
                 <td>목격 위치</td>

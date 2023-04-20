@@ -17,9 +17,10 @@ public class ProtectBoardVO {
 	private int child_age; //아동 현재 나이 
 	private String child_gender; //아동 성별
 	private String child_hometown;	//아동 연고지
+	private String child_findlocation; //아동 목격지
 	
 	private LocalDateTime protect_time;		//보호 글 목격 시간
-	private String protect_address;		//보호 글 목격 위치
+	private String protect_address;		//보호 위치
 	private String protect_content;		//보호 글 내용
 	
 	private String user_phone;		//사용자 연락처

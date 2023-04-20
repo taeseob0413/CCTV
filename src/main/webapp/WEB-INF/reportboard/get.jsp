@@ -40,7 +40,7 @@
                 <td><textarea name="report_content" rows="50" cols="100" readonly="readonly">${board.report_content }</textarea></td>
             </tr>
         </table>
-         <input type="button" value="목록" onclick="location.href='list?child_id=${board.child_id}'"/>
+         <input type="button" value="목록" onclick="location.href='/child/get?child_id=${board.child_id}'"/>
 		<input type="button" value="수정" onclick="updateDialog()"/>
          
           <%

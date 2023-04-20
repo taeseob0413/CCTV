@@ -21,11 +21,11 @@
     <h1>실종 아동 제보 글 작성</h1>
 
     <form action="/reportBoard/register" method="post" id="registerform">
-    	<input type="hidden" name = "child_id" value="${child_id}">
+    	<input type="hidden" name = "child_id" value="${child.child_id}">
     	<input type="hidden" name= "user_loginId" value= <%= userLoginId %>>
-    	<input type="hidden" name= "child_name" value="데이터">
-    	<input type="hidden" name = "child_age" value="11">
-    	<input type="hidden" name = "child_gender" value="데이터">
+    	<input type="hidden" name= "child_name" value="${child.child_name }">
+    	<input type="hidden" name = "child_age" value="${child.child_curage }">
+    	<input type="hidden" name = "child_gender" value="${child.child_gender }">
     	
         <table>
         	<tr>
@@ -34,7 +34,7 @@
             </tr>
         	<tr>
                 <td>아동 이름</td>
-                <td><!-- ${child.child_name }--></td>
+                <td>${child.child_name }</td>
             </tr>
             <tr>
                 <td>목격 시간</td>
@@ -54,7 +54,7 @@
             </tr>
         </table>
         <input type="submit" id="mysubmit" value="작성완료" onclick="return submitForm()"/>
-        <input type="button" value="취소" onclick="location.href='list?child_id=${child_id}'"/>
+        <input type="button" value="취소" onclick="location.href='/child/get?child_id=${child.child_id}'"/>
     </form>
 </center>
 

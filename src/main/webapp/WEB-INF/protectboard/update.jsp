@@ -17,10 +17,9 @@
 %>
 	
 <center>
-    <h1>실종 아동 보호 글 수정</h1>
-
     <form action="/protectBoard/update" method="post">
     	<input type="hidden" name="protect_id" value="${board.protect_id }">
+    	<input type="hidden" name="password" value="${board.password }">
         <table>
         	<tr>
                 <td>작성자</td>
@@ -50,7 +49,11 @@
                 <td><textarea name="child_hometown" rows="1" cols="100">${board.child_hometown }</textarea></td>
             </tr>
             <tr>
-                <td>보호 시작 시간</td>
+                <td>아동 목격장소</td>
+                <td><textarea name="child_findlocation" rows="1" cols="100">${board.child_findlocation }</textarea></td>
+            </tr>
+            <tr>
+                <td>목격 시간</td>
                 <td><input type="datetime-local" name="protect_time" id="protect_time" value="${board.protect_time }"></td>
             </tr>
             <tr>
@@ -78,6 +81,7 @@
             document.getElementsByName("child_gender")[0].checked === false &&
             document.getElementsByName("child_gender")[1].checked === false ||
             document.getElementsByName("child_hometown")[0].value.trim() === "" ||
+            document.getElementsByName("child_findlocation")[0].value.trim() === "" ||
             document.getElementsByName("protect_time")[0].value.trim() === "" ||
             document.getElementsByName("protect_address")[0].value.trim() === "" ||
             document.getElementsByName("protect_content")[0].value.trim() === "") {
