@@ -1,11 +1,8 @@
 package com.firstclass.childrenctv.user;
 
-import com.firstclass.childrenctv.util.GmailService;
-import com.firstclass.childrenctv.util.GmailServiceImpl;
-
+import com.firstclass.childrenctv.util.email.GmailService;
+import com.firstclass.childrenctv.util.email.MailText;
 import lombok.AllArgsConstructor;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -59,16 +56,17 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public boolean findpass(String name, String email, String loginId) {
-        String userLoginId = null;
         UserVO user = null;
+
         try {
             user = userMapper.existUserByNameAndEmail(name, email);
-            userLoginId = user.getUser_loginID();
-        }catch (Exception e){
+            if(!user.getUser_loginID().equals(loginId)) return false;
 
+            gmailService.send(email, "[CCTV] 비밀번호를 알려드립니다.",
+                    MailText.getFindPassword(user.getUser_name(), user.getUser_password()));
+        }catch (Exception e){
+            return false;
         }
-        if(userLoginId == null || !userLoginId.equals(loginId)) return false;
-        gmailService.send(email, "CCTV 비밀번호를 알려드립니다.", "당신의 비밀번호는 " + user.getUser_password() +" 입니다.");
         return true;
     }
 

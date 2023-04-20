@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.response;
+package com.firstclass.childrenctv.util.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
