@@ -18,5 +18,4 @@ public interface UserMapper {
     String registerNotice(String content);
     
     int idcheck(String loginId);   //아이디 중복체크
-    //String emailcheck(String email);   //이메일 인증
 }
