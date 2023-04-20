@@ -2,7 +2,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.firstclass.childrenctv.user.UserMapper">
 
-   <insert id="create" parameterType="com.firstclass.childrenctv.user.UserVO">
+   <insert id="insert" parameterType="com.firstclass.childrenctv.user.UserVO">
         INSERT INTO USER_TABLE(user_id, user_name, user_email, user_loginID, user_password, user_age, user_gender, user_address)
             VALUES (seq_user.NEXTVAL, #{user_name}, #{user_email}, #{user_loginID}, #{user_password}, #{user_age}, #{user_gender}, #{user_address})
     </insert>
@@ -22,4 +22,9 @@
     <select id="existUserByNameAndEmail" resultType="com.firstclass.childrenctv.user.UserVO">
         SELECT * FROM USER_TABLE WHERE user_name = #{name} AND user_email = #{email}
     </select>
+    
+    <select id="idcheck" resultType="int">
+    	SELECT count(*) FROM USER_TABLE WHERE user_loginID = #{loginId}
+    </select>
+    
 </mapper>

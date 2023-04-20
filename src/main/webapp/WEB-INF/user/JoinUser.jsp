@@ -5,12 +5,12 @@
 	<link rel="stylesheet" href="/resources/css/signup.css"/>
 	<form action="/user/join" method="post"> 
     <div class=signup style="text-align: center;">
+    
     <div id="info_id" >
         <p style="font-weight:bold; margin-top: 50px; margin-left: -350px;">아이디</p>
-        <input type="text" name="user_loginID" style="border: 1px solid gray;" placeholder="아이디 입력(4~20자)"
-        onfocus="this.placeholder=''" onblur="this.placeholder='아이디 입력(4~20자)'"/>
-        <button>중복 확인</button>
-        <p class="error-msg"></p>
+   		<input type="text" id="username" name="user_loginID" style="border: 1px solid gray;" placeholder="아이디 입력(4~20자)"/>
+   		<button id="idcheck" type="button">중복확인</button><br>
+   		<span id="id_check"></span>
     </div>
 
     <div id="info_pw" style="text-align: center;">
@@ -23,7 +23,7 @@
       
          <div id="info_pw2">
             <p style="font-weight:bold; margin-top: 30px; margin-left: -280px;">비밀번호 재확인</p>
-            <input type="password" name="user_password" style="border: 1px solid gray;"  placeholder="비밀번호 재입력"
+            <input type="password" id="password" name="user_password" style="border: 1px solid gray;"  placeholder="비밀번호 재입력"
             onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호 재입력'"/>
             <p class="error-msg"></p>
         </div>
@@ -38,14 +38,15 @@
     <div id="info_email">
         <div id="info_email1">
             <p style="font-weight:bold; margin-top: 30px; margin-left: -270px;">본인 확인 이메일</p>
-            <input type="text" name="user_email" style="border: 1px solid gray;" placeholder="이메일을 입력하세요"
+            <input type="text" id="user_email" name="user_email" style="border: 1px solid gray;" placeholder="이메일을 입력하세요"
             onfocus="this.placeholder=''" onblur="this.placeholder='이메일을 입력하세요'"/> 
-            <button>인증번호 전송</button>
+            <button id="emailcheck" type="button">인증번호 전송</button>
         </div>
 
         <div id="info_email2">
-            <input type="text" name=address style="border: 1px solid gray;" placeholder="인증번호 입력"
-            onfocus="this.placeholder=''" onblur="this.placeholder='인증번호 입력'"/>
+            <input type="text" id="mailconfirm" style="border: 1px solid gray;" placeholder="인증번호 입력"
+            onfocus="this.placeholder=''" onblur="this.placeholder='인증번호 입력'"/><br>
+            <span id="email_check"></span>
         </div>    
     </div>
 
@@ -80,10 +81,75 @@
     <p id="login">
     <a href="/user/login">로그인 하러가기</a>
     </p>
-
-    <script src="/resources/js/signup.js"></script>
+    
+    <!--><script src="/resources/js/signup.js"></script> -->
            
     </form>
 </center>
 
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+$("#idcheck").click(function(){
+	
+	var username = $("#username").val();
+	var data = {username: username}
+
+	$.ajax({
+		url : '/user/idCheck' ,
+		type : 'post',
+		data : data,
+		success : function(result) {	
+			console.log("성공여부:" + result);
+			
+			if (result != "fail") {
+				$("#id_check").text("사용 가능한 아이디입니다.");
+				$("#id_check").css("color", "green");
+				
+			} else {
+				$("#id_check").text("이미 사용중인 아이디입니다");
+				$("#id_check").css("color", "red");
+			}				
+		}
+	})
+});
+
+var code = "";
+$("#emailcheck").click(function(){
+	
+	var user_email = $("#user_email").val();
+	var data = {user_email: user_email}
+
+	$.ajax({
+		url : '/user/emailcheck' ,
+		type : 'get',
+		data : data,
+		success : function(result) {	
+			alert("인증번호가 전송되었습니다.")
+			code = result;
+			console.log("code:" + code);
+		}
+	})
+});
+
+$("#mailconfirm").blur(function() {
+	var inputcode = $("#mailconfirm").val();
+	console.log("inputcode: " +inputcode)
+
+	if(inputcode == code) {	
+		$("#email_check").text("인증성공");
+		$("#email_check").css("color", "green");
+		
+	} else {
+		$("#email_check").text("일치하지 않습니다.");
+		$("#email_check").css("color", "red");
+		
+	}
+	
+});
+	
+
+	
+</script>
+		
 <%@ include file="../layout/footer.jsp"%>

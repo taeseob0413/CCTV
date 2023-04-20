@@ -1,7 +1,11 @@
 package com.firstclass.childrenctv.user;
 
 import com.firstclass.childrenctv.util.GmailService;
+import com.firstclass.childrenctv.util.GmailServiceImpl;
+
 import lombok.AllArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,14 +13,26 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class UserServiceImpl implements UserService{
-    private final UserMapper userMapper;
+
+	private final UserMapper userMapper;
     private final GmailService gmailService;
     
 
     @Override
     public void signup(UserVO user) {
-    	userMapper.create(user);	
+    	userMapper.insert(user);	
     }
+    
+	@Override
+	public int idcheck(String loginid) {
+    	return userMapper.idcheck(loginid); 
+	}
+	
+	@Override
+	public String emailcheck(String email) {
+		String code = gmailService.send1(email);
+		return code;
+	}
 
     @Override
     public UserVO signIn(String loginid, String password) {
@@ -65,4 +81,5 @@ public class UserServiceImpl implements UserService{
     public List<UserVO> getAllUserList() {
         return null;
     }
+
 }

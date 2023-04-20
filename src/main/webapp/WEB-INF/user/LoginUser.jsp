@@ -22,7 +22,7 @@
             </div>
             <button id="loginButton"type="button" onclick="checkLogin()">로그인</button>
             <div id="userJoin">
-                <a href="">회원 가입</a>
+                <a href="/user/join">회원 가입</a>
             </div>
         </div>
     </div>

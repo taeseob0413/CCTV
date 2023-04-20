@@ -11,24 +11,7 @@ const errMsg = {
       fail: "비밀번호가 일치하지 않습니다"
     },
   }
-
-/*** SECTION - ID ***/
-
-var account = {id:"", pw:""};
-
-const idInputEl = document.querySelector('#info_id input')
-const idErrorMsgEl = document.querySelector('#info_id .error-msg')
-idInputEl.addEventListener('change', () => {
-  const idRegExp = /^[a-zA-Z0-9]{4,20}$/ // 4~20자의 영문 소문자와 숫자
-  if(idRegExp.test(idInputEl.value)) { // 유효성 검사 성공
-    idErrorMsgEl.textContent = ""
-    account.id = idInputEl.value
-  } else { // 유효성 검사 실패
-    idErrorMsgEl.textContent = errMsg.id.invalid
-    account.id = null
-  }
-  console.log(account)
-});
+var account = {pw:""};
 
   // pwVal: 패스워드, pwReVal: 패스워드 재입력, isPwValid: 패스워드 유효 여부
 let pwVal = "", pwReVal = "", isPwValid = false

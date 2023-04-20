@@ -11,4 +11,7 @@ public interface UserService {
     //List<ReportBoardVO> myReportList(Long id);
     List<UserVO> getAllUserList();
     //String registerNotice(String content);
+    
+    int idcheck(String loginid);   //아이디 중복체크
+    String emailcheck(String email);  //이메일 인증 
 }
