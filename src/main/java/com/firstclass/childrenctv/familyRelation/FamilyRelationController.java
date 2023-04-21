@@ -34,7 +34,7 @@ public class FamilyRelationController {
         return new BaseResponse(400, "Err : 비정상적인 요청입니다.");
     }
 
-    @GetMapping("user/famulyRelation/list")
+    @GetMapping("user/familyRelation/list")
     public BaseResponse findRelationList(HttpServletRequest request){
         UserVO user = (UserVO) request.getSession().getAttribute("user");
         if(user == null) return new BaseResponse(400, "로그인 후 이용해주세요.");

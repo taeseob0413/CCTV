@@ -16,6 +16,7 @@ public class FamilyRelationServiceImpl implements FamilyRelationService{
         try {
             familyRelationMapper.save(vo);
         }catch (Exception e){
+            e.printStackTrace();
             return false;
         }
         return true;

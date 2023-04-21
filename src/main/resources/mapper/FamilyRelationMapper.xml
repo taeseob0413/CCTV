@@ -3,13 +3,13 @@
 <mapper namespace="com.firstclass.childrenctv.familyRelation.FamilyRelationMapper">
 
    <insert id="save" parameterType="com.firstclass.childrenctv.familyRelation.FamilyRelationVO">
-        INSERT INTO FAMILY_RELATION_TABLE(id, user_id, child_id, approval)
-            VALUES (seq_familyRelation.NEXTVAL, #{user_id}, #{child_id}, #{approval})
+        INSERT INTO FAMILY_RELATION_TABLE(id, user_id, childBoard_id, approval)
+            VALUES (seq_familyRelation.NEXTVAL, #{user_id}, #{childBoard_id}, #{approval})
     </insert>
   	
     <select id="findRelationByChild" parameterType="java.lang.Long"
             resultType="com.firstclass.childrenctv.familyRelation.FamilyRelationVO">
-        SELECT * FROM FAMILY_RELATION_TABLE WHERE child_id = #{child_id}
+        SELECT * FROM FAMILY_RELATION_TABLE WHERE childBoard_id = #{childBoard_id}
     </select>
 
     <select id="findRelationByUser" parameterType="java.lang.Long"
