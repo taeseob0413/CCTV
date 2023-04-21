@@ -7,7 +7,6 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
 @AllArgsConstructor
 public class UserVO {
     private Long user_id;
