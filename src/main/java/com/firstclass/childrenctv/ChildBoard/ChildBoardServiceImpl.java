@@ -13,21 +13,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Service
 @AllArgsConstructor
 public class ChildBoardServiceImpl implements ChildBoardService {
-
-	
-
+   
    @Autowired
    private ChildBoardMapper mapper;
 
-
    @Override
    public List<ChildBoardVO> getChildAddr(String child_location) {
-	   return mapper.getChildAddr(child_location);
+      return mapper.getChildAddr(child_location);
 
    }
-
-
-	
 
    @Override
    public List<ChildBoardVO> getChild() {
@@ -35,27 +29,28 @@ public class ChildBoardServiceImpl implements ChildBoardService {
       return mapper.getChild();
    }
 
-	
    @Override
-   public ChildBoardVO getChildId(Long id) {
+   public ChildBoardVO getChildId(long id) {
       // TODO Auto-generated method stub
       return mapper.getChildId(id);
    }
 
-
-	
-
    @Override
-   public void insert(ChildBoardVO child) {
-      mapper.insert(child);
-
-
+   public void insert(List<ChildBoardVO> childList) {
+      for(ChildBoardVO entity:childList) {
+         mapper.insert(entity);
+      }
    }
-   
-   @Override
-   public void register(ChildBoardVO child) {
-	   mapper.insert(child);
 
+   @Override
+   public List<ChildBoardVO> getChildList(Criteria cri) {
+      return mapper.getChildWithPaging(cri);
+   
+   }
+
+   @Override
+   public int getTotal(Criteria cri) {
+      return mapper.getTotal(cri);
    }
    
    @Override
@@ -65,4 +60,5 @@ public class ChildBoardServiceImpl implements ChildBoardService {
 	   System.out.println("서비스단에서 정보!!!" +child_name+child_gender +top_age+bottom_age );
 	   return mapper.matching(child_name, child_gender, top_age, bottom_age);
    }
+
 }
