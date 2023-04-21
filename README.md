@@ -36,3 +36,27 @@
 <br>
 
 # 서비스 기능 상세 소개
+
+
+## 유저 기능
+
+
+### 로그인 페이지
+![스크린샷 2023-04-22 오전 12 09 50](https://user-images.githubusercontent.com/97227920/233671726-29c340f6-a831-427b-b693-f6c92f347273.png)
+<br>
+<br>
+### 아이디 찾기
+![스크린샷 2023-04-22 오전 12 09 57](https://user-images.githubusercontent.com/97227920/233671872-229772ae-fc35-4e07-8940-8e08cbd94ba5.png)
+<br>
+<br>
+### 비밀번호 찾기
+![스크린샷 2023-04-22 오전 12 10 01](https://user-images.githubusercontent.com/97227920/233672011-66471ee2-cb18-4b21-a1d2-b0571967d59c.png)
+<br>
+<br>
+### 이메일 전송 로직
+![스크린샷 2023-04-22 오전 12 10 06](https://user-images.githubusercontent.com/97227920/233672084-81fc3a0d-f491-4be6-b9e4-1eb211306e87.png)
+<br>
+<br>
+
+
+## 제보 알림 기능
