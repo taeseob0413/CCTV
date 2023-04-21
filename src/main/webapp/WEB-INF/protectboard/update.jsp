@@ -17,10 +17,9 @@
 %>
 	
 <center>
-    <h1>실종 아동 보호 글 수정</h1>
-
-    <form action="/protectBoard/update" method="post">
+    <form action="/protectBoard/update" method="post" id="registerform">
     	<input type="hidden" name="protect_id" value="${board.protect_id }">
+    	<input type="hidden" name="password" value="${board.password }">
         <table>
         	<tr>
                 <td>작성자</td>
@@ -41,8 +40,8 @@
             <tr>
                 <td>아동 성별</td>
                 <td>
-                	<input type="radio" name="child_gender" value="male" ${board.child_gender == '남성' ? 'checked' : ''}>남성
-                	<input type="radio" name="child_gender" value="female" ${board.child_gender == '여성' ? 'checked' : ''}>여성
+                	<input type="radio" name="child_gender" value="남성" ${board.child_gender == '남성' ? 'checked' : ''}>남성
+                	<input type="radio" name="child_gender" value="여성" ${board.child_gender == '여성' ? 'checked' : ''}>여성
                 </td>
             </tr>
             <tr>
@@ -50,7 +49,11 @@
                 <td><textarea name="child_hometown" rows="1" cols="100">${board.child_hometown }</textarea></td>
             </tr>
             <tr>
-                <td>보호 시작 시간</td>
+                <td>아동 목격장소</td>
+                <td><textarea name="child_findlocation" rows="1" cols="100">${board.child_findlocation }</textarea></td>
+            </tr>
+            <tr>
+                <td>목격 시간</td>
                 <td><input type="datetime-local" name="protect_time" id="protect_time" value="${board.protect_time }"></td>
             </tr>
             <tr>
@@ -68,6 +71,24 @@
 </center>
 
 
+<script>
+//예외값 처리하는 script
+function checkNumberLength(input) {
+  if (input.value.length > 2) {
+    alert("나이는 최대 2자리까지 입력 가능합니다.");
+    input.value = input.value.slice(0, 2);
+  }
+}
+</script>
+
+<script>
+//엔터 키(키 코드 13)를 눌렀을 때 폼의 서브밋 동작을 막음
+document.getElementById("registerform").addEventListener("keydown", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+  }
+});
+</script>
 
 <script>
     function validateForm() {
@@ -78,6 +99,7 @@
             document.getElementsByName("child_gender")[0].checked === false &&
             document.getElementsByName("child_gender")[1].checked === false ||
             document.getElementsByName("child_hometown")[0].value.trim() === "" ||
+            document.getElementsByName("child_findlocation")[0].value.trim() === "" ||
             document.getElementsByName("protect_time")[0].value.trim() === "" ||
             document.getElementsByName("protect_address")[0].value.trim() === "" ||
             document.getElementsByName("protect_content")[0].value.trim() === "") {

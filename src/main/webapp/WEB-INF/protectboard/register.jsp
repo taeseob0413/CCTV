@@ -18,8 +18,6 @@
 %>
 
 <center>
-    <h1>실종 아동 제보 글 작성</h1>
-
     <form action="/protectBoard/register" method="post" id="registerform">
     	<input type="hidden" name = "child_id" value="0">
     	<input type="hidden" name= "user_loginId" value= <%= userLoginId %>>
@@ -54,7 +52,11 @@
                 <td><textarea name="child_hometown" rows="1" cols="100"></textarea></td>
             </tr>
             <tr>
-                <td>보호 시작 시간</td>
+                <td>아동 목격장소</td>
+                <td><textarea name="child_findlocation" rows="1" cols="100"></textarea></td>
+            </tr>
+            <tr>
+                <td>목격 시간</td>
                 <td><input type="datetime-local" name="protect_time" id="protect_time"></td>
             </tr>
             <tr>
@@ -71,7 +73,7 @@
             </tr>
         </table>
         <input type="submit" id="mysubmit" value="작성완료" onclick="return submitForm()"/>
-        <input type="button" value="취소" onclick="location.href='list?child_id=${child_id}'"/>
+        <input type="button" value="취소" onclick="location.href='list'"/>
     </form>
 </center>
 
@@ -104,14 +106,24 @@ document.getElementById("registerform").addEventListener("keydown", function(eve
 <script>
 
 function submitForm() {
-	  // 폼 서브밋 전에 비밀번호 값이 있는지 확인
-	  var passwordInput = document.getElementsByName("password")[0];
-	  if (passwordInput.value.length === 0) {
-	    alert("비밀번호를 입력해주세요.");
-	    return false; // 서브밋 중지
-	  }
-	  return true; // 서브밋 실행
-	}
+    // 입력값이 없는 경우 submit 방지
+    if (document.getElementsByName("user_phone")[0].value.trim() === "" || 
+        document.getElementsByName("child_name")[0].value.trim() === "" ||
+        document.getElementsByName("child_age")[0].value.trim() === "" ||
+        document.getElementsByName("child_gender")[0].checked === false &&
+        document.getElementsByName("child_gender")[1].checked === false ||
+        document.getElementsByName("child_hometown")[0].value.trim() === "" ||
+        document.getElementsByName("child_findlocation")[0].value.trim() === "" ||
+        document.getElementsByName("protect_time")[0].value.trim() === "" ||
+        document.getElementsByName("protect_address")[0].value.trim() === "" ||
+        document.getElementsByName("protect_content")[0].value.trim() === "" ||
+        document.getElementsByName("password")[0].value.trim() === "") {
+        alert("모든 항목을 입력해주세요.");
+        return false;
+    }
+    alert('관리자 승인 후 게시됩니다.')
+    return true;
+}
 </script>
 
 
