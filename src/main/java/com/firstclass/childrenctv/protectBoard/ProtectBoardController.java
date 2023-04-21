@@ -76,21 +76,6 @@ public class ProtectBoardController {
 		return "redirect:/protectBoard/list";
 	}
 	
-	@PostMapping("/protectBoard/matching")
-	public void matchingList(Long protect_id, Model model) {
-		System.out.println("매칭 드가자~~~~~~~~");
-		ProtectBoardVO board = boardService.get(protect_id);
-		Long child_age = Long.valueOf(board.getChild_age());
-		List<ChildBoardVO> childList =childService.matching(board.getChild_name(), board.getChild_gender(), child_age);
-		if (childList != null && !childList.isEmpty()) {
-	        System.out.println("가져온 아동 정보는?" + childList.get(0));
-	        model.addAttribute("matchList", childList);
-	    } else {
-	        // childList가 비어있는 경우에 대한 처리
-	        System.out.println("가져온 아동 정보가 없습니다.");
-	    }
-	}
-	
 	
 	
 }
