@@ -2,25 +2,59 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
            
 <mapper namespace="com.firstclass.childrenctv.ChildBoard.ChildBoardMapper">  
-
     <select id="getChild" resultType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO">
-    
-    	select * from CHILDBOARD_TABLE where child_id > 0
-        
+       select * from childboard_table where child_id>0
     </select>
     
     <select id="getChildId" parameterType="Long"  resultType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO">
-    	select * from CHILDBOARD_TABLE where child_id=#{id}
+       select * from childboard_table where child_id=#{id}
     </select>
     
     <select id="getChildAddr" parameterType="String" resultType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO">
-    	select * from CHILDBOARD_TABLE where child_location like '%'||#{addr}||'%'
+       select * from childboard_table where child_location like '%'||#{addr}||'%'
+    </select>
+    
+    <sql id="criteria">
+      <trim prefix="(" suffix=") AND " prefixOverrides="OR">
+         <foreach item="type" collection="typeArr">
+            <trim prefix="OR">
+               <choose>
+                  <when test="type == 'T'.toString()"> child_name like '%' || #{keyword} || '%' </when>
+                  <when test="type == 'C'.toString()"> child_location like '%' || #{keyword} || '%' </when>
+                  <when test="type == 'W'.toString()"> child_occage = #{keyword} </when>
+               </choose>
+            </trim>
+         </foreach>
+      </trim>
+   </sql>
+    
+    <select id="getChildWithPaging" resultType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO" >
+       <![CDATA[
+       select child_id,child_location,child_curage,child_occage,child_gender,child_name,child_time,child_feature,child_outfit,child_img 
+       from (select /*+ index_desc(child_table child_table_pk)*/ rownum rn,child_id,child_location,child_curage,child_occage,child_gender,child_name,child_time,child_feature,child_outfit,child_img
+             from 
+               childboard_table 
+             where 
+             ]]>
+       <include refid="criteria"></include>
+       <![CDATA[
+             rownum <= #{pageNum}*#{amount}
+             ) 
+        where rn > (#{pageNum}-1)*#{amount}
+        ]]>
+    
     </select>
     
     <insert id="insert" parameterType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO">
-        INSERT INTO CHILDBOARD_TABLE (child_id,child_location,child_curage,child_occage,child_gender,child_name,child_time,child_feature,child_outfit,child_img)
-        VALUES (seq_child.nextval,#{child_location}, #{child_curage},#{child_occage},#{child_gender},#{child_name},#{child_time},#{child_feature},#{child_outfit},#{child_img})
+        INSERT INTO childboard_table(child_id,child_location,child_curage,child_occage,child_gender,child_name,child_time,child_feature,child_outfit,child_img)
+            VALUES (seq_child.nextval,#{child_location},#{child_curage},#{child_occage},#{child_gender},#{child_name},#{child_time},#{child_feature},#{child_outfit},#{child_img})
     </insert>
+    
+    <select id="getTotal" resultType="int">
+       select count(*) from childboard_table where 
+       <include refid="criteria"></include>
+       child_id>0
+    </select>
     
     
 </mapper>

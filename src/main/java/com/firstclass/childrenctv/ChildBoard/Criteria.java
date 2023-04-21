@@ -16,7 +16,8 @@ public class Criteria {
 	private int pageNum;
 	private int amount;
 	
-	
+	private String type;
+	private String keyword;
 	//생성자로 무조건 실행된다 1번은
 	//기본 페이지를 1페이지에 10개씩 보여준다는 의미
 	public Criteria() { this(1, 10);}
@@ -27,4 +28,7 @@ public class Criteria {
 		this.amount = amount;
 	}
 
+	public String[] getTypeArr() {
+		return type==null?new String[] {} : type.split("");
+	}
 }

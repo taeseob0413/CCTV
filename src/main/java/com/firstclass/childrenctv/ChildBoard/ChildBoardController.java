@@ -21,16 +21,17 @@ public class ChildBoardController {
 	@Autowired
 	private ReportBoardService boardservice;
 	
-	@GetMapping("/child/list")
-	public String list(Model model) {
-		String child_location="서울";
-		List<ChildBoardVO> cl=service.getChildAddr(child_location);
-		
-		model.addAttribute("list", cl);
-		
-		System.out.println("성공!");
-		return "childboard/child";
-	}
+	 @GetMapping("/child/list")
+	   public String list(Criteria cri,Model model) {
+	      List<ChildBoardVO> cl=service.getChildList(cri);
+	      int total=service.getTotal(cri);
+	      PageDTO paging=new PageDTO(cri, total);
+	      model.addAttribute("list", cl);
+	      model.addAttribute("pageMaker",paging);
+	      
+	      return "childboard/child";
+	   }
+
 
 	@GetMapping("/child/get")
 	public String get(@RequestParam("child_id") Long child_id,Model model) {
