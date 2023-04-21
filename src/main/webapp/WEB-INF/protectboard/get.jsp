@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.time.LocalDateTime" %>
-<%@ page import="com.firstclass.childrenctv.ProtectBoard.ProtectBoardVO" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.time.LocalDateTime"%>
+<%@ page import="com.firstclass.childrenctv.protectBoard.ProtectBoardVO"%>
 
 <%@include file="../layout/header.jsp"%>
 <head>
@@ -8,64 +9,84 @@
 </head>
 
 <center>
-        <table>
-        	<tr>
-                <td>작성자</td>
-                <td>${board.user_loginId}</td> 
-            </tr>
-        	<tr>
-                <td>아동 이름</td>
-                <td>${board.child_name }</td>
-            </tr>
-            <tr>
-                <td>나이</td>
-                <td>${board.child_age }세</td>
-            </tr>
-            <tr>
-                <td>성별</td>
-                <td>${board.child_gender }</td>
-            </tr>
-            <tr>
-                <td>아동 연고지</td>
-                <td>${board.child_hometown }</td>
-            </tr>
-            <tr>
-                <td>아동 목격장소</td>
-                <td>${board.child_findlocation }</td>
-            </tr>
-            <tr>
-                <td>목격 시간</td>
-                <td>${board.protect_time.toString().replace('T', ' ') }</td>
-            </tr>
-            <tr>
-                <td>보호 위치</td>
-                <td>${board.protect_address}</td>
-            </tr>
-            <tr>
-                <td>목격 내용</td>
-                <td><textarea name="protect_content" rows="50" cols="100" readonly="readonly">${board.protect_content }</textarea></td>
-            </tr>
-        </table>
-         <input type="button" value="목록" onclick="location.href='/protectBoard/list'"/>
-		<input type="button" value="수정" onclick="updateDialog()"/>
-         
-          <%
+	<table>
+		<tr>
+			<td>작성자</td>
+			<td>${board.user_loginId}</td>
+		</tr>
+		<tr>
+			<td>아동 이름</td>
+			<td>${board.child_name }</td>
+		</tr>
+		<tr>
+			<td>나이</td>
+			<td>${board.child_age }세</td>
+		</tr>
+		<tr>
+			<td>성별</td>
+			<td>${board.child_gender }</td>
+		</tr>
+		<tr>
+			<td>아동 연고지</td>
+			<td>${board.child_hometown }</td>
+		</tr>
+		<tr>
+			<td>아동 목격장소</td>
+			<td>${board.child_findlocation }</td>
+		</tr>
+		<tr>
+			<td>목격 시간</td>
+			<td>${board.protect_time.toString().replace('T', ' ') }</td>
+		</tr>
+		<tr>
+			<td>보호 위치</td>
+			<td>${board.protect_address}</td>
+		</tr>
+		<tr>
+			<td>목격 내용</td>
+			<td><textarea name="protect_content" rows="50" cols="100"
+					readonly="readonly">${board.protect_content }</textarea></td>
+		</tr>
+	</table>
+	<input type="button" value="목록"
+		onclick="location.href='/protectBoard/list'" /> <input type="button"
+		value="수정" onclick="updateDialog()" />
+
+	<%
 			HttpSession userSession = request.getSession();
   			UserVO userInfo = (UserVO) userSession.getAttribute("user");
   			ProtectBoardVO protectboard = (ProtectBoardVO)request.getAttribute("board");
          	if(userInfo != null){
         		if(userInfo.getUser_grade().equalsIgnoreCase("admin")){
          %>
-         <input type="submit" value="글삭제" onclick="deleteBoard()"/>
-         <%
+	<input type="submit" value="글삭제" onclick="deleteBoard()" />
+	<%
         		}
          	}
          %>
-         
-         
-         
+
+
+	<div id="matchListDiv">
+		<table>
+			<tr>
+				<th>실종 아동 이름</th>
+				<th>현재 나이</th>
+				<th>성별</th>
+				<!-- 추가적인 테이블 헤더 항목들 -->
+			</tr>
+			<c:forEach var="matchList" items="${matchList }">
+				<tr>
+					<td><c:out value="${matchList.child_name }"/></td>
+					<td><c:out value="${matchList.child_curage }"/></td>
+					<td><c:out value="${matchList.child_gender }"/></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+
+
 </center>
-  
+
 <script>
 function deleteBoard() {
     if (confirm("글을 삭제하시겠습니까?")) {
@@ -106,6 +127,8 @@ function updateDialog() {
     }
 }
 </script>
+
+
 
 
 <%@ include file="../layout/footer.jsp"%>

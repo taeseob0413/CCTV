@@ -14,4 +14,6 @@ public interface ChildBoardMapper {
 	
 	public void insert(ChildBoardVO child);
 	
+	public List<ChildBoardVO> matching(String child_name, String child_gender, Long top_age, Long bottom_age);
+	
 }

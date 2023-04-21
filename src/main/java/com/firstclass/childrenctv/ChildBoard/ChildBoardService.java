@@ -13,4 +13,6 @@ public interface ChildBoardService {
 	void insert(ChildBoardVO child);
 	
 	public void register(ChildBoardVO child);
+	
+	public List<ChildBoardVO> matching(String child_name, String child_gender, Long child_age);
 }

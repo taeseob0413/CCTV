@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.firstclass.childrenctv.ProtectBoard.ProtectBoardMapper">
+<mapper namespace="com.firstclass.childrenctv.protectBoard.ProtectBoardMapper">
 
 <insert id="insert">
 insert into ProtectBoard_table(protect_id, child_name, child_age, child_gender, child_hometown, child_findlocation, protect_address, protect_time, protect_content, user_phone, user_loginId, child_id, password)
@@ -11,19 +11,19 @@ values(seq_protectboard.nextval, #{child_name}, #{child_age}, #{child_gender}, #
 update Protectboard_table set child_name =#{child_name}, child_age =#{child_age}, child_gender =#{child_gender}, child_hometown=#{child_hometown}, child_findlocation=#{child_findlocation}, protect_time =#{protect_time}, protect_address =#{protect_address}, protect_content =#{protect_content}, user_phone=#{user_phone} where protect_id = #{protect_id}
 </update>
 
-<select id="get" resultType ="com.firstclass.childrenctv.ProtectBoard.ProtectBoardVO">
+<select id="get" resultType ="com.firstclass.childrenctv.protectBoard.ProtectBoardVO">
 select * from ProtectBoard_table where protect_id = #{protect_id} AND approval =1
 </select>
 
-<select id="getAll" resultType="com.firstclass.childrenctv.ProtectBoard.ProtectBoardVO">
+<select id="getAll" resultType="com.firstclass.childrenctv.protectBoard.ProtectBoardVO">
 select * from ProtectBoard_table where approval =1
 </select>
 
-<select id="getByUser" resultType="com.firstclass.childrenctv.ProtectBoard.ProtectBoardVO">
+<select id="getByUser" resultType="com.firstclass.childrenctv.protectBoard.ProtectBoardVO">
 select * from ProtectBoard_table where user_loginId= #{user_loginId} AND approval =1
 </select>
 
-<select id="getByAddress" resultType="com.firstclass.childrenctv.ProtectBoard.ProtectBoardVO">
+<select id="getByAddress" resultType="com.firstclass.childrenctv.protectBoard.ProtectBoardVO">
 select * from ProtectBoard_table where protect_addres like '%'||#{address}||'%'
 </select>
 
