@@ -1,16 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@include file="../layout/header.jsp"%>
 
 <head>
 <style>
-h1 {
-	color: #667632;
-	font-family: serif;
-	font-weight: bold;
-	font-size: 30px;
-}
+	.page-header {
+		color: #667632;
+		font-family: 'RIDIBatang';
+		src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-size: 30px;
+	}
+    table#childinfo{
+      font-family: 'RIDIBatang';
+	  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+	  font-weight: normal;
+	  font-style: normal;
+      width: 100%;
+      border: 2px solid #C1D387;  
+      border-collapse: collapse;
+      padding: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      }
+     table#childinfo th{
+      border: 2px solid #C1D387;
+      text-align: center;
+      }
+     table#childinfo td{
+      border: 2px solid #C1D387;
+      text-align: center;
+      }
 </style>
 </head>
 <center>
@@ -30,7 +53,7 @@ h1 {
 
 				<!-- /.panel-heading -->
 				<div class="panel-body">
-					<table class="table table-striped table-bordered table-hover">
+					<table class="table table-striped table-bordered table-hover", id="childinfo">
 						<thead>
 							<tr>
 								<th>사진</th>
@@ -39,14 +62,17 @@ h1 {
 
 								<th>이름</th>
 
-								<th>나이</th>
+								<th>현재 나이</th>
 
+                                <th>실종 나이</th>
+                                
 								<th>성별</th>
 
 								<th>실종 일자</th>
-
-								<th>키</th>
-
+                                
+                                <th>특징</th>
+								
+								<th>외형</th>
 							</tr>
 						</thead>
 
@@ -55,18 +81,21 @@ h1 {
 							<td><img src="${child.child_img}" alt="My Image" width="150"
 								height="150"></td>
 
-							<td>${child.getChild_location()}</td>
+							<td>${child.child_location}</td>
 
 							<td>${child.child_name}</td>
 
 							<td>${child.child_curage}</td>
 
+                            <td>${child.child_occage}</td>
+                            
 							<td>${child.child_gender}</td>
 
-							<td>${child.child_time}</td>
+							<td>${fn:replace(fn:substring(child.child_time, 0, 4), "-", "")}-${fn:replace(fn:substring(child.child_time, 4, 6), "-", "")}-${fn:replace(fn:substring(child.child_time, 6, 8), "-", "")}</td>
 
-							<td>${child.child_height}</td>
-
+                            <td>${child.child_feature}</td>
+                            
+                            <td>${child.child_outfit}</td>
 						</tr>
 
 					</table>
