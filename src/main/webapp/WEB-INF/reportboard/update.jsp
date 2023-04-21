@@ -17,16 +17,21 @@
 %>
 	
 <center>
-    <h1>실종 아동 제보 글 작성</h1>
+    <h1>실종 아동 목격 제보</h1>
 
-    <form action="/reportBoard/update" method="post">
+    <form action="/reportBoard/update" method="post" id="registerform">
     	<input type="hidden" name="child_id" value="${board.child_id }"/>
-    	<input type="hidden" name="user_id" value="${board.user_id }"/>
+    	<input type="hidden" name="child_name" value="${board.child_name }"/>
+    	<input type="hidden" name="child_age" value="${board.child_age }"/>
+    	<input type="hidden" name="child_gender" value="${board.child_gender }"/>
     	<input type="hidden" name="report_id" value="${board.report_id }"/>
+    	<input type="hidden" name="user_loginId" value="${board.user_loginId }"/>
+    	<input type="hidden" name="password" value="${board.password }"/>
+    	<input type="hidden" name="approval" value="${board.approval }"/>
         <table>
         	<tr>
                 <td>작성자</td>
-                <td>${board.user_id }</td>
+                <td>${board.user_loginId }</td>
             </tr>
         	<tr>
                 <td>아동 이름</td>
@@ -42,7 +47,7 @@
             </tr>
             <tr>
                 <td>목격 시간</td>
-                <td><input type="date" name="report_time" value="${board.report_time}"></td>
+                <td><input type="datetime-local" name="report_time" value="${board.report_time}"></td>
             </tr>
             <tr>
                 <td>목격 위치</td>
@@ -53,17 +58,30 @@
                 <td><textarea name="report_content" rows="50" cols="100">${board.report_content }</textarea></td>
             </tr>
         </table>
-        <input type="submit" value="수정완료" onclick="showModal()">
+        <input type="submit" value="수정완료" onclick="return submitForm()">
         <input type="button" value="취소" onclick="location.href='get?report_id=${board.report_id}'"/>
     </form>
 </center>
 
 
 <script>
-function showModal() {
- alert('수정 완료!')
+
+function submitForm() {
+    // 입력값이 없는 경우 submit 방지
+    if (document.getElementsByName("report_time")[0].value.trim() === "" ||
+        document.getElementsByName("report_address")[0].value.trim() === "" ||
+        document.getElementsByName("report_content")[0].value.trim() === "" ||
+        document.getElementsByName("password")[0].value.trim() === "") {
+        alert("모든 항목을 입력해주세요.");
+        return false;
+    }
+    alert('수정완료!')
+    return true;
 }
 </script>
+
+
+
 
 
 <%@ include file="../layout/footer.jsp"%>

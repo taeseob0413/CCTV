@@ -8,11 +8,15 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ChildBoardService {
 		
-	// List<ChildBoardVO> getChildAddr(String child_location);
+	List<ChildBoardVO> getChildAddr(String child_location);
 	
-	List<ChildBoardVO> getList(Criteria cri); //목록
+	List<ChildBoardVO> getChild();
 	
-	ChildBoardVO get(Long child_id); //상세
+	ChildBoardVO getChildId(Long id);
 	
-	//void insert(List<ChildBoardVO> childEntityList);
+	//List<ChildBoardVO> getList(Criteria cri); //목록
+	
+	public void register(ChildBoardVO child);
+	
+	void insert(ChildBoardVO child);
 }

@@ -3,12 +3,12 @@
 <mapper namespace="com.firstclass.childrenctv.ProtectBoard.ProtectBoardMapper">
 
 <insert id="insert">
-insert into ProtectBoard_table(protect_id, child_name, child_age, child_gender, child_hometown, protect_address, protect_time, protect_content, user_id, user_phone, user_loginId, child_id, password)
-values(seq_protectboard.nextval, #{child_name}, #{child_age}, #{child_gender}, #{child_hometown}, #{protect_address}, #{protect_time}, #{protect_content}, #{user_id}, #{user_phone}, #{user_loginId}, #{child_id}, #{password})
+insert into ProtectBoard_table(protect_id, child_name, child_age, child_gender, child_hometown, child_findlocation, protect_address, protect_time, protect_content, user_phone, user_loginId, child_id, password)
+values(seq_protectboard.nextval, #{child_name}, #{child_age}, #{child_gender}, #{child_hometown}, #{child_findlocation}, #{protect_address}, #{protect_time}, #{protect_content}, #{user_phone}, #{user_loginId}, #{child_id}, #{password})
 </insert>
 
 <update id="update">
-update Protectboard_table set child_name =#{child_name}, child_age =#{child_age}, child_gender =#{child_gender}, child_hometown=#{child_hometown}, protect_time =#{protect_time}, protect_address =#{protect_address}, protect_content =#{protect_content}, user_id=#{user_id}, user_phone=#{user_phone}, user_loginId=#{user_loginId} where protect_id = #{protect_id}
+update Protectboard_table set child_name =#{child_name}, child_age =#{child_age}, child_gender =#{child_gender}, child_hometown=#{child_hometown}, child_findlocation=#{child_findlocation}, protect_time =#{protect_time}, protect_address =#{protect_address}, protect_content =#{protect_content}, user_phone=#{user_phone} where protect_id = #{protect_id}
 </update>
 
 <select id="get" resultType ="com.firstclass.childrenctv.ProtectBoard.ProtectBoardVO">
@@ -20,19 +20,16 @@ select * from ProtectBoard_table where approval =1
 </select>
 
 <select id="getByUser" resultType="com.firstclass.childrenctv.ProtectBoard.ProtectBoardVO">
-select * from ProtectBoard_table where user_id = #{user_id} AND approval =1
+select * from ProtectBoard_table where user_loginId= #{user_loginId} AND approval =1
 </select>
 
 <select id="getByAddress" resultType="com.firstclass.childrenctv.ProtectBoard.ProtectBoardVO">
 select * from ProtectBoard_table where protect_addres like '%'||#{address}||'%'
 </select>
 
-<delete id="deleteProtectBoard"> 
+<delete id="delete"> 
 delete Protectboard_table where protect_id =#{protect_id}
 </delete>
 
-<select id="getLoginId">
-select user_loginId from user_table where user_id =#{user_id}
-</select>
 
 </mapper>

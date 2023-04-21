@@ -18,29 +18,34 @@ public class ChildBoardServiceImpl implements ChildBoardService {
    private ChildBoardMapper mapper;
 
 
-  // @Override
-  // public List<ChildBoardVO> getChildAddr(String child_location) {
-	//   return mapper.getChildAddr(child_location);
+  @Override
+  public List<ChildBoardVO> getChildAddr(String child_location) {
+	 return mapper.getChildAddr(child_location);
 
-  // }
-
-   @Override
-   public List<ChildBoardVO> getList(Criteria cri) {
-      // TODO Auto-generated method stub
-      return mapper.getListWithPaging(cri);
    }
 
-	
    @Override
-   public ChildBoardVO get(Long child_id) {
+   public List<ChildBoardVO> getChild() {
       // TODO Auto-generated method stub
-      return mapper.read(child_id);
+      return mapper.getChild();
    }
    
-   //@Override
-   //public void insert(List<ChildBoardVO> childEntityList) {
-     // mapper.insert(childEntityList);
+   @Override
+   public ChildBoardVO getChildId(Long id) {
+      // TODO Auto-generated method stub
+      return mapper.getChildId(id);
+   }
+   
+   @Override
+   public void insert(ChildBoardVO child) {
+      mapper.insert(child);
       
+   }
    
+   @Override
+   public void register(ChildBoardVO child) {
+	   mapper.insert(child);
+
+   }
 
 }

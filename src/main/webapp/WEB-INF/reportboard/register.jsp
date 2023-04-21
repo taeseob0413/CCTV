@@ -11,24 +11,21 @@
 	Long userId = null;
 	if(userInfo != null){
 		userLoginId =userInfo.getUser_loginID();
-		userId = userInfo.getUser_id();
 	}
 	else{
 		userLoginId = "익명";
-		userId = 0L;
 	}
 %>
 
 <center>
-    <h1>실종 아동 제보 글 작성</h1>
+    <h1>실종 아동 목격 제보</h1>
 
     <form action="/reportBoard/register" method="post" id="registerform">
-    	<input type="hidden" name = "child_id" value="${child_id}">
+    	<input type="hidden" name = "child_id" value="${child.child_id}">
     	<input type="hidden" name= "user_loginId" value= <%= userLoginId %>>
-    	<input type="hidden" name= "user_id" value=<%= userId %>>
-    	<input type="hidden" name= "child_name" value="데이터">
-    	<input type="hidden" name = "child_age" value="11">
-    	<input type="hidden" name = "child_gender" value="데이터">
+    	<input type="hidden" name= "child_name" value="${child.child_name }">
+    	<input type="hidden" name = "child_age" value="${child.child_curage }">
+    	<input type="hidden" name = "child_gender" value="${child.child_gender }">
     	
         <table>
         	<tr>
@@ -37,7 +34,7 @@
             </tr>
         	<tr>
                 <td>아동 이름</td>
-                <td><!-- ${child.child_name }--></td>
+                <td>${child.child_name }</td>
             </tr>
             <tr>
                 <td>목격 시간</td>
@@ -57,20 +54,12 @@
             </tr>
         </table>
         <input type="submit" id="mysubmit" value="작성완료" onclick="return submitForm()"/>
-        <input type="button" value="취소" onclick="location.href='list?child_id=${child_id}'"/>
+        <input type="button" value="취소" onclick="location.href='/child/get?child_id=${child.child_id}'"/>
     </form>
 </center>
 
 
 <script>
-//예외값 처리하는 script
-function checkNumberLength(input) {
-  if (input.value.length > 2) {
-    alert("나이는 최대 2자리까지 입력 가능합니다.");
-    input.value = input.value.slice(0, 2);
-  }
-}
-
 function checkPwLength(input) {
 	  if (input.value.length > 10) {
 	    alert("비밀번호는 10자리 이하로 입력해주세요.");
@@ -90,14 +79,17 @@ document.getElementById("registerform").addEventListener("keydown", function(eve
 <script>
 
 function submitForm() {
-	  // 폼 서브밋 전에 비밀번호 값이 있는지 확인
-	  var passwordInput = document.getElementsByName("password")[0];
-	  if (passwordInput.value.length === 0) {
-	    alert("비밀번호를 입력해주세요.");
-	    return false; // 서브밋 중지
-	  }
-	  return true; // 서브밋 실행
-	}
+    // 입력값이 없는 경우 submit 방지
+    if (document.getElementsByName("report_time")[0].value.trim() === "" ||
+        document.getElementsByName("report_address")[0].value.trim() === "" ||
+        document.getElementsByName("report_content")[0].value.trim() === "" ||
+        document.getElementsByName("password")[0].value.trim() === "") {
+        alert("모든 항목을 입력해주세요.");
+        return false;
+    }
+    alert('관리자 승인 후 게시됩니다.')
+    return true;
+}
 </script>
 
 

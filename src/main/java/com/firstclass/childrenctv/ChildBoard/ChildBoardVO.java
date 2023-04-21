@@ -1,13 +1,8 @@
 package com.firstclass.childrenctv.ChildBoard;
 
 
-import java.util.List;
-
-import org.springframework.stereotype.Repository;
-
 import lombok.Data;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Data
