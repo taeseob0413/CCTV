@@ -1,0 +1,27 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.firstclass.childrenctv.familyRelation.FamilyRelationMapper">
+
+   <insert id="save" parameterType="com.firstclass.childrenctv.familyRelation.FamilyRelationVO">
+        INSERT INTO FAMILY_RELATION_TABLE(id, user_id, child_id, approval)
+            VALUES (seq_familyRelation.NEXTVAL, #{user_id}, #{child_id}, #{approval})
+    </insert>
+  	
+    <select id="findRelationByChild" parameterType="java.lang.Long"
+            resultType="com.firstclass.childrenctv.familyRelation.FamilyRelationVO">
+        SELECT * FROM FAMILY_RELATION_TABLE WHERE child_id = #{child_id}
+    </select>
+
+    <select id="findRelationByUser" parameterType="java.lang.Long"
+            resultType="com.firstclass.childrenctv.familyRelation.FamilyRelationVO">
+        SELECT * FROM FAMILY_RELATION_TABLE WHERE user_id = #{user_id}
+    </select>
+
+    <update id="approval" parameterType="java.lang.Long">
+        UPDATE FAMILY_RELATION_TABLE SET approval = 1 WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        DELETE FAMILY_RELATION_TABLE WHERE id = #{id}
+    </delete>
+</mapper>
