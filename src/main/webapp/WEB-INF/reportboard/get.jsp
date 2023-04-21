@@ -5,43 +5,48 @@
 
 <%@include file="../layout/header.jsp"%>
 <head>
-<link rel="stylesheet" href="/resources/css/reportboard_get_style.css">
+<link rel="stylesheet" href="/resources/css/protectBoard_get.css">
 </head>
 
 <center>
-	<h1>실종 아동 목격 제보</h1>
-
-	<table>
-		<tr>
-			<td>작성자</td>
-			<td>${board.user_loginId}</td>
-		</tr>
-		<tr>
-			<td>아동 이름</td>
-			<td>${board.child_name }</td>
-		</tr>
-		<tr>
-			<td>나이</td>
-			<td>${board.child_age }세</td>
-		</tr>
-		<tr>
-			<td>성별</td>
-			<td>${board.child_gender }</td>
-		</tr>
-		<tr>
-			<td>목격 시간</td>
-			<td>${board.report_time.toString().replace('T', ' ') }</td>
-		</tr>
-		<tr>
-			<td>목격 위치</td>
-			<td>${board.report_address}</td>
-		</tr>
-		<tr>
-			<td>목격 내용</td>
-			<td><textarea name="report_content" rows="50" cols="100"
-					readonly="readonly">${board.report_content }</textarea></td>
-		</tr>
-	</table>
+	<div id="ContentArea">
+		<div id="InnerArea">
+			<div id="title">실종 아동 목격 정보</div>
+			<div>
+				<table>
+					<tr>
+						<td id="attribute">작성자</td>
+						<td>${board.user_loginId}</td>
+					</tr>
+					<tr>
+						<td id="attribute">아동 이름</td>
+						<td>${board.child_name }</td>
+					</tr>
+					<tr>
+						<td id="attribute">나이</td>
+						<td>${board.child_age }세</td>
+					</tr>
+					<tr>
+						<td id="attribute">성별</td>
+						<td>${board.child_gender }</td>
+					</tr>
+					<tr>
+						<td id="attribute">목격 시간</td>
+						<td>${board.report_time.toString().replace('T', ' ') }</td>
+					</tr>
+					<tr>
+						<td id="attribute">목격 위치</td>
+						<td>${board.report_address}</td>
+					</tr>
+					<tr>
+						<td id="attribute">목격 내용</td>
+						<td><textarea name="report_content" rows="20" cols="100"
+								readonly="readonly">${board.report_content }</textarea></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 	<input type="button" value="목록"
 		onclick="location.href='/child/get?child_id=${board.child_id}'" /> <input
 		type="button" value="수정" onclick="updateDialog()" />
@@ -53,8 +58,7 @@
          	if(userInfo != null){
         		if(userInfo.getUser_grade().equalsIgnoreCase("admin")){
          %>
-	<input type="submit" value="글삭제"
-		onclick="deletePost(${board.report_id})" />
+	<input type="submit" value="글삭제" onclick="deletePost(${board.report_id})" />
 	<%
         		}
          	}

@@ -1,15 +1,11 @@
 package com.firstclass.childrenctv.protectBoard;
 
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.firstclass.childrenctv.ChildBoard.ChildBoardService;
-import com.firstclass.childrenctv.ChildBoard.ChildBoardVO;
 
 import lombok.AllArgsConstructor;
 
@@ -18,7 +14,7 @@ import lombok.AllArgsConstructor;
 public class ProtectBoardController {
 
 	private ProtectBoardService boardService;
-	private ChildBoardService childService;
+	
 	
 	@GetMapping("/protectBoard/list")
 	public String protectBoardlist(Model model) {
