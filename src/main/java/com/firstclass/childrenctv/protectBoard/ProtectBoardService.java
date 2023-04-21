@@ -12,4 +12,6 @@ public interface ProtectBoardService {
 	public List<ProtectBoardVO> getByAddress(String address);	//지역별 글 보기
 	public void delete(Long protect_id);		//보호 글 삭제
 	
+	public List<Long> getProtectByChild(Long child_id);
+	
 }

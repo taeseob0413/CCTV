@@ -19,7 +19,7 @@ public interface ChildBoardMapper {
    
    public int getTotal(Criteria cri);
    
-   public List<ChildBoardVO> matching(String child_name, String child_gender, Long top_age, Long bottom_age);
+   public List<Long> matching(String child_name, String child_gender, int top_age, int bottom_age);
 }
 	
 

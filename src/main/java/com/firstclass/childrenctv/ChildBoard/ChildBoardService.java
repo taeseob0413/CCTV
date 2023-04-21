@@ -16,7 +16,5 @@ public interface ChildBoardService {
 	   void insert(List<ChildBoardVO> childList);
 	   
 	   public int getTotal(Criteria cri);
-	
-	   public List<ChildBoardVO> matching(String child_name, String child_gender, Long child_age);
 
 }

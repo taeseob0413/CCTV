@@ -52,13 +52,5 @@ public class ChildBoardServiceImpl implements ChildBoardService {
    public int getTotal(Criteria cri) {
       return mapper.getTotal(cri);
    }
-   
-   @Override
-   public List<ChildBoardVO> matching(String child_name, String child_gender, Long child_age){
-	   Long top_age = child_age+10;
-	   Long bottom_age = child_age-10;
-	   System.out.println("서비스단에서 정보!!!" +child_name+child_gender +top_age+bottom_age );
-	   return mapper.matching(child_name, child_gender, top_age, bottom_age);
-   }
 
 }

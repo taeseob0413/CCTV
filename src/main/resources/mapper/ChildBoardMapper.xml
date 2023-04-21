@@ -57,8 +57,8 @@
        child_id>0
     </select>
     
-    <select id="matching" resultType="com.firstclass.childrenctv.ChildBoard.ChildBoardVO">
-    	select * from childboard_table
+    <select id="matching" resultType="Long">
+    	select child_id from childboard_table
     	where child_name=#{child_name} 
     	AND child_curage &lt; #{top_age} AND child_curage &gt; #{bottom_age}
     	AND child_gender = #{child_gender} 

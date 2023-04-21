@@ -40,8 +40,8 @@
             <tr>
                 <td>아동 성별</td>
                 <td>
-                	<input type="radio" name="child_gender" value="남성" ${board.child_gender == '남성' ? 'checked' : ''}>남성
-                	<input type="radio" name="child_gender" value="여성" ${board.child_gender == '여성' ? 'checked' : ''}>여성
+                	<input type="radio" name="child_gender" value="남성" ${board.child_gender == '남자' ? 'checked' : ''}>남자
+                	<input type="radio" name="child_gender" value="여성" ${board.child_gender == '여자' ? 'checked' : ''}>여자
                 </td>
             </tr>
             <tr>

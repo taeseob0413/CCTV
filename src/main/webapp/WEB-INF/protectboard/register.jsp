@@ -22,7 +22,6 @@
     	<input type="hidden" name = "child_id" value="0">
     	<input type="hidden" name= "user_loginId" value= <%= userLoginId %>>
     	
-    	
         <table>
         	<tr>
                 <td>작성자</td>
@@ -43,8 +42,8 @@
             <tr>
                 <td>아동 성별</td>
                 <td>
-                	<input type="radio" name="child_gender" value="남성">남성
-                	<input type="radio" name="child_gender" value="여성">여성
+                	<input type="radio" name="child_gender" value="남자">남자
+                	<input type="radio" name="child_gender" value="여자">여자
                 </td>
             </tr>
             <tr>

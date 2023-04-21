@@ -43,9 +43,7 @@ public class ProtectBoardController {
 	@GetMapping("/protectBoard/get")
 	public String protectboardget(@RequestParam("protect_id") Long protect_id, Model model) {
 		ProtectBoardVO board = boardService.get(protect_id);
-		Long child_age = Long.valueOf(board.getChild_age());
 		model.addAttribute("board", board);
-		model.addAttribute("matchList", childService.matching(board.getChild_name(), board.getChild_gender(),child_age));
 		System.out.println("GET 컨트롤러 왔다!!");
 		if(boardService.get(protect_id) != null) {
 			return "protectboard/get";

@@ -31,5 +31,21 @@ select * from ProtectBoard_table where protect_addres like '%'||#{address}||'%'
 delete Protectboard_table where protect_id =#{protect_id}
 </delete>
 
+<insert id="insertPR">
+insert into protectRelation (pr_id, protect_id, child_id)
+values(seq_pr.nextval, #{protect_id}, #{child_id})
+</insert>
+
+<select id="getNotPR" resultType="Long">
+select protect_id from ProtectBoard_table where ispr =0
+</select>
+
+<update id="doPR">
+update ProtectBoard_table set ispr=1 where protect_id=#{protect_id}
+</update>
+
+<select id="getProtectByChild" resultType="Long">
+select protect_id from ProtectRelation where child_id = #{child_id}
+</select>
 
 </mapper>

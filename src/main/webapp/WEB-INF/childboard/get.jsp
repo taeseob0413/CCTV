@@ -106,6 +106,7 @@
 	<div>
 		<h1>실종 아동 목격 제보 게시판</h1>
 	</div>
+	<div>
 	<table>
 		<tr>
 			<th>글 번호</th>
@@ -134,6 +135,39 @@
 	</table>
 	<input type="button" value="제보" onClick="goToRegisterPage(${child.child_id})">
 
+	</div>
+	<div>
+		<h1>보호중인 유사 아동</h1>
+	</div>
+	<div>
+	<table>
+		<tr>
+			<th>글 번호</th>
+			<th>목격 시간</th>
+			<th>목격 장소</th>
+			<th>작성자</th>
+		</tr>
+		<%-- 게시글 리스트를 반복해서 출력 --%>
+
+		<c:forEach var="protectboard" items="${protect}">
+			<tr>
+				<td><a
+					href="/protectBoard/get?protect_id=${protectboard.protect_id}"><c:out
+							value="${protectboard.protect_id}" /></a></td>
+				<td><a
+					href="/protectBoard/get?protect_id=${protectboard.protect_id}"><c:out
+							value="${protectboard.protect_time.toString().replace('T', ' ')}" /></a></td>
+				<td><a
+					href="/protectBoard/get?protect_id=${protectboard.protect_id}"><c:out
+							value="${protectboard.protect_address}" /></a></td>
+				<td><a
+					href="/protectBoard/get?protect_id=${protectboard.protect_id}"><c:out
+							value="${protectboard.user_loginId}" /></a></td>
+			</tr>
+		</c:forEach>
+	</table>
+	
+	</div>
 </center>
 
 <script>
