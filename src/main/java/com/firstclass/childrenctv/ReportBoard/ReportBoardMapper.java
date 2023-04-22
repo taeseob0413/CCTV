@@ -11,8 +11,7 @@ public interface ReportBoardMapper {
 	public void update(ReportBoardVO board);
 	public ReportBoardVO get(Long report_id);
 	public List<ReportBoardVO> getByChild(Long child_id);
-	public List<ReportBoardVO> getByUser(Long user_id);
-	public String getLoginId(Long user_id);
+	public List<ReportBoardVO> getByUser(String user_loginId);
 	
 	public void deleteReportBoard(Long report_id);
 	

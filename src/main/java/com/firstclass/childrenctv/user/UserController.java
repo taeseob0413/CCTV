@@ -2,19 +2,27 @@ package com.firstclass.childrenctv.user;
 
 import com.firstclass.childrenctv.response.BaseResponse;
 import com.firstclass.childrenctv.user.dto.LoginDTO;
+import com.firstclass.childrenctv.util.GmailServiceImpl;
+
+import ch.qos.logback.core.util.SystemInfo;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j;
 import oracle.jdbc.proxy.annotation.Post;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
 public class UserController {
-    private final UserService userService;
-
+	
+   private final UserService userService;
+   
     @PostMapping("/user/login")
     public BaseResponse login(HttpServletRequest request, @RequestBody LoginDTO loginDTO){
         UserVO user = userService.signIn(loginDTO.getEmail(), loginDTO.getPassword());

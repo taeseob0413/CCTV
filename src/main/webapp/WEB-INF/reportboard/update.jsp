@@ -12,7 +12,7 @@
 		userLoginId =userInfo.getUser_loginID();
 	}
 	else{
-		userLoginId = "None";
+		userLoginId = "익명";
 	}
 %>
 	
@@ -21,16 +21,33 @@
 
     <form action="/reportBoard/update" method="post">
     	<input type="hidden" name="child_id" value="${board.child_id }"/>
-    	<input type="hidden" name="user_id" value="${board.user_id }"/>
+    	<input type="hidden" name="child_name" value="${board.child_name }"/>
+    	<input type="hidden" name="child_age" value="${board.child_age }"/>
+    	<input type="hidden" name="child_gender" value="${board.child_gender }"/>
     	<input type="hidden" name="report_id" value="${board.report_id }"/>
+    	<input type="hidden" name="user_loginId" value="${board.user_loginId }"/>
+    	<input type="hidden" name="password" value="${board.password }"/>
+    	<input type="hidden" name="approval" value="${board.approval }"/>
         <table>
+        	<tr>
+                <td>작성자</td>
+                <td>${board.user_loginId }</td>
+            </tr>
+        	<tr>
+                <td>아동 이름</td>
+                <td>${board.child_name }</td>
+            </tr>
+            <tr>
+                <td>나이</td>
+                <td>${board.child_age }></td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>${board.child_gender }</td>
+            </tr>
             <tr>
                 <td>목격 시간</td>
                 <td><input type="date" name="report_time" value="${board.report_time}"></td>
-            </tr>
-            <tr>
-                <td>작성자</td>
-                <td><%= userLoginId %></td>
             </tr>
             <tr>
                 <td>목격 위치</td>

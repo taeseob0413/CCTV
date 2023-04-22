@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
+	
+	@GetMapping("/user/join")
+	public String join() {
+		return "/user/JoinUser";
+	}
 
 	@GetMapping("/user/login")
 	public String login(){
@@ -17,25 +22,29 @@ public class HomeController {
     public String home() {
         return "index";
     }
-    
-    @GetMapping("/reportBoard/get")
-    public String get() {
-    	return "reportboard/get";
+
+
+
+    @GetMapping("/find/user/userLoginId")
+    public String findUserLoginId(){
+        return "/user/FindUserLoginId";
     }
-    
-   @GetMapping("/register") //여기를("/reportBoard/register")이거에서 /register로바꿨다가 다시 바꿈
-    public String register() {
-    	return "reportboard/register";
-    }
-   
 
     @GetMapping("/find/user/userPassword")
     public String findUserPassword() {
         return "user/FindUserPassword";
-    }
-  
 
-}
+    } 
+
+    @GetMapping("/user/update") 
+	public String update() {
+		return "/mypage/update1";
+	}
+
+    } 
+
+
+
 
 
 
