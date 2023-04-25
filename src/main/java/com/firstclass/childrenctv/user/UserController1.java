@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.firstclass.childrenctv.ReportBoard.ReportBoardVO;
+import com.firstclass.childrenctv.reportBoard.ReportBoardVO;
 
 import lombok.AllArgsConstructor;
 

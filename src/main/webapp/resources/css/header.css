@@ -33,7 +33,7 @@
 #headerMenuList > li{
     display : inline-block;
     font-size: 35px;
-    padding : 20px;
+    padding : 15px;
     margin : 2px;
     float: left;
 }
