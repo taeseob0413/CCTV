@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.firstclass.childrenctv.Paging.Criteria;
+import com.firstclass.childrenctv.Paging.PageDTO;
 import com.firstclass.childrenctv.ReportBoard.ReportBoardService;
 
 import lombok.AllArgsConstructor;
@@ -39,5 +41,6 @@ public class ChildBoardController {
 		model.addAttribute("report", boardservice.getByChild(child_id));
 		return "childboard/get";
 	}
+	
 	
 }
