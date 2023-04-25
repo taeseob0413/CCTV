@@ -25,8 +25,6 @@ public class ProtectBoardServiceImpl implements ProtectBoardService {
 		int bottom_age = board.getChild_age()-10;
 		List<Long> matchingList =childMapper.matching(board.getChild_name(), board.getChild_gender(), top_age, bottom_age);	//matching하는 childId값을 List로 반환
 		if(matchingList.size() !=0) {
-			System.out.println("여기까지는 했냐????????????????????");
-			System.out.println("여자 아이디는???????" +matchingList.get(0));
 			for(int i=0; i<matchingList.size(); i++) {
 				protectMapper.insertPR(protect_id, matchingList.get(i));
 			}

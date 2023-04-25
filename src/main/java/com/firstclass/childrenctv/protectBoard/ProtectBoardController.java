@@ -17,19 +17,19 @@ public class ProtectBoardController {
 	
 	
 	@GetMapping("/protectBoard/list")
-	public String protectBoardlist(Model model) {
+	public String protectBoardList(Model model) {
 		model.addAttribute("list", boardService.getAll());
 		return "protectboard/list";
 	}
 	
 	@GetMapping("/protectBoard/register")
-	public String protectBoardregister() {
+	public String protectBoardRegister() {
 		
 		return "protectboard/register";
 	}
 	
 	@PostMapping("/protectBoard/register")
-	public String protectboardregister(ProtectBoardVO board) {
+	public String protectBoardRegister(ProtectBoardVO board) {
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
 		boardService.insert(board);
 		
@@ -37,7 +37,7 @@ public class ProtectBoardController {
 	}
 	
 	@GetMapping("/protectBoard/get")
-	public String protectboardget(@RequestParam("protect_id") Long protect_id, Model model) {
+	public String protectBoardGet(@RequestParam("protect_id") Long protect_id, Model model) {
 		ProtectBoardVO board = boardService.get(protect_id);
 		model.addAttribute("board", board);
 		System.out.println("GET 컨트롤러 왔다!!");
@@ -50,7 +50,7 @@ public class ProtectBoardController {
 	}
 	
 	@PostMapping("/protectBoard/delete")
-	public String deleteprotectboard(Long protect_id) {
+	public String deleteProtectBoard(Long protect_id) {
 		boardService.delete(protect_id);
 		return "redirect:/protectBoard/list";
 	}

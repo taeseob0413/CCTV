@@ -56,9 +56,8 @@
 			</div>
 		</div>
 	</div>
-	<input type="button" value="목록"
-		onclick="location.href='/protectBoard/list'" /> <input type="button"
-		value="수정" onclick="updateDialog()" />
+	<input type="button" value="목록" onclick="goBack()" /> 
+	<input type="button" value="수정" onclick="updateDialog()" />
 	<%
 				HttpSession userSession = request.getSession();
 				UserVO userInfo = (UserVO) userSession.getAttribute("user");
@@ -74,8 +73,11 @@
 
 </center>
 
-
-
+<script>
+function goBack(){
+	history.back()
+}
+</script>
 
 <script>
 function deleteBoard() {

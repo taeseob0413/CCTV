@@ -42,11 +42,11 @@
             </tr>
             <tr>
                 <td>목격 위치</td>
-                <td><textarea name="report_address" rows="1" cols="100"></textarea></td>
+                <td><textarea name="report_address" rows="1" cols="100" style="font-size:13px;"></textarea></td>
             </tr>
             <tr>
                 <td>목격 내용</td>
-                <td><textarea name="report_content" rows="50" cols="100"></textarea></td>
+                <td><textarea name="report_content" rows="50" cols="100" style="font-size:13px;"></textarea></td>
             </tr>
             <tr>
                 <td>비밀번호</td>

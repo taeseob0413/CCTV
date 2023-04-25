@@ -67,7 +67,7 @@
 		            </tr>
 		            <tr>
 		                <td id="attribute">특이사항</td>
-		                <td><textarea name="protect_content" rows="20" cols="100"></textarea></td>
+		                <td><textarea name="protect_content" rows="13" cols="100" style="font-size:13px;"></textarea></td>
 		            </tr>
 		            <tr>
 		                <td id="attribute">비밀번호</td>
