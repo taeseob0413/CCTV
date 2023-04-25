@@ -72,13 +72,18 @@
         </div>
         <div id="buttonContainer">
 		<input type="submit" value="수정완료" onclick="return validateForm()">
-        <input type="button" value="취소" onclick="location.href='get?protect_id=${board.protect_id}'"/>
+        <input type="button" value="취소" onclick="goBack()"/>
         </div>
     </form>
     </div>
     </div>
 </center>
 
+<script>
+function goBack(){
+	history.back()
+}
+</script>
 
 <script>
 //예외값 처리하는 script

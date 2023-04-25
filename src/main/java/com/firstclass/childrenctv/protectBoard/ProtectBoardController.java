@@ -41,22 +41,9 @@ public class ProtectBoardController {
 	
 	@GetMapping("/protectBoard/get")
 	public String protectBoardGet(@RequestParam("protect_id") Long protect_id, Model model, HttpServletRequest request) {
-		//get 페이지 이전에 어디 page에 있었는지에 따라 다른 attribute 넘기기
-		URI  uri;
-		try {
-			String referringPage = request.getHeader("referer");
-			uri= new URI(referringPage);
-			if(uri.getPath() =="/protectBoard/list") {
-				model.addAttribute("originPage", "protect");
-			}else if(uri.getPath() == "/child/get") {
-				model.addAttribute("originPage", "child");
-			}
-		}catch( URISyntaxException e) {
-			e.printStackTrace();
-		}
+		//상세 글 정보 가져오기
 		ProtectBoardVO board = boardService.get(protect_id);
 		model.addAttribute("board", board);
-		System.out.println("GET 컨트롤러 왔다!!");
 		if(boardService.get(protect_id) != null) {
 			return "protectboard/get";
 		}
