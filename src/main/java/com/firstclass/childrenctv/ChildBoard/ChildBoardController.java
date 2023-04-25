@@ -9,9 +9,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import com.firstclass.childrenctv.protectBoard.ProtectBoardService;
 import com.firstclass.childrenctv.protectBoard.ProtectBoardVO;
 import com.firstclass.childrenctv.reportBoard.ReportBoardService;
+
+import com.firstclass.childrenctv.Paging.Criteria;
+import com.firstclass.childrenctv.Paging.PageDTO;
+
 
 import lombok.AllArgsConstructor;
 
@@ -55,5 +60,6 @@ public class ChildBoardController {
 
 		 return "childboard/get";
 	 }
+	
 	
 }

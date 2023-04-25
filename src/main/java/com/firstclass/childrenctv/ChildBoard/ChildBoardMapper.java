@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.firstclass.childrenctv.Paging.Criteria;
+
 @Mapper
 public interface ChildBoardMapper {
 	
