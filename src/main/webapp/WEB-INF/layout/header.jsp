@@ -4,6 +4,7 @@
 <head>
     <title>CCTV</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/reset.css">
 </head>
     <% UserVO user = (UserVO) session.getAttribute("user");%>
 <body>
@@ -14,8 +15,8 @@
 <div id = "headerMenu">
 <ul id = "headerMenuList">
     <li><a href="/protectBoard/list" >보호신고</a></li>
-    <li>실종 검색</li>
-    <li>안전 지도</li>
+    <li><a href="/child/list" >실종 검색</a></li>
+    <li><a href="/child/list" >안전 지도</a></li>
     <% if(user == null){%>
     <li class ="userMenu" onclick="toLoginPage()">로그인</li>
     <%} else{ %>

@@ -3,9 +3,12 @@
 
 <mapper namespace="com.firstclass.childrenctv.reportBoard.ReportBoardMapper">
 
-<insert id="insert">
-insert into ReportBoard_table(report_id, child_name, child_age, child_gender, report_address, report_time, report_content, user_loginId, child_id, password)
-values(seq_reportboard.nextval, #{child_name}, #{child_age}, #{child_gender}, #{report_address}, #{report_time}, #{report_content}, #{user_loginId}, #{child_id}, #{password})
+<insert id="insert" parameterType="com.firstclass.childrenctv.ReportBoard.ReportBoardVO">
+    insert into ReportBoard_table(report_id, child_name, child_age, child_gender, report_address, report_time, report_content, user_loginId, child_id, password, approval)
+    values(seq_reportboard.nextval, #{child_name}, #{child_age}, #{child_gender}, #{report_address}, #{report_time}, #{report_content}, #{user_loginId}, #{child_id}, #{password}, 1)
+    <selectKey keyProperty="report_id" resultType="Long">
+        SELECT seq_reportboard.CURRVAL FROM DUAL
+    </selectKey>
 </insert>
 
 <select id="get" resultType ="com.firstclass.childrenctv.reportBoard.ReportBoardVO">
