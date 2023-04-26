@@ -16,7 +16,7 @@
 <ul id = "headerMenuList">
     <li><a href="/protectBoard/list" >보호신고</a></li>
     <li><a href="/child/list" >실종 검색</a></li>
-    <li><a href="/child/list" >안전 지도</a></li>
+    <li><a href="/safety/get" >안전 지도</a></li>
     <% if(user == null){%>
     <li class ="userMenu" onclick="toLoginPage()">로그인</li>
     <%} else{ %>

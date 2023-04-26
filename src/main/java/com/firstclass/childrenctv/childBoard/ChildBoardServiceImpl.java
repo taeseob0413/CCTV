@@ -1,10 +1,10 @@
-package com.firstclass.childrenctv.ChildBoard;
+package com.firstclass.childrenctv.childBoard;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.firstclass.childrenctv.Paging.Criteria;
+import com.firstclass.childrenctv.util.paging.Criteria;
 
 import lombok.AllArgsConstructor;
 

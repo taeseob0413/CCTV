@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.firstclass.childrenctv.ChildBoard.ChildBoardMapper;
+import com.firstclass.childrenctv.childBoard.ChildBoardMapper;
 
 import lombok.AllArgsConstructor;
 
