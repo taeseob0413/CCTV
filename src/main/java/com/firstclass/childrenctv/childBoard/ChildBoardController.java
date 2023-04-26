@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.ChildBoard;
+package com.firstclass.childrenctv.childBoard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,8 @@ import com.firstclass.childrenctv.protectBoard.ProtectBoardService;
 import com.firstclass.childrenctv.protectBoard.ProtectBoardVO;
 import com.firstclass.childrenctv.reportBoard.ReportBoardService;
 
-import com.firstclass.childrenctv.Paging.Criteria;
-import com.firstclass.childrenctv.Paging.PageDTO;
+import com.firstclass.childrenctv.util.paging.Criteria;
+import com.firstclass.childrenctv.util.paging.PageDTO;
 
 
 import lombok.AllArgsConstructor;

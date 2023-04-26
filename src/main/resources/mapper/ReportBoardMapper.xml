@@ -3,7 +3,7 @@
 
 <mapper namespace="com.firstclass.childrenctv.reportBoard.ReportBoardMapper">
 
-<insert id="insert" parameterType="com.firstclass.childrenctv.ReportBoard.ReportBoardVO">
+<insert id="insert" parameterType="com.firstclass.childrenctv.reportBoard.ReportBoardVO">
     insert into ReportBoard_table(report_id, child_name, child_age, child_gender, report_address, report_time, report_content, user_loginId, child_id, password, approval)
     values(seq_reportboard.nextval, #{child_name}, #{child_age}, #{child_gender}, #{report_address}, #{report_time}, #{report_content}, #{user_loginId}, #{child_id}, #{password}, 1)
     <selectKey keyProperty="report_id" resultType="Long">

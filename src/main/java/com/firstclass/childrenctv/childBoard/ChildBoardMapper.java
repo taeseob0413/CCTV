@@ -1,10 +1,10 @@
-package com.firstclass.childrenctv.ChildBoard;
+package com.firstclass.childrenctv.childBoard;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.firstclass.childrenctv.Paging.Criteria;
+import com.firstclass.childrenctv.util.paging.Criteria;
 
 @Mapper
 public interface ChildBoardMapper {
