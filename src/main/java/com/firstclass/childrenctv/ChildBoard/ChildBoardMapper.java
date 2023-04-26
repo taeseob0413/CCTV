@@ -8,6 +8,7 @@ import com.firstclass.childrenctv.Paging.Criteria;
 
 @Mapper
 public interface ChildBoardMapper {
+	
    public List<ChildBoardVO> getChildAddr(String child_location);
    
    public List<ChildBoardVO> getChild();
@@ -19,6 +20,8 @@ public interface ChildBoardMapper {
    public List<ChildBoardVO> getChildWithPaging(Criteria cri);
    
    public int getTotal(Criteria cri);
+   
+   public List<Long> matching(String child_name, String child_gender, int top_age, int bottom_age);
 }
 	
 

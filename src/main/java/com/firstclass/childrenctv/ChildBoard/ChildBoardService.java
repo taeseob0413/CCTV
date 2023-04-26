@@ -18,6 +18,5 @@ public interface ChildBoardService {
 	   void insert(List<ChildBoardVO> childList);
 	   
 	   public int getTotal(Criteria cri);
-	   
-	
+
 }

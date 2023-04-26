@@ -55,6 +55,5 @@ public class ChildBoardServiceImpl implements ChildBoardService {
    public int getTotal(Criteria cri) {
       return mapper.getTotal(cri);
    }
-   
 
 }

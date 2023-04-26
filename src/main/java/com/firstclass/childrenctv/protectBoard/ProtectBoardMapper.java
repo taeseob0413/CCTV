@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.ProtectBoard;
+package com.firstclass.childrenctv.protectBoard;
 
 import java.util.List;
 
@@ -15,5 +15,9 @@ public interface ProtectBoardMapper {
 	public List<ProtectBoardVO> getByAddress(String address);
 	public void delete(Long protect_id);
 	
+	public void insertPR(Long protect_id, Long child_id);
+	public Long getNotPR();
+	public void doPR(Long protect_id);
+	public List<Long> getProtectByChild(Long child_id);
 	
 }

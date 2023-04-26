@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.ReportBoard;
+package com.firstclass.childrenctv.reportBoard;
 
 import java.util.List;
 
@@ -38,7 +38,7 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 			try {
 				UserVO user = userMapper.findById(vo.getUser_id());
 				gmailService.send(user.getUser_email(),"[CCTV] 회원님의 실종 아동에 대한 제보가 들어왔습니다."
-						,MailText.getReportNotification(user.getUser_name(),child.getChild_name(), "localhost:8082/reportBoard/get?report_id="+report_id));
+						,MailText.getReportNotification(user.getUser_name(),child.getChild_name(), "localhost:8080/reportBoard/get?report_id="+report_id));
 			}catch (Exception e){
 				e.printStackTrace();
 			}

@@ -5,6 +5,7 @@
 <%@include file="../layout/header.jsp"%>
 
 <head>
+<link rel="stylesheet" href="/resources/css/childBoardList.css">
 <style>
 	.page-header {
 		color: #667632;
@@ -103,9 +104,50 @@
 			</div>
 		</div>
 	</div>
-	<div>
-		<h1>실종 아동 목격 제보 게시판</h1>
+
+
+	<div id="ListArea">
+		<div id="InnerArea">
+			<div id="title">아동 목격 제보</div>
+			<div id="reportButtonContainer">
+				<input type="button" value="제보"
+					onClick="goToRegisterPage(${child.child_id})">
+			</div>
+			<div>
+				<table>
+					<tr>
+						<th>글 번호</th>
+						<th>목격 시간</th>
+						<th>목격 장소</th>
+						<th>작성자</th>
+					</tr>
+					<%-- 게시글 리스트를 반복해서 출력 --%>
+
+					<c:forEach var="reportboard" items="${report}">
+						<tr>
+							<td><a
+								href="/reportBoard/get?report_id=${reportboard.report_id}"><c:out
+										value="${reportboard.report_id}" /></a></td>
+							<td><a
+								href="/reportBoard/get?report_id=${reportboard.report_id}"><c:out
+										value="${reportboard.report_time.toString().replace('T', ' ')}" /></a></td>
+							<td><a
+								href="/reportBoard/get?report_id=${reportboard.report_id}"><c:out
+										value="${reportboard.report_address}" /></a></td>
+							<td><a
+								href="/reportBoard/get?report_id=${reportboard.report_id}"><c:out
+										value="${reportboard.user_loginId}" /></a></td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+		</div>
 	</div>
+
+	<div>
+		<h1>보호중인 유사 아동</h1>
+	</div>
+	<div>
 	<table>
 		<tr>
 			<th>글 번호</th>
@@ -115,25 +157,25 @@
 		</tr>
 		<%-- 게시글 리스트를 반복해서 출력 --%>
 
-		<c:forEach var="reportboard" items="${report}">
+		<c:forEach var="protectboard" items="${protect}">
 			<tr>
 				<td><a
-					href="/reportBoard/get?report_id=${reportboard.report_id}"><c:out
-							value="${reportboard.report_id}" /></a></td>
+					href="/protectBoard/get?protect_id=${protectboard.protect_id}"><c:out
+							value="${protectboard.protect_id}" /></a></td>
 				<td><a
-					href="/reportBoard/get?report_id=${reportboard.report_id}"><c:out
-							value="${reportboard.report_time.toString().replace('T', ' ')}" /></a></td>
+					href="/protectBoard/get?protect_id=${protectboard.protect_id}"><c:out
+							value="${protectboard.protect_time.toString().replace('T', ' ')}" /></a></td>
 				<td><a
-					href="/reportBoard/get?report_id=${reportboard.report_id}"><c:out
-							value="${reportboard.report_address}" /></a></td>
+					href="/protectBoard/get?protect_id=${protectboard.protect_id}"><c:out
+							value="${protectboard.protect_address}" /></a></td>
 				<td><a
-					href="/reportBoard/get?report_id=${reportboard.report_id}"><c:out
-							value="${reportboard.user_loginId}" /></a></td>
+					href="/protectBoard/get?protect_id=${protectboard.protect_id}"><c:out
+							value="${protectboard.user_loginId}" /></a></td>
 			</tr>
 		</c:forEach>
 	</table>
-	<input type="button" value="제보" onClick="goToRegisterPage(${child.child_id})">
-
+	
+	</div>
 </center>
 
 <script>

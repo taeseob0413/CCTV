@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.ReportBoard;
+package com.firstclass.childrenctv.reportBoard;
 
 import com.firstclass.childrenctv.familyRelation.FamilyRelationService;
 import org.springframework.stereotype.Controller;
