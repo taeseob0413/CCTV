@@ -14,7 +14,11 @@
   		insert into user_table(user_id, user_name, user_email, user_loginID, user_password, user_age, user_gender, user_address)
   		values(#{user_id}, #{user_name}, #{user_email}, #{user_loginID}, #{user_password}, #{user_age}, #{user_gender}, #{user_address})
   	</insert>
-  	
+
+    <select id="findById" parameterType="long" resultType="com.firstclass.childrenctv.user.UserVO">
+        SELECT * FROM USER_TABLE WHERE user_id = #{id}
+    </select>
+
     <select id="existUserByIdAndPassword" resultType="com.firstclass.childrenctv.user.UserVO">
         SELECT * FROM USER_TABLE WHERE user_loginID = #{loginId} AND user_password = #{password}
     </select>

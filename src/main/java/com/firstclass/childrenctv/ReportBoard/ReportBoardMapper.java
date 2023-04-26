@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface ReportBoardMapper {
 
-	public void insert(ReportBoardVO board);
+	public Long insert(ReportBoardVO board);
 	public void update(ReportBoardVO board);
 	public ReportBoardVO get(Long report_id);
 	public List<ReportBoardVO> getByChild(Long child_id);

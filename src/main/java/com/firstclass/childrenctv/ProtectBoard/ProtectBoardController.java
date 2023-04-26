@@ -29,6 +29,7 @@ public class ProtectBoardController {
 	@PostMapping("/protectBoard/register")
 	public String protectboardregister(ProtectBoardVO board) {
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
+		board.setApproval(1);
 		boardservice.insert(board);
 		
 		return "redirect:/protectBoard/list";
