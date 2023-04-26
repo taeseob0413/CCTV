@@ -1,12 +1,12 @@
 <br><br>
 
-안녕하세요. <%userName%>님. <br><br>
+안녕하세요. <%userName%>님.<br><br>
 
-<%userName%>님이 찾으시고 계신 아이 <%childName%>에 대한 제보가 들어왔습니다.<br><br>
+<%userName%>님의 비밀번호는 다음과 같습니다.<br><br>
 
 해당 제보에 대한 링크입니다. : <%url%> </a><br><br>
 
-해당 제보를 통해 <%childName%>이 <%userName%>님의 품으로 돌아오길 바라며, <br><br>
+로그인 이후 해당 이메일을 삭제해주시기 바라며, 비밀번호 변경을 권장드립니다.<br><br>
 
 저희 CCTV는 <%childName%>이 최대한 빨리 <%userName%>님의 품으로 돌아갈 수 있도록 <br><br>
 

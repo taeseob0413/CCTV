@@ -3,6 +3,9 @@ package com.firstclass.childrenctv.ChildBoard;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+
+import com.firstclass.childrenctv.Paging.Criteria;
+
 import lombok.AllArgsConstructor;
 
 
