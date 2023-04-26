@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
     void insert(UserVO userVO);    //회원 가입
-    
+    UserVO findById(Long id);
     public int insertSelectKey(UserVO userVO); 
     void delete(Long userId);      //회원 탈퇴
     void update(UserVO userVO);    //회원정보 수정
