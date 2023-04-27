@@ -18,58 +18,58 @@
 %>
 
 <center>
-<div id="title">보호 아동 정보 작성</div>
 	<div id="ContentArea">
+		<div id="InnerArea">
+		<div id="title">보호 아동 정보 작정</div>
 		<div>
 		    <form action="/protectBoard/register" method="post" id="registerform">
 		    	<input type="hidden" name= "user_loginId" value= <%= userLoginId %>>
-		    	<div id="InnerArea">
 		        <table>
 		        	<tr>
-		                <td id="attribute">작성자</td>
+		                <td class="attribute">작성자</td>
 		                <td><%= userLoginId %></td>
 		            </tr>
 		            <tr>
-		                <td id="attribute">작성자 연락처</td>
+		                <td class="attribute">작성자 연락처</td>
 		                <td><input type=text name="user_phone"></td>
 		            </tr>
 		        	<tr>
-		                <td id="attribute">보호 아동 이름</td>
+		                <td class="attribute">보호 아동 이름</td>
 		                <td><input type=text name="child_name"></td>
 		            </tr>
 		            <tr>
-		                <td id="attribute">보호 아동 나이</td>
+		                <td class="attribute">보호 아동 나이</td>
 		                <td><input type=number name="child_age" oninput="checkNumberLength(this)"></td>
 		            </tr>
 		            <tr>
-		                <td id="attribute">아동 성별</td>
+		                <td class="attribute">아동 성별</td>
 		                <td>
 		                	<input type="radio" name="child_gender" value="남자">남자
 		                	<input type="radio" name="child_gender" value="여자">여자
 		                </td>
 		            </tr>
 		            <tr>
-		                <td id="attribute">아동 연고지</td>
+		                <td class="attribute">아동 연고지</td>
 		                <td><textarea name="child_hometown" rows="1" cols="100"></textarea></td>
 		            </tr>
 		            <tr>
-		                <td id="attribute">아동 목격장소</td>
+		                <td class="attribute">아동 목격장소</td>
 		                <td><textarea name="child_findlocation" rows="1" cols="100"></textarea></td>
 		            </tr>
 		            <tr>
-		                <td id="attribute">목격 시간</td>
+		                <td class="attribute">목격 시간</td>
 		                <td><input type="datetime-local" name="protect_time" id="protect_time"></td>
 		            </tr>
 		            <tr>
-		                <td id="attribute">보호 위치</td>
+		                <td class="attribute">보호 위치</td>
 		                <td><textarea name="protect_address" rows="1" cols="100"></textarea></td>
 		            </tr>
 		            <tr>
-		                <td id="attribute">특이사항</td>
-		                <td><textarea name="protect_content" rows="13" cols="100" style="font-size:13px;"></textarea></td>
+		                <td class="attribute">특이사항</td>
+		                <td><textarea name="protect_content" rows="13" cols="100"></textarea></td>
 		            </tr>
 		            <tr>
-		                <td id="attribute">비밀번호</td>
+		                <td class="attribute">비밀번호</td>
 		                <td><input type="text" name="password" oninput="checkPwLength(this)"></td>
 		            </tr>
 		        </table>
@@ -79,8 +79,8 @@
 		        <input type="button" value="취소" onclick="location.href='list'"/>
 		        </div>
 		    </form>
-    	</div>
     	
+    	</div>
     </div>
 </center>
 

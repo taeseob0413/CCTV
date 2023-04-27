@@ -12,8 +12,8 @@ values(seq_protectboard.nextval, #{child_name}, #{child_age}, #{child_gender}, #
 
 <select id="getListWithPaging" resultType="com.firstclass.childrenctv.protectBoard.ProtectBoardVO">
 <![CDATA[
-       select protect_id, child_name, child_age, child_gender, child_hometown, child_findlocation, protect_time, protect_address, protect_content, user_phone, user_loginId, child_id, password, approval
-       from (select /*+ index_desc(protectboard_table pt_pk)*/ rownum rn,protect_id, child_name, child_age, child_gender, child_hometown, child_findlocation, protect_time, protect_address, protect_content, user_phone, user_loginId, child_id, password, approval
+       select protect_id, child_name, child_age, child_gender, child_hometown, child_findlocation, protect_time, protect_address, protect_content, user_phone, user_loginId, password, approval
+       from (select /*+ index_desc(protectboard_table pt_pk)*/ rownum rn,protect_id, child_name, child_age, child_gender, child_hometown, child_findlocation, protect_time, protect_address, protect_content, user_phone, user_loginId, password, approval
              from 
                protectboard_table 
              where 

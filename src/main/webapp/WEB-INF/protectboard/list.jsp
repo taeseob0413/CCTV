@@ -10,14 +10,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="/resources/css/protectBoard_list.css">
-
 </head>
 <center>
 	<div id="ListArea">
 		<div id="InnerArea">
 			<div id="title">보호 아동 제보 게시판</div>
 			<div id="notice">
-				<br> 악의적인 제보 글은 실종 아동을 찾는 데에 심각한 피해를 줄 수 있습니다. <br> 또한,
+				<br> 악의적인 제보 글은 실종 아동을 찾는 데에 심각한 피해를 줄 수 있습니다. <br><br>
 				장난으로 혹은 악의적인 목적으로 제보를 남기는 것은 법적으로 처벌받을 수 있습니다.
 			</div>
 			<div id="reportButtonContainer">
