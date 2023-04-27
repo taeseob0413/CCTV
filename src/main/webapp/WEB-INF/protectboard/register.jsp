@@ -22,7 +22,6 @@
 	<div id="ContentArea">
 		<div>
 		    <form action="/protectBoard/register" method="post" id="registerform">
-		    	<input type="hidden" name = "child_id" value="0">
 		    	<input type="hidden" name= "user_loginId" value= <%= userLoginId %>>
 		    	<div id="InnerArea">
 		        <table>

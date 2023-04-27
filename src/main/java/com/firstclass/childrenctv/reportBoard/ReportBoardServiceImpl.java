@@ -28,7 +28,6 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 	public void insert(ReportBoardVO board) {// 제보 글 등록
 		
 		mapper.insert(board);
-		System.out.println("report_id는?" + board.getReport_id());
 		notify(board.getReport_id(), board.getChild_id());
 	}
 

@@ -2,9 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.firstclass.childrenctv.protectBoard.ProtectBoardMapper">
 
-<insert id="insert">
-insert into ProtectBoard_table(protect_id, child_name, child_age, child_gender, child_hometown, child_findlocation, protect_address, protect_time, protect_content, user_phone, user_loginId, child_id, password)
-values(seq_protectboard.nextval, #{child_name}, #{child_age}, #{child_gender}, #{child_hometown}, #{child_findlocation}, #{protect_address}, #{protect_time}, #{protect_content}, #{user_phone}, #{user_loginId}, #{child_id}, #{password})
+<insert id="insert" parameterType="com.firstclass.childrenctv.protectBoard.ProtectBoardVO">
+insert into ProtectBoard_table(protect_id, child_name, child_age, child_gender, child_hometown, child_findlocation, protect_address, protect_time, protect_content, user_phone, user_loginId, password)
+values(seq_protectboard.nextval, #{child_name}, #{child_age}, #{child_gender}, #{child_hometown}, #{child_findlocation}, #{protect_address}, #{protect_time}, #{protect_content}, #{user_phone}, #{user_loginId}, #{password})
+	<selectKey keyProperty="protect_id" resultType="Long">
+		select seq_protectboard.CURRVAL from dual
+	</selectKey>
 </insert>
 
 <select id="getListWithPaging" resultType="com.firstclass.childrenctv.protectBoard.ProtectBoardVO">
@@ -14,10 +17,7 @@ values(seq_protectboard.nextval, #{child_name}, #{child_age}, #{child_gender}, #
              from 
                protectboard_table 
              where 
-             ]]>
-       
-       <![CDATA[
-             rownum <= #{pageNum}*#{amount}
+             rownum <= #{pageNum}*#{amount} and approval =1
              ) 
         where rn > (#{pageNum}-1)*#{amount}
         ]]>
@@ -35,16 +35,16 @@ update Protectboard_table set child_name =#{child_name}, child_age =#{child_age}
 select * from ProtectBoard_table where protect_id = #{protect_id} AND approval =1
 </select>
 
+<select id="getNoneApproval" resultType ="com.firstclass.childrenctv.protectBoard.ProtectBoardVO">
+select * from ProtectBoard_table where protect_id = #{protect_id}
+</select>
+
 <select id="getAll" resultType="com.firstclass.childrenctv.protectBoard.ProtectBoardVO">
 select * from ProtectBoard_table where approval =1
 </select>
 
 <select id="getByUser" resultType="com.firstclass.childrenctv.protectBoard.ProtectBoardVO">
 select * from ProtectBoard_table where user_loginId= #{user_loginId} AND approval =1
-</select>
-
-<select id="getByAddress" resultType="com.firstclass.childrenctv.protectBoard.ProtectBoardVO">
-select * from ProtectBoard_table where protect_addres like '%'||#{address}||'%'
 </select>
 
 <delete id="delete"> 
@@ -56,13 +56,6 @@ insert into protectRelation (pr_id, protect_id, child_id)
 values(seq_pr.nextval, #{protect_id}, #{child_id})
 </insert>
 
-<select id="getNotPR" resultType="Long">
-select protect_id from ProtectBoard_table where ispr =0
-</select>
-
-<update id="doPR">
-update ProtectBoard_table set ispr=1 where protect_id=#{protect_id}
-</update>
 
 <select id="getProtectByChild" resultType="Long">
 select protect_id from ProtectRelation where child_id = #{child_id}
