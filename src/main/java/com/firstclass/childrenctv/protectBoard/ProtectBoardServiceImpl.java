@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.firstclass.childrenctv.childBoard.ChildBoardMapper;
+import com.firstclass.childrenctv.util.paging.Criteria;
 
 import lombok.AllArgsConstructor;
 
@@ -45,9 +46,10 @@ public class ProtectBoardServiceImpl implements ProtectBoardService {
 	}
 
 	@Override
-	public List<ProtectBoardVO> getAll() {
+	public List<ProtectBoardVO> getAll(Criteria cri) {
+		System.out.println("get List with criteria : " +cri);
 		
-		return protectMapper.getAll();
+		return protectMapper.getListWithPaging(cri);
 	}
 
 	@Override
@@ -72,6 +74,12 @@ public class ProtectBoardServiceImpl implements ProtectBoardService {
 	public List<Long> getProtectByChild(Long child_id) {
 		
 		return protectMapper.getProtectByChild(child_id);
+	}
+
+	@Override
+	public int getTotal(Criteria cri) {
+		
+		return protectMapper.getTotalCount(cri);
 	}
 
 }

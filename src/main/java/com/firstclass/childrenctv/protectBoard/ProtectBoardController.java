@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.firstclass.childrenctv.util.paging.Criteria;
+import com.firstclass.childrenctv.util.paging.PageDTO;
+
 import lombok.AllArgsConstructor;
 
 @Controller
@@ -15,8 +18,10 @@ public class ProtectBoardController {
 	private ProtectBoardService boardservice;
 	
 	@GetMapping("/protectBoard/list")
-	public String protectBoardlist(Model model) {
-		model.addAttribute("list", boardservice.getAll());
+	public String protectBoardlist(Criteria cri, Model model) {
+		model.addAttribute("list", boardservice.getAll(cri));
+		int total = boardservice.getTotal(cri);
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 		return "protectboard/list";
 	}
 	
