@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>MyPage</title>
-    <li class ="userMenu"><a href="/user/update">마이페이지</a></li>
+    <li class ="userMenu"><a href="/mypage/update">마이페이지</a></li>
 </head>
 
    <center>
-	<link rel="stylesheet" href="/resources/css/update.css"/>
+	<link rel="stylesheet" href="/resources/css/mypage.css"/>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-	<form action="/user/update" method="post">
+	<form action="/user/mypage" method="post">
 	<!-- 왼쪽 사이드바  -->
 	<div class="menu">
     <ul id="mypagemenu">

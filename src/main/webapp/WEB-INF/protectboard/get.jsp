@@ -8,8 +8,6 @@
 </head>
 
 <center>
-    <h1>보호 아동 제보</h1>
-
         <table>
         	<tr>
                 <td>작성자</td>
@@ -32,11 +30,15 @@
                 <td>${board.child_hometown }</td>
             </tr>
             <tr>
+                <td>아동 목격장소</td>
+                <td>${board.child_findlocation }</td>
+            </tr>
+            <tr>
                 <td>목격 시간</td>
                 <td>${board.protect_time.toString().replace('T', ' ') }</td>
             </tr>
             <tr>
-                <td>목격 위치</td>
+                <td>보호 위치</td>
                 <td>${board.protect_address}</td>
             </tr>
             <tr>

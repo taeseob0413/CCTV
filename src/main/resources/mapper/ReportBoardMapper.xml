@@ -20,6 +20,18 @@ select * from ReportBoard_table where child_id = #{child_id} AND approval =1 ord
 select * from ReportBoard_table where user_loginId = #{user_loginId} AND approval =1
 </select>
 
+<!--  제보 목록 가져오기 -->
+<select id="getReportList" resultType ="com.firstclass.childrenctv.ReportBoard.ReportBoardVO">
+select * from ReportBoard_table where user_loginId = #{user_loginId} AND approval = 1
+<!-- select * from ReportBoard_table where user_loginId = 'ksh'  AND approval = 1 -->
+</select>
+
+<!--  제보 글 지우기 
+<delete id="deleteReportBoardVO"> 
+delete reportboard_table where report_id =#{report_id}
+</delete>-->
+
+
 <delete id="deleteReportBoard"> 
 delete reportboard_table where report_id =#{report_id}
 </delete>

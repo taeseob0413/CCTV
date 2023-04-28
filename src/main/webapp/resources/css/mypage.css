@@ -1,0 +1,29 @@
+#mypagemenu {
+    list-style-type: none;
+    padding: 10px;
+    margin:  0px 0px 0px 0px ;
+    width: 150px;
+    background:lightgray;
+    height: 955px;
+    position: fixed;
+}
+
+#mypagemenu li a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    color: #000;
+    font-weight: bold;
+}
+
+#mypagemenu li label {
+    display: block;
+    padding: 10px;
+    font-weight: bold
+
+}
+
+#mypagemenu li a:hover  {
+    background: #333;   /* 마우스 가져다 대면 색변경*/
+    color:#fff          /* 마우스 가져다 대면 글씨 색변경*/
+}

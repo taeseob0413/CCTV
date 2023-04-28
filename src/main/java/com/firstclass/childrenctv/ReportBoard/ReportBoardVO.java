@@ -1,5 +1,6 @@
 package com.firstclass.childrenctv.ReportBoard;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
@@ -37,5 +38,7 @@ public class ReportBoardVO {
 
 	private String password;	//제보 글 비밀번호
 	private int approval;		//관리자 승인 여부 (1 or 0)
+	
+		
+	}
 
-}

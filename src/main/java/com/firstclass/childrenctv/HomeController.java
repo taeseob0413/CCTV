@@ -2,7 +2,6 @@ package com.firstclass.childrenctv;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -36,10 +35,15 @@ public class HomeController {
 
     } 
 
-    @GetMapping("/user/update") 
+    @GetMapping("/mypage/update") 
 	public String update() {
 		return "/mypage/update1";
 	}
+    
+  // @GetMapping("/mypage/mywrite") 
+//	public String mywrite() {
+	//	return "/mypage/mywrite";
+	//}
 
     } 
 
