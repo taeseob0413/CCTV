@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.ReportBoard;
+package com.firstclass.childrenctv.reportBoard;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.firstclass.childrenctv.ChildBoard.ChildBoardService;
+import com.firstclass.childrenctv.childBoard.ChildBoardService;
 
 import lombok.AllArgsConstructor;
 
@@ -28,7 +28,7 @@ public class ReportBoardController {
 	public String reportboardregister(ReportBoardVO board) {
 		System.out.println("넣는 정보는 무엇일까????" +board.toString());
 		boardservice.insert(board);
-		
+
 		return "redirect:/child/get?child_id=" + board.getChild_id();
 		
 	}

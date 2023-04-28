@@ -69,7 +69,7 @@ h1{
 table.table-01{
  width: 95%;
  min-width: 500px;
- height: 20px;;
+ height: 20px;
  border-collapse: collapse;
  text-align: left;
  font-family: 'RIDIBatang';
@@ -97,7 +97,6 @@ table.table-01{
  height: 20px;
  }
 </style>
-
 
 </head>
 
