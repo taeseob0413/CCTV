@@ -6,7 +6,7 @@
 
 <%@include file="../layout/header.jsp"%>
 <head>
-<link rel="stylesheet" href="/resources/css/protectBoard_get.css">
+<link rel="stylesheet" href="/resources/css/board_get.css">
 </head>
 
 <center>
@@ -65,7 +65,7 @@
 				if (userInfo != null) {
 					if (userInfo.getUser_grade().equalsIgnoreCase("admin")) {
 				%>
-	<input type="submit" value="글삭제" onclick="deleteBoard()" />
+	<input type="submit" value="삭제" onclick="deleteBoard()" />
 	<%
 				}
 				}

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../layout/header.jsp"%>
 <head>
-<link rel="stylesheet" href="/resources/css/protectBoard_update.css">
+<link rel="stylesheet" href="/resources/css/board_update.css">
 </head>
 
 <% 
@@ -44,8 +44,8 @@
             <tr>
                 <td class="attribute">아동 성별</td>
                 <td>
-                	<input type="radio" name="child_gender" value="남성" ${board.child_gender == '남자' ? 'checked' : ''}>남자
-                	<input type="radio" name="child_gender" value="여성" ${board.child_gender == '여자' ? 'checked' : ''}>여자
+                	<input type="radio" name="child_gender" value="남자" ${board.child_gender == '남자' ? 'checked' : ''}>남자
+                	<input type="radio" name="child_gender" value="여자" ${board.child_gender == '여자' ? 'checked' : ''}>여자
                 </td>
             </tr>
             <tr>
