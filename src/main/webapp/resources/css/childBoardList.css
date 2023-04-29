@@ -32,13 +32,11 @@
 #ListArea {
   font-family: 'RIDIBatang';
   width: 100%;
-  height: 500px;
   text-align: center;
 }
 
 #InnerArea{
   width: 800px;
-  height : 1000px;
   padding: 20px;
   margin : 0 auto;
   text-align: center;

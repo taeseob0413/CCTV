@@ -5,7 +5,6 @@
 <%@include file="../layout/header.jsp"%>
 
 <head>
-<link rel="stylesheet" href="/resources/css/childBoardList.css">
 <style>
 	.page-header {
 		color: #667632;

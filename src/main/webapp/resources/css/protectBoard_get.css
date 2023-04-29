@@ -28,10 +28,7 @@
 /* 제목 스타일 */
 #title {
   text-align: center;
-  background-color: #FFFFFF; /* 배경을 하얀색으로 설정 */
-  border-top: 3px solid #B5C1DB; /* 위쪽에 파란색 선 추가 */
-  border-bottom: 3px solid #B5C1DB; /* 아래쪽에 파란색 선 추가 */
-  font-size: 50px;
+  font-size: 70px;
   width: 800px;
   height: 120px;
   margin: 0 auto;
@@ -46,7 +43,7 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 td {
@@ -54,12 +51,17 @@ td {
   border: 1px solid #C3C3C3;
 }
 
-#attribute{
-	width: 130px;
-	height: 40px;
+.attribute{
+	width: 200px;
+	height: 80px;
+  text-align:center;
+	vertical-align: middle;
 }
 
-
+.values{
+	padding-left: 12px;
+	vertical-align: middle;
+}
 
 /* 입력 필드 스타일 */
 textarea[name="protect_content"] {
@@ -68,7 +70,7 @@ textarea[name="protect_content"] {
   resize: none;
   border: none;
   background-color: #f9f9f9;
-  font-size: 20px;
+  font-size: 30px;
   padding: 5px;
   border-radius: 5px;
   font-family: 'RIDIBatang';
@@ -78,16 +80,19 @@ textarea[name="protect_content"] {
 input[type="button"], input[type="submit"] {
   font-family: 'RIDIBatang';
   padding: 20px 50px;
-  background-color: #B5C1DB;
   color: #fff;
-  font-size: 25px;
+  font-size: 35px;
   border: none;
   cursor: pointer;
   margin-top: 20px;
-  margin-right: 10px;
-  border-radius: 5px;
+  margin-right: 50px;
+  border-radius: 10px;
 }
 
-input[type="button"]:hover, input[type="submit"]:hover {
-  background-color: #919DB7;
+input[value="목록"] {
+  background-color: #205295;
+}
+
+input[value="수정"] {
+  background-color: #89C4E1;
 }
