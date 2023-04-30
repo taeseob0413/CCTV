@@ -7,11 +7,12 @@
   <meta charset="UTF-8">
   <title>Kakao Map Example</title>
   <style>
-      #map {
-         width: 70%;
-         height: 500px;
-      }
-      
+    #map {
+         width: 100%;
+         height: 40vh;
+         display: flex;
+         justify-content: center;
+         align-items: center;}
       #tabml {
          width: 50%;
          height: 500px;
@@ -39,6 +40,42 @@
         font-weight: bold;
         color: #fff;
         background: #4a89dc;
+   }
+   
+   .w-btn {
+       position: relative;
+       border: none;
+       display: inline-block;
+       padding: 10px 20px;
+       border-radius: 15px;
+       font-family: "paybooc-Light", sans-serif;
+       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+       text-decoration: none;
+       font-weight: 600;
+       transition: 0.25s;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+
+   .w-btn-outline {
+       position: relative;
+       padding: 10px 20px;
+       border-radius: 15px;
+       font-family: "paybooc-Light", sans-serif;
+       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+       text-decoration: none;
+       font-weight: 600;
+       transition: 0.25s;
+   }
+   .w-btn-gray-outline {
+       border: 3px solid #a3a1a1;
+       color: #6e6e6e;
+   }
+   .btn-container {
+     text-align: right;
+    margin-top: 20px; /* 위쪽 여백 추가 */
+     margin-bottom: 20px; /* 아래쪽 여백 추가 */
    }
   
     td, th {
@@ -254,9 +291,11 @@
       }
       
      </script>
-   
+   <div class="btn-container">
+   		<button onclick="printSafetyInfo()" class="w-btn-outline w-btn-gray-outline" >테이블 출력</button>
+   	</div>
       <div id="table">
-      <button onclick="printSafetyInfo()">테이블 출력</button>
+      
       <table class="table table-striped table-bordered table-hover">
        <thead>
            <tr>

@@ -4,12 +4,13 @@
 <head>
     <title>CCTV</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/reset.css">
 </head>
     <% UserVO user = (UserVO) session.getAttribute("user");%>
 <body>
 
 <div id = "headerBox">
-    <div id = "logoBox"><img src="/resources/image/logo.png" width="200" height="70"></div>
+    <div id = "logoBox"><a href="/"><img src="/resources/image/logo.png" width="200" height="70"></a></div>
 </div>
 <div id = "headerMenu">
 <ul id = "headerMenuList">

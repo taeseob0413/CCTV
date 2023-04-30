@@ -6,42 +6,8 @@
 <head>
   <meta charset="UTF-8">
   <title>사용자 위치 얻기</title>
-  <style>
-  @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-
-.nanummyeongjo * {
- font-family: 'Nanum Myeongjo', serif;
-}
-   .cnt-opt {
-   border: 2px solid gray;
-   border-radius: 10px;
-   width: 80%;
-   height: 45%;
-   margin: 30px auto;
-   padding: 30px;
-   }
-   .main-copy{
-   font-family: 'Nanum Myeongjo', serif;
-   font-size: 3em;
-   font-weight: bolder;
-   text-align: center;
-   color: #245d9e;
-   }
-   .col-sm-4{
-   text-align: center;
-   }
-   .img-responsive{
-   width: 50%;
-   height: 50%;
-   }
-   .main{
-   font-size: 2.3em;
-   line-height: 1.5em;
-   text-align: justify;
-   font-family: 'Nanum Myeongjo', serif;
-   color: #485054;
-   }
-  </style>
+  <link rel="stylesheet" href="/resources/css/safetyMap.css">
+ 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     function getLocation() {
@@ -76,14 +42,15 @@
     </div>
    </div>     
   </div>
+  <!-- 아동 안전 지킴이집 로고 -->
   <div class="cnt-main"> 
             <h5 class="item-title">아동 안전 지킴이집 로고</h5>
-            <p>아동 안전 지킴이집 로고는 경찰과 주민이 손을 잡고 함께 아동을 보호한다는 의미로 유명 만화가인 이현세 씨에게 의뢰하여 아동 친화적으로 제작되었습니다.</p>
+            <p class="logoexplanation">아동 안전 지킴이집 로고는 경찰과 주민이 손을 잡고 함께 아동을 보호한다는 의미로 유명 만화가인 이현세 씨에게 의뢰하여 아동 친화적으로 제작되었습니다.</p>
        
   <div class="row">
           
       <div class="col-sm-6 m-t-20">
-        <strong class="center-block text-center main-color">아동 안전 지킴이 표지물</strong>
+        <p class="center-block text-center main-color">아동 안전 지킴이 표지물</p>
         <img class="center-block" src="/resources/image/child1.jpg" alt="아동안전지킴이 표지물"/>
       </div>
     
@@ -93,8 +60,8 @@
   </div>
   
   <br>
-  <div class="outer">
-  <button onclick="getLocation()" style="display: inline-block; margin: 10px auto;">내 근처 안전지도 보기!!</button>
+ <div class="outer">
+  <button onclick="getLocation()" class="w-btn-outline w-btn-gray-outline" style="display: inline-block; margin: 10px auto;">내 근처 안전지도</button>
   </div>
 </body>
 </html>
