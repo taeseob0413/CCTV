@@ -20,7 +20,7 @@ h1{
 }
 .childname{
     text-align: center;
-    font-size: 1.8em;
+    font-size: 20px;
     font-weight: bold;
     border: 1px solid white;
     width: 60%;
@@ -56,7 +56,7 @@ table.table-01{
  height: 20px;
  border-collapse: collapse;
  text-align: left;
- font-size: 1.4em;
+ font-size: 25px;
  margin: 10px 10px 10px 10px;
 }
  table.table-01 th{
