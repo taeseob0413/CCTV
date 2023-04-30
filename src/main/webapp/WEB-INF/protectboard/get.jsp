@@ -6,7 +6,7 @@
 
 <%@include file="../layout/header.jsp"%>
 <head>
-<link rel="stylesheet" href="/resources/css/protectBoard_get.css">
+<link rel="stylesheet" href="/resources/css/board_get.css">
 </head>
 
 <center>
@@ -16,40 +16,40 @@
 			<div>
 				<table>
 					<tr>
-						<td id="attribute">작성자</td>
-						<td>${board.user_loginId}</td>
+						<td class="attribute">작성자</td>
+						<td class="values">${board.user_loginId}</td>
 					</tr>
 					<tr>
-						<td id="attribute">아동 이름</td>
-						<td>${board.child_name }</td>
+						<td class="attribute">아동 이름</td>
+						<td class="values">${board.child_name }</td>
 					</tr>
 					<tr>
-						<td id="attribute">나이</td>
-						<td>${board.child_age }세</td>
+						<td class="attribute">나이</td>
+						<td class="values">${board.child_age }세</td>
 					</tr>
 					<tr>
-						<td id="attribute">성별</td>
-						<td>${board.child_gender }</td>
+						<td class="attribute">성별</td>
+						<td class="values">${board.child_gender }</td>
 					</tr>
 					<tr>
-						<td id="attribute">아동 연고지</td>
-						<td>${board.child_hometown }</td>
+						<td class="attribute">아동 연고지</td>
+						<td class="values">${board.child_hometown }</td>
 					</tr>
 					<tr>
-						<td id="attribute">아동 목격장소</td>
-						<td>${board.child_findlocation }</td>
+						<td class="attribute">아동 목격장소</td>
+						<td class="values">${board.child_findlocation }</td>
 					</tr>
 					<tr>
-						<td id="attribute">목격 시간</td>
-						<td>${board.protect_time.toString().replace('T', ' ') }</td>
+						<td class="attribute">목격 시간</td>
+						<td class="values">${board.protect_time.toString().replace('T', ' ') }</td>
 					</tr>
 					<tr>
-						<td>보호 위치</td>
-						<td>${board.protect_address}</td>
+						<td class="attribute">보호 위치</td>
+						<td class="values">${board.protect_address}</td>
 					</tr>
 					<tr>
-						<td>목격 내용</td>
-						<td><textarea name="protect_content" rows="20" cols="100"
+						<td class="attribute">목격 내용</td>
+						<td class="values"><textarea name="protect_content" rows="20" cols="100"
 								readonly="readonly">${board.protect_content }</textarea></td>
 					</tr>
 				</table>
@@ -65,7 +65,7 @@
 				if (userInfo != null) {
 					if (userInfo.getUser_grade().equalsIgnoreCase("admin")) {
 				%>
-	<input type="submit" value="글삭제" onclick="deleteBoard()" />
+	<input type="submit" value="삭제" onclick="deleteBoard()" />
 	<%
 				}
 				}

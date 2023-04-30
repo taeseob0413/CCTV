@@ -5,7 +5,7 @@
 
 <%@include file="../layout/header.jsp"%>
 <head>
-<link rel="stylesheet" href="/resources/css/protectBoard_get.css">
+<link rel="stylesheet" href="/resources/css/board_get.css">
 </head>
 
 <center>
@@ -15,41 +15,40 @@
 			<div>
 				<table>
 					<tr>
-						<td id="attribute">작성자</td>
-						<td>${board.user_loginId}</td>
+						<td class="attribute">작성자</td>
+						<td class="values">${board.user_loginId}</td>
 					</tr>
 					<tr>
-						<td id="attribute">아동 이름</td>
-						<td>${board.child_name }</td>
+						<td class="attribute">아동 이름</td>
+						<td class="values">${board.child_name }</td>
 					</tr>
 					<tr>
-						<td id="attribute">나이</td>
-						<td>${board.child_age }세</td>
+						<td class="attribute">나이</td>
+						<td class="values">${board.child_age }세</td>
 					</tr>
 					<tr>
-						<td id="attribute">성별</td>
-						<td>${board.child_gender }</td>
+						<td class="attribute">성별</td>
+						<td class="values">${board.child_gender }</td>
 					</tr>
 					<tr>
-						<td id="attribute">목격 시간</td>
-						<td>${board.report_time.toString().replace('T', ' ') }</td>
+						<td class="attribute">목격 시간</td>
+						<td class="values">${board.report_time.toString().replace('T', ' ') }</td>
 					</tr>
 					<tr>
-						<td id="attribute">목격 위치</td>
-						<td>${board.report_address}</td>
+						<td class="attribute">목격 위치</td>
+						<td class="values">${board.report_address}</td>
 					</tr>
 					<tr>
-						<td id="attribute">목격 내용</td>
-						<td><textarea name="report_content" rows="20" cols="100"
+						<td class="attribute">목격 내용</td>
+						<td class="values"><textarea name="report_content" rows="20" cols="100"
 								readonly="readonly">${board.report_content }</textarea></td>
 					</tr>
 				</table>
 			</div>
 		</div>
 	</div>
-	<input type="button" value="목록"
-		onclick="location.href='/child/get?child_id=${board.child_id}'" /> <input
-		type="button" value="수정" onclick="updateDialog()" />
+	<input type="button" value="목록" onclick="location.href='/child/get?child_id=${board.child_id}'" /> 
+		<input type="button" value="수정" onclick="updateDialog()" />
 
 	<%
 			HttpSession userSession = request.getSession();
@@ -58,7 +57,7 @@
          	if(userInfo != null){
         		if(userInfo.getUser_grade().equalsIgnoreCase("admin")){
          %>
-	<input type="submit" value="글삭제" onclick="deletePost(${board.report_id})" />
+	<input type="submit" value="삭제" onclick="deletePost(${board.report_id})" />
 	<%
         		}
          	}

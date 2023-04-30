@@ -26,7 +26,6 @@ public class ReportBoardController {
 	
 	@PostMapping("/reportBoard/register")
 	public String reportboardregister(ReportBoardVO board) {
-		System.out.println("넣는 정보는 무엇일까????" +board.toString());
 		boardservice.insert(board);
 
 		return "redirect:/child/get?child_id=" + board.getChild_id();
@@ -43,7 +42,6 @@ public class ReportBoardController {
 	@GetMapping("/reportBoard/get")
 	public String get(@RequestParam("report_id") Long report_id, Model model) {
 		model.addAttribute("board", boardservice.get(report_id));
-		System.out.println("GET 컨트롤러 들어왔다!!!!!!!!!!");
 		if(boardservice.get(report_id) != null) {
 			return "reportboard/get";
 		}
@@ -57,14 +55,12 @@ public class ReportBoardController {
 	public String update(@RequestParam("report_id") Long reportboard_id, Model model) {
 	    // reportboard_id를 사용하여 해당 보고서 정보를 가져와서 update.jsp 화면에 전달
 	    ReportBoardVO board = boardservice.get(reportboard_id);
-	    System.out.println("어떤 정보를 가져왔을까????????" + board);
 	    model.addAttribute("board", board);
 	    return "reportboard/update";
 	}
 	
 	@PostMapping("/reportBoard/update")
 	public String update(ReportBoardVO board, @RequestParam("child_id") Long child_id) {
-		System.out.println("넣는 정보는 무엇일까????" +board.toString());
 		boardservice.update(board);
 		return "redirect:/reportBoard/get?report_id=" + board.getReport_id();
 	}

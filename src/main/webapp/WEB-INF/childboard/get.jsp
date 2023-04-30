@@ -9,6 +9,8 @@
 
 </head>
 
+<center>
+
  <div class="section cnt-zone">
  <!-- 실종 아동 상세 정보 start -->	
   <div class="container">
@@ -77,28 +79,34 @@
 		   </div>
 		  </div>
 		</div>	
-		<!-- 실종 아동 상세 정보 end -->			
-	<div>
-		<h1>실종 아동 목격 제보 게시판</h1>
-	</div>
-	<table>
+
+		
+		<!-- 실종 아동 상세 정보 end -->
+		<!-- 목격 게시판 -->
+	<div class="board">
+		<div class="title">실종 아동 목격 제보 게시판</div>
+		<div id="buttoncontainer">
+		<button class="blue-btn" onClick="goToRegisterPage(${child.child_id})">
+					<img src="/resources/image/write.png" alt="이미지" width="30" height="30"> <span>제보</span>
+				</button>
+		</div>
+	<table class="boardtable">
 		<tr>
-			<th>글 번호</th>
-			<th>목격 시간</th>
-			<th>목격 장소</th>
-			<th>작성자</th>
+			<th class="th1">No.</th>
+			<th class="th2">목격 시간</th>
+			<th class="th3">목격 장소</th>
+			<th class="th4">작성자</th>
 		</tr>
-		<%-- 게시글 리스트를 반복해서 출력 --%>
 
 		<c:forEach var="reportboard" items="${report}">
 			<tr>
-				<td><a
+				<td class="no"><a
 					href="/reportBoard/get?report_id=${reportboard.report_id}"><c:out
 							value="${reportboard.report_id}" /></a></td>
-				<td><a
+				<td class="time"><a
 					href="/reportBoard/get?report_id=${reportboard.report_id}"><c:out
 							value="${reportboard.report_time.toString().replace('T', ' ')}" /></a></td>
-				<td><a
+				<td class="address"><a
 					href="/reportBoard/get?report_id=${reportboard.report_id}"><c:out
 							value="${reportboard.report_address}" /></a></td>
 				<td><a
@@ -107,10 +115,38 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<input type="button" value="제보" onClick="goToRegisterPage(${child.child_id})">
+	</div>
+	<%-- 보호 게시판 --%>
+	<div class="board">
+		<div class="title">보호중인 유사 아동 게시판</div>
+	<table class="boardtable">
+		<tr>
+			<th class="th1">No.</th>
+			<th class="th2">목격 시간</th>
+			<th class="th3">목격 장소</th>
+			<th class="th4">작성자</th>
+		</tr>
 
+		<c:forEach var="protectboard" items="${protect}">
+			<tr>
+				<td class="no"><a
+					href="/protectBoard/get?protect_id=${protectboard.protect_id}"><c:out
+							value="${protectboard.protect_id}" /></a></td>
+				<td class="time"><a
+					href="/protectBoard/get?protect_id=${protectboard.protect_id}"><c:out
+							value="${protectboard.protect_time.toString().replace('T', ' ')}" /></a></td>
+				<td class="address"><a
+					href="/protectBoard/get?protect_id=${protectboard.protect_id}"><c:out
+							value="${protectboard.protect_address}" /></a></td>
+				<td><a
+					href="/protectBoard/get?protect_id=${protectboard.protect_id}"><c:out
+							value="${protectboard.user_loginId}" /></a></td>
+			</tr>
+		</c:forEach>
+	</table>
+	</div>
 </div>
-
+</center>
 <script>
 function goToRegisterPage(child_id) {
     var childIdLong= parseInt(child_id,10);

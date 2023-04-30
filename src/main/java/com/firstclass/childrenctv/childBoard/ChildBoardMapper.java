@@ -23,5 +23,3 @@ public interface ChildBoardMapper {
    
    public List<Long> matching(String child_name, String child_gender, int top_age, int bottom_age);
 }
-	
-
