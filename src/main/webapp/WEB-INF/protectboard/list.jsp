@@ -9,7 +9,7 @@
 <%@ include file="../layout/header.jsp"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/resources/css/protectBoard_list.css">
+<link rel="stylesheet" href="/resources/css/board_list.css">
 </head>
 <center>
 	<div id="ListArea">
@@ -20,21 +20,22 @@
 				장난으로 혹은 악의적인 목적으로 제보를 남기는 것은 법적으로 처벌받을 수 있습니다.
 			</div>
 			<div id="reportButtonContainer">
-				<input type="button" value="제보" id="submit"
-					onclick="location.href='/protectBoard/register'">
+				<button class="blue-btn" onclick="location.href='/protectBoard/register'">
+					<img src="/resources/image/write.png" alt="이미지" width="40" height="40"> <span>제보</span>
+				</button>
 			</div>
 			<div>
 				<table>
 					<tr>
-						<th>글 번호</th>
-						<th>아동 이름</th>
-						<th>보호 장소</th>
-						<th>작성자</th>
+						<th id="th1">No.</th>
+						<th id="th2">아동 이름</th>
+						<th id="th3">보호 장소</th>
+						<th id="th4">작성자</th>
 					</tr>
 					<%-- 게시글 리스트를 반복해서 출력 --%>
 					<c:forEach var="protectboard" items="${list}">
 						<tr>
-							<td><a href="get?protect_id=${protectboard.protect_id}"><c:out
+							<td id="no"><a href="get?protect_id=${protectboard.protect_id}"><c:out
 										value="${protectboard.protect_id}" /></a></td>
 							<td><a href="get?protect_id=${protectboard.protect_id}"><c:out
 										value="${protectboard.child_name}" /></a></td>

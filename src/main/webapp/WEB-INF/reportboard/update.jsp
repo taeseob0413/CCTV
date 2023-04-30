@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../layout/header.jsp"%>
 <head>
-<link rel="stylesheet" href="/resources/css/reportBoard_update.css">
+<link rel="stylesheet" href="/resources/css/board_update.css">
 </head>
 
 <% 
@@ -17,8 +17,9 @@
 %>
 
 <center>
+<div id="ContentArea">
+<div id="InnerArea">
 	<div id="title">목격 아동 정보 수정</div>
-	<div id="ContentArea">
 		<div>
 			<form action="/reportBoard/update" method="post" id="registerform">
 				<input type="hidden" name="child_id" value="${board.child_id }" /> 
@@ -29,37 +30,35 @@
 				<input type="hidden" name="user_loginId" value="${board.user_loginId }" /> 
 				<input type="hidden" name="password" value="${board.password }" /> 
 				<input type="hidden" name="approval" value="${board.approval }" />
-				
-				<div id="InnerArea">
 					<table>
 						<tr>
-							<td>작성자</td>
+							<td class="attribute">작성자</td>
 							<td>${board.user_loginId }</td>
 						</tr>
 						<tr>
-							<td>아동 이름</td>
+							<td class="attribute">아동 이름</td>
 							<td>${board.child_name }</td>
 						</tr>
 						<tr>
-							<td>나이</td>
+							<td class="attribute">나이</td>
 							<td>${board.child_age }></td>
 						</tr>
 						<tr>
-							<td>성별</td>
+							<td class="attribute">성별</td>
 							<td>${board.child_gender }</td>
 						</tr>
 						<tr>
-							<td>목격 시간</td>
+							<td class="attribute">목격 시간</td>
 							<td><input type="datetime-local" name="report_time"
 								value="${board.report_time}"></td>
 						</tr>
 						<tr>
-							<td>목격 위치</td>
+							<td class="attribute">목격 위치</td>
 							<td><textarea name="report_address" rows="1" cols="100">${board.report_address }</textarea></td>
 						</tr>
 						<tr>
-							<td>목격 내용</td>
-							<td><textarea name="report_content" rows="50" cols="100">${board.report_content }</textarea></td>
+							<td class="attribute">목격 내용</td>
+							<td><textarea name="report_content" rows="10" cols="100">${board.report_content }</textarea></td>
 						</tr>
 					</table>
 				</div>

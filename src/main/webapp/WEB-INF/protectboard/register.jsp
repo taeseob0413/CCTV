@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../layout/header.jsp"%>
 <head>
-<link rel="stylesheet" href="/resources/css/protectBoard_register.css">
+<link rel="stylesheet" href="/resources/css/board_register.css">
 </head>
 
 <% 
@@ -20,7 +20,7 @@
 <center>
 	<div id="ContentArea">
 		<div id="InnerArea">
-		<div id="title">보호 아동 정보 작정</div>
+		<div id="title">보호 아동 정보 작성</div>
 		<div>
 		    <form action="/protectBoard/register" method="post" id="registerform">
 		    	<input type="hidden" name= "user_loginId" value= <%= userLoginId %>>
@@ -70,7 +70,7 @@
 		            </tr>
 		            <tr>
 		                <td class="attribute">비밀번호</td>
-		                <td><input type="text" name="password" oninput="checkPwLength(this)"></td>
+		                <td><input type="text" id="pw" name="password" oninput="checkPwLength(this)"></td>
 		            </tr>
 		        </table>
 		        </div>
