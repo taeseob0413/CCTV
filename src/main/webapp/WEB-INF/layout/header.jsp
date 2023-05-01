@@ -10,7 +10,7 @@
 <body>
 
 <div id = "headerBox">
-    <div id = "logoBox"><img src="/resources/image/logo.png" width="200" height="70"></div>
+    <div id = "logoBox"><a href="/"><img src="/resources/image/logo.png" width="200" height="70"></a></div>
 </div>
 <div id = "headerMenu">
 <ul id = "headerMenuList">

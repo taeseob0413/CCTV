@@ -8,7 +8,9 @@
 <link rel="stylesheet" href="/resources/css/childboard_get.css"/>
 
 </head>
+
 <center>
+
  <div class="section cnt-zone">
  <!-- 실종 아동 상세 정보 start -->	
   <div class="container">
@@ -77,6 +79,8 @@
 		   </div>
 		  </div>
 		</div>	
+
+		
 		<!-- 실종 아동 상세 정보 end -->
 		<!-- 목격 게시판 -->
 	<div class="board">
@@ -143,7 +147,6 @@
 	</div>
 </div>
 </center>
-
 <script>
 function goToRegisterPage(child_id) {
     var childIdLong= parseInt(child_id,10);
