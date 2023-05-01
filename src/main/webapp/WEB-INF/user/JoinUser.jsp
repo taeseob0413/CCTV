@@ -2,7 +2,7 @@
 <%@ include file="../layout/header.jsp"%>
 
 <center>
-	<link rel="stylesheet" href="/resources/css/signup.css"/>
+	<link rel="stylesheet" href="/resources/css/user/signup.css"/>
 	<form action="/user/join" method="post"> 
     <div class=signup style="text-align: center;">
     

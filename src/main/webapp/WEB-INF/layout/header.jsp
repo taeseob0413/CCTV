@@ -3,8 +3,8 @@
 <html>
 <head>
     <title>CCTV</title>
-    <link rel="stylesheet" type="text/css" href="/resources/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/resources/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/layout/header.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/layout/reset.css">
 </head>
     <% UserVO user = (UserVO) session.getAttribute("user");%>
 <body>
