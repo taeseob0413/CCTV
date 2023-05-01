@@ -16,9 +16,8 @@ public interface UserService {
     //String registerNotice(String content);
     
     int idcheck(String loginid);   //아이디 중복체크
-    String emailcheck(String email);  //이메일 인증 
-    
-    public UserVO get(Long user_id);   //회원 상세 조회
+    String emailcheck(String email);  //이메일 인증     
+    UserVO get(Long user_id);   //회원 상세 조회
     
  
 }

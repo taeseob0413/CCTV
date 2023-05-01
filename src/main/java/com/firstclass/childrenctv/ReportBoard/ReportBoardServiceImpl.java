@@ -29,13 +29,8 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 
 	@Override
 	public void insert(ReportBoardVO board) {// 제보 글 등록
-		
-<<<<<<< HEAD
-		mapper.insert(board);		
-=======
 		mapper.insert(board);
 		notify(board.getReport_id(), board.getChild_id());
->>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
 	}
 
 	private void notify(Long report_id, Long child_id){
@@ -51,6 +46,7 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 			}
 		}
 	}
+	
 	@Override
 	public void update(ReportBoardVO board) {		//제보 글 수정
 		mapper.update(board);
@@ -69,14 +65,12 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 	}
 
 	@Override
-	public List<ReportBoardVO> getByUser(String user_loginId) {		//작성자별 제보 글 보기
-		
+	public List<ReportBoardVO> getByUser(String user_loginId) {		//작성자별 제보 글 보기		
 		return mapper.getByUser(user_loginId);
 	}
 	
 	@Override
-	public void deleteReportBoard(Long report_id) {		//제보 글 삭제
-		
+	public void deleteReportBoard(Long report_id) {		//제보 글 삭제		
 		mapper.deleteReportBoard(report_id);
 	}
 	

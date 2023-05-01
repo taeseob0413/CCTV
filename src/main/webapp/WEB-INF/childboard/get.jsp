@@ -115,15 +115,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-<<<<<<< HEAD
-	<input type="button" value="제보" onClick="goToRegisterPage(${child.child_id})">
-	
-	<div>
-		<h1>실종자 가족 등록</h1>
-		<input type="button" value="등록" id="addchild" onclick="addchild_btn(${child.child_id})"> 
-	</div>
-	
-=======
 	</div>
 	<%-- 보호 게시판 --%>
 	<div class="board">
@@ -155,43 +146,13 @@
 	</table>
 	</div>
 </div>
->>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
 </center>
-<<<<<<< HEAD
 
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-=======
->>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
 <script>
 function goToRegisterPage(child_id) {
     var childIdLong= parseInt(child_id,10);
     location.href = "/reportBoard/register?child_id=" + child_id;
 }
-<<<<<<< HEAD
-
-$("#addchild").click(function() {
-	$.ajax({
-		url : "/mypage/register",
-		type : "post",
-		success : function (){
-			alert("실종 아동이 등록되었습니다 이동하시겠습니까?");
-		},
-		error : function() {
-			alert("등록 실패")ㅣ
-		}
-	});
-});
-
-function addchild_btn(child_id) {	
-	
-	if(result ==1) {
-		alert("실종 아동이 등록되었습니다 이동하시겠습니까?");
-		location.href = "/mypage/register?child_id=" + child_id;
-	} else {
-		alert("회원만 등록 가능합니다.");
-	}
-});
-=======
 const cellContentEls = document.querySelectorAll('.cell-content');
 const showMoreBtnEls = document.querySelectorAll('.show-more-button');
 
@@ -222,8 +183,6 @@ for (let i = 0; i < cellContentEls.length; i++) {
     showMoreBtnEl.addEventListener('click', onClickHideMoreBtn);
   }
 }
-
->>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
 
 </script>
 <%@ include file="../layout/footer.jsp"%>

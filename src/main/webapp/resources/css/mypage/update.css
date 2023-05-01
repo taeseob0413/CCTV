@@ -1,13 +1,11 @@
-@import "reset.css";
-
-#mypage_get {
+#mypage_update {
     width: 100%;
     height: 1300px;
     text-align:center;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-#get_title {
+#update_title {
   margin :80px 50px 30px 260px;	
   font-size: 50px;
   width: 500px;  
@@ -15,39 +13,48 @@
   color: black;
 }
 
-#mypage_get label {
+#mypage_update label {
   font-size: 1.4em;
   padding : 10px;
   font-weight : bolder;
 }
 
-#get_id label, #get_email label {
+#update_id label, #update_email label {
   padding:20px;
 }
 
-#get_name label, #get_age label, #get_gender label,
-#get_address label {
+#update_name label, #update_age label, #update_gender label,
+#update_address label {
   padding : 30px;
 }
 
-#get_id, #get_pw, #get_name, #get_email,
-#get_age, #get_gender, #get_address {
+#update_id, #update_pw, #update_name, #update_email,
+#update_age, #update_gender, #update_address {
 	margin : 0px 0px 0px 40px;
 }
 
-#get_id input, #get_pw input, #get_name input,
-#get_email input, #get_age input, #get_gender input,
-#get_address input {
+#update_id input {
   width: 450px;
   height:70px;
   border-radius: 5px;
   border: 1px solid gray;
   font-size:1.6em;
+  margin: 15px;	
   background-color :#E2E2E2;
+}
+
+#update_pw input, #update_name input,
+#update_email input, #update_age input, #update_gender input,
+#update_address input {
+  width: 450px;
+  height:70px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size:1.6em;
   margin: 15px;
 }
 
-#get_button{
+#update_button{
   width: 250px;
   height: 90px;
   border-radius: 20px;
@@ -59,12 +66,12 @@
   margin:20px 10px 0px 85px;
 }
 
-#get_button1 {
+#update_button1 {
   width: 250px;
   height: 90px;
   border-radius: 20px;
   font-size: 2em;
-  font-weight : bold;;
+  font-weight : bold;
   background-color: gray;
   border: 2px dotted black;
   color: white;

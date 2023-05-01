@@ -1,16 +1,12 @@
 <%@ page import="com.firstclass.childrenctv.user.UserVO" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-
 <html>
 <head>
     <title>CCTV</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" href="/resources/css/header.css">
-=======
     <link rel="stylesheet" type="text/css" href="/resources/css/layout/header.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/layout/reset.css">
 </head>
->>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
+
     <% UserVO user = (UserVO) session.getAttribute("user");%>
 <body>
 
