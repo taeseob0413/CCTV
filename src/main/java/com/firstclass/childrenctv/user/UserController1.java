@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.firstclass.childrenctv.reportBoard.ReportBoardVO;
+import com.firstclass.childrenctv.ReportBoard.ReportBoardVO;
+
 
 import lombok.AllArgsConstructor;
 
@@ -51,7 +52,6 @@ public class UserController1 {
      	System.out.println("인증코드 :" +  code);
      	return code;
      }
-  
 
     
 	  

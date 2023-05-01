@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.time.LocalDateTime"%>
-<%@ page import="com.firstclass.childrenctv.protectBoard.ProtectBoardVO"%>
+<%@ page import="com.firstclass.childrenctv.ProtectBoard.ProtectBoardVO"%>
 
 <%@include file="../layout/header.jsp"%>
 <head>

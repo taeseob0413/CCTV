@@ -1,21 +1,24 @@
-package com.firstclass.childrenctv.reportBoard;
+package com.firstclass.childrenctv.ReportBoard;
 
 import java.util.List;
 
-import com.firstclass.childrenctv.childBoard.ChildBoardMapper;
-import com.firstclass.childrenctv.childBoard.ChildBoardVO;
+import org.springframework.stereotype.Service;
+
+import com.firstclass.childrenctv.ChildBoard.ChildBoardMapper;
+import com.firstclass.childrenctv.ChildBoard.ChildBoardVO;
 import com.firstclass.childrenctv.familyRelation.FamilyRelationService;
 import com.firstclass.childrenctv.familyRelation.FamilyRelationVO;
 import com.firstclass.childrenctv.user.UserMapper;
 import com.firstclass.childrenctv.user.UserVO;
 import com.firstclass.childrenctv.util.email.GmailService;
 import com.firstclass.childrenctv.util.email.MailText;
-import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
 
 @Service
 @AllArgsConstructor
+@Log4j
 public class ReportBoardServiceImpl implements ReportBoardService {
 
 	private ReportBoardMapper mapper;
@@ -73,5 +76,21 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 		mapper.deleteReportBoard(report_id);
 	}
 	
-
+	// 제보 목록 가져오기
+		@Override
+		public List<ReportBoardVO> getReportList(String user_loginId) {
+			
+			return mapper.getReportList(user_loginId);
+			/*
+			 * System.out.println("Hello JUnitTest");
+			 * 
+			 * List<ReportBoardVO> list = mapper.getReportList(); // mapper -> sql -> data
+			 * access
+			 * 
+			 * log.info(list.get(0)); log.info(list.get(1)); log.info(list.get(2));
+			 * 
+			 * return list;
+			 */
+			
+		}
 }

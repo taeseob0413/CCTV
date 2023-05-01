@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.time.LocalDateTime"%>
-<%@ page import="com.firstclass.childrenctv.reportBoard.ReportBoardVO"%>
+<%@ page import="com.firstclass.childrenctv.ReportBoard.ReportBoardVO"%>
 
 <%@include file="../layout/header.jsp"%>
 <head>
@@ -9,6 +9,7 @@
 </head>
 
 <center>
+
 	<div id="ContentArea">
 		<div id="InnerArea">
 			<div id="title">실종 아동 목격 정보</div>
@@ -50,7 +51,9 @@
 	<input type="button" value="목록" onclick="location.href='/child/get?child_id=${board.child_id}'" /> 
 		<input type="button" value="수정" onclick="updateDialog()" />
 
-	<%
+
+  
+          <%
 			HttpSession userSession = request.getSession();
   			UserVO userInfo = (UserVO) userSession.getAttribute("user");
   			ReportBoardVO reportboard = (ReportBoardVO)request.getAttribute("board");
@@ -62,7 +65,6 @@
         		}
          	}
          %>
-
 
 
 </center>

@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.childBoard;
+package com.firstclass.childrenctv.ChildBoard;
 
 
 import lombok.Data;

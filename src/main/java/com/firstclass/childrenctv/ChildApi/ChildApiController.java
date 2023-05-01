@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.childApi;
+package com.firstclass.childrenctv.ChildApi;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,8 +16,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.firstclass.childrenctv.childBoard.ChildBoardService;
-import com.firstclass.childrenctv.childBoard.ChildBoardVO;
+import com.firstclass.childrenctv.ChildBoard.ChildBoardService;
+import com.firstclass.childrenctv.ChildBoard.ChildBoardVO;
 
 
 import lombok.AllArgsConstructor;

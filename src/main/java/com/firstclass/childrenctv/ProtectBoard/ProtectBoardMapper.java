@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.protectBoard;
+package com.firstclass.childrenctv.ProtectBoard;
 
 import java.util.List;
 

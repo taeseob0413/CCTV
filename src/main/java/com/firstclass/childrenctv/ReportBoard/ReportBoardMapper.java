@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.reportBoard;
+package com.firstclass.childrenctv.ReportBoard;
 
 import java.util.List;
 
@@ -14,4 +14,8 @@ public interface ReportBoardMapper {
 	public List<ReportBoardVO> getByUser(String user_loginId);
 	
 	public void deleteReportBoard(Long report_id);
+	
+	// 제보 목록 가져오기
+		public List<ReportBoardVO> getReportList(String user_loginId);
+		
 }

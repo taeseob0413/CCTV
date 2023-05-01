@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.reportBoard;
+package com.firstclass.childrenctv.ReportBoard;
 
 import java.time.LocalDateTime;
 
