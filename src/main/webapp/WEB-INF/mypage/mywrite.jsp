@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="/resources/css/mywrite.css" />
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -12,7 +11,7 @@
 
 <html>
 <head>
-<link rel="stylesheet" href="/resources/css/mywrite.css" />
+<link rel="stylesheet" href="/resources/css/mypage/mywrite.css" />
 </head>
 <body>
 	<!-- <h1>Hello world!</h1> -->
@@ -52,8 +51,4 @@
 	<!-- class=container -->
 
 </body>
-
-
-
-
 </html>

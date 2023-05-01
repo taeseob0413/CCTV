@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/layout/header.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/layout/reset.css">
 </head>
+
     <% UserVO user = (UserVO) session.getAttribute("user");%>
 <body>
 
@@ -21,7 +22,7 @@
     <li class ="userMenu" onclick="toLoginPage()">로그인</li>
     <%} else{ %>
     <li class ="userMenu" onclick="logout()">로그아웃</li>
-    <li class ="userMenu">마이페이지</li>
+    <li class ="userMenu"><a href="/mypage/get?user_id=${user.user_id}">마이페이지</a></li>
     <% } %>
 </ul>
 </div>

@@ -1,0 +1,78 @@
+#mypage_update {
+    width: 100%;
+    height: 1300px;
+    text-align:center;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#update_title {
+  margin :80px 50px 30px 260px;	
+  font-size: 50px;
+  width: 500px;  
+  height: 80px;
+  color: black;
+}
+
+#mypage_update label {
+  font-size: 1.4em;
+  padding : 10px;
+  font-weight : bolder;
+}
+
+#update_id label, #update_email label {
+  padding:20px;
+}
+
+#update_name label, #update_age label, #update_gender label,
+#update_address label {
+  padding : 30px;
+}
+
+#update_id, #update_pw, #update_name, #update_email,
+#update_age, #update_gender, #update_address {
+	margin : 0px 0px 0px 40px;
+}
+
+#update_id input {
+  width: 450px;
+  height:70px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size:1.6em;
+  margin: 15px;	
+  background-color :#E2E2E2;
+}
+
+#update_pw input, #update_name input,
+#update_email input, #update_age input, #update_gender input,
+#update_address input {
+  width: 450px;
+  height:70px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size:1.6em;
+  margin: 15px;
+}
+
+#update_button{
+  width: 250px;
+  height: 90px;
+  border-radius: 20px;
+  font-size: 2em;
+  font-weight : bold;
+  background-color: #6559e8;
+  border: 2px dotted black;
+  color: white;
+  margin:20px 10px 0px 85px;
+}
+
+#update_button1 {
+  width: 250px;
+  height: 90px;
+  border-radius: 20px;
+  font-size: 2em;
+  font-weight : bold;
+  background-color: gray;
+  border: 2px dotted black;
+  color: white;
+}

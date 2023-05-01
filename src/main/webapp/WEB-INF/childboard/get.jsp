@@ -147,6 +147,7 @@
 	</div>
 </div>
 </center>
+
 <script>
 function goToRegisterPage(child_id) {
     var childIdLong= parseInt(child_id,10);
@@ -182,7 +183,6 @@ for (let i = 0; i < cellContentEls.length; i++) {
     showMoreBtnEl.addEventListener('click', onClickHideMoreBtn);
   }
 }
-
 
 </script>
 <%@ include file="../layout/footer.jsp"%>

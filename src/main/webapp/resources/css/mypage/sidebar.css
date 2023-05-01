@@ -1,12 +1,5 @@
-@font-face {
-    font-family: 'RIDIBatang';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 .menu {
-  font-family: 'RIDIBatang';
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 #mypagemenu {
@@ -32,7 +25,6 @@
     display: block;
     padding: 10px;
     font-weight: bold
-
 }
 
 #mypagemenu li a:hover  {
