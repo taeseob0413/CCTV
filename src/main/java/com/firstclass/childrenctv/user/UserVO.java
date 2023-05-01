@@ -18,5 +18,12 @@ public class UserVO {
     private String user_gender;
     private String user_address;
     private String user_grade;
-
+	
+    @Override
+	public String toString() {
+		return "UserVO [user_id=" + user_id + ", user_name=" + user_name + ", user_email=" + user_email
+				+ ", user_loginID=" + user_loginID + ", user_password=" + user_password + ", user_age=" + user_age
+				+ ", user_gender=" + user_gender + ", user_address=" + user_address + ", user_grade=" + user_grade
+				+ "]";
+	}
 }

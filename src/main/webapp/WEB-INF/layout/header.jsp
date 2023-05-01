@@ -1,10 +1,10 @@
 <%@ page import="com.firstclass.childrenctv.user.UserVO" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>CCTV</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/header.css">
-</head>
     <% UserVO user = (UserVO) session.getAttribute("user");%>
 <body>
 
@@ -20,7 +20,7 @@
     <li class ="userMenu" onclick="toLoginPage()">로그인</li>
     <%} else{ %>
     <li class ="userMenu" onclick="logout()">로그아웃</li>
-    <li class ="userMenu">마이페이지</li>
+    <li class ="userMenu"><a href="/mypage/get?user_id=${user.user_id}">마이페이지</a></li>
     <% } %>
 </ul>
 </div>

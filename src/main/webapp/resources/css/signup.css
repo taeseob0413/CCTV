@@ -1,187 +1,155 @@
-*{
-    margin: auto;
-    padding: auto;
+@import "reset.css";
+#signup {
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.signup {
-    border: 0px solid black;
-    width: 800px;
-    height: 1200px;
-    justify-content: center;
-    align-items: center;
-    }      
-  
-.wrapper input {
-    width: 450px;
-    height:30px;
-    border-radius: 3px;
-    border: 1px solid gray;
-  }
+#signup {
+	width:100%;
+	height:1350px;
+	text-align: center;
+}
 
-  #title {
-    margin-left: 100px;
-    margin-top: 10px;
-    font-weight:1000;
-    font-size:2em;
-    border : 1px solid pink;
-    width: 150px;
-    height: 50px;
-    position:center;
-    
-  }
-  #info_id {
-    position: relative;
-  }
-  
-  #info_id input {
-    margin: 10px 0px 0px 100px;
-    width: 500px;
-    height: 45px;
-    border-radius: 5px;
-  }
-  
-  #info_id button {
-    margin: 14px 0px 0px 0px ;
-    width: 150px;
-    height: 40px;
-    border-radius: 3px;
-    background-color: #6559e8;
-    border: #1fa7d2;
-    color: white;
-    font-size: 1em;
-    right: 104px;
-    position: absolute;
-  }
+label {
+  font-size: 1.5em;
+  padding : 10px;
+  font-weight : bolder;
+}
 
-  #info_pw1 input {
-    margin-top: 8px;
-    margin-left: 95px;
-    width: 500px;
-    height: 45px;
-    border-radius: 5px;
-    position: relative;
-  }
+#info_id, #info_name, #info_pw1, #info_pw2,
+#info_email1, #info_email2, #info_age, #info_address {
+  margin: 40px auto;
+  width : 635px;
+  height : 73px;
+  border-bottom: 1px solid black;
+}
 
-  #info_pw2 input {
-    margin-top: 8px;
-    margin-left: 95px;
-    width: 500px;
-    height: 45px;
-    border-radius: 5px;
-    position: relative;
-  }
+#info_gender {
+  margin: 40px auto;
+  width : 635px;
+  height : 53px;
+  border-bottom: 1px solid black;
+}
 
-  #info_name input {
-    margin-top: 8px;
-    margin-left: 95px;
-    width: 500px;
-    height: 45px;
-    border-radius: 5px;
-    position: relative;
-  }
 
-  #info_gender1 {
-    margin-top: 8px;
-    margin-left: 95px;
-    width: 500px;
-    height: 45px;
-    border-radius: 5px;
-    position: relative
-  }
+#info_id input, #info_email1 input {
+  width: 530px;
+  height:70px;
+  border-radius: 5px;
+  border: 0px solid gray;
+  font-size:1.6em;  
+}
 
-  #info_email {
-    position: relative;
-  }
-  
-  #info_email1 input {
-    margin-top: 8px;
-    margin-left: 95px;
-    width: 500px;
-    height: 45px;
-    border-radius: 5px;
-    position: relative;
-  }
+#info_pw1 input, #info_email2 input {
+  width: 509px;
+  height:70px;
+  border-radius: 5px;
+  border: 0px solid gray;
+  font-size:1.6em;   
+}
 
-  #info_email1 button {
-    margin: 12px 0px 0px 0px ;
-    width: 150px;
-    height: 40px;
-    right: 105px;
-    border-radius: 3px;
-    position: absolute;
-    background-color: #6559e8;
-    border: #1fa7d2;
-    color: white;
-    font-size: 1em;
-  }
+#info_pw2 input {
+  width: 450px;
+  height:70px;
+  border-radius: 5px;
+  border: 0px solid gray;
+  font-size:1.6em;   
+}
 
-  #info_email2 input {
-    margin-top: 8px;
-    margin-left: 95px;
-    width: 500px;
-    height: 45px;
-    border-radius: 5px;
-    position: relative;
-  }
+#info_name input, #info_age input,
+#info_address input {
+  width: 555px;
+  height:70px;
+  border-radius: 5px;
+  border: 0px solid gray;
+  font-size:1.6em; 
+}
 
-  #info_age input {
-    margin-top: 8px;
-    margin-left: 95px;
-    width: 500px;
-    height: 45px;
-    border-radius: 5px;
-  }
+#info_gender span {
+  font-size :1.4em;
+}
 
-  #info_address input {
-    margin-top: 8px;
-    margin-left: 95px;
-    width: 500px;
-    height: 45px;
-    border-radius: 5px;
-    position: relative;
-  }
+#info_gender label {
+  margin : 0px 0px 0px -445px;
+}
 
-   #b > #b1 {
-    margin-top: 80px;
-    margin-left: 100px;
-    width: 150px;
-    height: 40px;
-    border-radius: 3px;
-    font-size: 1em;
-    background-color: #6559e8;
-    border: #1fa7d2;
-    color: white;
-  }
+#info_gender input.box {
+  width:1.4em;
+  height:1.4em; 
+}
 
-  #b > #b2 {
-    margin-top: 80px;
-    margin-left: 5px;
-    width: 150px;
-    height: 40px;
-    border-radius: 3px;
-    font-size: 1em;
-    background-color: #00b6ef;
-    border: #1fa7d2;
-    color: white;
-  }
-  
-  input::placeholder {
-    font-size: 1.2em;
-  }
-  input {
-    padding: 0px 0px 0px 10px;
-  }
+#info_title {
+  margin :50px auto;	
+  font-size: 60px;
+  width: 300px;  
+  height: 80px;
+  color: #aaa;
+}
 
-  #already {
-    margin: 20px 0px 0px -20px;
-  }
+#info_id {
+  position: relative;
+}
 
-  #login {
-    margin: -20px -250px 7px 10px;
-    font-weight: bold;
-  }
-  
-  
-  
-  
-  
+#info_id button {
+  margin: 7px 0px 0px 0px ;
+  width: 200px;
+  height: 62px;
+  border-radius: 20px;
+  background-color: #6559e8;
+  border: #1fa7d2;
+  color: white;
+  font-size: 1.3em;
+  right: 2px;
+  position: absolute;
+}
+
+#info_email1 {
+  position: relative;
+}
+
+#info_email1 button {
+  margin: 4px 0px 0px 0px ;
+  width: 200px;
+  height: 65px;
+  border-radius: 20px;
+  background-color: #6559e8;
+  border: #1fa7d2;
+  color: white;
+  font-size: 1.3em;
+  right: 2px;
+  position: absolute;
+}
+
+
+#b > #b1 {
+  width: 250px;
+  height: 70px;
+  border-radius: 20px;
+  font-size: 1.5em;
+  background-color: #6559e8;
+  border: #1fa7d2;
+  color: white;
+}
+
+#b > #b2 {
+  width: 250px;
+  height: 70px;
+  border-radius: 20px;
+  font-size: 1.5em;
+  background-color: gray;
+  border: #1fa7d2;
+  color: white;
+}
+
+input::placeholder {
+  font-size:0.8em; 
+}
+
+#already {
+  font-size : 1.4em;
+  margin: 20px 0px 0px -230px;
+}
+
+#login {
+  font-size : 1.4em;
+  margin: -20px 0px 0px 160px;
+}

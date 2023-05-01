@@ -110,3 +110,7 @@ input:placeholder-shown + label{
     font-size:50px;
     top:15px;
 }
+
+#headerMenuList li {
+	font-family: 'Noto Sans KR', sans-serif;
+}

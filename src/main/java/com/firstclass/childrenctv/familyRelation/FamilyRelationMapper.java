@@ -11,4 +11,6 @@ public interface FamilyRelationMapper {
     List<FamilyRelationVO> findRelationByUser(Long user_id);
     void approval(Long id);
     void delete(Long id);
+    
+    void insert(FamilyRelationVO family);     //아동 등록
 }
