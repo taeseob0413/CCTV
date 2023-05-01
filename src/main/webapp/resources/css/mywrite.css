@@ -44,5 +44,5 @@ td {
 
 table tr:hover td:first-child {
   background-color: #c0dbea;
-  color: white;
+  color: white; 
 }
