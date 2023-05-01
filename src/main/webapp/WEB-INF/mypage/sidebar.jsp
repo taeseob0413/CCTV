@@ -6,7 +6,11 @@
     <ul id="mypagemenu">
     
         <li>
+<<<<<<< HEAD
         <a href="/mypage/get?user_id=${user.user_id }" class="item">
+=======
+        <a href="/mypage/update" class="item">
+>>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
             <span class="material-symbols-outlined">edit</span>
             회원정보수정
         </a></li>

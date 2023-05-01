@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.firstclass.childrenctv.Paging.Criteria;
+import com.firstclass.childrenctv.util.paging.Criteria;
 
 import lombok.AllArgsConstructor;
 
@@ -55,6 +55,5 @@ public class ChildBoardServiceImpl implements ChildBoardService {
    public int getTotal(Criteria cri) {
       return mapper.getTotal(cri);
    }
-   
 
 }

@@ -4,18 +4,24 @@
 <html>
 <head>
     <title>CCTV</title>
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="/resources/css/header.css">
+=======
+    <link rel="stylesheet" type="text/css" href="/resources/css/layout/header.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/layout/reset.css">
+</head>
+>>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
     <% UserVO user = (UserVO) session.getAttribute("user");%>
 <body>
 
 <div id = "headerBox">
-    <div id = "logoBox"><img src="/resources/image/logo.png" width="200" height="70"></div>
+    <div id = "logoBox"><a href="/"><img src="/resources/image/logo.png" width="200" height="70"></a></div>
 </div>
 <div id = "headerMenu">
 <ul id = "headerMenuList">
     <li><a href="/protectBoard/list" >보호신고</a></li>
-    <li>실종 검색</li>
-    <li>안전 지도</li>
+    <li><a href="/child/list" >실종 검색</a></li>
+    <li><a href="/safety/get" >안전 지도</a></li>
     <% if(user == null){%>
     <li class ="userMenu" onclick="toLoginPage()">로그인</li>
     <%} else{ %>

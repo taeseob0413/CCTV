@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../layout/header.jsp" %>
 
-<link rel="stylesheet" type="text/css" href="/resources/css/login.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/user/login.css">
 
 <div id="login_area">
     <div id="login_logo">CCTV 로그인</div>
@@ -17,12 +17,10 @@
                 <input id="password" type="password" name="password" placeholder="비밀번호">
                 <label for="password">비밀번호</label>
             </div>
-            <div id="forgot">
-                <a href="/find/user/userPassword">비밀번호 찾기</a>
-                <a href="/find/user/userLoginId">아이디 찾기</a>
-            </div>
             <button id="loginButton"type="button" onclick="checkLogin()">로그인</button>
             <div id="userJoin">
+                <a href="/find/user/userPassword">비밀번호 찾기</a>  |
+                <a href="/find/user/userLoginId">아이디 찾기</a>  |
                 <a href="/user/join">회원 가입</a>
             </div>
         </div>

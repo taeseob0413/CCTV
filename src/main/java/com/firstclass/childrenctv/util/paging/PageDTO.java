@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.Paging;
+package com.firstclass.childrenctv.util.paging;
 
 import lombok.Getter;
 import lombok.ToString;

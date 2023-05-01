@@ -4,20 +4,53 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.firstclass.childrenctv.ChildBoard.ChildBoardMapper;
+import com.firstclass.childrenctv.ChildBoard.ChildBoardVO;
+import com.firstclass.childrenctv.familyRelation.FamilyRelationService;
+import com.firstclass.childrenctv.familyRelation.FamilyRelationVO;
+import com.firstclass.childrenctv.user.UserMapper;
+import com.firstclass.childrenctv.user.UserVO;
+import com.firstclass.childrenctv.util.email.GmailService;
+import com.firstclass.childrenctv.util.email.MailText;
+
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
 
 @Service
 @AllArgsConstructor
+@Log4j
 public class ReportBoardServiceImpl implements ReportBoardService {
 
 	private ReportBoardMapper mapper;
+	private final FamilyRelationService familyRelationService;
+	private final UserMapper userMapper;
+	private final ChildBoardMapper childBoardMapper;
+	private final GmailService gmailService;
 
 	@Override
 	public void insert(ReportBoardVO board) {// 제보 글 등록
 		
+<<<<<<< HEAD
 		mapper.insert(board);		
+=======
+		mapper.insert(board);
+		notify(board.getReport_id(), board.getChild_id());
+>>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
 	}
 
+	private void notify(Long report_id, Long child_id){
+		List<FamilyRelationVO> list = familyRelationService.findRelationByChild(child_id);
+		ChildBoardVO child = childBoardMapper.getChildId(child_id);
+		for(FamilyRelationVO vo : list){
+			try {
+				UserVO user = userMapper.findById(vo.getUser_id());
+				gmailService.send(user.getUser_email(),"[CCTV] 회원님의 실종 아동에 대한 제보가 들어왔습니다."
+						,MailText.getReportNotification(user.getUser_name(),child.getChild_name(), "localhost:8080/reportBoard/get?report_id="+report_id));
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+		}
+	}
 	@Override
 	public void update(ReportBoardVO board) {		//제보 글 수정
 		mapper.update(board);
@@ -47,5 +80,21 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 		mapper.deleteReportBoard(report_id);
 	}
 	
-
+	// 제보 목록 가져오기
+		@Override
+		public List<ReportBoardVO> getReportList(String user_loginId) {
+			
+			return mapper.getReportList(user_loginId);
+			/*
+			 * System.out.println("Hello JUnitTest");
+			 * 
+			 * List<ReportBoardVO> list = mapper.getReportList(); // mapper -> sql -> data
+			 * access
+			 * 
+			 * log.info(list.get(0)); log.info(list.get(1)); log.info(list.get(2));
+			 * 
+			 * return list;
+			 */
+			
+		}
 }

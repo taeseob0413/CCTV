@@ -1,10 +1,9 @@
-
 package com.firstclass.childrenctv.ChildBoard;
 
 import java.util.List;
 
-import com.firstclass.childrenctv.Paging.Criteria;
 
+import com.firstclass.childrenctv.util.paging.Criteria;
 
 public interface ChildBoardService {
 	   List<ChildBoardVO> getChildAddr(String child_location);
@@ -18,6 +17,5 @@ public interface ChildBoardService {
 	   void insert(List<ChildBoardVO> childList);
 	   
 	   public int getTotal(Criteria cri);
-	   
-	
+
 }

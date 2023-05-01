@@ -7,6 +7,21 @@
             VALUES (seq_user.NEXTVAL, #{user_name}, #{user_email}, #{user_loginID}, #{user_password}, #{user_age}, #{user_gender}, #{user_address})
     </insert>
     
+<<<<<<< HEAD
+=======
+    <insert id="insertSelectKey">
+  		<selectKey keyProperty="user_id" order="BEFORE" resultType="long">
+  		 select seq_user.nextval from dual
+  		</selectKey>
+  		insert into user_table(user_id, user_name, user_email, user_loginID, user_password, user_age, user_gender, user_address)
+  		values(#{user_id}, #{user_name}, #{user_email}, #{user_loginID}, #{user_password}, #{user_age}, #{user_gender}, #{user_address})
+  	</insert>
+
+    <select id="findById" parameterType="long" resultType="com.firstclass.childrenctv.user.UserVO">
+        SELECT * FROM USER_TABLE WHERE user_id = #{id}
+    </select>
+
+>>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
     <select id="existUserByIdAndPassword" resultType="com.firstclass.childrenctv.user.UserVO">
         SELECT * FROM USER_TABLE WHERE user_loginID = #{loginId} AND user_password = #{password}
     </select>

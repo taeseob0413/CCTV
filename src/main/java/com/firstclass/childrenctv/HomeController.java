@@ -16,10 +16,13 @@ public class HomeController {
 		return "/user/LoginUser";
 	}
 
+
     @GetMapping("/")
-    public String home(){
+    public String home() {
         return "index";
     }
+
+
 
     @GetMapping("/find/user/userLoginId")
     public String findUserLoginId(){
@@ -27,11 +30,25 @@ public class HomeController {
     }
 
     @GetMapping("/find/user/userPassword")
-    public String findUserPassword(){
+    public String findUserPassword() {
         return "user/FindUserPassword";
+
     } 
 
-}
+    @GetMapping("/mypage/update") 
+	public String update() {
+		return "/mypage/update1";
+	}
+    
+  // @GetMapping("/mypage/mywrite") 
+//	public String mywrite() {
+	//	return "/mypage/mywrite";
+	//}
+
+    } 
+
+
+
 
 
 

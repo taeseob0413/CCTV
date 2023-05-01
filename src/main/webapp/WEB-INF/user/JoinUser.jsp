@@ -6,9 +6,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">	 
 
+<<<<<<< HEAD
 <div id=signup>
 	<div id="info_title">회원가입</div>
 	
+=======
+<center>
+	<link rel="stylesheet" href="/resources/css/user/signup.css"/>
+>>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
 	<form action="/user/join" method="post"> 
 	
 		<div id="info_id" >

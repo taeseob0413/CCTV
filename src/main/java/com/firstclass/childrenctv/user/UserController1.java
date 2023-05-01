@@ -12,7 +12,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.firstclass.childrenctv.ChildBoard.ChildBoardService;
 
+<<<<<<< HEAD
 import jakarta.servlet.http.HttpSession;
+=======
+
+>>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
 import lombok.AllArgsConstructor;
 
 @Controller
@@ -48,6 +52,10 @@ public class UserController1 {
      	System.out.println("인증코드 :" +  code);
      	return code;
      }
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
     
     //회원 조회
     @GetMapping("/mypage/get")

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import "reset.css";
 @font-face {
     font-family: 'RIDIBatang';
@@ -14,6 +15,23 @@
     list-style-type: none;
     padding: 10px 0px 0px 0px;
     top:220px;
+=======
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.menu {
+  font-family: 'RIDIBatang';
+}
+
+#mypagemenu {
+    list-style-type: none;
+    padding: 10px 0px 0px 0px;
+    top:230px;
+>>>>>>> branch 'main' of https://github.com/ChangDaeJun/CCTV.git
     width: 150px;
     height: 1400px;
     background:#C0DBEA;
