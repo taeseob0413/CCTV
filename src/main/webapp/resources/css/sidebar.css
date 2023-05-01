@@ -1,19 +1,31 @@
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.menu {
+  font-family: 'RIDIBatang';
+}
+
 #mypagemenu {
     list-style-type: none;
-    padding: 10px;
-    margin:  0px 0px 0px 0px ;
+    padding: 10px 0px 0px 0px;
+    top:230px;
     width: 150px;
-    background:lightgray;
-    height: 955px;
+    height: 1400px;
+    background:#C0DBEA;
     position: fixed;
 }
 
 #mypagemenu li a {
     text-decoration: none;
     padding: 10px;
+    margin : 40px auto;
     display: block;
-    color: #000;
-    font-weight: bold;
+    color: #000;  
+    font-size:1.1em;
 }
 
 #mypagemenu li label {

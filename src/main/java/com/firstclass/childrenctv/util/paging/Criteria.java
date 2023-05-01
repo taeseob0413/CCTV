@@ -1,9 +1,5 @@
-package com.firstclass.childrenctv.ChildBoard;
+package com.firstclass.childrenctv.util.paging;
 
-import org.springframework.stereotype.Component;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

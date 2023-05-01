@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../layout/header.jsp"%>
 <head>
-<link rel="stylesheet" href="/resources/css/reportboard_register_style.css">
+<link rel="stylesheet" href="/resources/css/board_register.css">
 </head>
 
 <% 
@@ -18,8 +18,10 @@
 %>
 
 <center>
-    <h1>실종 아동 목격 제보</h1>
-
+<div id="ContentArea">
+		<div id="InnerArea">
+    <div id="title">실종 아동 목격 제보</div>
+<div>
     <form action="/reportBoard/register" method="post" id="registerform">
     	<input type="hidden" name = "child_id" value="${child.child_id}">
     	<input type="hidden" name= "user_loginId" value= <%= userLoginId %>>
@@ -29,33 +31,38 @@
     	
         <table>
         	<tr>
-                <td>작성자</td>
+                <td class="attribute">작성자</td>
                 <td><%= userLoginId %></td>
             </tr>
         	<tr>
-                <td>아동 이름</td>
+                <td class="attribute">아동 이름</td>
                 <td>${child.child_name }</td>
             </tr>
             <tr>
-                <td>목격 시간</td>
+                <td class="attribute">목격 시간</td>
                 <td><input type="datetime-local" name="report_time" id="report_time"></td>
             </tr>
             <tr>
-                <td>목격 위치</td>
-                <td><textarea name="report_address" rows="1" cols="100"></textarea></td>
+                <td class="attribute">목격 위치</td>
+                <td><textarea name="report_address" rows="1" cols="100" style="font-size:13px;"></textarea></td>
             </tr>
             <tr>
-                <td>목격 내용</td>
-                <td><textarea name="report_content" rows="50" cols="100"></textarea></td>
+                <td class="attribute">목격 내용</td>
+                <td><textarea name="report_content" rows="13" cols="100"></textarea></td>
             </tr>
             <tr>
-                <td>비밀번호</td>
-                <td><input type="text" name="password" oninput="checkPwLength(this)"></td>
+                <td class="attribute">비밀번호</td>
+                <td><input type="text" id="pw" name="password" oninput="checkPwLength(this)"></td>
             </tr>
         </table>
+        </div>
+        <div id="buttonContainer">
         <input type="submit" id="mysubmit" value="작성완료" onclick="return submitForm()"/>
         <input type="button" value="취소" onclick="location.href='/child/get?child_id=${child.child_id}'"/>
+        </div>
     </form>
+    </div>
+    </div>
 </center>
 
 

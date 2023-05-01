@@ -1,13 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="/resources/css/mywrite.css" />
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@include file="../layout/header.jsp"%>
+
+<!-- 사이드바 -->
+<jsp:include page="../mypage/sidebar.jsp"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 <html>
 <head>
-<title>Home</title>
 <link rel="stylesheet" href="/resources/css/mywrite.css" />
 </head>
 <body>
@@ -21,7 +25,7 @@
 			<h1>제보 목록</h1>
 			<table border="1">
 				<tr>
-					<th>제보 글 고유번호</th>
+					<th>-해당 페이지로 이동-(고유번호)</th>
 					<th>실종 아동</th>
 					<th>제보 내용</th>
 					<th>작성자</th>
@@ -50,26 +54,6 @@
 </body>
 
 
-
-<!--<script>
-function deletePost(reportId) {
-	  if (confirm("글을 삭제하시겠습니까?")) {
-	    var xhr = new XMLHttpRequest();
-	    xhr.open('POST', '/reportBoard/delete', true);
-	    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-	    xhr.onload = function () {
-	      if (xhr.status === 200) {
-	        alert('글이 삭제되었습니다.');
-	        location.href = "/mypage/mywrite/delete?report_id=" + reportId;
-	      } else {
-	        alert('글 삭제에 실패하였습니다.');
-	      }
-	    };
-	    xhr.send('report_id=' + reportId);
-	  }
-	}
-
-  </script>-->
 
 
 </html>

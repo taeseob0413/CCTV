@@ -24,6 +24,8 @@ class UserMapperTest {
     
     @Autowired
     private ReportBoardMapper reportMapper;
+    
+    
 
    /* @Test
     void testGetReportList() {    	

@@ -1,6 +1,5 @@
-package com.firstclass.childrenctv.ChildBoard;
+package com.firstclass.childrenctv.util.paging;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
 
