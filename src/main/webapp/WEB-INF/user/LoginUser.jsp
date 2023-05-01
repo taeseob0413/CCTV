@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../layout/header.jsp" %>
 
-<link rel="stylesheet" type="text/css" href="/resources/css/login.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/user/login.css">
 
 <div id="login_area">
     <div id="login_logo">CCTV 로그인</div>
