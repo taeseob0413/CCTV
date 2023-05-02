@@ -20,9 +20,15 @@
   a:active {
     color: #999; /* 클릭한 링크의 색상 설정 */
   }
-
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 
 #ListArea {
+  font-family: 'MICEGothic Bold';
   width: 100%;
   text-align: center;
   margin-bottom: 50px;
@@ -54,7 +60,7 @@
 }
 
 #notice{
-	font-size: 23px;
+	font-size: 25px;
 }
 
 table {
@@ -121,6 +127,7 @@ th {
   width: 200px;
   height: 80px;
   background-color:#2F58CD;
+  font-family: 'MICEGothic Bold';
   font-weight:bold;
   color: #fff;
   padding: 10px;
