@@ -1,11 +1,11 @@
-package com.firstclass.childrenctv.ReportBoard;
+package com.firstclass.childrenctv.reportBoard;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.firstclass.childrenctv.ChildBoard.ChildBoardMapper;
-import com.firstclass.childrenctv.ChildBoard.ChildBoardVO;
+import com.firstclass.childrenctv.childBoard.ChildBoardMapper;
+import com.firstclass.childrenctv.childBoard.ChildBoardVO;
 import com.firstclass.childrenctv.familyRelation.FamilyRelationService;
 import com.firstclass.childrenctv.familyRelation.FamilyRelationVO;
 import com.firstclass.childrenctv.user.UserMapper;

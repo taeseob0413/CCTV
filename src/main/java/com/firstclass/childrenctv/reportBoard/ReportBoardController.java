@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.ReportBoard;
+package com.firstclass.childrenctv.reportBoard;
 
 
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.firstclass.childrenctv.ChildBoard.ChildBoardService;
+import com.firstclass.childrenctv.childBoard.ChildBoardService;
 import com.firstclass.childrenctv.user.UserVO;
 
 import jakarta.servlet.http.HttpSession;

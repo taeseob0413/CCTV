@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.SafetyMap;
+package com.firstclass.childrenctv.safetyMap;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.ProtectBoard;
+package com.firstclass.childrenctv.protectBoard;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,7 +1,7 @@
 package com.firstclass.childrenctv.user;
 
 import org.apache.ibatis.annotations.Mapper;
-import com.firstclass.childrenctv.ReportBoard.ReportBoardVO;
+import com.firstclass.childrenctv.reportBoard.ReportBoardVO;
 
 import java.util.List;
 
