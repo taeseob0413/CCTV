@@ -19,11 +19,14 @@
     }
 
     function showPosition(position) {
-      var lat = position.coords.latitude;
-      var lon = position.coords.longitude;
-      var url = "http://localhost:8080/sendLocation?latitude=" + lat + "&longitude=" + lon;
-      window.location = url;
-    }
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        //var url = "http://localhost:8082/sendLocation?latitude=" + lat + "&longitude=" + lon;
+        //window.location = url;
+        var host = window.location.host;
+        var url = "http://" + host + "/sendLocation?latitude=" + lat + "&longitude=" + lon;
+        window.location = url;
+      }
   </script>
 </head>
 <body>
