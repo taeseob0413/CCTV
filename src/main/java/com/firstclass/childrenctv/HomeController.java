@@ -15,9 +15,9 @@ public class HomeController {
 	public String login(){
 		return "/user/LoginUser";
 	}
-
+	
     @GetMapping("/")
-    public String home(){
+    public String home() {
         return "index";
     }
 
@@ -27,11 +27,19 @@ public class HomeController {
     }
 
     @GetMapping("/find/user/userPassword")
-    public String findUserPassword(){
+    public String findUserPassword() {
         return "user/FindUserPassword";
     } 
+   
+  // @GetMapping("/mypage/mywrite") 
+//	public String mywrite() {
+	//	return "/mypage/mywrite";
+	//}
 
-}
+    } 
+
+
+
 
 
 

@@ -1,0 +1,154 @@
+#signup {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+#signup {
+	width:100%;
+	height:1350px;
+	text-align: center;
+}
+
+label {
+  font-size: 1.5em;
+  padding : 10px;
+  font-weight : bolder;
+}
+
+#info_id, #info_name, #info_pw1, #info_pw2,
+#info_email1, #info_email2, #info_age, #info_address {
+  margin: 40px auto;
+  width : 635px;
+  height : 73px;
+  border-bottom: 1px solid black;
+}
+
+#info_gender {
+  margin: 40px auto;
+  width : 635px;
+  height : 53px;
+  border-bottom: 1px solid black;
+}
+
+
+#info_id input, #info_email1 input {
+  width: 530px;
+  height:70px;
+  border-radius: 5px;
+  border: 0px solid gray;
+  font-size:1.6em;  
+}
+
+#info_pw1 input, #info_email2 input {
+  width: 509px;
+  height:70px;
+  border-radius: 5px;
+  border: 0px solid gray;
+  font-size:1.6em;   
+}
+
+#info_pw2 input {
+  width: 450px;
+  height:70px;
+  border-radius: 5px;
+  border: 0px solid gray;
+  font-size:1.6em;   
+}
+
+#info_name input, #info_age input,
+#info_address input {
+  width: 555px;
+  height:70px;
+  border-radius: 5px;
+  border: 0px solid gray;
+  font-size:1.6em; 
+}
+
+#info_gender span {
+  font-size :1.4em;
+}
+
+#info_gender label {
+  margin : 0px 0px 0px -445px;
+}
+
+#info_gender input.box {
+  width:1.4em;
+  height:1.4em; 
+}
+
+#info_title {
+  margin :50px auto;	
+  font-size: 60px;
+  width: 300px;  
+  height: 80px;
+  color: #aaa;
+}
+
+#info_id {
+  position: relative;
+}
+
+#info_id button {
+  margin: 7px 0px 0px 0px ;
+  width: 200px;
+  height: 62px;
+  border-radius: 20px;
+  background-color: #6559e8;
+  border: #1fa7d2;
+  color: white;
+  font-size: 1.3em;
+  right: 2px;
+  position: absolute;
+}
+
+#info_email1 {
+  position: relative;
+}
+
+#info_email1 button {
+  margin: 4px 0px 0px 0px ;
+  width: 200px;
+  height: 65px;
+  border-radius: 20px;
+  background-color: #6559e8;
+  border: #1fa7d2;
+  color: white;
+  font-size: 1.3em;
+  right: 2px;
+  position: absolute;
+}
+
+
+#b > #b1 {
+  width: 250px;
+  height: 70px;
+  border-radius: 20px;
+  font-size: 1.5em;
+  background-color: #6559e8;
+  border: #1fa7d2;
+  color: white;
+}
+
+#b > #b2 {
+  width: 250px;
+  height: 70px;
+  border-radius: 20px;
+  font-size: 1.5em;
+  background-color: gray;
+  border: #1fa7d2;
+  color: white;
+}
+
+input::placeholder {
+  font-size:0.8em; 
+}
+
+#already {
+  font-size : 1.4em;
+  margin: 20px 0px 0px -230px;
+}
+
+#login {
+  font-size : 1.4em;
+  margin: -20px 0px 0px 160px;
+}

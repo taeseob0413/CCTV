@@ -37,7 +37,7 @@ public class ChildApiController {
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("esntlId", "10000532");
         params.add("authKey", "180928cbe4e14d7f");
-        params.add("rowSize", "24");
+        params.add("rowSize", "42");
         params.add("writngTrgetDscds", "010");
         params.add("page", "2");
 

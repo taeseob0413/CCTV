@@ -1,0 +1,48 @@
+/* 컨텐츠 영역 스타일 */
+
+h1 {
+	margin-top: 50px;
+	margin-bottom: 30px;
+	margin-right: 20px;
+	left: 420px;
+	top: 210px;
+	font-size: 50px; 
+	font-weight: bold;
+	text-align: center;
+	position: fixed;
+	padding: 10px;
+	
+}
+
+table {
+	border-collapse: collapse;
+	left: 120px;
+	top: 320px;
+	margin: 50px;
+	width: 80%;
+	font-size: 1em;
+	text-align: center;
+	padding: 10px;
+	position: fixed;	
+	border: 5px solid black;
+	
+	
+}
+
+th {
+	background: #8e9091;
+	color: #fff;
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+td {
+	border: 1px solid #000;
+	padding: 10px;
+} 
+
+
+table tr:hover td:first-child {
+  background-color: #c0dbea;
+  color: white; 
+}

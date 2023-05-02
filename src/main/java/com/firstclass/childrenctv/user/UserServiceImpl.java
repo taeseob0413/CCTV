@@ -72,11 +72,28 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void infoUpdate(UserVO user) {
-
+    	userMapper.infoUpdate(user);
     }
 
     @Override
     public List<UserVO> getAllUserList() {
         return null;
     }
+		
+	@Override
+	public UserVO get(Long user_id) {			
+		return userMapper.get(user_id);
+	}
+
+	@Override
+	public void delete(long id) {
+		userMapper.delete(id);	
+	}
+	
+	
+
+	
+	
+
+	
 }

@@ -2,6 +2,8 @@ package com.firstclass.childrenctv.reportBoard;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.firstclass.childrenctv.childBoard.ChildBoardMapper;
 import com.firstclass.childrenctv.childBoard.ChildBoardVO;
 import com.firstclass.childrenctv.familyRelation.FamilyRelationService;
@@ -10,12 +12,13 @@ import com.firstclass.childrenctv.user.UserMapper;
 import com.firstclass.childrenctv.user.UserVO;
 import com.firstclass.childrenctv.util.email.GmailService;
 import com.firstclass.childrenctv.util.email.MailText;
-import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
 
 @Service
 @AllArgsConstructor
+@Log4j
 public class ReportBoardServiceImpl implements ReportBoardService {
 
 	private ReportBoardMapper mapper;
@@ -26,7 +29,6 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 
 	@Override
 	public void insert(ReportBoardVO board) {// 제보 글 등록
-		
 		mapper.insert(board);
 		notify(board.getReport_id(), board.getChild_id());
 	}
@@ -44,6 +46,7 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 			}
 		}
 	}
+	
 	@Override
 	public void update(ReportBoardVO board) {		//제보 글 수정
 		mapper.update(board);
@@ -62,16 +65,30 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 	}
 
 	@Override
-	public List<ReportBoardVO> getByUser(String user_loginId) {		//작성자별 제보 글 보기
-		
+	public List<ReportBoardVO> getByUser(String user_loginId) {		//작성자별 제보 글 보기		
 		return mapper.getByUser(user_loginId);
 	}
 	
 	@Override
-	public void deleteReportBoard(Long report_id) {		//제보 글 삭제
-		
+	public void deleteReportBoard(Long report_id) {		//제보 글 삭제		
 		mapper.deleteReportBoard(report_id);
 	}
 	
-
+	// 제보 목록 가져오기
+		@Override
+		public List<ReportBoardVO> getReportList(String user_loginId) {
+			
+			return mapper.getReportList(user_loginId);
+			/*
+			 * System.out.println("Hello JUnitTest");
+			 * 
+			 * List<ReportBoardVO> list = mapper.getReportList(); // mapper -> sql -> data
+			 * access
+			 * 
+			 * log.info(list.get(0)); log.info(list.get(1)); log.info(list.get(2));
+			 * 
+			 * return list;
+			 */
+			
+		}
 }

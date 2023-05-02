@@ -4,16 +4,23 @@
     text-align: center;
 }
 
+#login_area{
+    width: 100%;
+    height: 1300px;
+    text-align: center;
+}
+
 #login_logo{
     width: 800px;
     font-size: 80px;
-    margin : 50px auto;
+    margin : 150px auto;
+    text-align: center;
     color: #aaa;
 }
 
 #loginBox{
     width : 800px;
-    height : 1000px;
+    height : 800px;
     padding : 20px;
     border: 2px solid grey;
     background : white;
@@ -22,27 +29,10 @@
     text-align: center;
 }
 
-#forgot{
-    width : 100%;
-    height :230px;
-}
-
-#forgot > a{
-    padding : 35px;
-    text-decoration: none;
-    line-height : 200px;
-    cursor: default;
-    margin : 20px;
-    font-size : 50px;
-    background-color: #4a89dc;
-    border:none;
-    color:white;
-    border-radius: 5px;
-}
 
 .input-box{
     width: 600px;
-    margin: 80px auto;
+    margin: 120px auto;
     position: relative;
 }
 
@@ -79,26 +69,19 @@ button{
     width:700px;
     height:120px;
     font-size: 50px;
-    margin-bottom : 50px;
+    margin-bottom : 40px;
 }
 
-#userJoin{
-    padding : 30px;
-    margin : 0 auto;
-    width : 650px;
+#userJoin {
     text-decoration: none;
     cursor: default;
-    background-color: #4a89dc;
-    border:none;
-    color:white;
-    border-radius: 5px;
+    font-size: 30px;
+    color: black;
 }
 
 #userJoin > a{
     text-decoration: none;
-    cursor: default;
-    font-size: 50px;
-    color:white;
+    color: black;
 }
 
 input::placeholder{
@@ -109,8 +92,4 @@ input:placeholder-shown + label{
     color:#aaa;
     font-size:50px;
     top:15px;
-}
-
-#headerMenuList li {
-	font-family: 'Noto Sans KR', sans-serif;
 }

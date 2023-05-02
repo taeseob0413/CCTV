@@ -8,4 +8,6 @@ public interface FamilyRelationService {
     List<FamilyRelationVO> findRelationByUser(Long user_id);
     boolean approval(Long id);
     boolean unregister(Long id);
+    
+    void addchild(FamilyRelationVO family);        //아동 등록
 }

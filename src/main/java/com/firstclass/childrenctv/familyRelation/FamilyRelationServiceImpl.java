@@ -63,4 +63,12 @@ public class FamilyRelationServiceImpl implements FamilyRelationService{
         }
         return true;
     }
+
+	@Override
+	public void addchild(FamilyRelationVO family) {
+		familyRelationMapper.insert(family);
+		
+	}
+    
+    
 }

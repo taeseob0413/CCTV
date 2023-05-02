@@ -24,4 +24,10 @@
     <delete id="delete" parameterType="java.lang.Long">
         DELETE FAMILY_RELATION_TABLE WHERE id = #{id}
     </delete>
+    
+    <insert id="insert">
+    	INSERT INTO FAMILY_RELATION_TABLE(id, user_id, childBoard_id, approval)
+    		VALUES (seq_familyRelation.NEXTVAL, #{user_id}, #{childBoard_id}, #{approval})
+    </insert>
+    
 </mapper>
