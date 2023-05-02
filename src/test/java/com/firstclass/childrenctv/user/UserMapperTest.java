@@ -1,16 +1,9 @@
 package com.firstclass.childrenctv.user;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.firstclass.childrenctv.ReportBoard.ReportBoardMapper;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.List;
-
-import com.firstclass.childrenctv.ReportBoard.ReportBoardVO;
+import com.firstclass.childrenctv.reportBoard.ReportBoardMapper;
 
 import lombok.extern.log4j.Log4j;
 

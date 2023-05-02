@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.ChildBoard;
+package com.firstclass.childrenctv.childBoard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-import com.firstclass.childrenctv.ProtectBoard.ProtectBoardService;
-import com.firstclass.childrenctv.ProtectBoard.ProtectBoardVO;
-import com.firstclass.childrenctv.ReportBoard.ReportBoardService;
+import com.firstclass.childrenctv.protectBoard.ProtectBoardService;
+import com.firstclass.childrenctv.protectBoard.ProtectBoardVO;
+import com.firstclass.childrenctv.reportBoard.ReportBoardService;
 
 import com.firstclass.childrenctv.util.paging.Criteria;
 import com.firstclass.childrenctv.util.paging.PageDTO;

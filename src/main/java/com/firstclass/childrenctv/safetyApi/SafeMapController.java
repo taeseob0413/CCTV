@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.SafetyApi;
+package com.firstclass.childrenctv.safetyApi;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,8 +16,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.firstclass.childrenctv.SafetyMap.SafetyMapService;
-import com.firstclass.childrenctv.SafetyMap.SafetyMapVO;
+import com.firstclass.childrenctv.safetyMap.SafetyMapService;
+import com.firstclass.childrenctv.safetyMap.SafetyMapVO;
 
 import lombok.AllArgsConstructor;
 
