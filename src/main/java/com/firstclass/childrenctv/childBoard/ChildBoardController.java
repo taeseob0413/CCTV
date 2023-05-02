@@ -60,5 +60,6 @@ public class ChildBoardController {
 
 		 return "childboard/get";
 	 }
+	 
 	
 }
