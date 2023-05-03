@@ -2,18 +2,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.firstclass.childrenctv.user.UserMapper">
 
-   <insert id="insert" parameterType="com.firstclass.childrenctv.user.UserVO">
+   <insert id="insert" >
         INSERT INTO USER_TABLE(user_id, user_name, user_email, user_loginID, user_password, user_age, user_gender, user_address)
             VALUES (seq_user.NEXTVAL, #{user_name}, #{user_email}, #{user_loginID}, #{user_password}, #{user_age}, #{user_gender}, #{user_address})
     </insert>
-    
-    <insert id="insertSelectKey">
-  		<selectKey keyProperty="user_id" order="BEFORE" resultType="long">
-  		 select seq_user.nextval from dual
-  		</selectKey>
-  		insert into user_table(user_id, user_name, user_email, user_loginID, user_password, user_age, user_gender, user_address)
-  		values(#{user_id}, #{user_name}, #{user_email}, #{user_loginID}, #{user_password}, #{user_age}, #{user_gender}, #{user_address})
-  	</insert>
 
     <select id="findById" parameterType="long" resultType="com.firstclass.childrenctv.user.UserVO">
         SELECT * FROM USER_TABLE WHERE user_id = #{id}
@@ -30,5 +22,19 @@
     <select id="idcheck" resultType="int">
     	SELECT count(*) FROM USER_TABLE WHERE user_loginID = #{loginId}
     </select>
+    
+    <update id="infoUpdate">
+    	UPDATE USER_TABLE SET user_password =#{user_password}, user_name =#{user_name},
+    	user_email =#{user_email}, user_age =#{user_age}, user_gender =#{user_gender}, user_address =#{user_address}
+    	WHERE user_loginID =#{user_loginID}
+    </update>
+    
+   <delete id="delete">
+    	DELETE USER_TABLE WHERE user_id = #{id}
+    </delete>
+      
+	<select id="get" resultType ="com.firstclass.childrenctv.user.UserVO">
+		SELECT * FROM USER_TABLE where user_id = #{user_id}
+	</select>
     
 </mapper>

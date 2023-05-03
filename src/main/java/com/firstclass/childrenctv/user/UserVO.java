@@ -18,5 +18,5 @@ public class UserVO {
     private String user_gender;
     private String user_address;
     private String user_grade;
-
+	
 }

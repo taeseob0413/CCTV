@@ -43,4 +43,6 @@ public class FamilyRelationController {
         if(list != null) return new BaseResponse(200, "성공적으로 삭제되었습니다.", list);
         return new BaseResponse(400, "Err : 비정상적인 요청입니다.");
     }
+    
+    
 }
