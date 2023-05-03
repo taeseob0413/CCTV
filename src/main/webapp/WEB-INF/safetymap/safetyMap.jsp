@@ -30,6 +30,7 @@
   </script>
 </head>
 <body>
+
   <div class="cnt-opt">
    <div class="row">
     <div class="col-sm-4">
@@ -49,7 +50,9 @@
   <div class="cnt-main"> 
             <h5 class="item-title">아동 안전 지킴이집 로고</h5>
             <p class="logoexplanation">아동 안전 지킴이집 로고는 경찰과 주민이 손을 잡고 함께 아동을 보호한다는 의미로 유명 만화가인 이현세 씨에게 의뢰하여 아동 친화적으로 제작되었습니다.</p>
-       
+        <div class="outer">
+  <button onclick="getLocation()" class="w-btn-outline w-btn-gray-outline" style="display: inline-block; margin: 10px auto;">내 근처 안전지도</button>
+  </div>
   <div class="row">
           
       <div class="col-sm-6 m-t-20">
@@ -63,9 +66,7 @@
   </div>
   
   <br>
- <div class="outer">
-  <button onclick="getLocation()" class="w-btn-outline w-btn-gray-outline" style="display: inline-block; margin: 10px auto;">내 근처 안전지도</button>
-  </div>
+ 
 </body>
 </html>
 <%@ include file="../layout/footer.jsp"%>

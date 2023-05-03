@@ -6,138 +6,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Kakao Map Example</title>
-  <style>
-    #map {
-         width: 100%;
-         height: 40vh;
-         display: flex;
-         justify-content: center;
-         align-items: center;}
-      #tabml {
-         width: 50%;
-         height: 500px;
-      }
-      body {
-        padding:1.5em;
-        background: #f5f5f5
-   }
-
-   table {
-        border: 1px #a39485 solid;
-        font-size: .9em;
-        box-shadow: 0 2px 5px rgba(0,0,0,.25);
-        width: 100%;
-        border-collapse: collapse;
-        border-radius: 5px;
-        overflow: hidden;
-      }
-
-   th {
-        text-align: left;
-      }
-  
-   thead {
-        font-weight: bold;
-        color: #fff;
-        background: #4a89dc;
-   }
-   
-   .w-btn {
-       position: relative;
-       border: none;
-       display: inline-block;
-       padding: 10px 20px;
-       border-radius: 15px;
-       font-family: "paybooc-Light", sans-serif;
-       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-       text-decoration: none;
-       font-weight: 600;
-       transition: 0.25s;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-   }
-
-   .w-btn-outline {
-       position: relative;
-       padding: 10px 20px;
-       border-radius: 15px;
-       font-family: "paybooc-Light", sans-serif;
-       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-       text-decoration: none;
-       font-weight: 600;
-       transition: 0.25s;
-   }
-   .w-btn-gray-outline {
-       border: 3px solid #a3a1a1;
-       color: #6e6e6e;
-   }
-   .btn-container {
-     text-align: right;
-    margin-top: 20px; /* 위쪽 여백 추가 */
-     margin-bottom: 20px; /* 아래쪽 여백 추가 */
-   }
-  
-    td, th {
-        padding: 1em .5em;
-        vertical-align: middle;
-   }
-  
-    td {
-        border-bottom: 1px solid rgba(0,0,0,.1);
-        background: #fff;
-      }
-
-   a {
-        color: #73685d;
-   }
-  
-    @media all and (max-width: 768px) {
-    
-        table, thead, tbody, th, td, tr {
-          display: block;
-        }
-  
-     th {
-       text-align: right;
-     }
-  
-     table {
-       position: relative; 
-       padding-bottom: 0;
-       border: none;
-       box-shadow: 0 0 10px rgba(0,0,0,.2);
-     }
-  
-     thead {
-       float: left;
-       white-space: nowrap;
-     }
-  
-     tbody {
-       overflow-x: auto;
-       overflow-y: hidden;
-       position: relative;
-       white-space: nowrap;
-     }
-  
-     tr {
-       display: inline-block;
-       vertical-align: top;
-     }
-  
-     th {
-       border-bottom: 1px solid #a39485;
-     }
-  
-     td {
-       border-bottom: 1px solid #e5e5e5;
-     }
-  
-  
-     }
-   </style>
-</head>
+  <link rel="stylesheet" href="/resources/css/locationReceived.css"> 
+ </head>
 <body>
       <div style="text-align: center;">
         <div id="map"></div>
@@ -173,15 +43,17 @@
          });
          customOverlay.setMap(map);
          var markers=[];
+         var overlay=[];
          var listAddrs=[];
          <c:forEach var="location" items="${listAddr}">
             var markerPosition = new kakao.maps.LatLng(${location.getSafety_latitude()}, ${location.getSafety_longitude()});
             var marker = new kakao.maps.Marker({
             position: markerPosition,
+            title: '${location.getSafety_name()}', //새로 추가
             clickable: true
             });
             marker.setMap(map);
-            // 커스텀 오버레이를 생성합니다.
+            // 커스텀 오버레이를 생성
             var content = '<div style="color: black; font-weight: bold; padding: 10px; background-color: rgba(255, 255, 255, 0);">${location.getSafety_name()}</div>';
             var customOverlay = new kakao.maps.CustomOverlay({
                position: markerPosition,
@@ -189,41 +61,61 @@
                xAnchor: 0.5,
                yAnchor: 1.5
             });
-
-            kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, customOverlay));
-            kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(customOverlay));
+            //customOverlay.setMap(map); 커스텀 오버레이 초기에 생성
+            
+            //kakao.maps.event.addListener(marker, 'click', function() {
+            //     var url = 'https://map.kakao.com/link/map/' + '${location.getSafety_name()},' + ${location.getSafety_latitude()} + ',' + ${location.getSafety_longitude()};
+            //     window.open(url);
+            //   });
+            
+            //kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, customOverlay));
+            //kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(customOverlay));
             
             markers.push(marker);
-            
+            overlay.push(customOverlay);
              var safetyObj = {
                   safety_class: '${location.getSafety_class()}',
                   safety_address: '${location.getSafety_address()}',
                   safety_name: '${location.getSafety_name()}',
-                  safety_telno: '${location.getSafety_telno()}'
-                  
+                  safety_telno: '${location.getSafety_telno()}',
+                  safety_latitude : ${location.getSafety_latitude()},
+                  safety_longitude : ${location.getSafety_longitude()}
               };
          
              listAddrs.push(safetyObj);
+             
+             (function(marker, customOverlay) {
+                 kakao.maps.event.addListener(marker, 'click', function() {
+                   if (customOverlay.getMap()) {
+                     customOverlay.setMap(null);
+                   } else {
+                     customOverlay.setMap(map);
+                   }
+                 });
+               })(marker, customOverlay);
+             
       </c:forEach>
    
-      function makeOverListener(map, marker, customOverlay) {
-            return function() {
-               customOverlay.setMap(map);
-            };
-      }
+     // function makeOverListener(map, marker, customOverlay) {
+     //       return function() {
+     //          customOverlay.setMap(map);
+     //       };
+     // }
 
          // 커스텀 오버레이를 닫는 클로저를 만드는 함수입니다.
-      function makeOutListener(customOverlay) {
-            return function() {
-               customOverlay.setMap(null);
-            };
-      }
+      //function makeOutListener(customOverlay) {
+      //      return function() {
+      //         customOverlay.setMap(null);
+      //      };
+      //}
          
       kakao.maps.event.addListener(map, 'center_changed', function() {
           // 현재까지 찍힌 마커 모두 제거
           for (var i=0; i<markers.length; i++) {
               markers[i].setMap(null);
+              overlay[i].setMap(null);
           }
+         overlay=[];
          markers=[];
          listAddrs=[];
           var latlng = map.getCenter();
@@ -239,32 +131,51 @@
                  var markerPosition = new kakao.maps.LatLng(${location.getSafety_latitude()}, ${location.getSafety_longitude()});
                   var marker = new kakao.maps.Marker({
                       position: markerPosition,
+                      title: '${location.getSafety_name()}', //새로 추가
                       clickable: true
                   });
                   marker.setMap(map);
                   // 커스텀 오버레이를 생성합니다.
-                  var content = '<div style="color: black; font-weight: bold; padding: 10px; background-color: rgba(255, 255, 255, 0);">${location.getSafety_name()}</div>';
+                  var content = '<div style="color: black; font-weight:bold; padding: 10px; background-color: rgba(255, 255, 255, 0);">${location.getSafety_name()}</div>';
                   var customOverlay = new kakao.maps.CustomOverlay({
                       position: markerPosition,
                       content: content,
                       xAnchor: 0.5,
                       yAnchor: 1.5
                   });
-
-                  kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, customOverlay));
-                  kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(customOverlay));
-                  markers.push(marker);
+              
                   
+                  //customOverlay.setMap(map); // 수정된 부분
+                  
+                  //kakao.maps.event.addListener(marker, 'click', function() {
+                  //     var url = 'https://map.kakao.com/link/map/' + '${location.getSafety_name()},' + ${location.getSafety_latitude()} + ',' + ${location.getSafety_longitude()};
+                  //     window.open(url);
+                  //   });
+                  
+                  //kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, customOverlay));
+                  //kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(customOverlay));
+                  markers.push(marker);
+                  overlay.push(customOverlay);
                   var safetyObj = {
                         safety_class: '${location.getSafety_class()}',
                         safety_address: '${location.getSafety_address()}',
                         safety_name: '${location.getSafety_name()}',
-                        safety_telno: '${location.getSafety_telno()}'
+                        safety_telno: '${location.getSafety_telno()}',
+                        safety_latitude : ${location.getSafety_latitude()},
+                        safety_longitude : ${location.getSafety_longitude()}
                         
                     };
                   
                   listAddrs.push(safetyObj);
-                  
+                  (function(marker, customOverlay) {
+                     kakao.maps.event.addListener(marker, 'click', function() {
+                       if (customOverlay.getMap()) {
+                         customOverlay.setMap(null);
+                       } else {
+                         customOverlay.setMap(map);
+                       }
+                     });
+                   })(marker, customOverlay);
                   
              }
           </c:forEach>
@@ -286,23 +197,30 @@
               addressCell.innerHTML = safety.safety_address;
               telnoCell.innerHTML = safety.safety_telno;
               classCell.innerHTML = safety.safety_class;
+              
+              (function(safety) {
+                  nameCell.addEventListener('click', function() {
+                      var url = 'https://map.kakao.com/link/map/' + safety.safety_name + ',' + safety.safety_latitude + ',' + safety.safety_longitude;
+                      window.open(url, '_blank');
+                  });
+              })(safety);
           }
          
       }
       
      </script>
-   <div class="btn-container">
-   		<button onclick="printSafetyInfo()" class="w-btn-outline w-btn-gray-outline" >테이블 출력</button>
-   	</div>
+     <div class="btn-container">
+         <button onclick="printSafetyInfo()" class="w-btn-outline w-btn-gray-outline" >테이블 출력</button>
+      </div>
       <div id="table">
       
       <table class="table table-striped table-bordered table-hover">
        <thead>
            <tr>
-            <th>Safety Name</th>
-            <th>Safety Address</th>
-            <th>Safety Telno</th>
-            <th>Safety Class</th>
+            <th>이름</th>
+            <th>주소</th>
+            <th>전화번호</th>
+            <th>안전지도 유형</th>
            </tr>
        </thead>
           <tbody id="output-table-body">
