@@ -20,18 +20,20 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
+.container{
+	font-family: 'MICEGothic Bold';
+	margin-top: 20px;
+}
 .childname{
     text-align: center;
-    font-size: 20px;
+    font-size: 35px;
     font-weight: bold;
     border: 1px solid white;
-    width: 60%;
-    height: 10%;
+    width: 180px;
+    height: 40px;
     margin-left: auto; 
     margin-right: auto;
-    padding: 13px;
-    border-radius: 20px;
+    padding: 13px;    
     background-color: white;
     color: #2d52ad;
 }
@@ -47,20 +49,25 @@
 }
 .gal-img{
  float: left;
+ width: 30%;
+ height: 400px;
+ margin-top: 15px;
 }
 .info{
  float: right;
  width: 70%;
- height: 20%;
+ height: 400px;
+ margin-top: 15px;
 }
 table.table-01{
  width: 95%;
  min-width: 500px;
- height: 20px;
+ height: 40px;
  border-collapse: collapse;
+ border-radius: 20px;
  text-align: left;
  font-size: 25px;
- margin: 10px 10px 10px 10px;
+ 
 }
  table.table-01 th{
  border-bottom: 1px solid white;
@@ -69,7 +76,6 @@ table.table-01{
  background-color: #2d52ad;
  color: white;
  padding: 10px;
- height: 20px;
  width: 100px;
  }
  table.table-01 td{
@@ -78,7 +84,6 @@ table.table-01{
  background-color: white;
  color: black;
  padding: 10px;
- height: 20px;
  }
  
  .title{

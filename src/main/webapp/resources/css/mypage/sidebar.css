@@ -6,10 +6,10 @@
     list-style-type: none;
     padding: 10px 0px 0px 0px;
     top:230px;
-    width: 150px;
+    width: 170px;
     height: 1400px;
     background:#C0DBEA;
-    position: fixed;
+    float : left;
 }
 
 #mypagemenu li a {

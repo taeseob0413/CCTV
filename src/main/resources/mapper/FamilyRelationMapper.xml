@@ -11,10 +11,17 @@
             resultType="com.firstclass.childrenctv.familyRelation.FamilyRelationVO">
         SELECT * FROM FAMILY_RELATION_TABLE WHERE childBoard_id = #{childBoard_id}
     </select>
-
+    <!-- 차일드정보가져오기 -->
+    <select id="getChildrenByUser" parameterType="java.lang.Long"
+            resultType="com.firstclass.childrenctv.childBoard.ChildBoardVO">
+          select * from family_relation_table f, childboard_table c 
+          where f.childboard_id = c.child_id and user_id = #{user_id} AND approval = 1
+    </select>
+    
+<!-- 마이페이지 실종알림 -->
     <select id="findRelationByUser" parameterType="java.lang.Long"
             resultType="com.firstclass.childrenctv.familyRelation.FamilyRelationVO">
-        SELECT * FROM FAMILY_RELATION_TABLE WHERE user_id = #{user_id}
+        SELECT * FROM FAMILY_RELATION_TABLE WHERE user_id = #{user_id} AND approval = 1
     </select>
 
     <update id="approval" parameterType="java.lang.Long">
