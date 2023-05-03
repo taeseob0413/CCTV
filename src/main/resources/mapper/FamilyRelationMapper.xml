@@ -17,6 +17,11 @@
         SELECT * FROM FAMILY_RELATION_TABLE WHERE user_id = #{user_id}
     </select>
 
+    <select id="findRelationByUserAndChild" parameterType="java.lang.Long"
+            resultType="com.firstclass.childrenctv.familyRelation.FamilyRelationVO">
+        SELECT * FROM FAMILY_RELATION_TABLE WHERE user_id = #{user_id} AND childBoard_id= #{child_id}
+    </select>
+
     <update id="approval" parameterType="java.lang.Long">
         UPDATE FAMILY_RELATION_TABLE SET approval = 1 WHERE id = #{id}
     </update>
