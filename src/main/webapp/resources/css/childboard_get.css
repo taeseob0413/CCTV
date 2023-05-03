@@ -210,3 +210,23 @@ table.table-01{
   margin-bottom: 5px;
 }
 
+#red-btn-area{
+    width: 800px;
+    height: 80px;
+    margin: 20px auto;
+}
+#red-btn{
+    float: right;
+    width: 250px;
+    height: 70px;
+    background-color:red;
+    font-family:'MICEGothic Bold';
+    font-weight:bold;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 35px;
+    cursor: pointer;
+    padding: 10px;
+}
+
