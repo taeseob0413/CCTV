@@ -58,7 +58,7 @@ public class UserController1 {
 	@PostMapping("/mypage/update")
 	public String update(UserVO user) {	
 		userService.infoUpdate(user);
-		return "redirect:/";
+		return "index";
 	}
 		
 	//회원탈퇴

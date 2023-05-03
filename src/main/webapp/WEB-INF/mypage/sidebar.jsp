@@ -19,9 +19,10 @@
             제보목록
         </a></li>
 
-        <li><a href="/mypage/register?child_id=${child_id}" class="item">
+        <li><a href="/mypage/register" class="item">
             <span class="material-symbols-outlined">notifications</span>
-            실종알림
+            실종 아동<br> 
+               관심리스트
         </a></li>
         
         <li><a href="#" class="item">
