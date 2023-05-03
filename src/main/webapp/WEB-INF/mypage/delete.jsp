@@ -24,6 +24,12 @@
           <button id="delete_button" id="delete_submit" type="submit" onclick="delete_alert()">탈퇴하기</button>
        </div>
        
+       <div>
+          <button id="register_button" id="delete_submit" type="submit" onclick="register_alert()">삭제</button>
+       </div>
+       
+             	
+       
       </div>
    </form>
 
@@ -31,6 +37,10 @@
 function delete_alert() {
  alert('탈퇴가 완료되었습니다.')
 }
+
+function register_alert() {
+	 alert('삭제가 완료되었습니다.')
+	}
 
 </script>
 <%@ include file="../layout/footer.jsp"%>

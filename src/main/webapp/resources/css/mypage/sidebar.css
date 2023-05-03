@@ -1,15 +1,21 @@
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
 .menu {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'MICEGothic Bold';
 }
 
 #mypagemenu {
     list-style-type: none;
     padding: 10px 0px 0px 0px;
-    top:230px;
-    width: 150px;
+    width: 170px;
     height: 1400px;
     background:#C0DBEA;
-    position: fixed;
+    float : left;
 }
 
 #mypagemenu li a {

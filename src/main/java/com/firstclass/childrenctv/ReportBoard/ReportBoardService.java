@@ -13,5 +13,5 @@ public interface ReportBoardService {
 	public void deleteReportBoard(Long report_id); // delete
 	
 	// 제보 목록 가져오기
-		public List<ReportBoardVO> getReportList(String user_loginId);
+	public List<ReportBoardVO> getReportList(String user_loginId);
 }

@@ -6,6 +6,7 @@
 
 <head>
 <link rel="stylesheet" href="/resources/css/childboard_get.css"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 
@@ -145,6 +146,16 @@
 		</c:forEach>
 	</table>
 	</div>
+	
+	<%-- 실종자 가족 등록 --%>
+	<div id="mypage_register">
+		<div id="mypage_rtitle">실종자 가족 등록</div>
+		<button id=mypage_register_btn" onclick="mypage_register(${child.child_id})">
+		<span class="material-symbols-outlined">add</span>
+		</button>
+	</div>
+	
+	
 </div>
 </center>
 
@@ -182,6 +193,11 @@ for (let i = 0; i < cellContentEls.length; i++) {
     showMoreBtnEl.removeEventListener('click', onClickShowMoreBtn);
     showMoreBtnEl.addEventListener('click', onClickHideMoreBtn);
   }
+}
+
+function mypage_register(child_id) {
+	alert("실종자 가족이 등록되었습니다. 이동하시겠습니까?");
+	location.href = "/mypage/register?child_id=" + child_id;
 }
 
 </script>

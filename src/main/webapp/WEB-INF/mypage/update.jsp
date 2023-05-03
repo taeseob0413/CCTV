@@ -2,9 +2,7 @@
 <%@ include file="../layout/header.jsp"%>
 <link rel="stylesheet" href="/resources/css/mypage/update.css"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">	 
+
      
      <form action="/mypage/update" method="post">
 	 <!-- sidebar -->
@@ -58,10 +56,11 @@
        </form>    
 
 <script>
-function mypage_get() {
- alert('수정이 완료되었습니다')
 
+function mypage_get() {
+	alert('수정이 완료되었습니다');	
 }
 
 </script>
+
 <%@ include file="../layout/footer.jsp"%>

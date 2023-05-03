@@ -3,8 +3,6 @@ package com.firstclass.childrenctv.ChildApi;
 import java.io.IOException;
 import java.util.List;
 import java.util.LinkedList;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
@@ -26,6 +24,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @RequestMapping("/childapi")
 public class ChildApiController {
+	
    @Autowired
    private ChildBoardService childService;
    
