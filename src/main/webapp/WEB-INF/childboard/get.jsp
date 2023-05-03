@@ -71,9 +71,7 @@
 			    </tbody>
 			   </table>
 			  </div>
-			 
 			</fieldset>
-		   
 		  
 		</div>	
 
