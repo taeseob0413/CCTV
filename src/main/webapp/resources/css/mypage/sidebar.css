@@ -1,0 +1,33 @@
+.menu {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+#mypagemenu {
+    list-style-type: none;
+    padding: 10px 0px 0px 0px;
+    top:230px;
+    width: 170px;
+    height: 1400px;
+    background:#C0DBEA;
+    float : left;
+}
+
+#mypagemenu li a {
+    text-decoration: none;
+    padding: 10px;
+    margin : 40px auto;
+    display: block;
+    color: #000;  
+    font-size:1.1em;
+}
+
+#mypagemenu li label {
+    display: block;
+    padding: 10px;
+    font-weight: bold
+}
+
+#mypagemenu li a:hover  {
+    background: #333;   /* 마우스 가져다 대면 색변경*/
+    color:#fff          /* 마우스 가져다 대면 글씨 색변경*/
+}

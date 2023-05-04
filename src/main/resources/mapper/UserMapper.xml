@@ -1,14 +1,40 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.firstclass.childrenctv.user.UserMapper">
-    <insert id="create" parameterType="com.firstclass.childrenctv.user.UserVO">
-        INSERT INTO USER_TABLE(user_id, user_name, user_loginID, user_password, user_age, user_gender, user_address, user_grade, user_email)
-            VALUES (#{user_id}, #{user_name}, #{user_loginID}, #{user_password}, #{user_age}, #{user_gender}, #{user_address}, #{user_grade}, #{user_email})
+
+   <insert id="insert" >
+        INSERT INTO USER_TABLE(user_id, user_name, user_email, user_loginID, user_password, user_age, user_gender, user_address)
+            VALUES (seq_user.NEXTVAL, #{user_name}, #{user_email}, #{user_loginID}, #{user_password}, #{user_age}, #{user_gender}, #{user_address})
     </insert>
+
+    <select id="findById" parameterType="long" resultType="com.firstclass.childrenctv.user.UserVO">
+        SELECT * FROM USER_TABLE WHERE user_id = #{id}
+    </select>
+
     <select id="existUserByIdAndPassword" resultType="com.firstclass.childrenctv.user.UserVO">
         SELECT * FROM USER_TABLE WHERE user_loginID = #{loginId} AND user_password = #{password}
     </select>
+    
     <select id="existUserByNameAndEmail" resultType="com.firstclass.childrenctv.user.UserVO">
         SELECT * FROM USER_TABLE WHERE user_name = #{name} AND user_email = #{email}
     </select>
+    
+    <select id="idcheck" resultType="int">
+    	SELECT count(*) FROM USER_TABLE WHERE user_loginID = #{loginId}
+    </select>
+    
+    <update id="infoUpdate">
+    	UPDATE USER_TABLE SET user_password =#{user_password}, user_name =#{user_name},
+    	user_email =#{user_email}, user_age =#{user_age}, user_gender =#{user_gender}, user_address =#{user_address}
+    	WHERE user_loginID =#{user_loginID}
+    </update>
+    
+   <delete id="delete">
+    	DELETE USER_TABLE WHERE user_id = #{id}
+    </delete>
+      
+	<select id="get" resultType ="com.firstclass.childrenctv.user.UserVO">
+		SELECT * FROM USER_TABLE where user_id = #{user_id}
+	</select>
+    
 </mapper>

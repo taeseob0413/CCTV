@@ -1,6 +1,32 @@
 @charset "UTF-8";
 
-#searchForm select, #searchForm input[type="text"]{
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+#container{
+	font-family: 'MICEGothic Bold';
+	width: 900px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.search{
+	width: 900px;
+	margin-left: auto;
+    margin-right: auto;
+	
+}
+  #searchForm{
+  width: 500px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  }
+  #searchForm select, #searchForm input[type="text"]{
   font-size: 16px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -14,29 +40,9 @@
   margin: 10px 0; 
   display: inline-block;
 }
-#container{
-	width: 900px;
-	margin-left: auto;
-  margin-right: auto;
-	margin: 30px;
-}
-
-.search{
-	width: 900px;
-	margin-left: auto;
-  margin-right: auto;
-	
-}
-  #searchForm{
-  width: 800px;
-  height: 60px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-  }
   .gal-img{
   width: 200px;
-  height: 400px;
+  height: 350px;
   margin-left: 50px;
   margin-right: 0;
   float: left;
@@ -56,7 +62,7 @@
   .info{
   width: 650px;
   float: right;
-  height: 400px;
+  height: 350px;
   }
    table.table-01 {
       width: 600px;

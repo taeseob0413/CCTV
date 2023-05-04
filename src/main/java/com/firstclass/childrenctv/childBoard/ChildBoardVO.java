@@ -2,9 +2,15 @@ package com.firstclass.childrenctv.childBoard;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
+@Getter
+@Setter
 public class ChildBoardVO {
+	
+	
 	private long child_id;    //고유 아이디
 	private String child_location;  //실종 장소
 	private String child_curage; //현재 나이
@@ -16,12 +22,5 @@ public class ChildBoardVO {
 	private String child_outfit; //아이 불상
 	private String child_img; //이미지 경로
 	
-	
-	
-	
-	
-	//age > curage , occage 추가
-	
-	
-	
+	   
 }

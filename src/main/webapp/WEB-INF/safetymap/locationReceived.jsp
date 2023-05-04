@@ -64,9 +64,9 @@
             //customOverlay.setMap(map); 커스텀 오버레이 초기에 생성
             
             //kakao.maps.event.addListener(marker, 'click', function() {
-            //	  var url = 'https://map.kakao.com/link/map/' + '${location.getSafety_name()},' + ${location.getSafety_latitude()} + ',' + ${location.getSafety_longitude()};
-            //	  window.open(url);
-            //	});
+            //     var url = 'https://map.kakao.com/link/map/' + '${location.getSafety_name()},' + ${location.getSafety_latitude()} + ',' + ${location.getSafety_longitude()};
+            //     window.open(url);
+            //   });
             
             //kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, customOverlay));
             //kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(customOverlay));
@@ -85,14 +85,14 @@
              listAddrs.push(safetyObj);
              
              (function(marker, customOverlay) {
-            	  kakao.maps.event.addListener(marker, 'click', function() {
-            	    if (customOverlay.getMap()) {
-            	      customOverlay.setMap(null);
-            	    } else {
-            	      customOverlay.setMap(map);
-            	    }
-            	  });
-            	})(marker, customOverlay);
+                 kakao.maps.event.addListener(marker, 'click', function() {
+                   if (customOverlay.getMap()) {
+                     customOverlay.setMap(null);
+                   } else {
+                     customOverlay.setMap(map);
+                   }
+                 });
+               })(marker, customOverlay);
              
       </c:forEach>
    
@@ -143,14 +143,14 @@
                       xAnchor: 0.5,
                       yAnchor: 1.5
                   });
-				  
+              
                   
                   //customOverlay.setMap(map); // 수정된 부분
                   
                   //kakao.maps.event.addListener(marker, 'click', function() {
-                  //	  var url = 'https://map.kakao.com/link/map/' + '${location.getSafety_name()},' + ${location.getSafety_latitude()} + ',' + ${location.getSafety_longitude()};
-                  //	  window.open(url);
-                  //	});
+                  //     var url = 'https://map.kakao.com/link/map/' + '${location.getSafety_name()},' + ${location.getSafety_latitude()} + ',' + ${location.getSafety_longitude()};
+                  //     window.open(url);
+                  //   });
                   
                   //kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, customOverlay));
                   //kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(customOverlay));
@@ -168,14 +168,14 @@
                   
                   listAddrs.push(safetyObj);
                   (function(marker, customOverlay) {
-                	  kakao.maps.event.addListener(marker, 'click', function() {
-                	    if (customOverlay.getMap()) {
-                	      customOverlay.setMap(null);
-                	    } else {
-                	      customOverlay.setMap(map);
-                	    }
-                	  });
-                	})(marker, customOverlay);
+                     kakao.maps.event.addListener(marker, 'click', function() {
+                       if (customOverlay.getMap()) {
+                         customOverlay.setMap(null);
+                       } else {
+                         customOverlay.setMap(map);
+                       }
+                     });
+                   })(marker, customOverlay);
                   
              }
           </c:forEach>

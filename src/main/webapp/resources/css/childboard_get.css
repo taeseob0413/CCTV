@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+.cell-content-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .show-more-button {
+    display: inline-block;
+    width: 50px; /* 버튼의 너비를 조절할 수 있습니다. */
+    margin-left: 10px; /* 버튼과 셀 내용 사이의 간격을 조절할 수 있습니다. */
+  }
+  .cell-content {
+    height: 40px; /* 적절한 높이로 설정 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+.container{
+	font-family: 'MICEGothic Bold';
+	margin-top: 20px;
+}
+.childname{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border: 1px solid white;
+    width: 180px;
+    height: 40px;
+    margin-left: auto; 
+    margin-right: auto;
+    padding: 13px;    
+    background-color: white;
+    color: #2d52ad;
+}
+.clear_b{
+ overflow-x: auto;
+ width: 800px;
+ height: 400px;
+ margin-left: auto; 
+ margin-right: auto;
+ padding: 15px;
+ border-radius: 20px;
+ background-color: #4a89dc;
+}
+.gal-img{
+ float: left;
+ width: 30%;
+ height: 400px;
+ margin-top: 15px;
+}
+.info{
+ float: right;
+ width: 70%;
+ height: 380px;
+ margin-top: 30px;
+}
+table.table-01{
+ width: 95%;
+ min-width: 500px;
+ height: 50px;
+ border-collapse: collapse;
+ text-align: left;
+ font-size: 25px;
+}
+table.table-01 th.childlocation{
+	border-radius: 20px 0 0 0;
+	border-bottom: 1px solid white;
+	}
+table.table-01 th.childoutfit{
+	border-radius: 0 0 0 20px;
+	border-top: 1px solid white;
+	}
+table.table-01 th.childage{
+	border-bottom: 1px solid white;
+	}
+ table.table-01 th{
+ border-right: 1px solid white;
+ background-color: #2d52ad;
+ color: white;
+ padding: 10px;
+ width: 100px;
+ text-align: left;
+ }
+ table.table-01 td{
+ border-bottom: 1px solid #2d52ad;
+ border-top: 1px solid #2d52ad;
+ background-color: white;
+ color: black;
+ padding: 10px;
+ }
+ table.table-01 td.child{
+ border-radius: 0 20px 0 0;
+ }
+ table.table-01 td.outfit{
+ border-radius: 0 0 20px 0;
+ }
+ .title{
+  font-family:'MICEGothic Bold';
+  font-size: 50px; 
+  text-align: center;
+  font-weight: bold;
+  height:80px;
+  width:80%;
+  margin-top: 80px;
+  margin-bottom: 10px;
+  }
+
+.board{
+ font-family:'MICEGothic Bold';
+ margin-top: 50px;
+ width: 80%;
+ vertical-align: middle;
+}
+
+.boardtable{
+ width: 100%;
+ margin: 0 auto;
+ margin-top: 30px;
+ border-collapse:collapse;
+ margin-bottom: 120px;
+}
+
+.boardtable td, .boardtable th{
+ height: 50px;
+ font-size: 27px;
+ text-align: center;
+ vertical-align: middle;
+ border-bottom: 1px solid #ccc;
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ max-width: 10ch; /* 최대 글자 수 */
+ padding-left: 10px;
+}
+
+.boardtable th{
+ font-weight: bold;
+ background-color: #C0EEF2;
+}
+
+.boardtable .th1{
+ padding-left: 15px;
+ width: 10%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius : 10px;
+}
+
+.boardtable .th2{
+ width: 1%;
+}
+
+.boardtable .th3{
+ width: 40%;
+}
+
+.boardtable .th4{
+ width: 10%;
+ border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.boardtable .no{
+  font-size: 25px;
+}
+
+.boardtable .time{
+ text-overflow:clip;
+}
+
+
+
+/* a 태그에 대한 스타일 */
+  a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333; /* 링크의 기본 색상 설정 */
+  }
+
+  /* 방문한 링크에 대한 스타일 */
+  a:visited {
+    color: #333; /* 방문한 링크의 색상 설정 */
+  }
+
+  /* 마우스를 올렸을 때의 링크에 대한 스타일 */
+  a:hover {
+    color: #666; /* 마우스를 올렸을 때의 링크 색상 설정 */
+  }
+
+  /* 클릭한 링크에 대한 스타일 */
+  a:active {
+    color: #999; /* 클릭한 링크의 색상 설정 */
+  }
+
+#buttoncontainer{
+ display: flex;
+ justify-content: flex-end;
+ margin-bottom: 30px;
+}
+
+.blue-btn {
+  width: 190px;
+  height: 70px;
+  background-color:#2F58CD;
+  font-family:'MICEGothic Bold';
+  font-weight:bold;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 35px;
+  cursor: pointer;
+ padding: 10px;
+}
+
+.blue-btn img {
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+#red-btn-area{
+    width: 800px;
+    height: 80px;
+    margin: 20px auto;
+}
+#red-btn{
+    float: right;
+    width: 250px;
+    height: 70px;
+    background-color:red;
+    font-family:'MICEGothic Bold';
+    font-weight:bold;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 35px;
+    cursor: pointer;
+    padding: 10px;
+}
+

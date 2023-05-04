@@ -1,4 +1,4 @@
-package com.firstclass.childrenctv.saftetyApi;
+package com.firstclass.childrenctv.safetyApi;
 
 import java.io.IOException;
 import java.util.List;

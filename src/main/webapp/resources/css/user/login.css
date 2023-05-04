@@ -1,0 +1,95 @@
+#login_area{
+    width: 100%;
+    height: 1300px;
+    text-align: center;
+}
+
+#login_area{
+    width: 100%;
+    height: 1300px;
+    text-align: center;
+}
+
+#login_logo{
+    width: 800px;
+    font-size: 80px;
+    margin : 150px auto;
+    text-align: center;
+    color: #aaa;
+}
+
+#loginBox{
+    width : 800px;
+    height : 800px;
+    padding : 20px;
+    border: 2px solid grey;
+    background : white;
+    margin: 0 auto;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+.input-box{
+    width: 600px;
+    margin: 120px auto;
+    position: relative;
+}
+
+.input-box > input{
+    background:transparent;
+    border:none;
+    border-bottom: solid 1px #ccc;
+    font-size:50px;
+    width:100%;
+}
+input:focus + label, label{
+    position: absolute;
+    color:#8aa1a1;
+    font-size:20px;
+    left: 20px;
+    transform: translateY(-30%);
+    transition: all 0.2s ease ;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#loginButton{
+    background-color: #4a89dc;
+    border:none;
+    color:white;
+    border-radius: 5px;
+    width:700px;
+    height:120px;
+    font-size: 50px;
+    margin-bottom : 40px;
+}
+
+#userJoin {
+    text-decoration: none;
+    cursor: default;
+    font-size: 30px;
+    color: black;
+}
+
+#userJoin > a{
+    text-decoration: none;
+    color: black;
+}
+
+input::placeholder{
+    color:transparent;
+}
+
+input:placeholder-shown + label{
+    color:#aaa;
+    font-size:50px;
+    top:15px;
+}
