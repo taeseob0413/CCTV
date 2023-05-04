@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+#ContentArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  font-family:'MICEGothic Bold';
+}
+
+#InnerArea {
+	width: 90%;
+	max-width: 1200px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#logo{
+	display: flex;
+	justify-content: flex-start;
+}
+#title1{
+	font-size: 50px;
+	border-top : 5px solid #2a52af;
+	padding-top: 30px;
+	padding-left: 30px;
+	text-align: left;
+	line-height: 1.2;
+}
+.image-text-container {
+  display: flex;
+  align-items: center; /* 수직 정렬 */
+}
+
+.image-text-container img {
+	width: 300px;
+	height: 300px;
+	margin-top: 40px;
+  margin-right: 50px; /* 이미지와 텍스트 사이 간격 조절 */
+  margin-left: 30px;
+}
+
+.image-text-container .text {
+  font-size: 30px;
+  color: #333;
+  line-height: 1.5;
+  text-align: left;
+}
+
+#btn_container{
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 30px;
+}
+
+#btn{
+	width: 250px;
+	height: 100px;
+	margin-right: 20px;
+	background-color: #6DA9E4;
+	font-family: 'MICEGothic Bold';
+	font-weight: bold;
+	color: #fff;
+	border: none;
+	border-radius : 10px;
+	font-size: 30px;
+	cursor: pointer;
+}
