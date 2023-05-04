@@ -49,8 +49,13 @@ public class HomeController {
 //	public String mywrite() {
 	//	return "/mypage/mywrite";
 	//}
+    
+    @GetMapping("/error")
+    public String getError() {
+    	return "error";
+    }
 
-    } 
+} 
 
 
 

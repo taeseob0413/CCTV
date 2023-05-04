@@ -19,6 +19,7 @@ public class ProtectBoardController {
 	
 	@GetMapping("/protectBoard/list")
 	public String protectBoardlist(Criteria cri, Model model) {
+		cri.setAmount(15);	//페이지당 15개씩 보여주기
 		model.addAttribute("list", boardservice.getAll(cri));
 		int total = boardservice.getTotal(cri);
 		model.addAttribute("pageMaker", new PageDTO(cri, total));
