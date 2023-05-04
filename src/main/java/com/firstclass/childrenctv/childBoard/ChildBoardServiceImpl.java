@@ -1,16 +1,18 @@
-package com.firstclass.childrenctv.ChildBoard;
+package com.firstclass.childrenctv.childBoard;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.firstclass.childrenctv.paging.Criteria;
+
 import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
 public class ChildBoardServiceImpl implements ChildBoardService {
-   
+  
    @Autowired
    private ChildBoardMapper mapper;
 
@@ -27,15 +29,28 @@ public class ChildBoardServiceImpl implements ChildBoardService {
    }
 
    @Override
-   public ChildBoardVO getChildId(Long id) {
+   public ChildBoardVO getChildId(long id) {
       // TODO Auto-generated method stub
       return mapper.getChildId(id);
    }
 
    @Override
-   public void insert(ChildBoardVO child) {
-      mapper.insert(child);
-
+   public void insert(List<ChildBoardVO> childList) {
+	   for(ChildBoardVO entity:childList) {
+		   mapper.insert(entity);
+	   }
    }
+
+   @Override
+   public List<ChildBoardVO> getChildList(Criteria cri) {
+	   return mapper.getChildWithPaging(cri);
+	
+   }
+
+   @Override
+   public int getTotal(Criteria cri) {
+	   return mapper.getTotal(cri);
+   }
+   
 
 }

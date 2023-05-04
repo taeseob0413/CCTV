@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+#searchForm select, #searchForm input[type="text"]{
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-right: 10px; 
+}
+#searchForm button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 10px 0; 
+  display: inline-block;
+}
+#container{
+	width: 900px;
+	margin-left: auto;
+  margin-right: auto;
+	margin: 30px;
+}
+
+.search{
+	width: 900px;
+	margin-left: auto;
+  margin-right: auto;
+	
+}
+  #searchForm{
+  width: 800px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  }
+  .gal-img{
+  width: 200px;
+  height: 400px;
+  margin-left: 50px;
+  margin-right: 0;
+  float: left;
+  }
+
+    .childname{
+     font-size: 30px;
+     width: 180px;
+     height: 40px;
+     font-weight: bold;
+     text-align: center;
+     border: 1px solid gray; 
+    
+     padding: 10px;
+  }
+  
+  .info{
+  width: 650px;
+  float: right;
+  height: 400px;
+  }
+   table.table-01 {
+      width: 600px;
+      height: 300px;
+      border: 1px solid gray;  
+      border-collapse: collapse;
+      font-size: 25px;
+      text-align: center;
+      padding: 30px;
+      }
+      table.table-01 th{
+      border: 1px solid gray;
+      padding: 30px;
+      width: 150px;
+    }
+     table.table-01 td{
+      border: 1px solid gray;
+       width: 450px;
+      padding: 30px;
+    }
+    table.pagination {
+    width: 500px;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    .pagination a {
+        /*
+        display: inline-block 인라인 요소의 특징과 블록 요소의 특징을 모두 갖는다
+        크기를 가질 수 있으며 텍스트 정렬도 적용받는다
+        */
+        display: inline-block;        
+        font-weight: bold;
+        text-decoration: none;
+        padding: 5px 8px;
+        border: 1px solid #ccc;
+        color: #000;
+        background-color: #F5F5DC;
+    }
+    /* 현재 페이징에 select 클래스를 적용한다*/
+    .pagination a.select {
+        color: #fff;
+        background-color: #FFA7A7;
+    }
+    
+    

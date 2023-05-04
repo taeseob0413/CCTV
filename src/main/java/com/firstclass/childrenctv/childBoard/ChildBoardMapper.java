@@ -1,8 +1,10 @@
-package com.firstclass.childrenctv.ChildBoard;
+package com.firstclass.childrenctv.childBoard;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+
+import com.firstclass.childrenctv.paging.Criteria;
 
 @Mapper
 public interface ChildBoardMapper {
@@ -14,4 +16,7 @@ public interface ChildBoardMapper {
 	
 	public void insert(ChildBoardVO child);
 	
+	public List<ChildBoardVO> getChildWithPaging(Criteria cri);
+	
+	public int getTotal(Criteria cri);
 }

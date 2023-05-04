@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+@font-face{
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.swiper-container{
+	width :85%;
+	height:600px;
+	border:5px solid silver;
+	border-radius:50px;
+	box-shadow:0 0 20px #ccc inset;
+}
+.swiper-slide{
+	text-align:center;
+	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+	align-items:center; /* 위아래 기준 중앙정렬 */
+	justify-content:center; /* 좌우 기준 중앙정렬 */
+	
+}
+.swiper-slide img {
+	box-shadow:0 0 5px #555;
+	max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
+	
+}
+
+
+#number{
+	width: 100%;
+	height: 250px;
+    margin-top:20px;
+}
+
+#icon{
+	display: inline-block;
+	width: 39.2%;
+	height: 250px;
+}
+#num{
+
+	height: 100px;
+	float: right;
+	margin-top: 30px;
+	
+}
+
+#f{
+	width: 70%;
+	height: 100px;
+	float: right;
+	margin-left: auto; 
+    margin-right: auto;
+    padding: 30px;
+	
+}
+.find{
+    color: #1a28c4;
+	font-size: 39px;
+	font-weight: bold;
+	float: right;
+    
+}
+
+#content{
+ width: 59.2%;
+ height: 250px;
+ border: 1px solid white;
+ border-radius: 40px;
+ background-color: #d1f0ff;
+ 
+ font-size: 5px;
+ font-weight: 600;
+ color: #121f87;
+ display: inline-block;
+ vertical-align: top;
+ margin-left: auto;
+ margin-right: auto;
+ text-align: center;
+ line-height: 80px;
+ 
+
+}
+
+#child{
+	margin-top:80px;
+}
+#child_info{
+	position: absolute;
+	top: 370px;
+    padding-left: 5px;
+    
+}
+#child_image{
+	position: absolute;
+	bottom: 250px;
+    padding-left: 5px;
+    
+}
+#child_name{
+	font-size:30px;
+	margin-bottom:8px;
+	font-weight: bold;
+}
+#child_age{
+	font-size:25px;
+	margin-bottom:5px;
+	font-weight: bold;
+}
+
+#child_lo{
+	font-size:25px;
+	font-weight: bold;
+}
+#cc{
+	color: #1a28c4;
+}
+
+
+
+#pic {
+  display: flex;
+  justify-content: center;
+  margin-top:80px;
+}
+
+#pic img {
+  margin: 0 50px; /* 좌우 간격 설정 */
+}
+
+#pic img:nth-child(2) {
+  margin: 0; /* 중간 이미지는 좌우 간격 없음 */
+}

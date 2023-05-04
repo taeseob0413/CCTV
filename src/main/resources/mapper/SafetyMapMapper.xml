@@ -1,0 +1,18 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+        
+<mapper namespace="com.firstclass.childrenctv.safetyMap.SafetyMapMapper">  
+    <select id="getSafetyMap" resultType="com.firstclass.childrenctv.safetyMap.SafetyMapVO">
+    	select * from SAFETYMAP_TABLE where safety_id>0
+    </select>
+  
+    <select id="getSafetyMapAddr" parameterType="Double" resultType="com.firstclass.childrenctv.safetyMap.SafetyMapVO">
+    	select * from SAFETYMAP_TABLE where (safety_latitude between #{lat}-0.025 and #{lat}+0.025) and (safety_longitude between #{lon}-0.025 and #{lon}+0.025)
+    </select>
+    
+    <insert id="insert" parameterType="com.firstclass.childrenctv.safetyMap.SafetyMapVO">
+        INSERT INTO SAFETYMAP_TABLE(safety_id,safety_name,safety_address,safety_latitude,safety_longitude,safety_class,safety_telno)
+            VALUES (seq_safetymap.nextval,#{safety_name}, #{safety_address},#{safety_latitude},#{safety_longitude},#{safety_class},#{safety_telno})
+    </insert>
+</mapper>
