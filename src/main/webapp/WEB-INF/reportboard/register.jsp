@@ -44,7 +44,7 @@
             </tr>
             <tr>
                 <td class="attribute">목격 위치</td>
-                <td><textarea name="report_address" rows="1" cols="100" style="font-size:13px;"></textarea></td>
+                <td><textarea name="report_address" rows="1" cols="100""></textarea></td>
             </tr>
             <tr>
                 <td class="attribute">목격 내용</td>
