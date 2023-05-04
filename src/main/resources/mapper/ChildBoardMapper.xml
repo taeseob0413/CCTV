@@ -3,7 +3,7 @@
            
 <mapper namespace="com.firstclass.childrenctv.childBoard.ChildBoardMapper">
     <select id="getChild" resultType="com.firstclass.childrenctv.childBoard.ChildBoardVO">
-       select * from childboard_table where child_name='김정성' or child_name='신규진' or child_name='명창순' or child_name='김보경' or child_name='김지은' or child_name='김은지' or child_name='정승연' or child_name='박수진' or child_name='김동현' or child_name='정다빈' 
+       select * from childboard_table where child_name='김정성' or child_name='신규진' or child_name='명창순' or child_name='김보경' or child_name='김지은' or child_name='김은지' or child_name='정승연' or child_name='박수진' or child_name='김민하' or child_name='정다빈' 
     </select>
     
     <select id="getChildId" parameterType="Long"  resultType="com.firstclass.childrenctv.childBoard.ChildBoardVO">
