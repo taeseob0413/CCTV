@@ -9,11 +9,12 @@
 *{
 	font-family: 'MICEGothic Bold';
 }
+
 h1 {
-	margin-top: 50px;
-	margin-bottom: 30px;
+	margin-top: 80px;
+	margin-bottom: 10px;
 	margin-right: 20px;
-	left: 320px;
+	left: 450px;
 	top: 210px;
 	font-size: 50px; 
 	font-weight: bold;
@@ -23,17 +24,17 @@ h1 {
 	
 }
 
-table {
-	
+table {	
 	border-collapse: collapse;
-	left: 180px;
+	left: 120px;
 	top: 320px;
-	margin: 50px;
+	margin: 130px;
+	margin-top: 70px;
 	width: 80%;
-	font-size: 1em;
+	font-size: 2em;
 	text-align: center;
 	padding: 10px;
-	float : center;	
+	font-weight: bold; 
 	border: 5px solid black;
 	
 	
@@ -56,3 +57,24 @@ table tr:hover td:first-child {
   background-color: #c0dbea;
   color: white; 
 }
+
+/* a 태그에 대한 스타일 */
+  a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333; /* 링크의 기본 색상 설정 */
+  }
+
+  /* 방문한 링크에 대한 스타일 */
+  a:visited {
+    color: #333; /* 방문한 링크의 색상 설정 */
+  }
+
+  /* 마우스를 올렸을 때의 링크에 대한 스타일 */
+  a:hover {
+    color: #666; /* 마우스를 올렸을 때의 링크 색상 설정 */
+  }
+
+  /* 클릭한 링크에 대한 스타일 */
+  a:active {
+    color: #999; /* 클릭한 링크의 색상 설정 */
+  }
