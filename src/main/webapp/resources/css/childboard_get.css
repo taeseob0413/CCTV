@@ -56,27 +56,35 @@
 .info{
  float: right;
  width: 70%;
- height: 400px;
- margin-top: 15px;
+ height: 380px;
+ margin-top: 30px;
 }
 table.table-01{
  width: 95%;
  min-width: 500px;
- height: 40px;
+ height: 50px;
  border-collapse: collapse;
- border-radius: 20px;
  text-align: left;
  font-size: 25px;
- 
 }
+table.table-01 th.childlocation{
+	border-radius: 20px 0 0 0;
+	border-bottom: 1px solid white;
+	}
+table.table-01 th.childoutfit{
+	border-radius: 0 0 0 20px;
+	border-top: 1px solid white;
+	}
+table.table-01 th.childage{
+	border-bottom: 1px solid white;
+	}
  table.table-01 th{
- border-bottom: 1px solid white;
  border-right: 1px solid white;
- border-top: 1px solid white;
  background-color: #2d52ad;
  color: white;
  padding: 10px;
  width: 100px;
+ text-align: left;
  }
  table.table-01 td{
  border-bottom: 1px solid #2d52ad;
@@ -85,7 +93,12 @@ table.table-01{
  color: black;
  padding: 10px;
  }
- 
+ table.table-01 td.child{
+ border-radius: 0 20px 0 0;
+ }
+ table.table-01 td.outfit{
+ border-radius: 0 0 20px 0;
+ }
  .title{
   font-family:'MICEGothic Bold';
   font-size: 50px; 
@@ -123,8 +136,6 @@ table.table-01{
  text-overflow: ellipsis;
  max-width: 10ch; /* 최대 글자 수 */
  padding-left: 10px;
- 
- 
 }
 
 .boardtable th{
@@ -207,5 +218,25 @@ table.table-01{
 .blue-btn img {
   vertical-align: middle;
   margin-bottom: 5px;
+}
+
+#red-btn-area{
+    width: 800px;
+    height: 80px;
+    margin: 20px auto;
+}
+#red-btn{
+    float: right;
+    width: 250px;
+    height: 70px;
+    background-color:red;
+    font-family:'MICEGothic Bold';
+    font-weight:bold;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 35px;
+    cursor: pointer;
+    padding: 10px;
 }
 
