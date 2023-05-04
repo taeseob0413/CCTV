@@ -32,24 +32,24 @@
 			 <table class="table-01">
 			    <tbody>
 			    <tr>
-			      <th scope="row">실종 장소</th>
-			      <td>${child.child_location}</td>
+			      <th scope="row" class="childlocation">실종 장소</th>
+			      <td class="child">${child.child_location}</td>
 			    </tr>
 			     
 			     <tr>
-			      <th scope="row">현재 나이</th>
+			      <th scope="row" class="childage">현재 나이</th>
 			      <td>${child.child_curage}</td>
 			     </tr>
 			     <tr>
-			      <th scope="row">실종 나이</th>
+			      <th scope="row" class="childage">실종 나이</th>
 			      <td>${child.child_occage}</td>
 			     </tr>
 			     <tr>
-			      <th scope="row">성별</th>
+			      <th scope="row" class="childage">성별</th>
 			      <td>${child.child_gender}</td>
 			     </tr>
 			     <tr>
-			      <th scope="row">실종 일자</th>
+			      <th scope="row" class="childage">실종 일자</th>
 			      <td>${fn:replace(fn:substring(child.child_time, 0, 4), "-", "")}-${fn:replace(fn:substring(child.child_time, 4, 6), "-", "")}-${fn:replace(fn:substring(child.child_time, 6, 8), "-", "")}</td>
 			     </tr>
 			     
@@ -65,8 +65,8 @@
                   </td>
 			     </tr>
 			     <tr>
-			      <th scope="row">옷차림</th>
-			      <td>${child.child_outfit}</td>
+			      <th scope="row" class="childoutfit">옷차림</th>
+			      <td class="outfit">${child.child_outfit}</td>
 			     </tr>
 			    </tbody>
 			   </table>
