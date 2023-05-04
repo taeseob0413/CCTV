@@ -134,7 +134,7 @@ table.table-01 th.childage{
  white-space: nowrap;
  overflow: hidden;
  text-overflow: ellipsis;
- max-width: 10ch; /* 최대 글자 수 */
+ max-width: 5ch; /* 최대 글자 수 */
  padding-left: 10px;
 }
 
@@ -151,7 +151,7 @@ table.table-01 th.childage{
 }
 
 .boardtable .th2{
- width: 1%;
+ width: 16%;
 }
 
 .boardtable .th3{
