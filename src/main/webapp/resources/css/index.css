@@ -39,7 +39,7 @@
 
 #icon{
    display: inline-block;
-   width: 39.2%;
+   width: 36%;
    height: 250px;
 }
 #num {
@@ -60,18 +60,16 @@
 }
 .find {
     color: #1a28c4;
-    font-size: 33px;
+    font-size: 30px;
     font-weight: bold;
     float: right;
 }
 
 
-p {
-    margin-top: 20px;
-}
+
 
 #content {
-    width: 58%;
+    width: 55%;
     height: 250px;
     border: 1px solid white;
     border-radius: 40px;
@@ -85,7 +83,7 @@ p {
     margin-right: auto;
     text-align: justify;
     line-height: 40px;
-    padding: 7px;
+    padding: 30px;
 }
 
 #child{
