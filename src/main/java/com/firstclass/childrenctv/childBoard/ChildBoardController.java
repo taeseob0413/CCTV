@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.firstclass.childrenctv.protectBoard.ProtectBoardService;
 import com.firstclass.childrenctv.protectBoard.ProtectBoardVO;
 import com.firstclass.childrenctv.reportBoard.ReportBoardService;
-
 import com.firstclass.childrenctv.util.paging.Criteria;
 import com.firstclass.childrenctv.util.paging.PageDTO;
 

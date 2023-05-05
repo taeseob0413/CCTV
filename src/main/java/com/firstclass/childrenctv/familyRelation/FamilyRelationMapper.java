@@ -13,7 +13,9 @@ public interface FamilyRelationMapper {
     List<FamilyRelationVO> findRelationByUser(Long user_id);
     List<FamilyRelationVO> findRelationByUserAndChild(Long user_id, Long child_id);
     void approval(Long id);
-    void delete(Long id);
+    //void delete(Long id);
+    
+    boolean delete(Long id);
     
     List<ChildBoardVO> getChildrenByUser(Long user_id);
     
