@@ -39,7 +39,7 @@ public class FamilyRelationController1 {
  			
   			for(int i=0; i<children.size(); i++) {
   				familyList.get(i).setChild_name(children.get(i).getChild_name());
-  			}
+  			} 
   	        
   			
   			// jsp에 뿌려줄 데이터를 넘기기 위해서 mapping
