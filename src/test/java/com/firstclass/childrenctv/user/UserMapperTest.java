@@ -6,9 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.firstclass.childrenctv.familyRelation.FamilyRelationMapper;
 import com.firstclass.childrenctv.familyRelation.FamilyRelationVO;
-import com.firstclass.childrenctv.ReportBoard.ReportBoardMapper;
+import com.firstclass.childrenctv.reportBoard.ReportBoardMapper;
 import lombok.extern.log4j.Log4j;
-
 
 @Log4j
 @SpringBootTest
@@ -22,8 +21,7 @@ class UserMapperTest {
     
     @Autowired
     private FamilyRelationMapper familyMapper;
-    
-	
+    	
     @Test
     void testGetfamilyList() {    	
     	
@@ -78,9 +76,6 @@ class UserMapperTest {
     	reportMapper.deleteReportBoardVO(report_id);    	
     }*/
     
-    
-   
-
 //    @Test
 //    void create() {
 //        UserVO userVO = new UserVO(5L, "s", "s", "s", "s", 13, "ss", "s", "dd");

@@ -15,14 +15,11 @@
  <div class="section cnt-zone">
  <!-- 실종 아동 상세 정보 start -->	
   <div class="container">
-	<div class="row">
-		<div class="cnt-right">
-			<h1 class="cnt-title"></h1>
-		</div>
-		<div class="cnt-main">
+	
+		
 		  <fieldset class="clear_b">
 
-	       <div class="row">
+	      
 		    <div class="col-sm-4 gal-img">
 		     <p class="main-thum">
 		      <img name="tknImg" src="${child.child_img}" alt="My Image" width="210px"
@@ -75,10 +72,10 @@
 			    </tbody>
 			   </table>
 			  </div>
-			 </div>
+			 
 			</fieldset>
-		   </div>
-		  </div>
+		   
+		  
 		</div>	
 
 		

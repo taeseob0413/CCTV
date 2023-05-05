@@ -2,7 +2,7 @@ package com.firstclass.childrenctv.familyRelation;
 
 import java.util.List;
 
-import com.firstclass.childrenctv.ChildBoard.ChildBoardVO;
+import com.firstclass.childrenctv.childBoard.ChildBoardVO;
 
 public interface FamilyRelationService {
     boolean missingChildRegister(Long user_id, Long child_id);
@@ -11,7 +11,6 @@ public interface FamilyRelationService {
     boolean approval(Long id);
     //boolean unregister(Long id);
     
-    List<ChildBoardVO> getChildrenByUser(Long user_id);
 
     void unregister(Long id);
 }

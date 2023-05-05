@@ -14,7 +14,7 @@ public class UserVO {
     private String user_email;
     private String user_loginID;
     private String user_password;
-    private int user_age;
+    private Integer user_age;
     private String user_gender;
     private String user_address;
     private String user_grade;

@@ -79,13 +79,14 @@
 
       <div id="b">
         <button id="b1" type="submit">가입</button>
-        <button id="b2" type="submit">취소</button>
+        <button id="b2" type="button" onclick="location.href='/'">취소</button>
+        
       </div>
-
-      <p id="already">이미 회원이신가요?</p>
-      <p id="login">
-        <a href="/user/login">로그인 하러가기</a>
-      </p>
+      
+	  <div id="signup_content">
+      	<span id="already">이미 회원이신가요?</span>
+      	<span id="login"><a href="/user/login">로그인 하러가기</a></span>
+      </div>
  </form>  
  </div>  
     

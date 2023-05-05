@@ -13,8 +13,8 @@
 </head>
 <body>
 
- <div id="container">
-  <header>
+<div id="container">
+
    <div class="search">
 
                   <form id='searchForm' action="/child/list" method='get'>
@@ -39,17 +39,15 @@
                   </form>
                </div>
   
-  </header>
-  <main class="contents">
-		
-			
 
+  <div class="contents">
+		
 			<!-- /.panel-heading -->
 			
 			 <c:forEach items="${list}" var="board" >
 		     <div class="gal-img">
 		      <p class="main-thum">
-		       <img src="${board.child_img}" alt="My Image" width="200" height="250" onclick="location.href='/child/get?child_id=<c:out value="${board.child_id}"/>'">
+		       <img src="${board.child_img}" alt="My Image" width="200" height="240" onclick="location.href='/child/get?child_id=<c:out value="${board.child_id}"/>'">
 			  </p>
 			  <p class="childname">
 			   ${board.child_name}
@@ -76,9 +74,9 @@
 			  </div>
 			 </c:forEach>
 			
-		</main>
+		</div>
 	
-	<footer>
+	
 		  
             <div class='paging'>
                 <table class="pagination">
@@ -106,7 +104,7 @@
             <!--  end Pagination -->
             
                
-           </div>
+           
 				
 				<form id='actionForm' action="/child/list" method='get'>
 			         <input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
@@ -115,9 +113,9 @@
 			         <input   type='hidden' name='keyword' value='<c:out value="${ pageMaker.cri.keyword }"/>'>
                 </form>
 				
-		
-		</footer>
-	</div>
+		</div>
+	</div>	
+	
  </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -1,21 +1,26 @@
 package com.firstclass.childrenctv.user;
 
+import java.net.http.HttpRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.firstclass.childrenctv.ChildBoard.ChildBoardService;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.firstclass.childrenctv.user.dto.LoginDTO;
+
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
 
 @Controller
 @AllArgsConstructor
 public class UserController1 {
-	
+   
   private final UserService userService;
-  private final ChildBoardService childService;
 
   	//회원가입
     @PostMapping("/user/join")
@@ -47,37 +52,53 @@ public class UserController1 {
     
     //회원 조회
     @GetMapping("/mypage/get")
-    public String userget(@RequestParam("user_id") long user_id, Model model) {
+    public String userget(@RequestParam("user_id") Long user_id, Model model) {
     	model.addAttribute("user", userService.get(user_id));  	
     	return "/mypage/get";
     }
     	
     //회원 수정
 	@GetMapping("/mypage/update")
-	public String update(@RequestParam("user_id") long user_id, Model model) {
+	public String update(@RequestParam("user_id") Long user_id, Model model) {
 		UserVO user = userService.get(user_id);
 		model.addAttribute("user", user);
 		return "mypage/update";
 	}
 	
 	@PostMapping("/mypage/update")
-	public String update(UserVO user) {	
+	public String update(UserVO user, Model model) {
 		userService.infoUpdate(user);
-		return "redirect:/mypage/get?user_id=" + user.getUser_id();
-	}
+		return "redirect:/";
+	}	
 		
 	//회원탈퇴
 	@GetMapping("/mypage/delete")
-	public String delete(@RequestParam("user_id") long user_id, Model model) {
-		model.addAttribute("user", userService.get(user_id));
+	public String delete() {	
 		return "mypage/delete";
 	}
 		
 	@PostMapping("/mypage/delete")
-	public String delete(Long id, HttpSession session) {
-		userService.delete(id);
-		session.invalidate();	
+	public String delete(UserVO vo, HttpSession session) {
+		
+		UserVO user = (UserVO)session.getAttribute("user");		
+		String sPw = user.getUser_password();
+		String vPw = vo.getUser_password();
+		
+		if(!(sPw.equals(vPw))) {
+			return "redirect:/mypage/delete";
+		}
+		
+		userService.delete(user);
+		session.invalidate();
+		
 		return "index";
 	}
 	
+	//회원탈퇴 시 비밀번호 체크
+	@PostMapping("/mypage/delete_pw")
+	@ResponseBody
+	public int pwcheck(UserVO user) {
+		int result = userService.pwcheck(user);	
+		return result;
+	}	
 }

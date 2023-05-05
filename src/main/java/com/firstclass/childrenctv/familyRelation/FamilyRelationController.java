@@ -24,15 +24,15 @@ public class FamilyRelationController {
         return new BaseResponse(400, "Err : 비정상적인 요청입니다.");
     }
 
-    //@DeleteMapping("/user/familyRelation/{relationId}")
-   // public BaseResponse unregister(HttpServletRequest request, @PathVariable Long relationId){
-    	//UserVO user = (UserVO) request.getSession().getAttribute("user");
-       // if(user == null) return new BaseResponse(400, "로그인 후 이용해주세요.");
+    /*@DeleteMapping("/mypage/register/{relationId}")
+    public BaseResponse unregister(HttpServletRequest request, @PathVariable Long relationId){
+    	UserVO user = (UserVO) request.getSession().getAttribute("user");
+        if(user == null) return new BaseResponse(400, "로그인 후 이용해주세요.");
 
-       // boolean success = familyRelationService.unregister(relationId);
-       // if(success) return new BaseResponse(200, "성공적으로 삭제되었습니다.");
-        //return new BaseResponse(400, "Err : 비정상적인 요청입니다.");
-   // }
+        boolean success = familyRelationService.unregister(relationId);
+        if(success) return new BaseResponse(200, "성공적으로 삭제되었습니다.");
+        return new BaseResponse(400, "Err : 비정상적인 요청입니다.");
+   }*/
 
     @GetMapping("user/familyRelation/list")
     public BaseResponse findRelationList(HttpServletRequest request){

@@ -3,7 +3,7 @@ package com.firstclass.childrenctv.familyRelation;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import com.firstclass.childrenctv.ChildBoard.ChildBoardVO;
+import com.firstclass.childrenctv.childBoard.ChildBoardVO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,12 +61,7 @@ public class FamilyRelationServiceImpl implements FamilyRelationService{
 		familyRelationMapper.delete(id);		
 	}
 
-	@Override
-	public List<ChildBoardVO> getChildrenByUser(Long user_id) {
-		List<ChildBoardVO> children;
-        children = familyRelationMapper.getChildrenByUser(user_id);
-        return children;
-	}
+	
 	
    /* public boolean unregister(Long id) {
         try {

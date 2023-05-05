@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.firstclass.childrenctv.ChildBoard.ChildBoardVO;
+import com.firstclass.childrenctv.childBoard.ChildBoardVO;
 import com.firstclass.childrenctv.user.UserVO;
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
@@ -31,14 +31,8 @@ public class FamilyRelationController1 {
   			List<FamilyRelationVO> familyList = familyRelationService.findRelationByUser(user.getUser_id()); // 제보글 목록 가져오기 mapper.sml
   																									// -> sql명령문 ->DB data
   																									// acess
- 			 			
-  			List<ChildBoardVO> children = familyRelationService.getChildrenByUser(user.getUser_id());
-  		  	log.info("---------familyList[0]: " + familyList.get(0));
-  		  	log.info("---------first child[0]: " + children.get(0));
-  		  			
-  		  	ChildBoardVO child0 = children.get(0);
-  		  	log.info("---------first child id: " + child0.getChild_id());
-  		  	log.info("---------first child name: " + child0.getChild_name());
+ 	
+
   			 //log.info(familyList.get(0));
   			// log.info(reportList.get(1));
   			// log.info(reportList.get(2)); // 3개의 정보를 가져오기

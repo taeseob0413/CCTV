@@ -29,9 +29,15 @@
     	WHERE user_loginID =#{user_loginID}
     </update>
     
-   <delete id="delete">
-    	DELETE USER_TABLE WHERE user_id = #{id}
+    <!-- 회원탈퇴 -->
+   <delete id="delete" >
+    	DELETE USER_TABLE WHERE user_id = #{user_id} AND user_password =#{user_password}
     </delete>
+    
+    <!-- 비밀번호 체크 -->
+    <select id="pwcheck" resultType="int">
+    	SELECT COUNT(*) FROM USER_TABLE WHERE user_id = #{user_id} AND user_password = #{user_password}
+    </select>
       
 	<select id="get" resultType ="com.firstclass.childrenctv.user.UserVO">
 		SELECT * FROM USER_TABLE where user_id = #{user_id}
