@@ -7,7 +7,7 @@
 
 <!-- 사이드바 -->
 <jsp:include page="../mypage/sidebar.jsp"/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
 
 <html>
 <head>
@@ -24,7 +24,7 @@
 			<h1>제보 목록</h1>
 			<table border="1">
 				<tr>
-					<th>-해당 페이지로 이동-(고유번호)</th>
+					<th>고유번호</th>
 					<th>실종 아동</th>
 					<th>제보 내용</th>
 					<th>작성자</th>
@@ -52,3 +52,4 @@
 
 </body>
 </html>
+<%@ include file="../layout/footer.jsp"%>

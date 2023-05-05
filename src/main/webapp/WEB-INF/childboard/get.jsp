@@ -33,24 +33,24 @@
 			 <table class="table-01">
 			    <tbody>
 			    <tr>
-			      <th scope="row">실종 장소</th>
-			      <td>${child.child_location}</td>
+			      <th scope="row" class="childlocation">실종 장소</th>
+			      <td class="child">${child.child_location}</td>
 			    </tr>
 			     
 			     <tr>
-			      <th scope="row">현재 나이</th>
+			      <th scope="row" class="childage">현재 나이</th>
 			      <td>${child.child_curage}</td>
 			     </tr>
 			     <tr>
-			      <th scope="row">실종 나이</th>
+			      <th scope="row" class="childage">실종 나이</th>
 			      <td>${child.child_occage}</td>
 			     </tr>
 			     <tr>
-			      <th scope="row">성별</th>
+			      <th scope="row" class="childage">성별</th>
 			      <td>${child.child_gender}</td>
 			     </tr>
 			     <tr>
-			      <th scope="row">실종 일자</th>
+			      <th scope="row" class="childage">실종 일자</th>
 			      <td>${fn:replace(fn:substring(child.child_time, 0, 4), "-", "")}-${fn:replace(fn:substring(child.child_time, 4, 6), "-", "")}-${fn:replace(fn:substring(child.child_time, 6, 8), "-", "")}</td>
 			     </tr>
 			     
@@ -66,17 +66,20 @@
                   </td>
 			     </tr>
 			     <tr>
-			      <th scope="row">옷차림</th>
-			      <td>${child.child_outfit}</td>
+			      <th scope="row" class="childoutfit">옷차림</th>
+			      <td class="outfit">${child.child_outfit}</td>
 			     </tr>
 			    </tbody>
 			   </table>
-			  </div>
-			 
-			</fieldset>
-		   
-		  
-		</div>	
+			</div>
+		  </fieldset>
+
+	  <div id="red-btn-area">
+		  <button id="red-btn" onclick="requestRegisterChild()">
+			  <span>제보 알림 신청</span>
+		  </button>
+	  </div>
+  </div>
 
 		
 		<!-- 실종 아동 상세 정보 end -->
@@ -157,6 +160,38 @@
 </center>
 
 <script>
+function requestRegisterChild(){
+	var request = confirm("제보 알림 신청은 실종 아동에 대한 제보가 등록시 이메일로 제보가 등록됨을 알려주는 서비스입니다. 신청 후 관리자의 승인을 받아 이용하실 수 있습니다.");
+
+	fetch('/user/familyRelation?childId=${child.child_id}' , {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		}
+		})
+			.then(response => {
+				return response.json()
+			})
+			.then(function (json) {
+				console.log(json);
+				if (json.code == 200) {
+					// 요청이 성공한 경우
+					var message = json.message;
+					alert(message);
+				} else {
+					// 요청이 실패한 경우
+					var message = json.message;
+					alert(message);
+					return false;
+				}
+			})
+			.catch(function (error) {
+				alert('요청 처리 중 에러가 발생했습니다.');
+				return false;
+			});
+	return false;
+}
+
 function goToRegisterPage(child_id) {
     var childIdLong= parseInt(child_id,10);
     location.href = "/reportBoard/register?child_id=" + child_id;

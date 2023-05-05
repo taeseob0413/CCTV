@@ -14,6 +14,7 @@ public class FamilyRelationServiceImpl implements FamilyRelationService{
     private final FamilyRelationMapper familyRelationMapper;
     @Override
     public boolean missingChildRegister(Long user_id, Long child_id) {
+        if(familyRelationMapper.findRelationByUserAndChild(user_id, child_id).size() > 0) return false;
         FamilyRelationVO vo = new FamilyRelationVO(user_id, child_id, 1);
         try {
             familyRelationMapper.save(vo);
@@ -73,5 +74,12 @@ public class FamilyRelationServiceImpl implements FamilyRelationService{
     }*/
 
     
+	@Override
+    public List<ChildBoardVO> getChildrenByUser(Long user_id) {
+    	
+    	List<ChildBoardVO> children;
+        children = familyRelationMapper.getChildrenByUser(user_id);
+        return children;
+    }
     
 }

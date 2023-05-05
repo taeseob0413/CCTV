@@ -1,18 +1,11 @@
 package com.firstclass.childrenctv.user;
 
-import java.net.http.HttpRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import com.firstclass.childrenctv.user.dto.LoginDTO;
-
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
 
@@ -68,8 +61,8 @@ public class UserController1 {
 	@PostMapping("/mypage/update")
 	public String update(UserVO user, Model model) {
 		userService.infoUpdate(user);
-		return "redirect:/";
-	}	
+		return "index";
+	}
 		
 	//회원탈퇴
 	@GetMapping("/mypage/delete")

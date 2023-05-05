@@ -5,24 +5,24 @@
     font-style: normal;
 }
 
-.side_bar {
+.menu {
   font-family: 'MICEGothic Bold';
   overflow: hidden;
   width: 210px;
-  height: 1350px;
+  height: 1400px;
   background:#CED8DF;
   transition: all 0.5s ease;
   box-sizing: border-box;
   float : left;
 }
 
-.side_bar ul {
+.menu ul {
     list-style-type: none;
     margin : 0px;
     padding :0px; 
 }
 
-.side_bar a , .side_bar > label, .side_bar > div{
+.menu a, .menu > label {
     display: block;
     height: 30px;
     padding : 10px;
@@ -31,7 +31,7 @@
     text-decoration: none; 
 }
 
-#mypagemenu li:hover, .side_bar > label:hover  {
+#mypagemenu li:hover, .menu > label:hover  {
     background: #3A3C68;   /* 마우스 가져다 대면 색변경*/
     color: #FFFFFF;       /* 마우스 가져다 대면 글씨 색변경*/
 }
@@ -45,15 +45,7 @@
     font-size:1.1em;
 }
 
-.side_bar div {
-  left: 45px;
-  line-height : 1.2;
-  font-size :1.2em;
-  position: absolute;
-	
-}
-
-#mypagemenu div {
+.menu div, #mypagemenu div {
   position: absolute;
   left: 45px;
   line-height : 1.2;
@@ -65,45 +57,46 @@
 }
 
 #side_menu:checked ~ #mypagemenu {
-	display: block;
-	height: auto;
+  display: block;
+  height: auto;
 }
 
 #side_menu:not(:checked) ~ ul {
-	display: none;
+display: none;
 }
 
-.side_bar ::before {
+.menu ::before {
     font-family: 'Material Icons';
-    font-size: 1.7em;
+    font-size: 1.5em;
     float: left;
     clear: left;
 }
 
-.side_bar label::before{ content: '\e5d2'; }
-.side_bar li:nth-child(1) a::before{ content: '\e174'; }
-.side_bar li:nth-child(2) a::before{ content: '\e0ee'; }
-.side_bar li:nth-child(3) a::before{ content: '\e87d'; }
-.side_bar li:nth-child(4) a::before{ content: '\ef66'; }
+.menu label::before{ content: '\e5d2'; }
+.menu li:nth-child(1) a::before{ content: '\e174'; }
+.menu li:nth-child(2) a::before{ content: '\e0ee'; }
+.menu li:nth-child(3) a::before{ content: '\e87d'; }
+.menu li:nth-child(4) a::before{ content: '\ef66'; }
 
 @media screen and (max-width:980px) {
-    .menu1 {
+    .menu {
         width: 80px;
     }
     
-    .menu1 div, #mypagemenu div {
+    .menu div, #mypagemenu div {
+    	font-size : 1em;
     	display: none;
     }
     
-    .menu1 ::before {
-    	font-family: 'Material Icons';
-   	 	font-size: 3em;
-    	float: left;
-    	clear: left;
+    .menu ::before {
+    font-family: 'Material Icons';
+    font-size: 3em;
+    float: left;
+    clear: left;
 	}
-    
-	.menu1 a, .menu1 > label {
-		display: block;
-    	height: 50px;    
+	
+	.menu a, .menu > label {
+    	display: block;
+    	height: 50px;
 	}
 }

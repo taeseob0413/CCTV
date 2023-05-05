@@ -1,12 +1,22 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 .cnt-opt {
+   font-family: 'MICEGothic Bold';
    border: 2px solid gray;
    border-radius: 10px;
    width: 80%;
-   height: 45%;
+   height: 700px;
    margin: 50px auto;
    padding: 30px;
+   }
+   .cnt-main{
+   font-family: 'MICEGothic Bold';
    }
    .main-copy{
    font-size: 45px;
@@ -22,6 +32,7 @@
    height: 50%;
    }
    .main{
+   margin-top: 50px;
    font-size: 40px;
    line-height: 1.5em;
    text-align: justify;
@@ -34,9 +45,9 @@
    color: #245d9e;
    }
    .logoexplanation{
-   font-size: 29px;
+   font-size: 27px;
    line-height: 1.5em;
-   text-align: justify;
+   text-align: center;
    color: #485054;
    margin-left: auto; 
    margin-right: auto;

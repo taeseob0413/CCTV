@@ -9,8 +9,6 @@ public interface FamilyRelationService {
     List<FamilyRelationVO> findRelationByChild(Long child_id);
     List<FamilyRelationVO> findRelationByUser(Long user_id);
     boolean approval(Long id);
-    //boolean unregister(Long id);
-    
-
-    void unregister(Long id);
+    void unregister(Long id);   
+    List<ChildBoardVO> getChildrenByUser(Long user_id);
 }

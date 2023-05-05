@@ -21,7 +21,7 @@ public class FamilyRelationController {
 
         boolean success = familyRelationService.missingChildRegister(user.getUser_id(), childId);
         if(success) return new BaseResponse(200, "성공적으로 등록되었습니다. 아이를 찾을 수 있도록 최선을 다하겠습니다.");
-        return new BaseResponse(400, "Err : 비정상적인 요청입니다.");
+        return new BaseResponse(400, "이미 요청되었습니다.");
     }
 
     /*@DeleteMapping("/mypage/register/{relationId}")
@@ -43,4 +43,6 @@ public class FamilyRelationController {
         if(list != null) return new BaseResponse(200, "성공적으로 삭제되었습니다.", list);
         return new BaseResponse(400, "Err : 비정상적인 요청입니다.");
     }
+    
+    
 }
