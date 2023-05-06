@@ -19,7 +19,7 @@ values(seq_protectboard.nextval, #{child_name}, #{child_age}, #{child_gender}, #
              where 
              rownum <= #{pageNum}*#{amount} and approval =1
              ) 
-        where rn > (#{pageNum}-1)*#{amount}
+        where rn > (#{pageNum}-1)*#{amount} order by protect_id desc
         ]]>
 </select>
 
