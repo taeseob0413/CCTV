@@ -147,14 +147,6 @@
 	</table>
 	</div>
 	
-	<%-- 실종자 가족 등록 --%>
-	<div id="mypage_register">
-		<div id="mypage_rtitle">실종자 가족 등록</div>
-		<button id=mypage_register_btn" onclick="mypage_register(${child.child_id})">
-		<span class="material-symbols-outlined">add</span>
-		</button>
-	</div>
-	
 	
 </div>
 </center>
