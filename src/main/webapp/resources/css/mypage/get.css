@@ -1,67 +1,101 @@
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
 #mypage_get {
     width: 100%;
     height: 1300px;
     text-align:center;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'MICEGothic Bold';
+    position:relative;
 }
 
 #get_title {
-  margin :80px 50px 30px 260px;	
-  font-size: 50px;
+  top: 9%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
   width: 500px;  
   height: 80px;
   color: black;
+  position:absolute;
 }
 
+
 #mypage_get label {
-  font-size: 1.4em;
+  font-size:2em;
   padding : 10px;
   font-weight : bolder;
 }
 
+#get_input { 
+	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	width:800px;
+	height:900px;
+	position:absolute;
+}
+
 #get_id label, #get_email label {
-  padding:20px;
+  padding: 22px;
 }
 
 #get_name label, #get_age label, #get_gender label,
 #get_address label {
-  padding : 30px;
+  padding : 37px;
 }
 
 #get_id, #get_pw, #get_name, #get_email,
 #get_age, #get_gender, #get_address {
-	margin : 0px 0px 0px 40px;
+	margin :10px auto;
 }
 
 #get_id input, #get_pw input, #get_name input,
 #get_email input, #get_age input, #get_gender input,
 #get_address input {
-  width: 450px;
+  width: 550px;
   height:70px;
   border-radius: 5px;
   border: 1px solid gray;
-  font-size:1.6em;
+  font-size:1.7em;
   background-color :#E2E2E2;
   margin: 15px;
+  font-family: 'MICEGothic Bold';  
 }
 
-#get_button{
-  width: 250px;
+#get_button {
+	top: 116%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	width:800px;
+	height:1000px;
+	position:absolute;
+}
+
+
+#get_button1{
+  width: 330px;
   height: 90px;
+  font-family: 'MICEGothic Bold';
   border-radius: 20px;
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight : bold;
   background-color: #6559e8;
   border: 2px dotted black;
   color: white;
-  margin:20px 10px 0px 85px;
+  margin : 10px;
 }
 
-#get_button1 {
-  width: 250px;
+#get_button2 {
+  width: 330px;
   height: 90px;
+  font-family: 'MICEGothic Bold';
   border-radius: 20px;
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight : bold;;
   background-color: gray;
   border: 2px dotted black;

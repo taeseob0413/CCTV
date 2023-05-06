@@ -14,6 +14,7 @@
    margin-top: 80px;
    margin-bottom: 10px;
    margin-right: 20px;
+   
    left: 450px;
    top: 210px;
    font-size: 50px; 
@@ -24,11 +25,16 @@
 
 .register_table {   
    border-collapse: collapse;
-   left: 120px;
    top: 320px;
+   left: 120px;  
    margin: 130px;
    margin-top: 70px;
+  margin-top: 70px;
+   margin-right: 14%;
+   margin-left: 14%;
+   margin-bottom: 55%;
    width: 80%;
+
    font-size: 2em;
    text-align: center;
    padding: 10px;

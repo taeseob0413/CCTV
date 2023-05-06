@@ -13,10 +13,10 @@
 #mywrite_title {
    margin-top: 80px;
    margin-bottom: 10px;
-   margin-right: 20px;
-   left: 450px;
+   margin-right: 6%;
    top: 210px;
-   font-size: 50px; 
+   left: 450px;
+   font-size: 60px; 
    font-weight: bold;
    text-align: center;   
    padding: 10px;
@@ -24,12 +24,16 @@
 }
 
 .mywrite_table {   
-   border-collapse: collapse;
-   left: 120px;
+  border-collapse: collapse;
    top: 320px;
+   left: 120px;
    margin: 130px;
    margin-top: 70px;
+   margin-right: 14%;
+   margin-left: 14%;
+   margin-bottom: 55%;
    width: 80%;
+
    font-size: 2em;
    text-align: center;
    padding: 10px;

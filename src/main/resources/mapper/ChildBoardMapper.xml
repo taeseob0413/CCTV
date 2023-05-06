@@ -51,7 +51,6 @@
             VALUES (seq_child.nextval,#{child_location},#{child_curage},#{child_occage},#{child_gender},#{child_name},#{child_time},#{child_feature},#{child_outfit},#{child_img})
     </insert>
     
-
     <select id="getTotal" resultType="int">
        select count(*) from childboard_table where 
        <include refid="criteria"></include>
@@ -64,7 +63,4 @@
     	AND child_curage &lt; #{top_age} AND child_curage &gt; #{bottom_age}
     	AND child_gender = #{child_gender} 
     </select>
-    
-    
-
 </mapper>
