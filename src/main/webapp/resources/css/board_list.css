@@ -36,7 +36,7 @@
 
 #InnerArea{
   width: 100%;
-  max-width: 1500px;
+  max-width: 1800px;
   margin : 0 auto;
   text-align: center;
 }
@@ -64,7 +64,7 @@
 }
 
 table {
-  width: 80%; /* 테이블 너비 설정 */
+  width: 95%; /* 테이블 너비 설정 */
   margin: 0 auto; /* 가운데 정렬 */
   border-collapse: collapse; /* 테이블 경계선 병합 설정 */
   margin-bottom: 30px; /* 테이블 아래 여백 설정 */
@@ -117,7 +117,7 @@ th {
 #reportButtonContainer {
   display: flex;
   justify-content: flex-end; /* 오른쪽 정렬 */
-  width: 90%;
+  width: 95%;
   height: 50px;
   margin-top: 70px; /* 제보 버튼과 제목 사이의 간격 조절 */
   margin-bottom: 50px; /* 제보 버튼과 테이블 사이의 간격 조절 */
