@@ -54,7 +54,7 @@
 			      <td>${fn:replace(fn:substring(child.child_time, 0, 4), "-", "")}-${fn:replace(fn:substring(child.child_time, 4, 6), "-", "")}-${fn:replace(fn:substring(child.child_time, 6, 8), "-", "")}</td>
 			     </tr>
 			     
-			     <tr style="height: 50px;">
+			     <tr>
 			      <th scope="row">특징</th>
 			      <td>
 			       <div class="cell-content-wrapper">
@@ -145,14 +145,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-	</div>
-	
-	<%-- 실종자 가족 등록 --%>
-	<div id="mypage_register">
-		<div id="mypage_rtitle">실종자 가족 등록</div>
-		<button id=mypage_register_btn" onclick="mypage_register(${child.child_id})">
-		<span class="material-symbols-outlined">add</span>
-		</button>
 	</div>
 	
 	
