@@ -5,7 +5,9 @@ import com.firstclass.childrenctv.util.email.MailText;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @AllArgsConstructor
@@ -86,9 +88,28 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public void delete(long id) {
-		userMapper.delete(id);	
+	public void delete(UserVO user) {
+		userMapper.delete(user);	
 	}
+
+	@Override
+	public int pwcheck(UserVO user) {
+		int result = userMapper.pwcheck(user);
+		return result;
+	}
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+
+
+	
 	
 	
 

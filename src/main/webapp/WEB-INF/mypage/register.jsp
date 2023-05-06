@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <%@include file="../layout/header.jsp"%>
 
 <!-- 사이드바 -->
@@ -21,14 +22,14 @@
 
 		<div class="tels">
 
-			<h1>실종 아동 관심 리스트</h1>
-			<table border="1">
+			<div id="register_title">실종 아동 관심 리스트</div>
+			<table class="register_table" border="1">
 				<tr>
-					<th>상세페이지 바로가기(childBoard_id)</th>
+					<th>고유번호</th>
 					<!-- <th>id</th>
 					<th>userid</th> -->
 					<th>이름</th>
-					<th>가족 등록 삭제</th>
+					<th>실종 아동 삭제</th>
 
 				</tr>
 
@@ -51,3 +52,4 @@
 
 </body>
 </html>
+<%@ include file="../layout/footer.jsp"%>

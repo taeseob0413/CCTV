@@ -81,7 +81,7 @@ td {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 10ch; /* 최대 글자 수 */
+  max-width: 12ch; /* 최대 글자 수 */
 }
 
 #th1{

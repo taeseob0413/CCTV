@@ -2,19 +2,19 @@
 <%@ include file="../layout/header.jsp"%>
 <link rel="stylesheet" href="/resources/css/mypage/update.css"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">	 
-     
-     <form action="/mypage/update" method="post">
-	 <!-- sidebar -->
-	 <jsp:include page="../mypage/sidebar.jsp"/>
-	 
-	 <div id="mypage_update">
-	 	<div id="update_title">회원정보 수정</div>
-	 	<input type="hidden" name="id" value="${user.user_id }" /> 
+
+
+<div id="mypage_update">   
+<!-- sidebar -->
+<jsp:include page="../mypage/sidebar.jsp"/>
+
+    <form action="/mypage/update" method="post">
+    
+		<div id="update_title">회원정보 수정</div> 
+		<input type="hidden" name="id" value="${user.user_id }" /> 
 	 	
-       <div id="update_id" >
+	   	<div id="update_input">
+       	<div id="update_id" >
 	  		<label>아이디</label>
 		 	<input type="text" id="userid" name="user_loginID" value="${user.user_loginID}" readonly="readonly"/>
 		</div>
@@ -50,18 +50,22 @@
           <input type="text" id="useraddress" name="user_address" value="${user.user_address}"/>
         </div>
 
-        <div>
-          <button type="submit" id="update_button" onclick="mypage_get()">수정</button>
-          <button type="submit" id="update_button1" onclick="history.back()">취소</button>
+        <div id=update_button>
+          <button type="submit" id="update_button1" onclick="mypage_get()">수정</button>
+          <button type="submit" id="update_button2" onclick="history.back()">취소</button>
         </div>
-        </div>
-       </form>    
-
+       </div>
+       
+    </form>
+      
+</div>   
+      
 <script>
-function mypage_get() {
- alert('수정이 완료되었습니다')
 
+function mypage_get() {
+	alert('수정이 완료되었습니다');	
 }
 
 </script>
+
 <%@ include file="../layout/footer.jsp"%>

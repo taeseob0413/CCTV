@@ -2,9 +2,6 @@
 <%@ include file="../layout/header.jsp"%>
 <link rel="stylesheet" href="/resources/css/user/signup.css"/>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">	 
 
 <div id=signup>
 	<div id="info_title">회원가입</div>
@@ -82,13 +79,14 @@
 
       <div id="b">
         <button id="b1" type="submit">가입</button>
-        <button id="b2" type="submit">취소</button>
+        <button id="b2" type="button" onclick="location.href='/'">취소</button>
+        
       </div>
-
-      <p id="already">이미 회원이신가요?</p>
-      <p id="login">
-        <a href="/user/login">로그인 하러가기</a>
-      </p>
+      
+	  <div id="signup_content">
+      	<span id="already">이미 회원이신가요?</span>
+      	<span id="login"><a href="/user/login">로그인 하러가기</a></span>
+      </div>
  </form>  
  </div>  
     

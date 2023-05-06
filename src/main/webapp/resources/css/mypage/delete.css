@@ -1,75 +1,136 @@
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
 #mypage_delete {
 	width: 100%;
-    height: 1300px;
-    text-align:center;
-  	font-family: 'Noto Sans KR', sans-serif;
+	height :1300px;
+	text-align:center;
+	font-family: 'MICEGothic Bold';
+	position:relative;
 }
 
 #delete_title {
-  margin :80px 50px 30px 260px;	
-  font-size: 50px;
-  width: 500px;  
-  height: 80px;
-  color: black;
+	top: 9%;
+  	left: 50%;
+ 	transform: translate(-50%, -50%);
+	font-size: 60px;
+	width: 300px;  
+	height: 60px;
+	color: black;
+	position:absolute; 
+}
+
+#delete_content {
+	top: 25%;
+  	left: 50%;
+ 	transform: translate(-45%, -50%);
+	width : 850px;
+	height: 130px;
+	text-align :left;
+	position:absolute;
 }
 
 #delete_content1 {
 	color : blue;
-	font-size:2em;
-	margin : 80px 0px 0px -500px;
-}
-
-#delete_content2 {
-	font-size:1.6em;
-	margin : -30px 0px 0px -150px;
+	font-size:2.2em;
 }
 
 #delete_content3 {
-	font-size:1.6em;
-	margin : 15px 0px 0px 50px;
+	font-size: 1.8em;
+	margin:10px 0px 0px 0px;
 }
 
 #delete_content4 {
-	font-size:1.6em;
-	margin : 15px 0px 0px 150px;
+	font-size: 1.8em;
+	margin:10px 0px 0px 0px;
 }
 
-#delete_pw{
-	margin : 80px 0px 40px 80px;
+#delete_pw {
+	top: 37%;
+  	left: 50%;
+ 	transform: translate(-47%, -50%);
+	width: 900px;
+	height: 100px;
+	position:absolute;
 }
 
-#mypage_delete label {
-  font-size: 1.4em;
-  padding : 10px;
+#delete_pw label {
+  font-size: 2.1em;
+  padding : 20px;
   font-weight : bolder;
 }
 
 #delete_pw input {
-  width: 450px;
-  height:70px;
+  width: 565px;
+  height:80px;
   border-radius: 5px;
   border: 1px solid gray;
   font-size:1.5em;
 }
 
+input::placeholder {
+  font-size:1.4em;
+  font-family: 'MICEGothic Bold';  
+}
+
+#password_content {
+	top: 44%;
+  	left: 50%;
+ 	transform: translate(-78%, -50%);
+ 	width : 600px;
+ 	height : 50px;
+ 	position:absolute;
+}
+
 #password_title{
-	font-size : 1.4em;
-	margin :50px 10px 0px -180px ;
+	font-size : 1.7em;
+	padding:10px;
 }
 
 #password_window{
-	font-size : 1.4em;
+	font-size : 1.7em;
 	color : #6559e8;
-	margin :-50px 0px 0px 0px ;
 }
 
-#delete_button{
-  width: 400px;
-  height: 100px;
-  border-radius: 20px;
-  font-size: 2em;
-  background-color: #6559e8;
-  font-weight : bold;
-  color: white;
-  margin : 100px 0px 0px 80px;
+#password_window a {
+  text-decoration-line: none;
+  color: blue;
+}
+
+#delete_button {
+	top: 90%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	width:800px;
+	height:1000px;
+	position:absolute;
+}
+
+#delete_button1{
+	width: 300px;
+	height: 90px;
+	border-radius: 20px;
+	font-size: 2.5em;
+	background-color: #6559e8;
+	font-weight : bold;
+	border: 2px dotted black;
+	color: white;
+	font-family: 'MICEGothic Bold';
+	margin : 10px;
+}
+
+#delete_button2{
+	width: 300px;
+	height: 90px;
+	border-radius: 20px;
+	font-size: 2.5em;
+	background-color: gray;
+	font-weight : bold;
+	border: 2px dotted black;
+	color: white;
+	font-family: 'MICEGothic Bold';
 }

@@ -21,10 +21,10 @@
 
 		<div class="tels">
 
-			<h1>제보 목록</h1>
-			<table border="1">
+			<div id="mywrite_title">제보 목록</div>
+			<table class="mywrite_table" border="1">
 				<tr>
-					<th>-해당 페이지로 이동-(고유번호)</th>
+					<th>고유번호</th>
 					<th>실종 아동</th>
 					<th>제보 내용</th>
 					<th>작성자</th>
@@ -41,8 +41,7 @@
 							<%-- <button type="button" onclick="deletePost(${item.report_id})">글삭제</button> --%>
 							<%--삭제할때 이 코드 사용 --%> <%--  <a href="/mypage/mywrite/delete?report_id=${item.report_id}">삭제</a> --%>
 							<%-- <input type="submit" value="글삭제" onclick="deleteReportPost(${item.report_id})"/> --%>
-
-						
+		
 					</tr>
 				</c:forEach>
 			</table>
@@ -52,3 +51,4 @@
 
 </body>
 </html>
+<%@ include file="../layout/footer.jsp"%>

@@ -34,7 +34,6 @@ public class HomeController {
         return "index";
     }
     
-
     @GetMapping("/find/user/userLoginId")
     public String findUserLoginId(){
         return "/user/FindUserLoginId";
@@ -44,14 +43,13 @@ public class HomeController {
     public String findUserPassword() {
         return "user/FindUserPassword";
     } 
-   
-  // @GetMapping("/mypage/mywrite") 
-//	public String mywrite() {
-	//	return "/mypage/mywrite";
-	//}
+    
+    @GetMapping("/error")
+    public String getError() {
+    	return "error";
+    }
 
-    } 
-
+} 
 
 
 

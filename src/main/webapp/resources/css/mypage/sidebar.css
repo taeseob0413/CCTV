@@ -1,33 +1,102 @@
-.menu {
-  font-family: 'Noto Sans KR', sans-serif;
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
 }
 
-#mypagemenu {
+.menu {
+  font-family: 'MICEGothic Bold';
+  overflow: hidden;
+  width: 210px;
+  height: 1400px;
+  background:#CED8DF;
+  transition: all 0.5s ease;
+  box-sizing: border-box;
+  float : left;
+}
+
+.menu ul {
     list-style-type: none;
-    padding: 10px 0px 0px 0px;
-    top:230px;
-    width: 170px;
-    height: 1400px;
-    background:#C0DBEA;
-    float : left;
+    margin : 0px;
+    padding :0px; 
+}
+
+.menu a, .menu > label {
+    display: block;
+    height: 30px;
+    padding : 10px;
+    cursor: pointer;
+    color: black;  
+    text-decoration: none; 
+}
+
+#mypagemenu li:hover, .menu > label:hover  {
+    background: #3A3C68;   /* 마우스 가져다 대면 색변경*/
+    color: #FFFFFF;       /* 마우스 가져다 대면 글씨 색변경*/
+}
+
+#mypagemenu a:hover {
+    color: #FFFFFF;
 }
 
 #mypagemenu li a {
-    text-decoration: none;
-    padding: 10px;
-    margin : 40px auto;
-    display: block;
-    color: #000;  
+    margin : 30px auto;
     font-size:1.1em;
 }
 
-#mypagemenu li label {
-    display: block;
-    padding: 10px;
-    font-weight: bold
+.menu div, #mypagemenu div {
+  position: absolute;
+  left: 45px;
+  line-height : 1.2;
+  font-size :1.2em;
 }
 
-#mypagemenu li a:hover  {
-    background: #333;   /* 마우스 가져다 대면 색변경*/
-    color:#fff          /* 마우스 가져다 대면 글씨 색변경*/
+#side_menu {
+   display: none;
+}
+
+#side_menu:checked ~ #mypagemenu {
+  display: block;
+  height: auto;
+}
+
+#side_menu:not(:checked) ~ ul {
+display: none;
+}
+
+.menu ::before {
+    font-family: 'Material Icons';
+    font-size: 1.5em;
+    float: left;
+    clear: left;
+}
+
+.menu label::before{ content: '\e5d2'; }
+.menu li:nth-child(1) a::before{ content: '\e174'; }
+.menu li:nth-child(2) a::before{ content: '\e0ee'; }
+.menu li:nth-child(3) a::before{ content: '\e87d'; }
+.menu li:nth-child(4) a::before{ content: '\ef66'; }
+
+@media screen and (max-width:980px) {
+    .menu {
+        width: 80px;
+    }
+    
+    .menu div, #mypagemenu div {
+    	font-size : 1em;
+    	display: none;
+    }
+    
+    .menu ::before {
+    font-family: 'Material Icons';
+    font-size: 3em;
+    float: left;
+    clear: left;
+	}
+	
+	.menu a, .menu > label {
+    	display: block;
+    	height: 50px;
+	}
 }

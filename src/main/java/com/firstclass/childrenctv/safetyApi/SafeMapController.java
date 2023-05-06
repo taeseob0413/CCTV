@@ -25,7 +25,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @RequestMapping("/api")
 public class SafeMapController {
-
+	//현재 data 12000개
     @Autowired
     private SafetyMapService safeMapService;
 
@@ -37,16 +37,21 @@ public class SafeMapController {
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("esntlId", "10000532");
         params.add("authKey", "180928cbe4e14d7f");
-        params.add("pageIndex", "3");
         params.add("pageUnit", "100");
-        
-        // RestTemplate을 사용하여 API 요청을 보내고 응답 데이터를 받아옴
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response = restTemplate.postForEntity(url, params, String.class);
-        String responseBody = response.getBody();
 
-        // 받아온 응답 데이터를 파싱하여 SafeMapEntity 객체 리스트로 변환
-        List<SafetyMapVO> safeMapEntityList = parseResponseData(responseBody);
+        List<SafetyMapVO> safeMapEntityList = new LinkedList<>();
+        RestTemplate restTemplate = new RestTemplate();
+        
+        // 1부터 10까지 pageIndex 값을 변경하여 요청을 보냄
+        for (int pageIndex = 1; pageIndex <= 120; pageIndex++) {
+            params.set("pageIndex", String.valueOf(pageIndex));
+            ResponseEntity<String> response = restTemplate.postForEntity(url, params, String.class);
+            String responseBody = response.getBody();
+
+            // 받아온 응답 데이터를 파싱하여 SafeMapEntity 객체 리스트로 변환
+            List<SafetyMapVO> entityList = parseResponseData(responseBody);
+            safeMapEntityList.addAll(entityList);
+        }
 
         // SafeMapService를 사용하여 DB에 저장
         safeMapService.insert(safeMapEntityList);
@@ -71,7 +76,7 @@ public class SafeMapController {
             if (listNode != null) {
                 for (JsonNode itemNode : listNode) {
                     // 필요한 데이터를 추출하여 SafeMapEntity 객체 생성
-                   SafetyMapVO entity = new SafetyMapVO();
+                	SafetyMapVO entity = new SafetyMapVO();
                     entity.setSafety_name(itemNode.get("bsshNm").asText());
                     entity.setSafety_address(itemNode.get("adres").asText());
                     entity.setSafety_class(itemNode.get("clNm").asText());
