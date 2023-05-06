@@ -19,10 +19,10 @@
     <li><a href="/child/list" >실종 검색</a></li>
     <li><a href="/safety/get" >안전 지도</a></li>
     <% if(user == null){%>
-    <li class ="userMenu" onclick="toLoginPage()">로그인</li>
+    <li class ="userMenu" onclick="toLoginPage()"><img src="/resources/image/login.png" alt="login" width="80" height="80"></li>
     <%} else{ %>
-    <li class ="userMenu" onclick="logout()">로그아웃</li>
-    <li class ="userMenu"><a href="/mypage/get?user_id=${user.user_id}">마이페이지</a></li>
+    <li class ="userMenu" onclick="logout()"><img src="/resources/image/logout.png" alt="logout" width="80" height="80"></li>
+    <li class ="userMenu"><a href="/mypage/get?user_id=${user.user_id}"><img src="/resources/image/mypage.png" alt="mypage" width="80" height="80"></a></li>
     <% } %>
 </ul>
 </div>

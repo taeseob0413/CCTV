@@ -39,7 +39,7 @@
 }
 .clear_b{
  overflow-x: auto;
- width: 800px;
+ width: 920px;
  height: 400px;
  margin-left: auto; 
  margin-right: auto;
@@ -56,13 +56,14 @@
 .info{
  float: right;
  width: 70%;
- height: 380px;
- margin-top: 30px;
+ height: 400px;
+ margin-top: 15px;
 }
 table.table-01{
  width: 95%;
+ margin-right: 20px;
  min-width: 500px;
- height: 50px;
+ height: 93%;
  border-collapse: collapse;
  text-align: left;
  font-size: 25px;
