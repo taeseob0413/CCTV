@@ -54,7 +54,7 @@
 			      <td>${fn:replace(fn:substring(child.child_time, 0, 4), "-", "")}-${fn:replace(fn:substring(child.child_time, 4, 6), "-", "")}-${fn:replace(fn:substring(child.child_time, 6, 8), "-", "")}</td>
 			     </tr>
 			     
-			     <tr style="height: 50px;">
+			     <tr>
 			      <th scope="row">특징</th>
 			      <td>
 			       <div class="cell-content-wrapper">

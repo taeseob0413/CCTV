@@ -29,7 +29,8 @@
 }
 
 #InnerArea {
-    width: 800px;
+    width: 90%;
+	max-width: 1500px;
     padding: 20px;
     margin: 0 auto;
     background-color: #fff;
