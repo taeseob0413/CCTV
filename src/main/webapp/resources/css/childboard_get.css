@@ -12,11 +12,11 @@
   }
   .show-more-button {
     display: inline-block;
-    width: 50px; /* 버튼의 너비를 조절할 수 있습니다. */
+    width: 25px; /* 버튼의 너비를 조절할 수 있습니다. */
     margin-left: 10px; /* 버튼과 셀 내용 사이의 간격을 조절할 수 있습니다. */
   }
   .cell-content {
-    height: 40px; /* 적절한 높이로 설정 */
+    height: 25px; /* 적절한 높이로 설정 */
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -39,8 +39,8 @@
 }
 .clear_b{
  overflow-x: auto;
- width: 800px;
- height: 400px;
+ width: 90%;
+ max-width: 1000px;
  margin-left: auto; 
  margin-right: auto;
  padding: 15px;
@@ -56,13 +56,14 @@
 .info{
  float: right;
  width: 70%;
- height: 380px;
- margin-top: 30px;
+ height: 400px;
+ margin-top: 15px;
 }
 table.table-01{
  width: 95%;
+ margin-right: 20px;
  min-width: 500px;
- height: 50px;
+ height: 95%;
  border-collapse: collapse;
  text-align: left;
  font-size: 25px;
@@ -85,7 +86,9 @@ table.table-01 th.childage{
  padding: 10px;
  width: 100px;
  text-align: left;
+  vertical-align: middle;
  }
+
  table.table-01 td{
  border-bottom: 1px solid #2d52ad;
  border-top: 1px solid #2d52ad;
@@ -113,7 +116,8 @@ table.table-01 th.childage{
 .board{
  font-family:'MICEGothic Bold';
  margin-top: 50px;
- width: 80%;
+ width: 90%;
+ max-width: 1800px;
  vertical-align: middle;
 }
 
@@ -221,7 +225,8 @@ table.table-01 th.childage{
 }
 
 #red-btn-area{
-    width: 800px;
+    width: 90%;
+ max-width: 1000px;
     height: 80px;
     margin: 20px auto;
 }

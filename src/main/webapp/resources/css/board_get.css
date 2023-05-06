@@ -20,8 +20,8 @@
 
 /* 내부 영역 스타일 */
 #InnerArea {
-  width: 80%;
-  max-width: 800px;
+  width: 90%;
+  max-width: 1500px;
   margin: 0 auto;
   background-color: #f9f9f9;
   padding: 20px;
