@@ -77,16 +77,6 @@ public class UserServiceImpl implements UserService{
     	userMapper.infoUpdate(user);
     }
 
-    @Override
-    public List<UserVO> getAllUserList() {
-        return null;
-    }
-		
-	@Override
-	public UserVO get(Long user_id) {			
-		return userMapper.get(user_id);
-	}
-
 	@Override
 	public void delete(UserVO user) {
 		userMapper.delete(user);	
@@ -97,24 +87,4 @@ public class UserServiceImpl implements UserService{
 		int result = userMapper.pwcheck(user);
 		return result;
 	}
-	
-	
-
-	
-	
-	
-
-	
-	
-	
-
-
-	
-	
-	
-
-	
-	
-
-	
 }

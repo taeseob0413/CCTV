@@ -26,13 +26,11 @@ public class ChildBoardServiceImpl implements ChildBoardService {
 
    @Override
    public List<ChildBoardVO> getChild() {
-      // TODO Auto-generated method stub
       return mapper.getChild();
    }
 
    @Override
    public ChildBoardVO getChildId(long id) {
-      // TODO Auto-generated method stub
       return mapper.getChildId(id);
    }
 
