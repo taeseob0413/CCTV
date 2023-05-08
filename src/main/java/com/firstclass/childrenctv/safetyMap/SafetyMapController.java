@@ -21,7 +21,6 @@ public class SafetyMapController {
 
     @GetMapping("/safety/get")
     public String getLocation() {
-       System.out.println("성공");
        return "safetymap/safetyMap";
     }
     

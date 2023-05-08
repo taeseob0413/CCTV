@@ -72,10 +72,6 @@ public class ReportBoardController {
 			UserVO user = (UserVO) session.getAttribute("user");
 			List<ReportBoardVO> reportList = boardservice.getReportList(user.getUser_loginID()); // 제보글 목록 가져오기 mapper.sml
 																									// -> sql명령문 ->DB data
-																									// acess
-			for (ReportBoardVO report : reportList) {
-				log.info(report);
-			}
 			model.addAttribute("reportList", reportList);
 			return "/mypage/mywrite";
 		}

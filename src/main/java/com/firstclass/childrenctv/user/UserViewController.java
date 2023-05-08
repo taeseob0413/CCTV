@@ -37,8 +37,7 @@ public class UserViewController {
     @GetMapping("/user/emailcheck")
     @ResponseBody
      public String emailcheck(@RequestParam("user_email") String email) {
-     	String code = userService.emailcheck(email);     	
-     	System.out.println("인증코드 :" +  code);
+     	String code = userService.emailcheck(email);
      	return code;
      }
     
