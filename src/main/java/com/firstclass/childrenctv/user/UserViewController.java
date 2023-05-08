@@ -11,8 +11,7 @@ import lombok.AllArgsConstructor;
 
 @Controller
 @AllArgsConstructor
-public class UserController1 {
-   
+public class UserViewController {
   private final UserService userService;
 
   	//회원가입
@@ -38,8 +37,7 @@ public class UserController1 {
     @GetMapping("/user/emailcheck")
     @ResponseBody
      public String emailcheck(@RequestParam("user_email") String email) {
-     	String code = userService.emailcheck(email);     	
-     	System.out.println("인증코드 :" +  code);
+     	String code = userService.emailcheck(email);
      	return code;
      }
     
@@ -72,18 +70,14 @@ public class UserController1 {
 		
 	@PostMapping("/mypage/delete")
 	public String delete(UserVO vo, HttpSession session) {
-		
 		UserVO user = (UserVO)session.getAttribute("user");		
 		String sPw = user.getUser_password();
 		String vPw = vo.getUser_password();
-		
 		if(!(sPw.equals(vPw))) {
 			return "redirect:/mypage/delete";
 		}
-		
 		userService.delete(user);
 		session.invalidate();
-		
 		return "index";
 	}
 	

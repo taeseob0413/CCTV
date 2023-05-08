@@ -61,9 +61,6 @@ public class GmailServiceImpl implements GmailService {
     }
 	
     public String send1(String email) {
-	    System.out.println(this.user);
-        System.out.println(this.password);
-        System.out.println("인증 번호 : "+  pw);
         Properties prop = getProperties();
         Session session = getSession(prop);
 

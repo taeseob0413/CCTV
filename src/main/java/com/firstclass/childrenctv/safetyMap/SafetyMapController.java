@@ -18,10 +18,9 @@ import lombok.AllArgsConstructor;
 public class SafetyMapController {
     @Autowired
      private SafetyMapService service;
-    
+
     @GetMapping("/safety/get")
     public String getLocation() {
-       System.out.println("성공");
        return "safetymap/safetyMap";
     }
     
@@ -31,18 +30,11 @@ public class SafetyMapController {
                                 Model m) {
        // latitude와 longitude를 이용하여 서버에서 원하는 작업을 수행한다.
         List<SafetyMapVO> ss=service.getSafetyMap();
-        
-        
         List<SafetyMapVO> sss=service.getSafetyMapAddr(latitude,longitude);
-        System.out.println(latitude);
-        System.out.println(longitude);
-        
-        
         m.addAttribute("latitude",latitude);
         m.addAttribute("longitude",longitude);
         m.addAttribute("list", ss);
         m.addAttribute("listAddr", sss);
-        
         return "/safetymap/locationReceived";
      }
 }

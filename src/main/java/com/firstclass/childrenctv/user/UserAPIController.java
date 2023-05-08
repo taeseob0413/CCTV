@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
-public class UserController {
-	
+public class UserAPIController {
    private final UserService userService;
    
     @PostMapping("/user/login")
@@ -41,7 +40,4 @@ public class UserController {
         if(emailSend) return new BaseResponse<>(200, userEmail + "로 비밀번호를 전송했습니다.");
         return new BaseResponse(400, "정보가 불일치합니다. 다시 입력해주세요.");
     }
-    
-    
-    
 }

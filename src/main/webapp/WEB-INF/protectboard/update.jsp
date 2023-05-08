@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../layout/header.jsp"%>
 <head>
-<link rel="stylesheet" href="/resources/css/board_update.css">
+<link rel="stylesheet" href="/resources/css/board/board_update.css">
 </head>
 
 <% 

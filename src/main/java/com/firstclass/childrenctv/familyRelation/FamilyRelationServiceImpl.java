@@ -62,24 +62,10 @@ public class FamilyRelationServiceImpl implements FamilyRelationService{
 		familyRelationMapper.delete(id);		
 	}
 
-	
-	
-   /* public boolean unregister(Long id) {
-        try {
-            familyRelationMapper.delete(id);
-        }catch (Exception e){
-            return false;
-        }
-        return true;
-    }*/
-
-    
 	@Override
     public List<ChildBoardVO> getChildrenByUser(Long user_id) {
-    	
     	List<ChildBoardVO> children;
         children = familyRelationMapper.getChildrenByUser(user_id);
         return children;
     }
-    
 }

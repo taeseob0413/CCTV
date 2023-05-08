@@ -16,9 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Service
 @AllArgsConstructor
 public class ChildBoardServiceImpl implements ChildBoardService {
-   
-   @Autowired
-   private ChildBoardMapper mapper;
+   private final ChildBoardMapper mapper;
 
    @Override
    public List<ChildBoardVO> getChildAddr(String child_location) {
@@ -28,13 +26,11 @@ public class ChildBoardServiceImpl implements ChildBoardService {
 
    @Override
    public List<ChildBoardVO> getChild() {
-      // TODO Auto-generated method stub
       return mapper.getChild();
    }
 
    @Override
    public ChildBoardVO getChildId(long id) {
-      // TODO Auto-generated method stub
       return mapper.getChildId(id);
    }
 

@@ -10,13 +10,11 @@ public class FamilyRelationVO {
     private Long user_id;
     private Long childBoard_id;
     private int approval;
-    private String child_name;  //아동 이름
-
+    private String child_name;
 
     public FamilyRelationVO(Long user_id, Long childBoard_id, int approval) {
         this.user_id = user_id;
         this.childBoard_id = childBoard_id;
         this.approval = approval;
-        
     }
 }
