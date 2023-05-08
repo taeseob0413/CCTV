@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Kakao Map Example</title>
-  <link rel="stylesheet" href="/resources/css/locationReceived.css"> 
+  <link rel="stylesheet" href="/resources/css/safeMap/locationReceived.css">
  </head>
 <body>
       <div style="text-align: center;">

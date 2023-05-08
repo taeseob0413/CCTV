@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>실종 아동 검색</title>
-<link rel="stylesheet" href="/resources/css/childboard_child.css">
+<link rel="stylesheet" href="/resources/css/child/childboard_child.css">
 </head>
 <body>
 

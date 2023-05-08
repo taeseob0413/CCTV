@@ -9,20 +9,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 import com.firstclass.childrenctv.protectBoard.ProtectBoardService;
 import com.firstclass.childrenctv.protectBoard.ProtectBoardVO;
 import com.firstclass.childrenctv.reportBoard.ReportBoardService;
 import com.firstclass.childrenctv.util.paging.Criteria;
 import com.firstclass.childrenctv.util.paging.PageDTO;
 
-
 import lombok.AllArgsConstructor;
 
 @Controller
 @AllArgsConstructor
-public class ChildBoardController {
-	
+public class ChildBoardViewController {
 	@Autowired
 	private ChildBoardService service;
 	@Autowired
@@ -41,7 +38,6 @@ public class ChildBoardController {
 	      return "childboard/child";
 	   }
 
-
 	 @GetMapping("/child/get")
 	 public String get(@RequestParam("child_id") Long child_id,Model model) {
 		 model.addAttribute("child",service.getChildId(child_id));
@@ -56,9 +52,6 @@ public class ChildBoardController {
 			 model.addAttribute("protect", matchProtectList);
 		 }
 
-
 		 return "childboard/get";
 	 }
-	 
-	
 }

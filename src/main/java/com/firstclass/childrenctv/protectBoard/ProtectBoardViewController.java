@@ -13,8 +13,7 @@ import lombok.AllArgsConstructor;
 
 @Controller
 @AllArgsConstructor
-public class ProtectBoardController {
-
+public class ProtectBoardViewController {
 	private ProtectBoardService boardservice;
 	
 	@GetMapping("/protectBoard/list")
@@ -28,14 +27,12 @@ public class ProtectBoardController {
 	
 	@GetMapping("/protectBoard/register")
 	public String protectBoardregister() {
-		
 		return "protectboard/register";
 	}
 	
 	@PostMapping("/protectBoard/register")
 	public String protectboardregister(ProtectBoardVO board) {
 		boardservice.insert(board);
-		
 		return "redirect:/protectBoard/list";
 	}
 	

@@ -20,7 +20,6 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 @Log4j
 public class ReportBoardServiceImpl implements ReportBoardService {
-
 	private ReportBoardMapper mapper;
 	private final FamilyRelationService familyRelationService;
 	private final UserMapper userMapper;
@@ -40,7 +39,7 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 			try {
 				UserVO user = userMapper.findById(vo.getUser_id());
 				gmailService.send(user.getUser_email(),"[CCTV] 회원님의 실종 아동에 대한 제보가 들어왔습니다."
-						,MailText.getReportNotification(user.getUser_name(),child.getChild_name(), "localhost:8080/reportBoard/get?report_id="+report_id));
+						,MailText.getReportNotification(user.getUser_name(),child.getChild_name(), "www.child-ctv.com/reportBoard/get?report_id="+report_id));
 			}catch (Exception e){
 				e.printStackTrace();
 			}
@@ -54,13 +53,11 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 
 	@Override
 	public ReportBoardVO get(Long report_id) {		//제보 상세 글 보기
-		
 		return mapper.get(report_id);
 	}
 
 	@Override
 	public List<ReportBoardVO> getByChild(Long child_id) {		//실종 아동별 제보 글 보기
-		
 		return mapper.getByChild(child_id);
 	}
 
@@ -77,18 +74,6 @@ public class ReportBoardServiceImpl implements ReportBoardService {
 	// 제보 목록 가져오기
 		@Override
 		public List<ReportBoardVO> getReportList(String user_loginId) {
-			
 			return mapper.getReportList(user_loginId);
-			/*
-			 * System.out.println("Hello JUnitTest");
-			 * 
-			 * List<ReportBoardVO> list = mapper.getReportList(); // mapper -> sql -> data
-			 * access
-			 * 
-			 * log.info(list.get(0)); log.info(list.get(1)); log.info(list.get(2));
-			 * 
-			 * return list;
-			 */
-			
 		}
 }

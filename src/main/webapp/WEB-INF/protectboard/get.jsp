@@ -6,7 +6,7 @@
 
 <%@include file="../layout/header.jsp"%>
 <head>
-<link rel="stylesheet" href="/resources/css/board_get.css">
+<link rel="stylesheet" href="/resources/css/board/board_get.css">
 </head>
 
 <center>

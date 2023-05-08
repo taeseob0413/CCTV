@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 
 @Controller
 @AllArgsConstructor
-public class HomeController {
+public class ViewController {
 	
 	@Autowired
 	private ChildBoardService service;

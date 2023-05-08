@@ -10,16 +10,13 @@ import lombok.AllArgsConstructor;
 @Service
 @AllArgsConstructor
 public class SafetyMapServiceImpl implements SafetyMapService {
-   @Autowired
-   private SafetyMapMapper mapper;
+   private final SafetyMapMapper mapper;
       
    @Override
    public void insert(List<SafetyMapVO> safetyList) {
       for(SafetyMapVO entity:safetyList) {
          mapper.insert(entity);
       }
-      
-
    }
 
    @Override
@@ -31,5 +28,4 @@ public class SafetyMapServiceImpl implements SafetyMapService {
    public List<SafetyMapVO> getSafetyMap() {
       return mapper.getSafetyMap();
    }
-
 }

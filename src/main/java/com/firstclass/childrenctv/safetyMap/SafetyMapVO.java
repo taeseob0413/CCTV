@@ -11,8 +11,4 @@ public class SafetyMapVO {
    private double safety_longitude;
    private String safety_class;
    private String safety_telno;
-   
-   
-  
-   
 }

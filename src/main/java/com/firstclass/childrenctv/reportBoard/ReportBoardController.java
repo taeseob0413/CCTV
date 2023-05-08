@@ -19,7 +19,6 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 @Log4j
 public class ReportBoardController {
-
 	private ReportBoardService boardservice;
 	private ChildBoardService childservice;
 	
@@ -33,9 +32,7 @@ public class ReportBoardController {
 	@PostMapping("/reportBoard/register")
 	public String reportboardregister(ReportBoardVO board) {
 		boardservice.insert(board);
-
 		return "redirect:/child/get?child_id=" + board.getChild_id();
-		
 	}
 	
 	@PostMapping("/reportBoard/delete")
@@ -43,7 +40,6 @@ public class ReportBoardController {
 	    boardservice.deleteReportBoard(report_id);
 	    return "redirect:/child/get?child_id=" + child_id;
 	}
-
 	
 	@GetMapping("/reportBoard/get")
 	public String get(@RequestParam("report_id") Long report_id, Model model) {
@@ -55,8 +51,7 @@ public class ReportBoardController {
 			return "redirect:/";
 		}
 	}
-	
-	
+
 	@GetMapping("/reportBoard/update")
 	public String update(@RequestParam("report_id") Long reportboard_id, Model model) {
 	    // reportboard_id를 사용하여 해당 보고서 정보를 가져와서 update.jsp 화면에 전달
@@ -74,30 +69,15 @@ public class ReportBoardController {
 	//제보글 목록 가져오기
 		@RequestMapping(value = "/mypage/mywrite", method = RequestMethod.GET)
 		public String myWrite(Model model, HttpSession session) {
-
-			log.info("---------------start my write -----------------");
-
 			UserVO user = (UserVO) session.getAttribute("user");
-
 			List<ReportBoardVO> reportList = boardservice.getReportList(user.getUser_loginID()); // 제보글 목록 가져오기 mapper.sml
 																									// -> sql명령문 ->DB data
 																									// acess
-
-			// log.info(reportList.get(0));
-			// log.info(reportList.get(1));
-			// log.info(reportList.get(2)); // 3개의 정보를 가져오기
-
 			for (ReportBoardVO report : reportList) {
 				log.info(report);
-			} // 이거는 전부가져오기
-
-			log.info("---------------end my write -----------------");
-			// jsp에 뿌려줄 데이터를 넘기기 위해서 mapping
-			// model ==data
-			model.addAttribute("reportList", reportList); // 배열
-
+			}
+			model.addAttribute("reportList", reportList);
 			return "/mypage/mywrite";
-			// return "fake";
 		}
 
 

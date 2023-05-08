@@ -12,13 +12,11 @@ import lombok.AllArgsConstructor;
 @Service
 @AllArgsConstructor
 public class ProtectBoardServiceImpl implements ProtectBoardService {
-
 	private ProtectBoardMapper protectMapper;
 	private ChildBoardMapper childMapper;
 	
 	@Override
 	public void insert(ProtectBoardVO board) {
-
 		protectMapper.insert(board);
 		//matching 작업 시작
 		matching(board.getProtect_id());
@@ -40,44 +38,36 @@ public class ProtectBoardServiceImpl implements ProtectBoardService {
 
 	@Override
 	public void update(ProtectBoardVO board) {
-		
 		protectMapper.update(board);
 	}
 
 	@Override
 	public ProtectBoardVO get(Long protect_id) {
-		
 		return protectMapper.get(protect_id);
 	}
 
 	@Override
 	public List<ProtectBoardVO> getAll(Criteria cri) {
-		
 		return protectMapper.getListWithPaging(cri);
 	}
 
 	@Override
 	public List<ProtectBoardVO> getByUser(String user_loginId) {
-		
 		return protectMapper.getByUser(user_loginId);
 	}
 
 	@Override
 	public void delete(Long protect_id) {
-		
 		protectMapper.delete(protect_id);
 	}
 
 	@Override
 	public List<Long> getProtectByChild(Long child_id) {
-		
 		return protectMapper.getProtectByChild(child_id);
 	}
 
 	@Override
 	public int getTotal(Criteria cri) {
-		
 		return protectMapper.getTotalCount(cri);
 	}
-
 }

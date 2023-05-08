@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <title>사용자 위치 얻기</title>
-  <link rel="stylesheet" href="/resources/css/safetyMap.css">
+  <link rel="stylesheet" href="/resources/css/safeMap/safetyMap.css">
  
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
