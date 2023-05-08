@@ -13,4 +13,5 @@ public interface UserService {
     int idcheck(String loginid);   //아이디 중복체크
     int pwcheck(UserVO user); //회원탈퇴시 비밀번호 체크
     String emailcheck(String email);  //이메일 인증
+    UserVO get(Long user_id);
 }

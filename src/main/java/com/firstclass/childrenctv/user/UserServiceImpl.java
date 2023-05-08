@@ -34,6 +34,11 @@ public class UserServiceImpl implements UserService{
 	}
 
     @Override
+    public UserVO get(Long user_id) {
+        return userMapper.get(user_id);
+    }
+
+    @Override
     public UserVO signIn(String loginid, String password) {
         UserVO user = null;
         try {
